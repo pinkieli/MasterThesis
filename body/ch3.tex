@@ -1,5 +1,10 @@
 \chapter{结构动响应数值算法研究现状}
 
+对于结构动力学运动方程(\ref{eq:DyEq})
+\begin{equation}
+	M\ddot{U}(t)+C\dot{U}(t)+KU(t)=F(t)\label{eq:DyEq}
+\end{equation}
+带有合适的初值条件的求解。最常用的就是直接积分法，该方法的要求运动方程(\ref{eq:DyEq})在离散的时刻精确满足。同时假定位移和速度的更新方程，利用离散时刻的平衡方程求得对应时刻的加速度，进而求得速度和位移。特别地，自从Newmark-$\beta$算法\cite{Newmark1959}、Wilson-$\theta$法\cite{Wilson1968}和Houbolt法\cite{Chopra2011}等直接积分法提出以来，许多的研究学者在此之后基于各种原理提出了许多性能优良的积分算法。
 
 \section{传统直接积分法}
 
@@ -10,14 +15,50 @@
 
 
 \section{复合型子步隐式算法}
-Tarnow和Simo\inlinecite{Tarnow1994}在1994年提出了一个子步复合方法，将一般的二阶直接积分法的精度提高到四阶。在该方法中，一个时间步长内需要三次的子步计算。同时原来的二阶方法的稳定、守恒性质仍保持不变。需要注意的是，当该方法运用到二阶的Newmark-$\beta$方法\cite{Newmark1959}时，导出的高阶算法是没有数值耗散的。为了引入高频耗散特性，需要对求得的响应进行一定的技术处理，如后处理的滤波技术\cite{Fung1998}。后来，又有许多研究学者进行进一步的探索，发展了许多可靠优质的直接积分算法。其中，麻省理工的K.J. Bathe教授在2005年提出了一个两子步算法\cite{Bathe2005,Bathe2007,Bathe2012a}。假设在$t$时刻的状态量，即$^{t}U,^{t}\dot{U},^{t}\ddot{U}$，都是已知的。为了求在时刻$t+\Delta t$的未知量$^{t+\Delta t}U,^{t+\Delta t}\dot{U},^{t+\Delta t}\ddot{U}$，该方法将一个时间步长$\Delta t$划分为两个子时间步长$\gamma\Delta t,(1-\gamma)\Delta t$。在前一个时间子步$\gamma\Delta t$内，采用Trapezoidal规则\cite{book:dover}进行计算,即
+Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将一般的二阶直接积分法的精度提高到四阶。在该方法中，一个时间步长内需要三次的子步计算。同时原来的二阶方法的稳定、守恒性质仍保持不变。需要注意的是，当该方法运用到二阶的Newmark-$\beta$方法\cite{Newmark1959}时，导出的高阶算法是没有数值耗散的。为了引入高频耗散特性，需要对求得的响应进行一定的技术处理，如后处理的滤波技术\cite{Fung1998}。后来，又有许多研究学者进行进一步的探索，发展了许多可靠优质的直接积分算法。其中，麻省理工的K.J. Bathe教授在2005年提出了一个两子步算法\cite{Bathe2005,Bathe2007,Bathe2012a}。假设在$t$时刻的状态量，即$^{t}\!U,{^{t}\!\dot{U}},{^{t}\!\ddot{U}}$，都是已知的。为了求在时刻$t+\Delta t$的未知量$^{t+\Delta t}\!U,{^{t+\Delta t}\!\dot{U}},{^{t+\Delta t}\!\ddot{U}}$，该方法将一个时间步长$\Delta t$划分为两个子时间步长$\gamma\Delta t,(1-\gamma)\Delta t$。
+
+在第一个时间子步$\gamma\Delta t$内，采用Trapezoidal规则\cite{book:dover}进行计算,即
 \begin{align}
-^{t+\gamma\Delta t}\dot{U}&=^{t}\dot{U}+\frac{^t\ddot{U}+^{t+\gamma\Delta t}\ddot{U}}{2}\gamma\Delta t\\
-^{t+\gamma\Delta t}{U}&=^{t}U+\frac{^t\dot{U}+^{t+\gamma\Delta t}\dot{U}}{2}\gamma\Delta t
+{^{t+\gamma\Delta t}\!\dot{U}}&={^{t}\!\dot{U}}+\frac{{^t\!\ddot{U}}+{^{t+\gamma\Delta t}\!\ddot{U}}}{2}\gamma\Delta t\label{eq:bathev}\\
+{^{t+\gamma\Delta t}\!{U}}&={^{t}\!U}+\frac{{^t\!\dot{U}}+{^{t+\gamma\Delta t}\!\dot{U}}}{2}\gamma\Delta t\label{eq:bathed}
 \end{align}
 
+为了求得在$\gamma+\Delta t$时刻的加速度，需要引入在该时刻的离散形式的平衡方程
+\begin{equation}
+	M{^{t+\gamma\Delta t}\!\ddot{U}}+C{^{t+\gamma\Delta t}\!\dot{U}}+K{^{t+\gamma\Delta t}\!U}={^{t+\gamma\Delta t}\!F}\label{eq:batheDyEq}
+\end{equation}
+利用方程(\ref{eq:bathev})-(\ref{eq:batheDyEq})就可以求得在中间时刻$t+\gamma\Delta t$处的位移${^{t+\gamma\Delta t}\!U}$、速度${^{t+\gamma\Delta t}\!\dot{U}}$和加速度${^{t+\gamma\Delta t}\!\ddot{U}}$。然后对于第二子步内的更新则是利用了三点向后微分公式\cite{Bathe2005}
+\begin{equation}	
+	{^{t+\Delta t}\!\dot{f}}=c_1{^t\!f}+c_2{^{t+\gamma\Delta t}\!f}+c_3{^{t+\Delta t}\!f}
+\end{equation}
 
+其中，系数$c_1,c_2$和$c_3$分别为
+\begin{align}
+	c_1&=\frac{1-\gamma}{\Delta t\gamma}\\
+	c_2&=\frac{-1}{(1-\gamma)\gamma\Delta t}\\
+	c_3&=\frac{2-\gamma}{(1-\gamma)\Delta t}
+\end{align}
+于是，当$f$分别表示位移和速度时，则有：
+\begin{align}
+	{^{t+\Delta t}\!\dot{U}}&=c_1{^t\!U}+c_2{^{t+\gamma\Delta t}\!U}+c_3{^{t+\Delta t}\!U}\label{eq:batheV2}\\
+	{^{t+\Delta t}\!\ddot{U}}&=c_1{^t\!\dot{U}}+c_2{^{t+\gamma\Delta t}\!\dot{U}}+c_3{^{t+\Delta t}\!\dot{U}}\label{eq:batheA2}
+\end{align}
+同时，利用$t+\Delta t$时刻的平衡方程
+\begin{equation}
+	M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!U}={^{t+\Delta t}\!F}\label{eq:batheDyEq1}
+\end{equation}
+通过利用方程(\ref{eq:batheV2})-(\ref{eq:batheDyEq1})就可以求出在时刻$t+\Delta t$的位移${^{t+\Delta t}\!U}$、速度${^{t+\Delta t}\!\dot{U}}$和加速度${^{t+\Delta t}\!\ddot{U}}$。这样就完成了状态量从$t$时刻到$t+\Delta t$的转换，进而可以求解到满意的时间内的位移、速度和加速度值。
 
+需要说明的是，K.J. Bathe在文章\inlinecite{Bathe2005}中使用了$\gamma=0.5$来求解非线性问题较Trapezoidal规则取得了一定的优势。另外一个值得推荐的$\gamma$取值是$2-\sqrt{2}$。$\gamma=2-\sqrt{2}$的使用具有以下几方面的意义：
+\begin{itemize}
+	\item 在求解非线性问题时，可以使得在两个子步内的有效刚度矩阵是一致的，进而降低计算量\cite{Dharmaraja2009,Bathe2007,Bathe2012a}。如求解线性问题，该值可以给出问题的最优数值响应值\cite{Bathe2007,Bathe2012a}。
+	\item 该值给出了最小的误差常数和最大的线性化稳定域\cite{Dharmaraja2009}。
+\end{itemize}
+
+当然，上述的复合子步技巧也可以用于多个子步，亦即在一个时间步长$\Delta t$内，将其分为$n$份，每份不一定要求相等，而在每一个子步内使用不同的积分方法进行求解，进而复合成新的直接积分法。利用该技巧，许多学者又提出了新的复合型子步算法。
+%=====================================================================================================================
+
+Chandra和Zhou等人提出了一个三子步方法。
 
 \section{本章小结}
 
