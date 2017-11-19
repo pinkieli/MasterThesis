@@ -1,0 +1,23 @@
+\chapter{结构动响应数值算法研究现状}
+
+
+\section{传统直接积分法}
+
+
+
+\section{结构依赖型直接积分法}
+
+
+
+\section{复合型子步隐式算法}
+Tarnow和Simo\inlinecite{Tarnow1994}在1994年提出了一个子步复合方法，将一般的二阶直接积分法的精度提高到四阶。在该方法中，一个时间步长内需要三次的子步计算。同时原来的二阶方法的稳定、守恒性质仍保持不变。需要注意的是，当该方法运用到二阶的Newmark-$\beta$方法\cite{Newmark1959}时，导出的高阶算法是没有数值耗散的。为了引入高频耗散特性，需要对求得的响应进行一定的技术处理，如后处理的滤波技术\cite{Fung1998}。后来，又有许多研究学者进行进一步的探索，发展了许多可靠优质的直接积分算法。其中，麻省理工的K.J. Bathe教授在2005年提出了一个两子步算法\cite{Bathe2005,Bathe2007,Bathe2012a}。假设在$t$时刻的状态量，即$^{t}U,^{t}\dot{U},^{t}\ddot{U}$，都是已知的。为了求在时刻$t+\Delta t$的未知量$^{t+\Delta t}U,^{t+\Delta t}\dot{U},^{t+\Delta t}\ddot{U}$，该方法将一个时间步长$\Delta t$划分为两个子时间步长$\gamma\Delta t,(1-\gamma)\Delta t$。在前一个时间子步$\gamma\Delta t$内，采用Trapezoidal规则\cite{book:dover}进行计算,即
+\begin{align}
+^{t+\gamma\Delta t}\dot{U}&=^{t}\dot{U}+\frac{^t\ddot{U}+^{t+\gamma\Delta t}\ddot{U}}{2}\gamma\Delta t\\
+^{t+\gamma\Delta t}{U}&=^{t}U+\frac{^t\dot{U}+^{t+\gamma\Delta t}\dot{U}}{2}\gamma\Delta t
+\end{align}
+
+
+
+
+\section{本章小结}
+
