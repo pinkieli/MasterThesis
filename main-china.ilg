@@ -1,0 +1,10 @@
+This is makeindex, version 2.15 [TeX Live 2017/W32TeX] (kpathsea + Thai support).
+Scanning style file ./hithesis.ist.....
+** Input style error (file = ./hithesis.ist, line = 31):
+   -- Unknown specifier \endinput.
+done (5 attributes redefined, 1 ignored).
+Scanning input file main-china.idx....done (4 entries accepted, 0 rejected).
+Sorting entries....done (9 comparisons).
+Generating output file main-china.ind....done (19 lines written, 0 warnings).
+Output written in main-china.ind.
+Transcript written in main-china.ilg.

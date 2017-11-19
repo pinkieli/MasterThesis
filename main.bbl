@@ -1,0 +1,167 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{杨超2015}
+\bibauthor{杨超\@, 肖守讷\@, 阳光武, 等}\@.
+  \bibtitle{一类非耗散的显式时间积分方法}\bibmark{[J]}\@.
+  \bibjournal{振动工程学报}\@, \bibyear{2015}\@,
+  \bibvolume{28}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{441\thinspace{}\textnormal{--}\thinspace{}448}\@.
+
+\bibitem{Butcher1966}
+\bibauthor{Butcher J~C}\@. \bibtitle{On the convergence of numerical solutions
+  to ordinary differential equations}\bibmark{[J]}\@. \bibjournal{Mathematics
+  of Computation}\@, \bibyear{1966}\@,
+  \bibvolume{20}\bibnumber{(93)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}10}\@.
+
+\bibitem{于开平2005}
+\bibauthor{于开平\@, 邹经湘}\@.
+  \bibtitle{结构动力响应数值算法耗散和超调特性设计}\bibmark{[J]}\@.
+  \bibjournal{力学学报}\@, \bibyear{2005}\@,
+  \bibvolume{37}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{467\thinspace{}\textnormal{--}\thinspace{}476}\@.
+
+\bibitem{Dahlquist1956}
+\bibauthor{Dahlquist G}\@. \bibtitle{Convergence and stability in numerical
+  integration of ordinary differential equations}\bibmark{[J]}\@.
+  \bibjournal{Mathematica Scandinavica}\@, \bibyear{1956}\@,
+  \bibvolume{19}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{33\thinspace{}\textnormal{--}\thinspace{}53}\@.
+
+\bibitem{book:dover}
+\bibauthor{Hughes T~J~R}\@. \bibbooktitle{Dover Civil and Mechanical
+  Engineering\thinspace{}\textnormal{: }The Finite Element Method: Linear
+  Static and Dynamic Finite Element Analysis}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Dover
+  Publications}\@, \bibyear{2000}\@.
+
+\bibitem{周树荃1992}
+\bibauthor{周树荃\@, 高科华}\@.
+  \bibtitle{解结构动力问题的半隐式Runge—Kutta型并行直接积分法}\bibmark{[J]}\@.
+  \bibjournal{计算物理}\@, \bibyear{1992}\@,
+  \bibvolume{9}\bibnumber{(02)}\thinspace{}\textnormal{:
+  }\bibpages{133\thinspace{}\textnormal{--}\thinspace{}138}\@.
+
+\bibitem{Lunk2004}
+\bibauthor{Lunk C\@, Simeon B}\@. \bibbooktitle{Runge-Kutta-Nyström-Methods
+  with Maximized Stability Domain for Stiff Mechanical Systems}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer Berlin
+  Heidelberg}\@, \bibyear{2004}\thinspace{}\textnormal{:
+  }\bibpages{139\thinspace{}\textnormal{--}\thinspace{}144}\@.
+
+\bibitem{Lunk2005}
+\bibauthor{Lunk C\@, Simeon B}\@. \bibtitle{Runge-Kutta-Nyström methods with
+  maximized stability domain in structural dynamics}\bibmark{[J]}\@,
+  \bibyear{2005}\thinspace{}\textnormal{:
+  }\bibpages{373\thinspace{}\textnormal{--}\thinspace{}389}\@.
+
+\bibitem{Dopico2010}
+\bibauthor{Dopico D\@, Lugris U\@, Gonzalez M, et~al}\@. \bibtitle{Two
+  implementations of IRK integrators for real‐time multibody
+  dynamics}\bibmark{[J]}\@. \bibjournal{International Journal for Numerical
+  Methods in Engineering}\@, \bibyear{2010}\@,
+  \bibvolume{65}\bibnumber{(12)}\thinspace{}\textnormal{:
+  }\bibpages{2091\thinspace{}\textnormal{--}\thinspace{}2111}\@.
+
+\bibitem{吴志桥2010}
+\bibauthor{吴志桥\@, 高普云\@, 任钧国}\@.
+  \bibtitle{Runge-Kutta方法求解结构动力学方程}\bibmark{[J]}\@.
+  \bibjournal{系统仿真学报}\@,
+  \bibyear{2010}\bibnumber{(9)}\thinspace{}\textnormal{:
+  }\bibpages{2085\thinspace{}\textnormal{--}\thinspace{}2090}\@.
+
+\bibitem{吴志桥2009}
+\bibauthor{吴志桥}\@.
+  \bibtitle{L-稳定格式求解结构动力学方程和多体系统动力学方程}\bibmark{[D]}\@.
+  \bibaddress{长沙}\thinspace{}\textnormal{:
+  }\bibschool{国防科学技术大学}\@, \bibyear{2009}\@.
+
+\bibitem{Yin2013}
+\bibauthor{Yin S-H}\@. \bibtitle{A new explicit time integration method for
+  structural dynamics}\bibmark{[J/OL]}\@. \bibjournal{International Journal of
+  Structural Stability and Dynamics}\@, \bibyear{2013}\@,
+  \bibvolume{13}\bibnumber{(3)}\@.
+  \newline\url{http://dx.doi.org/10.1142/S021945541250068X}\@.
+
+\bibitem{郭静2014}
+\bibauthor{郭静\@, 邢誉峰}\@.
+  \bibtitle{结构动力学方程的辛RK方法}\bibmark{[J]}\@.
+  \bibjournal{应用数学和力学}\@, \bibyear{2014}\@,
+  \bibvolume{35}\bibnumber{(01)}\thinspace{}\textnormal{:
+  }\bibpages{12\thinspace{}\textnormal{--}\thinspace{}21}\@.
+
+\bibitem{黄策2016}
+\bibauthor{黄策\@, 富明慧\@, 郑彬彬}\@.
+  \bibtitle{求解结构动力学方程的一种辛格式及其优化}\bibmark{[J]}\@.
+  \bibjournal{固体力学学报}\@,
+  \bibyear{2016}\bibnumber{(s1)}\thinspace{}\textnormal{:
+  }\bibpages{45\thinspace{}\textnormal{--}\thinspace{}49}\@.
+
+\bibitem{Tarnow1994}
+\bibauthor{Tarnow N\@, Simo J}\@. \bibtitle{How to render second order accurate
+  time-stepping algorithms fourth order accurate while retaining the stability
+  and conservation properties}\bibmark{[J/OL]}\@. \bibjournal{Computer Methods
+  in Applied Mechanics and Engineering}\@, \bibyear{1994}\@,
+  \bibvolume{115}\bibnumber{(3)}\thinspace{}\textnormal{: }\bibpages{233
+  \thinspace{}\textnormal{--}\thinspace{} 252}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/0045782594900612}\@.
+
+\bibitem{Newmark1959}
+\bibauthor{Newmark N~M}\@. \bibtitle{A method of computation for structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{Proc Asce}\@, \bibyear{1959}\@,
+  \bibvolume{85}\thinspace{}\textnormal{: }\bibpages{67}\@.
+
+\bibitem{Fung1998}
+\bibauthor{Fung T~C}\@. \bibtitle{Complex-time-step Newmark methods with
+  controllable numerical dissipation}\bibmark{[J/OL]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{1998}\@, \bibvolume{41}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{65\thinspace{}\textnormal{--}\thinspace{}93}\@.
+  \newline\url{http://dx.doi.org/10.1002/(SICI)1097-0207(19980115)41:1<65::AID-NME270>3.0.CO;2-F}\@.
+
+\bibitem{Bathe2005}
+\bibauthor{Bathe K~J\@, Baig M~M~I}\@. \bibtitle{On a composite implicit time
+  integration procedure for nonlinear dynamics}\bibmark{[J]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2005}\@,
+  \bibvolume{83}\bibnumber{(31–32)}\thinspace{}\textnormal{:
+  }\bibpages{2513\thinspace{}\textnormal{--}\thinspace{}2524}\@.
+
+\bibitem{Bathe2007}
+\bibauthor{Bathe K~J}\@. \bibtitle{Conserving energy and momentum in nonlinear
+  dynamics: A simple implicit time integration scheme}\bibmark{[J]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2007}\@,
+  \bibvolume{85}\bibnumber{(7–8)}\thinspace{}\textnormal{:
+  }\bibpages{437\thinspace{}\textnormal{--}\thinspace{}445}\@.
+
+\bibitem{Bathe2012a}
+\bibauthor{Bathe K-J\@, Noh G}\@. \bibtitle{Insight into an implicit time
+  integration scheme for structural dynamics}\bibmark{[J]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2012}\@,
+  \bibvolume{98}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}6}\@.
+
+\end{thebibliography}
