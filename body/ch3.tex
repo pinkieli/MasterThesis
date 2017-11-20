@@ -15,7 +15,9 @@
 
 
 \section{复合型子步隐式算法}
-Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将一般的二阶直接积分法的精度提高到四阶。在该方法中，一个时间步长内需要三次的子步计算。同时原来的二阶方法的稳定、守恒性质仍保持不变。需要注意的是，当该方法运用到二阶的Newmark-$\beta$方法\cite{Newmark1959}时，导出的高阶算法是没有数值耗散的。为了引入高频耗散特性，需要对求得的响应进行一定的技术处理，如后处理的滤波技术\cite{Fung1998}。后来，又有许多研究学者进行进一步的探索，发展了许多可靠优质的直接积分算法。其中，麻省理工的K.J. Bathe教授在2005年提出了一个两子步算法\cite{Bathe2005,Bathe2007,Bathe2012a}。假设在$t$时刻的状态量，即$^{t}\!U,{^{t}\!\dot{U}},{^{t}\!\ddot{U}}$，都是已知的。为了求在时刻$t+\Delta t$的未知量$^{t+\Delta t}\!U,{^{t+\Delta t}\!\dot{U}},{^{t+\Delta t}\!\ddot{U}}$，该方法将一个时间步长$\Delta t$划分为两个子时间步长$\gamma\Delta t,(1-\gamma)\Delta t$。
+Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将一般的二阶直接积分法的精度提高到四阶。在该方法中，一个时间步长内需要三次的子步计算。同时原来的二阶方法的稳定、守恒性质仍保持不变。需要注意的是，当该方法运用到二阶的Newmark-$\beta$方法\cite{Newmark1959}时，导出的高阶算法是没有数值耗散的。为了引入高频耗散特性，需要对求得的响应进行一定的技术处理，如后处理的滤波技术\cite{Fung1998}。后来，又有许多研究学者进行进一步的探索，发展了许多可靠优质的直接积分算法。
+\subsection{TR-BDF2算法}
+麻省理工的K.J. Bathe教授在2005年提出了一个两子步算法\cite{Bathe2005,Bathe2007,Bathe2012a}。假设在$t$时刻的状态量，即$^{t}\!U,{^{t}\!\dot{U}},{^{t}\!\ddot{U}}$，都是已知的。为了求在时刻$t+\Delta t$的未知量$^{t+\Delta t}\!U,{^{t+\Delta t}\!\dot{U}},{^{t+\Delta t}\!\ddot{U}}$，该方法将一个时间步长$\Delta t$划分为两个子时间步长$\gamma\Delta t,(1-\gamma)\Delta t$。
 
 在第一个时间子步$\gamma\Delta t$内，采用Trapezoidal规则\cite{book:dover}进行计算,即
 \begin{align}
@@ -49,10 +51,10 @@ Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将�
 \end{equation}
 通过利用方程(\ref{eq:batheV2})-(\ref{eq:batheDyEq1})就可以求出在时刻$t+\Delta t$的位移${^{t+\Delta t}\!U}$、速度${^{t+\Delta t}\!\dot{U}}$和加速度${^{t+\Delta t}\!\ddot{U}}$。这样就完成了状态量从$t$时刻到$t+\Delta t$的转换，进而可以求解到满意的时间内的位移、速度和加速度值。
 
-需要说明的是，K.J. Bathe在文章\inlinecite{Bathe2005}中使用了$\gamma=0.5$来求解非线性问题较Trapezoidal规则取得了一定的优势。另外一个值得推荐的$\gamma$取值是$2-\sqrt{2}$。$\gamma=2-\sqrt{2}$的使用具有以下几方面的意义：
+需要说明的是，章杰等人\cite{Zhang2017}已经证明了，若在第一子步内使用Newmark算法\cite{book:dover}，则K.J.Bethe所提出的复合型子步算法在众多算法中具有最优性。同时，K.J. Bathe在文章\inlinecite{Bathe2005}中使用了$\gamma=0.5$来求解非线性问题较Trapezoidal规则取得了一定的优势。另外一个值得推荐的$\gamma$取值是$2-\sqrt{2}$。$\gamma=2-\sqrt{2}$的使用具有以下几方面的意义：
 \begin{itemize}
 	\item 在求解非线性问题时，可以使得在两个子步内的有效刚度矩阵是一致的，进而降低计算量\cite{Dharmaraja2009,Bathe2007,Bathe2012a}。如求解线性问题，该值可以给出问题的最优数值响应值\cite{Bathe2007,Bathe2012a}。
-	\item 该值给出了最小的误差常数和最大的线性化稳定域\cite{Dharmaraja2009}。
+	\item 该值给出了最小的截断误差常数\cite{Dharmaraja2009,Zhang2017}和最大的线性化稳定域\cite{Dharmaraja2009}。
 \end{itemize}
 
 当然，上述的复合子步技巧也可以用于多个子步，亦即在一个时间步长$\Delta t$内，将其分为$n$份，每份不一定要求相等，而在每一个子步内使用不同的积分方法进行求解，进而复合成新的直接积分法。利用该技巧，许多学者又提出了新的复合型子步算法。
@@ -83,8 +85,8 @@ A(\theta){^{t+\Delta t}\!y}+B(\theta){^{t}\!y}+C(\theta){^{t-\Delta t}\!y}+D(\th
 \end{equation}
 其中
 \begin{alignat}{2}
-A(\theta)&=\frac{11}{6}-\frac{\theta}{3}&\qquad B(\theta)&=\theta-3\\
-C(\theta)&=\frac{3}{2}-\theta&\qquad D(\theta)&=-\frac{1}{3}+\frac{\theta}{3}
+A(\theta)&=\frac{11}{6}-\frac{\theta}{3}&\qquad B(\theta)&=\theta-3\label{eq:DongA}\\
+C(\theta)&=\frac{3}{2}-\theta&\qquad D(\theta)&=-\frac{1}{3}+\frac{\theta}{3}\label{eq:DongD}
 \end{alignat}
 此时的零稳定性对参数$\theta$要求$\theta\le\frac{5}{2}$。
 
@@ -152,9 +154,146 @@ A_5(\theta_1,\theta_2)&=\frac{1}{4}-\frac{1}{4}\theta_2
 \theta_2({^{t+\frac{1}{2}\Delta t}\!U}-{^t\!U})&=\theta_2\left(\frac{\Delta t}{2}\right){^{t}\!\dot{U}}+\left(\frac{\Delta t}{2}\right)^2{^{t+\frac{1}{2}\Delta t}\!\ddot{U}}+\left(\frac{\theta_2}{2}-1\right)\left(\frac{\Delta t}{2}\right)^2{^{t}\!\ddot{U}}\\
 {^{t+\frac{1}{2}\Delta t}\!\dot{U}}-{^t\!\dot{U}}&=\frac{\Delta t}{4}({^{t+\frac{1}{2}\Delta t}\!\ddot{U}}-{^{t}\!\ddot{U}})
 \end{align}
+参数$\theta_2$实质上是扮演着$1/\beta$的角色。当$\theta_2=4$将退化为Trapezoidal规则。为了实现在第一个子步内地无条件稳定性，参数$\theta_2$应当满足\cite{book:dover}
+\begin{equation}
+0<\theta_2\le4
+\end{equation}
+
+在第二个子步内，Dong使用了如下的格式计算$t+\Delta t$时刻的位移和速度，即
+\begin{align}
+(3-\frac{3}{2}\theta_1){^{t+\Delta t}\!U}-6(1-\theta_1)&{^{t+\frac{1}{2}\Delta t}\!U}+\left(3-\frac{9}{2}\theta_1\right){^t\!U}\notag\\
+&=2\frac{\Delta t}{2}{^{t+\frac{1}{2}\Delta t}\!\dot{U}}+(3\theta_1-2)\frac{\Delta t}{2}{^t\!\dot{U}}+\left(\frac{\Delta t}{2}\right)^2{^{t+\Delta t}\!\ddot{U}}\\
+\frac{\Delta t}{2}{^{t+\Delta t}\!\dot{U}}&=\frac{3}{2}{^{t+\Delta t}\!U}-2{^{t+\frac{1}{2}\Delta t}\!U}+\frac{1}{2}{^t\!U}
+\end{align}
+通过Taylor级数展开可以证明该格式对于任意的$\theta_1$取值都是二阶精度的\cite{Dong2010}。当参数$\theta_1=1/2$时，上式退化为二阶的向后微分公式(BDF2)。于是，当参数$(\theta_1,\theta_2)=(1/2,4)$时，对于该复合型子步算法退化为前述提及的K.J. Bathe复合型子步算法\cite{Bathe2005,Bathe2007,Bathe2012a}。
 
 
-Chandra和Zhou等人提出了一个三子步方法。
+\subsection{TTBDF算法}
+Chandra和Zhou等人基于Dong提出的BDF型算法\cite{Dong2010}提出了一个三子步方法\cite{Chandra2015}。亦即将时间步长$\Delta t$分为三等份。在第一个子步内使用Trapezoidal规则，即
+\begin{align}
+{^{t+\frac{1}{3}\Delta t}\!U}&={^t\!U}+\frac{\Delta t}{6}({^{t}\!\dot{U}}+{^{t+\frac13\Delta t}\!\dot{U}})\\
+{^{t+\frac{1}{3}\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\frac{\Delta t}{6}({^{t}\!\ddot{U}}+{^{t+\frac13\Delta t}\!\ddot{U}})
+\end{align}
+且在$t+\frac{1}{3}\Delta t$时刻处满足平衡方程(\ref{eq:DyEq})。
 
+在第二个子步内仍然雇用Trapezoidal规则进行计算，则有
+\begin{align}
+{^{t+\frac{2}{3}\Delta t}\!U}&={^{t+\frac{1}{3}\Delta t}\!U}+\frac{\Delta t}{6}({^{t+\frac13\Delta t}\!\dot{U}}+{^{t+\frac23\Delta t}\!\dot{U}})\\
+{^{t+\frac{2}{3}\Delta t}\!\dot{U}}&={^{t+\frac{1}{3}\Delta t}\!\dot{U}}+\frac{\Delta t}{6}({^{t+\frac13\Delta t}\!\ddot{U}}+{^{t+\frac23\Delta t}\!\ddot{U}})
+\end{align}
+且在$t+\frac{2}{3}\Delta t$时刻处满足平衡方程(\ref{eq:DyEq})。
+
+在最后一个子步，也就是第三个子步内利用Dong提出的四点向后微分公式(\ref{eq:Dong12})，
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&=\frac{A(\theta_1)}{\Delta t/3}{^{t+\Delta t}\!{U}}+\frac{B(\theta_1)}{\Delta t/3}{^{t+\frac23\Delta t}\!{U}}+\frac{C(\theta_1)}{\Delta t/3}{^{t+\frac13\Delta t}\!{U}}+\frac{D(\theta_1)}{\Delta t/3}{^{t}\!{U}}\\
+{^{t+\Delta t}\!\ddot{U}}&=\frac{A(\theta_2)}{\Delta t/3}{^{t+\Delta t}\!\dot{U}}+\frac{B(\theta_2)}{\Delta t/3}{^{t+\frac23\Delta t}\!\dot{U}}+\frac{C(\theta_2)}{\Delta t/3}{^{t+\frac13\Delta t}\!\dot{U}}+\frac{D(\theta_2)}{\Delta t/3}{^{t}\!\dot{U}}
+\end{align}
+其中，$A,B,C,D$取值来自于等式(\ref{eq:DongA})-(\ref{eq:DongD})。当参数$(\theta_1,\theta_2)=(0.75,0.75)$时，在众多的无条件稳定算法中，具有最小的耗散特性\cite{Chandra2015}。
+
+\subsection{BDF2-BDF3算法}
+根据文\inlinecite{Gear1971a}，可以知道二阶的向后微分公式(BDF2)可以表达为
+\begin{equation}
+{^{t+\Delta t}\!\dot{U}}=\frac{3}{2\Delta t}{^{t+\Delta t}\!U}-\frac{2}{\Delta t}{^{t}\!U}+\frac{1}{2\Delta t}{^{t-\Delta t}\!U}
+\end{equation}
+而三阶向后微分公式(BDF3)则为
+\begin{equation}
+{^{t+\Delta t}\!\dot{U}}=\frac{11}{6\Delta t}{^{t+\Delta t}\!U}-\frac{3}{\Delta t}{^{t}\!U}+\frac{3}{2\Delta t}{^{t-\Delta t}\!U}-\frac{1}{3\Delta t}{^{t-2\Delta t}\!U}
+\end{equation}
+
+于是，Dong将BDF2和BDF3公式组合，可以得到如下的组合模式\cite{Dong2013}
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&=(1-\theta_1)\left(\frac{11}{6\Delta t}{^{t+\Delta t}\!U}-\frac{3}{\Delta t}{^{t}\!U}+\frac{3}{2\Delta t}{^{t-\Delta t}\!U}-\frac{1}{3\Delta t}{^{t-2\Delta t}\!U} \right)\notag\\
+&+\theta_1\left(\frac{3}{2\Delta t}{^{t+\Delta t}\!U}-\frac{2}{\Delta t}{^{t}\!U}+\frac{1}{2\Delta t}{^{t-\Delta t}\!U} \right)\\
+{^{t+\Delta t}\!\ddot{U}}&=(1-\theta_2)\left(\frac{11}{6\Delta t}{^{t+\Delta t}\!\dot{U}}-\frac{3}{\Delta t}{^{t}\!\dot{U}}+\frac{3}{2\Delta t}{^{t-\Delta t}\!\dot{U}}-\frac{1}{3\Delta t}{^{t-2\Delta t}\!\dot{U}} \right)\notag\\
+&+\theta_2\left(\frac{3}{2\Delta t}{^{t+\Delta t}\!\dot{U}}-\frac{2}{\Delta t}{^{t}\!\dot{U}}+\frac{1}{2\Delta t}{^{t-\Delta t}\!\dot{U}}\right)
+\end{align}
+当参数$(\theta_1,\theta_2)$取不同的值时，上述组合算法BDF2-BDF3将退化为不同的积分公式，如
+\begin{itemize}
+\item 当$(\theta_1,\theta_2)=(0,0)$时，BDF2-BDF3退化为BDF3。
+\item 当$(\theta_1,\theta_2)=(1,1)$时，BDF2-BDF3退化为BDF2。
+\item 当$(\theta_1,\theta_2)=(1/2,1/2)$时，BDF2-BDF3退化为著名的Park积分算法\cite{Park1975}。
+\end{itemize}
+当参数$(\theta_1,\theta_2)$在集合$I=\{(\theta_1,\theta_2)|\theta_1+\theta_2\ge1,0\le\theta_1,\theta_2\le1\}$时，BDF2-BDF3实现无条件稳定\cite{Dong2013}。
+
+\subsection{BDF3BDF2-Newmark算法}
+Dong利用前述提及的的BDF2-BDF3组合算法和Trapezoidal规则进行组合，进而提出了一个新的复合型子步算法,BDF3BDF2-Newmark算法\cite{Dong2013}。该算法将时间步长$\Delta t$分为两个相等的子步长$\Delta t/2$，在第一个子步长内使用Trapezoidal规则，即
+\begin{align}
+{^{t+\frac{1}{2}\Delta t}\!U}&={^t\!U}+\frac{\Delta t}{4}({^{t}\!\dot{U}}+{^{t+\frac12\Delta t}\!\dot{U}})\\
+{^{t+\frac{1}{2}\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\frac{\Delta t}{4}({^{t}\!\ddot{U}}+{^{t+\frac12\Delta t}\!\ddot{U}})
+\end{align}
+对于第二个子步长，则使用BDF2-BDF3组合算法，即
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&=\frac{A(\theta_1)}{\Delta t/3}{^{t+\Delta t}\!{U}}+\frac{B(\theta_1)}{\Delta t/3}{^{t+\frac12\Delta t}\!{U}}+\frac{C(\theta_1)}{\Delta t/3}{^{t}\!{U}}+\frac{D(\theta_1)}{\Delta t/3}{^{t-\frac12\Delta t}\!{U}}\\
+{^{t+\Delta t}\!\ddot{U}}&=\frac{A(\theta_2)}{\Delta t/3}{^{t+\Delta t}\!\dot{U}}+\frac{B(\theta_2)}{\Delta t/3}{^{t+\frac12\Delta t}\!\dot{U}}+\frac{C(\theta_2)}{\Delta t/3}{^{t}\!\dot{U}}+\frac{D(\theta_2)}{\Delta t/3}{^{t-\frac12\Delta t}\!\dot{U}}
+\end{align}
+其中，
+\begin{equation}
+\left\{\begin{aligned}
+A(\theta)&=\frac{11}{6}(1-\theta)+\frac32\theta\\
+B(\theta)&=3(\theta-1)-2\theta\\
+C(\theta)&=\frac{3}{2}(1-\theta)+\frac{1}{2}\theta\\
+D(\theta)&=\frac{1}{3}(\theta-1)
+\end{aligned}\right.
+\end{equation}
+
+显然，该算法不是自启动的。在第一个时间步长内，需要额外的启动机制，如连续使用两次Trapezoidal规则。当参数$(\theta_1,\theta_2)=(1,1)$时，BDF3BDF2-Newmark算法将退化为K.J. Bathe提出的TR-BDF2算法。
+
+\subsection{CTFEA算法}
+Kim和Reddy利用时间有限元配点方法导出了一个复合型子步算法(CTFEA)\cite{Kim2016}，在第一个子步$(t_s,t_s+\gamma\Delta t)$内，使用线性插值形函数如下
+\begin{equation}
+\psi_s^L=\frac{\gamma\Delta t-t+t_s}{\gamma\Delta t}\qquad \psi_{s+\gamma\Delta t}^L=\frac{t-t_s}{\gamma\Delta t}
+\end{equation}
+其上标$L$表示使用了线性插值函数。于是使用上述形函数，在第一个子步内的状态变量值可以近似表达为
+\begin{equation}
+\begin{cases}
+U(t)\approx{^t\!U}=\psi_s^L(t){^s\!U}+\psi_{s+\gamma\Delta t}^L(t){^{s+\gamma\Delta t}\!U}\\
+\dot{U}(t)\approx{^t\!\dot{U}}=\psi_s^L(t){^s\!\dot{U}}+\psi_{s+\gamma\Delta t}^L(t){^{s+\gamma\Delta t}\!\dot{U}}\\
+\ddot{U}(t)\approx{^t\!\ddot{U}}=\psi_s^L(t){^s\!\ddot{U}}+\psi_{s+\gamma\Delta t}^L(t){^{s+\gamma\Delta t}\!\ddot{U}}
+\end{cases}
+\end{equation}
+上述关系式只是近似成立，亦即其残差一般情况下不为0。故其速度和加速度的残差可以表达为
+\begin{equation}
+\begin{cases}
+r_1(t)&=\dot{U}(t)-{^t\!\dot{U}}\\
+r_2(t)&=\ddot{U}(t)-{^t\!\ddot{U}}
+\end{cases}
+\end{equation}
+在区间$t_s\le t\le t_{s+\gamma\Delta t}$通过利用配点法可以得到如下表达式
+\begin{equation}
+\begin{cases}
+0&=\int_{t_s}^{t_{s+\gamma\Delta t}}\delta(t-\theta_1\gamma\Delta t)r_1(t)dt\\
+0&=\int_{t_s}^{t_{s+\gamma\Delta t}}\delta(t-\theta_1\gamma\Delta t)r_2(t)dt
+\end{cases}
+\end{equation}
+其中，$\theta_1$表示在第一个子步内的配点参数。文\inlinecite{Kim2016}建议其$\theta_1$取值应满足$0.5\le\theta_1\le1$来获得无条件稳定性。
+
+于是，经过计算可以得到其速度和加速度的更新方程
+\begin{align}
+{^{t+\gamma\Delta t}\!\dot{U}}&=c_1{^{t+\gamma\Delta t}\!U}+c_2{^t\!U}+c_3{^{t}\!\dot{U}}\\
+{^{t+\gamma\Delta t}\!\ddot{U}}&=c_1{^{t+\gamma\Delta t}\!\dot{U}}+c_2{^t\!\dot{U}}+c_3{^{t}\!\ddot{U}}
+\end{align}
+其中，参数$c_1,c_2$和$c_3$取值为
+\begin{equation}
+c_1=\frac{1}{\gamma\theta_1\Delta t}\quad c_2=-\frac{1}{\gamma\theta_1\Delta t}\quad c_3=\frac{\theta_1-1}{\theta_1}
+\end{equation}
+需要说明的是，在第一个子步内的计算实质上等价于广义的Trapezoidal规则\cite{book:dover}。
+\begin{itemize}
+\item 当$\theta_1=0.5$时，上述算法将退化为Trapezoidal规则。
+\item 当$\theta_1=1.0$时，上述算法将退化为向后Euler公式。
+\end{itemize}
+
+类似地，在第二个子步长内，Kim等人利用了二次插值函数进行逼近计算，然后将残差再利用配点进行计算，进而得到如下的计算格式：
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&=d_1{^{t+\Delta t}\!U}+d_2{^{t+\gamma\Delta t}\!U}+d_3{^{t}\!U}+d_4{^{t+\gamma\Delta t}\!\dot{U}}+d_5{^{t}\!\dot{U}}\\
+{^{t+\Delta t}\!\ddot{U}}&=d_1{^{t+\Delta t}\!\dot{U}}+d_2{^{t+\gamma\Delta t}\!\dot{U}}+d_3{^{t}\!\dot{U}}+d_4{^{t+\gamma\Delta t}\!\ddot{U}}+d_5{^{t}\!\ddot{U}}
+\end{align}
+其中，系数取值分别为
+\begin{align}
+d_1&=\frac{\gamma-2\theta_2}{\theta_2(\gamma-\theta_2)\Delta t}\qquad d_2=\frac{2\theta_2-1}{\gamma\theta_2(\gamma-\theta_2)\Delta t}\\
+d_3&=\frac{(\gamma-1)(\gamma+1-2\theta_2)}{\gamma\theta_2(\gamma-\theta_2)\Delta t}\\
+d_4&=\frac{\theta_2-1}{\gamma(\theta_2-\gamma)}\qquad d_5=\frac{(\theta_2-1)(\gamma-1)}{\gamma\theta_2}
+\end{align}
+
+当CTFEMA算法中的参数$(\theta_1,\theta_2)=(0.5,1.0)$时，该算法将退化为TR-BDF2算法\cite{Bathe2005,Bathe2007,Bathe2012a}。
 \section{本章小结}
 

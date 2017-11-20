@@ -177,6 +177,14 @@
   \bibvolume{98}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}6}\@.
 
+\bibitem{Zhang2017}
+\bibauthor{Zhang J\@, Liu Y\@, Liu D}\@. \bibtitle{Accuracy of a composite
+  implicit time integration scheme for structural dynamics}\bibmark{[J/OL]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{2017}\@, \bibvolume{109}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{368\thinspace{}\textnormal{--}\thinspace{}406}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.5291}\@.
+
 \bibitem{Dharmaraja2009}
 \bibauthor{Dharmaraja S\@, Wang Y\@, Strang G}\@. \bibtitle{Optimal stability
   for trapezoidal–backward difference split-steps}\bibmark{[J]}\@.
@@ -189,5 +197,37 @@
   analysis}\bibmark{[J]}\@. \bibjournal{Journal of Computational Physics}\@,
   \bibyear{2010}\@, \bibvolume{229}\bibnumber{(8)}\thinspace{}\textnormal{:
   }\bibpages{3019\thinspace{}\textnormal{--}\thinspace{}3045}\@.
+
+\bibitem{Chandra2015}
+\bibauthor{Chandra Y\@, Zhou Y\@, Stanciulescu I, et~al}\@. \bibtitle{A robust
+  composite time integration scheme for snap-through problems}\bibmark{[J]}\@.
+  \bibjournal{Computational Mechanics}\@, \bibyear{2015}\@,
+  \bibvolume{55}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{1041\thinspace{}\textnormal{--}\thinspace{}1056}\@.
+
+\bibitem{Gear1971a}
+\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
+  ordinary differential equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{1971}\@.
+
+\bibitem{Dong2013}
+\bibauthor{Dong S}\@. \bibtitle{Blended Time Integration Algorithms for
+  Nonlinear Dynamics}\bibmark{[C]} //\thinspace{}\bibbooktitle{Structures,
+  Structural Dynamics, and Materials Conference Aiaa/ASME/AHS Adaptive
+  Structures Conference}\@. \bibyear{2013}\@.
+
+\bibitem{Park1975}
+\bibauthor{Park K~C}\@. \bibtitle{An improved stiffly stable method for direct
+  integration of nonlinear structural dynamic equations}\bibmark{[J]}\@.
+  \bibjournal{Journal of Applied Mechanics}\@, \bibyear{1975}\@,
+  \bibvolume{42}\thinspace{}\textnormal{: }\bibpages{464}\@.
+
+\bibitem{Kim2016}
+\bibauthor{Kim W\@, Reddy J~N}\@. \bibtitle{An Improved Time Integration
+  Algorithm: A Collocation Time Finite Element Approach}\bibmark{[J]}\@.
+  \bibjournal{International Journal of Structural Stability \& Dynamics}\@,
+  \bibyear{2016}\@, \bibvolume{17}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{1750024}\@.
 
 \end{thebibliography}

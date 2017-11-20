@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  20 NOV 2017 11:20
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  20 NOV 2017 16:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3278,12 +3278,12 @@ ut line 6.
 
 
 
-] [8] [9] [10]) [11]
+] [8] [9] [10] [11] [12] [13] [14]) [15]
 \openout2 = `body/ch4.aux'.
 
  (./body/ch4.tex
 第4章
-) [12
+) [16
 
 
 
@@ -3294,7 +3294,7 @@ ut line 6.
 
  (./body/ch5.tex
 第5章
-) [13
+) [17
 
 
 
@@ -3308,7 +3308,7 @@ ut line 6.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 2.
 
-) [14
+) [18
 
 
 
@@ -3322,7 +3322,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 1.
 
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
-[15
+[19
 
 
 
@@ -3333,16 +3333,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--158
 ]0207(19980115 ) 41 : 1<[]65 :: AID-[]NME270 >[] 3 .
  []
 
-[16]) (./back/appA.tex [17]
+[20]) (./back/appA.tex [21]
 附录 A
 File: figures/golfer.eps Graphic file (type eps)
-<figures/golfer.eps> [18
+<figures/golfer.eps> [22
 
 
 
 ]
 附录 B
-) [19
+) [23
 
 
 
@@ -3354,7 +3354,7 @@ File: figures/golfer.eps Graphic file (type eps)
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 3.
 
-) [20
+) [24
 
 
 
@@ -3367,7 +3367,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 1.
 
-(./main-china.ind) (./main-english.ind) [21
+(./main-china.ind) (./main-english.ind) [25
 
 
 
@@ -3377,7 +3377,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- [22
+ [26
 \FN@pp@footnotehinttrue 
 
 
@@ -3387,7 +3387,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
- [23
+ [27
 
 
 
@@ -3396,7 +3396,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 97.
 
-[24
+[28
 
 
 
@@ -3410,7 +3410,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.045pt on input line 7.
-) [25
+) [29
 
 
 
@@ -3423,7 +3423,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 3.
 
-) [26
+) [30
 
 
 
@@ -3457,12 +3457,12 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 48451 strings out of 493005
- 916105 string characters out of 6137956
- 1019295 words of memory out of 5000000
- 51538 multiletter control sequences out of 15000+600000
+ 48492 strings out of 493005
+ 916675 string characters out of 6137956
+ 1021281 words of memory out of 5000000
+ 51579 multiletter control sequences out of 15000+600000
  99889 words of font info for 174 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,12n,78p,10439b,14004s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (34 pages, 248608 bytes).
+Output written on main.xdv (38 pages, 299616 bytes).

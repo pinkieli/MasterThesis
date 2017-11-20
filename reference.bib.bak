@@ -35198,7 +35198,7 @@ A new method based on quadratic programming theory is proposed to determine the 
 @InProceedings{Dong2013,
   author    = {Dong, Suchuan},
   title     = {Blended Time Integration Algorithms for Nonlinear Dynamics},
-  booktitle = {Aiaa/asme/asce/ahs/asc Structures, Structural Dynamics, and Materials Conference Aiaa/asme/ahs Adaptive Structures Conference},
+  booktitle = {Structures, Structural Dynamics, and Materials Conference Aiaa/ASME/AHS Adaptive Structures Conference},
   year      = {2013},
   file      = {:composite method\\Dong2013.pdf:PDF},
   groups    = {composite sub-steps},
@@ -35529,7 +35529,7 @@ A new method based on quadratic programming theory is proposed to determine the 
   doi        = {10.1002/nme.5291},
   eissn      = {1097-0207},
   file       = {:paper\\Unconditionally Stable Explicit Method\\Accuracy of a composite implicit time integration scheme for structural dynamics.pdf:PDF},
-  groups     = {Unconditionally Stable Explicit Method},
+  groups     = {composite sub-steps},
   keywords   = {structural dynamics;implicit time integration;composite scheme;numerical accuracy, read},
   owner      = {Pinkie.li},
   timestamp  = {2017-10-19},
@@ -40118,6 +40118,19 @@ A new method based on quadratic programming theory is proposed to determine the 
   groups    = {Dynamic equation numerical methods},
   owner     = {Pinkie.li},
   timestamp = {2017-11-19},
+}
+
+@Book{Gear1971a,
+  title     = {Numerical initial value problems in ordinary differential equations},
+  publisher = {Prentice Hall},
+  year      = {1971},
+  author    = {C. William Gear},
+  groups    = {Ordinary differential Equations},
+  owner     = {Pinkie.li},
+  size      = {6538285},
+  status    = {OK},
+  subject   = {Mathematics },
+  timestamp = {2017-11-20},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
