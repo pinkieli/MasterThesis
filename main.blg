@@ -22,47 +22,48 @@ Warning--Require address: book:dover
 Warning--Require address: Lunk2004
 Warning--Require journal: Lunk2005
 Warning--Require citedate: Yin2013
+Warning--Require address: Chopra2011
 Warning--Require citedate: Tarnow1994
 Warning--Require citedate: Fung1998
-You've used 20 entries,
+You've used 24 entries,
             3103 wiz_defined-function locations,
-            868 strings with 9354 characters,
-and the built_in function-call counts, 25514 in all, are:
-= -- 2610
-> -- 56
-< -- 132
-+ -- 1918
-- -- 192
-* -- 920
-:= -- 2628
+            896 strings with 9996 characters,
+and the built_in function-call counts, 29952 in all, are:
+= -- 3057
+> -- 67
+< -- 157
++ -- 2248
+- -- 223
+* -- 1099
+:= -- 3088
 add.period$ -- 0
-call.type$ -- 20
+call.type$ -- 24
 change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 3565
-empty$ -- 1189
-format.name$ -- 144
-if$ -- 6662
+chr.to.int$ -- 3
+cite$ -- 31
+duplicate$ -- 4172
+empty$ -- 1400
+format.name$ -- 168
+if$ -- 7830
 int.to.chr$ -- 0
-int.to.str$ -- 20
+int.to.str$ -- 24
 missing$ -- 0
-newline$ -- 87
-num.names$ -- 20
-pop$ -- 415
+newline$ -- 99
+num.names$ -- 24
+pop$ -- 477
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 279
+skip$ -- 333
 stack$ -- 0
-substring$ -- 2921
-swap$ -- 983
+substring$ -- 3419
+swap$ -- 1163
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 6
-while$ -- 385
-width$ -- 22
-write$ -- 313
-(There were 7 warnings)
+warning$ -- 7
+while$ -- 445
+width$ -- 26
+write$ -- 367
+(There were 8 warnings)

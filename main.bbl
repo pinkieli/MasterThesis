@@ -121,6 +121,24 @@
   \bibyear{2016}\bibnumber{(s1)}\thinspace{}\textnormal{:
   }\bibpages{45\thinspace{}\textnormal{--}\thinspace{}49}\@.
 
+\bibitem{Newmark1959}
+\bibauthor{Newmark N~M}\@. \bibtitle{A method of computation for structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{Proc Asce}\@, \bibyear{1959}\@,
+  \bibvolume{85}\thinspace{}\textnormal{: }\bibpages{67}\@.
+
+\bibitem{Wilson1968}
+\bibauthor{Wilson E~L}\@. \bibtitle{A Computer Program for the Dynamic Stress
+  Analysis of Underground Structure}\bibmark{[J]}\@. \bibjournal{Dynamic
+  Loads}\@, \bibyear{1968}\@.
+
+\bibitem{Chopra2011}
+\bibauthor{Chopra A~K}\@. \bibbooktitle{Prentice-Hall International Series in
+  Civil Engineering and Engineering Mechanics\thinspace{}\textnormal{:
+  }Dynamics of Structures: Theory and applications to earthquake
+  engineering}\bibmark{[M]}\@. \bibedition{\mbox{4th~ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{2011}\@.
+
 \bibitem{Tarnow1994}
 \bibauthor{Tarnow N\@, Simo J}\@. \bibtitle{How to render second order accurate
   time-stepping algorithms fourth order accurate while retaining the stability
@@ -129,11 +147,6 @@
   \bibvolume{115}\bibnumber{(3)}\thinspace{}\textnormal{: }\bibpages{233
   \thinspace{}\textnormal{--}\thinspace{} 252}\@.
   \newline\url{http://www.sciencedirect.com/science/article/pii/0045782594900612}\@.
-
-\bibitem{Newmark1959}
-\bibauthor{Newmark N~M}\@. \bibtitle{A method of computation for structural
-  dynamics}\bibmark{[J]}\@. \bibjournal{Proc Asce}\@, \bibyear{1959}\@,
-  \bibvolume{85}\thinspace{}\textnormal{: }\bibpages{67}\@.
 
 \bibitem{Fung1998}
 \bibauthor{Fung T~C}\@. \bibtitle{Complex-time-step Newmark methods with
@@ -163,5 +176,18 @@
   \bibjournal{Computers \& Structures}\@, \bibyear{2012}\@,
   \bibvolume{98}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}6}\@.
+
+\bibitem{Dharmaraja2009}
+\bibauthor{Dharmaraja S\@, Wang Y\@, Strang G}\@. \bibtitle{Optimal stability
+  for trapezoidal–backward difference split-steps}\bibmark{[J]}\@.
+  \bibjournal{Ima Journal of Numerical Analysis}\@, \bibyear{2009}\@,
+  \bibvolume{30}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{141\thinspace{}\textnormal{--}\thinspace{}148}\@.
+
+\bibitem{Dong2010}
+\bibauthor{Dong S}\@. \bibtitle{BDF-like methods for nonlinear dynamic
+  analysis}\bibmark{[J]}\@. \bibjournal{Journal of Computational Physics}\@,
+  \bibyear{2010}\@, \bibvolume{229}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{3019\thinspace{}\textnormal{--}\thinspace{}3045}\@.
 
 \end{thebibliography}

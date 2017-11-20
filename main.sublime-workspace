@@ -1,0 +1,221 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"texlive",
+				"texlive"
+			],
+			[
+				"nel",
+				"nel"
+			],
+			[
+				"ne",
+				"nel"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 236.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"for",
+				"Set Syntax: Fortran - Modern"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/研二/MasterThesis/body/ch3.tex",
+		"/C/Users/lenovo/AppData/Roaming/Sublime Text 3/Packages/LaTeXTools/LaTeXTools.sublime-settings",
+		"/C/Users/lenovo/AppData/Roaming/SumatraPDF/SumatraPDF-settings.txt",
+		"/C/Users/lenovo/AppData/Local/Sublime Text 3/Cache/LaTeXTools/internal/preview_math/1990d1b205f04921903cecd049400ad7.png.err",
+		"/D/Software/emacs-22.3-barebin-i386/emacs-22.3/README.W32",
+		"/C/Users/lenovo/Desktop/GitHubLog.txt",
+		"/D/Software/ANSYS/Exam3dot5dot1.m",
+		"/D/Software/ANSYS/feaplyc2",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/FEA/feasmbl2.m",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/FEA/feeldof1.m",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/FEA/fef1l.m",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/FEA/feode2l.m",
+		"/C/Users/lenovo/Desktop/midpoint rule.txt",
+		"/C/Users/lenovo/Desktop/numerical differentiation.txt",
+		"/C/Users/lenovo/Desktop/Richardson Extrapolation.txt",
+		"/F/Jabref library/r.txt",
+		"/D/Software/MathType V6.9/Mathtype.txt",
+		"/C/Users/lenovo/Desktop/新建文本文档.txt",
+		"/C/Users/lenovo/Desktop/Newton-Cotes Integration.txt",
+		"/C/Users/lenovo/Desktop/Simpson's Rule.txt",
+		"/F/研二/MasterThesis/main.tex",
+		"/F/Jabref library/t.txt",
+		"/F/Jabref library/paper/exportlist.txt",
+		"/F/Jabref library/paper/citation-267200066.bib",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/FEA/feaplyc2",
+		"/D/Software/ANSYS/LICENSE.TXT",
+		"/C/Users/lenovo/Documents/MATLAB/FunctionYouNeed.m",
+		"/C/Users/lenovo/Documents/MATLAB/激励时程2.txt",
+		"/F/[muchong.com]杂志缩写全称查询.txt",
+		"/F/期刊名全称和缩写对照/期刊名全称和缩写对照.txt",
+		"/F/endnote-journal-j.txt",
+		"/F/ABAQUS/ABAQUS+Python二次开发攻略-配书资源/code/chapter2/pyTest2.py",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/generalKR/Parameters.m",
+		"/C/Users/lenovo/Documents/MATLAB/pinkie/generalKR/MainProExpAlg.m",
+		"/F/EndnoteLib/CNKI-636453909773108750.txt",
+		"/C/Users/lenovo/AppData/Roaming/Sublime Text 3/Packages/fortran.tmbundle-master/README.mdown",
+		"/C/Users/lenovo/AppData/Roaming/Sublime Text 3/Packages/Fortran - Modern.tmLanguage.txt"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"project": "main.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

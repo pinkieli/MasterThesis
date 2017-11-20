@@ -57,6 +57,102 @@ Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将�
 
 当然，上述的复合子步技巧也可以用于多个子步，亦即在一个时间步长$\Delta t$内，将其分为$n$份，每份不一定要求相等，而在每一个子步内使用不同的积分方法进行求解，进而复合成新的直接积分法。利用该技巧，许多学者又提出了新的复合型子步算法。
 %=====================================================================================================================
+\subsection{BDF型积分算法}
+对K.J. Bathe提出的复合型子步算法进行扩展的策略是利用下列基于向后微分公式的广义四步线性多步法\cite{Dong2010}：
+\begin{equation}
+	\alpha_1{^{t+\Delta t}\!y}+\alpha_2{^{t}\!y}+(\frac{7}{2}-6\alpha_1-3\alpha_2){^{t-\Delta t}\!y}+(8\alpha_1+3\alpha_2-6){^{t-2\Delta t}\!y}+(\frac{5}{2}-3\alpha_1-\alpha_2){^{t-3\Delta t}\!y}={^{t+\Delta t}\!\dot{y}\Delta t}\label{eq:forthbackdiff}
+\end{equation}
+其零稳定性要求参数$\alpha_1$和$\alpha_2$需要满足下列条件
+\begin{equation}
+\alpha_2\le-2\alpha_1+\frac{3}{2}\qquad \alpha_2>-\frac{18}{5}\alpha_1+\frac{5}{2}
+\end{equation}
+
+当参数$\alpha_2$满足$\alpha_2=\frac{5}{2}-3\alpha_1$时，四步向后微分公式(\ref{eq:forthbackdiff})将退化为三步形式，即
+\begin{equation}
+	\alpha_1{^{t+\Delta t}\!y}+(\frac{5}{2}-3\alpha_1){^{t}\!y}+(3\alpha_1-4){^{t-\Delta t}\!y}+(\frac{3}{2}-\alpha_1){^{t-2\Delta t}\!y}={^{t+\Delta t}\!\dot{y}\Delta t}\label{eq:threebackdiff}
+\end{equation}
+此时的零稳定要求$\alpha_1\ge1$。需要注意到是
+\begin{itemize}
+\item 当$\alpha_1=\frac{3}{2}$，公式(\ref{eq:threebackdiff})退化为二阶的三点向后微分公式(BDF2)。
+\item 当$\alpha_1=\frac{11}{6}$，公式(\ref{eq:threebackdiff})退化为三阶的四点向后微分公式(BDF3)。
+\end{itemize}
+
+Dong在文\inlinecite{Dong2010}中令$\alpha_1=\frac{11}{6}-\frac{\theta}{3}$，于是得到与公式(\ref{eq:threebackdiff})等价形式
+\begin{equation}
+A(\theta){^{t+\Delta t}\!y}+B(\theta){^{t}\!y}+C(\theta){^{t-\Delta t}\!y}+D(\theta){^{t-2\Delta t}\!y}={^{t+\Delta t}\!\dot{y}}\Delta t\label{eq:Dong12}
+\end{equation}
+其中
+\begin{alignat}{2}
+A(\theta)&=\frac{11}{6}-\frac{\theta}{3}&\qquad B(\theta)&=\theta-3\\
+C(\theta)&=\frac{3}{2}-\theta&\qquad D(\theta)&=-\frac{1}{3}+\frac{\theta}{3}
+\end{alignat}
+此时的零稳定性对参数$\theta$要求$\theta\le\frac{5}{2}$。
+
+基于公式(\ref{eq:Dong12})，第一个积分算法可构造如下：
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&=\frac{A(\theta_1)}{\Delta t}{^{t+\Delta t}\!U}+\frac{B(\theta_1)}{\Delta t}{^{t}\!U}+\frac{C(\theta_1)}{\Delta t}{^{t-\Delta t}\!U}+\frac{D(\theta_1)}{\Delta t}{^{t-2\Delta t}\!U}\\
+{^{t+\Delta t}\!\ddot{U}}&=\frac{A(\theta_2)}{\Delta t}{^{t+\Delta t}\!\dot{U}}+\frac{B(\theta_2)}{\Delta t}{^{t}\!\dot{U}}+\frac{C(\theta_2)}{\Delta t}{^{t-\Delta t}\!\dot{U}}+\frac{D(\theta_2)}{\Delta t}{^{t-2\Delta t}\!\dot{U}}
+\end{align}
+有意思的是，算法参数$\theta_1$和$\theta_2$可以取不同的值。当然根据前面的陈述，它们都应该满足零稳定性要求，即$\theta_1,\theta_2\le\frac{5}{2}$。Dong通过考虑一个单自由度振子分析了该算法获得无条件稳定性时的参数$\theta_1,\theta_2$的取值范围。
+
+
+考虑更加一般性的四点向后微分公式(\ref{eq:forthbackdiff})，令下列的参数变换
+\begin{equation}
+\alpha_1=-\frac{1}{3}\theta_1\theta_2-\frac{1}{4}\theta_2+\frac{25}{12}\qquad \alpha_2=\theta_1\theta_2+\theta_2-4
+\end{equation}
+则，等式(\ref{eq:forthbackdiff})可化为
+\begin{align}
+A_1(\theta_1,\theta_2){^{t+\Delta t}\!y}+A_2(\theta_1,\theta_2){^{t}\!y}+&A_3(\theta_1,\theta_2){^{t-\Delta t}\!y}\notag\\
+&+A_4(\theta_1,\theta_2){^{t-2\Delta t}\!y}+A_5(\theta_1,\theta_2){^{t-3\Delta t}\!y}={^{t+\Delta t}\!\dot{y}\Delta t}\label{eq:Dong20}
+\end{align}
+其中，
+\begin{equation}
+\left\{\begin{aligned}
+A_1(\theta_1,\theta_2)&=-\frac{1}{3}\theta_1\theta_2-\frac{1}{4}\theta_2+\frac{25}{12}\\
+A_2(\theta_1,\theta_2)&=\theta_1\theta_2+\theta_2-4\\
+A_3(\theta_1,\theta_2)&=-\theta_1\theta_2-\frac{3}{2}\theta_2+3\\
+A_4(\theta_1,\theta_2)&=\frac{1}{3}\theta_1\theta_2+\theta_2-\frac{4}{3}\\
+A_5(\theta_1,\theta_2)&=\frac{1}{4}-\frac{1}{4}\theta_2 
+\end{aligned}\right.
+\end{equation}
+同理，其零稳定性要求
+\begin{equation}
+\begin{cases}
+(\theta_1+\frac{3}{2})\theta_2\le4\\
+(\theta_1-\frac{1}{2})\theta_2<5
+\end{cases}
+\end{equation}
+于是，基于等式(\ref{eq:Dong20})可得第二个积分算法如下：
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}=\frac{A_1(\theta_1,\theta_2)}{\Delta t}{^{t+\Delta t}\!U}+\frac{A_2(\theta_1,\theta_2)}{\Delta t}{^{t}\!U}+&\frac{A_3(\theta_1,\theta_2)}{\Delta t}{^{t-\Delta t}\!U}\notag\\
+&+\frac{A_4(\theta_1,\theta_2)}{\Delta t}{^{t-2\Delta t}\!U}+\frac{A_5(\theta_1,\theta_2)}{\Delta t}{^{t-3\Delta t}\!U}\\
+{^{t+\Delta t}\!\ddot{U}}=\frac{A_1(\theta_1,\theta_2)}{\Delta t}{^{t+\Delta t}\!\dot{U}}+\frac{A_2(\theta_1,\theta_2)}{\Delta t}{^{t}\!\dot{U}}+&\frac{A_3(\theta_1,\theta_2)}{\Delta t}{^{t-\Delta t}\!\dot{U}}\notag\\
+&+\frac{A_4(\theta_1,\theta_2)}{\Delta t}{^{t-2\Delta t}\!\dot{U}}+\frac{A_5(\theta_1,\theta_2)}{\Delta t}{^{t-3\Delta t}\!\dot{U}}
+\end{align}
+可以通过计算一个单自由度振子来获得该算法的无条件稳定域。Dong在文\inlinecite{Dong2010}指出当参数$(\theta_1,\theta_2)=(1/2,4/5)$是无条件稳定的，且具有最小的耗散特性。
+
+最后，Dong通过利用K.J. Bathe的复合子步技巧，利用前面发展的三步、四步向后微分公式结合Trapezoidal规则提出了新的复合型子步算法\cite{Dong2010}。即将一个时间步长分为两个相等的子步长，在前一个子步长内利用Trapezoidal规则，即公式(\ref{eq:bathev})-(\ref{eq:batheDyEq})带有$\gamma=1/2$，在第二个子步雇用前面发展的向后微分公式进行计算，即
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}=\frac{A_1(\theta_1,\theta_2)}{\Delta t/2}{^{t+\Delta t}\!U}+\frac{A_2(\theta_1,\theta_2)}{\Delta t/2}&{^{t+\frac{1}{2}\Delta t}\!U}+\frac{A_3(\theta_1,\theta_2)}{\Delta t/2}{^{t}\!U}\notag\\
+&+\frac{A_4(\theta_1,\theta_2)}{\Delta t/2}{^{t-\frac{1}{2}\Delta t}\!U}+\frac{A_5(\theta_1,\theta_2)}{\Delta t/2}{^{t-\Delta t}\!U}\\
+{^{t+\Delta t}\!\ddot{U}}=\frac{A_1(\theta_1,\theta_2)}{\Delta t/2}{^{t+\Delta t}\!\dot{U}}+\frac{A_2(\theta_1,\theta_2)}{\Delta t/2}&{^{t+\frac{1}{2}\Delta t}\!\dot{U}}+\frac{A_3(\theta_1,\theta_2)}{\Delta t/2}{^{t}\!\dot{U}}\notag\\
+&+\frac{A_4(\theta_1,\theta_2)}{\Delta t/2}{^{t-\frac{1}{2}\Delta t}\!\dot{U}}+\frac{A_5(\theta_1,\theta_2)}{\Delta t/2}{^{t-\Delta t}\!\dot{U}}
+\end{align}
+通过零稳定性分析，可以得到其参数的约束条件为
+\begin{equation}
+(\theta_1+\frac{3}{2})\theta_2<\frac{19}{4},\qquad\theta_2\ge-2
+\end{equation}
+或者
+\begin{equation}
+(\theta_1+\frac{3}{2})\theta_2>\frac{19}{4},\qquad\theta_2\le-2
+\end{equation}
+
+若在第一个时间子步内，使用Newmark-$(\beta,\gamma=1/2)$算法\cite{book:dover}进行计算，即
+\begin{align}
+\theta_2({^{t+\frac{1}{2}\Delta t}\!U}-{^t\!U})&=\theta_2\left(\frac{\Delta t}{2}\right){^{t}\!\dot{U}}+\left(\frac{\Delta t}{2}\right)^2{^{t+\frac{1}{2}\Delta t}\!\ddot{U}}+\left(\frac{\theta_2}{2}-1\right)\left(\frac{\Delta t}{2}\right)^2{^{t}\!\ddot{U}}\\
+{^{t+\frac{1}{2}\Delta t}\!\dot{U}}-{^t\!\dot{U}}&=\frac{\Delta t}{4}({^{t+\frac{1}{2}\Delta t}\!\ddot{U}}-{^{t}\!\ddot{U}})
+\end{align}
+
 
 Chandra和Zhou等人提出了一个三子步方法。
 

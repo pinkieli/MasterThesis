@@ -19135,7 +19135,7 @@ where a and c are real.},
   file    = {:paper\\Stability Analysis of Direct Integration Algorithms Applied to Nonlinear Structural Dynamics.pdf:PDF},
 }
 
-@Book{book:1308677,
+@Book{Chopra2011,
   title     = {Dynamics of Structures: Theory and applications to earthquake engineering},
   publisher = {Prentice Hall},
   year      = {2011},
@@ -19177,8 +19177,8 @@ where a and c are real.},
 }
 
 @Article{Xie1996,
-  author   = {Y.M. Xie},
-  title    = {\{AN\} \{ASSESSMENT\} \{OF\} \{TIME\} \{INTEGRATION\} \{SCHEMES\} \{FOR\} NON-LINEAR \{DYNAMIC\} \{EQUATIONS\}},
+  author   = {Y.m. Xie},
+  title    = {An assessment of time integration schemes for non-linear dynamic equations},
   journal  = {Journal of Sound and Vibration},
   year     = {1996},
   volume   = {192},
@@ -19238,7 +19238,7 @@ where a and c are real.},
 
 @Article{Trujillo1977,
   author    = {Trujillo, D.M.},
-  title     = {UNCONDITIONALLY STABLE EXPLICIT ALGORITHM FOR STRUCTURAL DYNAMICS.},
+  title     = {Unconditionally Stable Explicit Algorithm for Structural Dynamics.},
   journal   = {International Journal for Numerical Methods in Engineering},
   year      = {1977},
   volume    = {11},
@@ -31067,24 +31067,6 @@ where a and c are real.},
   url       = {http://dx.doi.org/10.3233/SAV-2011-0654},
 }
 
-@Article{Xie1996a,
-  author    = {Xie, Y.M.},
-  title     = {Assessment of time integration schemes for non-linear dynamic equations},
-  journal   = {Journal of Sound and Vibration},
-  year      = {1996},
-  volume    = {192},
-  number    = {1},
-  pages     = {321 - 331},
-  issn      = {0022460X},
-  note      = {Fourth order Runge-Kutta method;Time integration schemes;},
-  language  = {English},
-  abstract  = {In the transient analysis of engineering structures by the finite element method there are several commonly used time integration schemes such as the method of central difference, the Newmark method, the Wilson-&theta; method, the Houbolt method and the &alpha;-method of Hilber-Hughes-Taylor. In this paper these time integration schemes are applied to simple non-linear dynamic systems and the performances of these schemes are compared. It is found that there are significant differences in the accuracy of these schemes. The result of some of these schemes are so inaccurate that it becomes clear that they are not suited for time integration over a long time duration. The behaviour of these schemes is also compared with that of the fourth order Runge-Kutta method, which has been the preferred integration scheme for non-linear systems of a single or a few degrees of freedom.},
-  copyright = {Compilation and indexing terms, Copyright 2017 Elsevier Inc.},
-  key       = {Structural analysis},
-  keywords  = {Degrees of freedom (mechanics);Finite element method;Integration;Nonlinear equations;Nonlinear systems;Performance;},
-  url       = {http://dx.doi.org/10.1006/jsvi.1996.0190},
-}
-
 @Article{Hirami1986,
   author    = {Hirami, Naotaka and Hirano, Katsumi and Yamakawa, Hiroshi},
   title     = {Non-linear dynamic response analysis of structures by the incremental transfer matrix method.},
@@ -40107,7 +40089,7 @@ A new method based on quadratic programming theory is proposed to determine the 
 
 @Article{Papadrakakis,
   author        = {Papadrakakis, M and Fragiadakis, M and Plevris, V},
-  title         = {A NEW POST-PROCESSING PROCEDURE FOR THE INCREASE IN THE ORDER OF ACCURACY OF THE TRAPEZOIDAL RULE AT TIME INTEGRATION OF LINEAR ELASTODYNAMICS PROBLEMS},
+  title         = {A new post-processing procedure for the increase in the order of accuracy of the trapezoidal rule at time integration of linear elastodynamics problems},
   __markedentry = {[Pinkie.li:6]},
   groups        = {Dynamic equation numerical methods},
   owner         = {Pinkie.li},
@@ -40126,6 +40108,16 @@ A new method based on quadratic programming theory is proposed to determine the 
   owner         = {Pinkie.li},
   publisher     = {Elsevier},
   timestamp     = {2017-11-18},
+}
+
+@Article{Wilson1968,
+  author    = {Wilson, Edward L.},
+  title     = {A Computer Program for the Dynamic Stress Analysis of Underground Structure},
+  journal   = {Dynamic Loads},
+  year      = {1968},
+  groups    = {Dynamic equation numerical methods},
+  owner     = {Pinkie.li},
+  timestamp = {2017-11-19},
 }
 
 @Comment{jabref-meta: databaseType:bibtex;}
