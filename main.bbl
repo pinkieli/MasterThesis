@@ -97,7 +97,7 @@
 \bibitem{吴志桥2009}
 \bibauthor{吴志桥}\@.
   \bibtitle{L-稳定格式求解结构动力学方程和多体系统动力学方程}\bibmark{[D]}\@.
-  \bibaddress{长沙}\thinspace{}\textnormal{:
+  \bibaddress{[出版地不详]}\thinspace{}\textnormal{:
   }\bibschool{国防科学技术大学}\@, \bibyear{2009}\@.
 
 \bibitem{Yin2013}
@@ -123,21 +123,35 @@
 
 \bibitem{Newmark1959}
 \bibauthor{Newmark N~M}\@. \bibtitle{A method of computation for structural
-  dynamics}\bibmark{[J]}\@. \bibjournal{Proc Asce}\@, \bibyear{1959}\@,
-  \bibvolume{85}\thinspace{}\textnormal{: }\bibpages{67}\@.
+  dynamics}\bibmark{[J]}\@. \bibjournal{J. Engrg. Mech. Div.}\@,
+  \bibyear{1959}\@, \bibvolume{85}\thinspace{}\textnormal{: }\bibpages{67}\@.
 
 \bibitem{Wilson1968}
 \bibauthor{Wilson E~L}\@. \bibtitle{A Computer Program for the Dynamic Stress
   Analysis of Underground Structure}\bibmark{[J]}\@. \bibjournal{Dynamic
   Loads}\@, \bibyear{1968}\@.
 
-\bibitem{Chopra2011}
-\bibauthor{Chopra A~K}\@. \bibbooktitle{Prentice-Hall International Series in
-  Civil Engineering and Engineering Mechanics\thinspace{}\textnormal{:
-  }Dynamics of Structures: Theory and applications to earthquake
-  engineering}\bibmark{[M]}\@. \bibedition{\mbox{4th~ed}}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
-  \bibyear{2011}\@.
+\bibitem{Liu2012}
+\bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
+  Euler time-integration method for nonlinear dynamic analysis of
+  structures}\bibmark{[J]}\@. \bibjournal{Computers \& Structures}\@,
+  \bibyear{2012}\@, \bibvolume{106-107}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{20\thinspace{}\textnormal{--}\thinspace{}28}\@.
+
+\bibitem{Liu2013}
+\bibauthor{Liu T~Y\@, Qingbin L~I\@, Zhao C~B}\@. \bibtitle{An efficient
+  time-integration method for nonlinear dynamic analysis of solids and
+  structures}\bibmark{[J]}\@. \bibjournal{Science China}\@, \bibyear{2013}\@,
+  \bibvolume{56}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{798\thinspace{}\textnormal{--}\thinspace{}804}\@.
+
+\bibitem{Lees1966}
+\bibauthor{Lees M}\@. \bibtitle{A Linear Three-Level Difference Scheme for
+  Quasilinear Parabolic Equations}\bibmark{[J/OL]}\@. \bibjournal{Mathematics
+  of Computation}\@, \bibyear{1966}\@,
+  \bibvolume{20}\bibnumber{(96)}\thinspace{}\textnormal{:
+  }\bibpages{516\thinspace{}\textnormal{--}\thinspace{}522}\@.
+  \newline\url{http://www.jstor.org/stable/2003541}\@.
 
 \bibitem{Tarnow1994}
 \bibauthor{Tarnow N\@, Simo J}\@. \bibtitle{How to render second order accurate
@@ -170,13 +184,6 @@
   \bibvolume{85}\bibnumber{(7–8)}\thinspace{}\textnormal{:
   }\bibpages{437\thinspace{}\textnormal{--}\thinspace{}445}\@.
 
-\bibitem{Bathe2012a}
-\bibauthor{Bathe K-J\@, Noh G}\@. \bibtitle{Insight into an implicit time
-  integration scheme for structural dynamics}\bibmark{[J]}\@.
-  \bibjournal{Computers \& Structures}\@, \bibyear{2012}\@,
-  \bibvolume{98}\thinspace{}\textnormal{:
-  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}6}\@.
-
 \bibitem{Zhang2017}
 \bibauthor{Zhang J\@, Liu Y\@, Liu D}\@. \bibtitle{Accuracy of a composite
   implicit time integration scheme for structural dynamics}\bibmark{[J/OL]}\@.
@@ -192,6 +199,21 @@
   \bibvolume{30}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{141\thinspace{}\textnormal{--}\thinspace{}148}\@.
 
+\bibitem{Klarmann2015}
+\bibauthor{Klarmann S\@, Wagner W}\@. \bibtitle{Enhanced studies on a composite
+  time integration scheme in linear and non-linear dynamics}\bibmark{[J]}\@.
+  \bibjournal{Computational Mechanics}\@, \bibyear{2015}\@,
+  \bibvolume{55}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{455\thinspace{}\textnormal{--}\thinspace{}468}\@.
+
+\bibitem{Kumara}
+\bibauthor{Kumar S\@, Gautam S~S}\@. \bibtitle{Extension of A Composite Time
+  Integration Scheme for Dynamic Problems}\bibmark{[J]}\@, \@.
+
+\bibitem{Guwahati}
+\bibauthor{Guwahati}\@. \bibtitle{Analysis of A Composite Time Integration
+  Scheme}\bibmark{[J]}\@, \@.
+
 \bibitem{Dong2010}
 \bibauthor{Dong S}\@. \bibtitle{BDF-like methods for nonlinear dynamic
   analysis}\bibmark{[J]}\@. \bibjournal{Journal of Computational Physics}\@,
@@ -205,17 +227,12 @@
   \bibvolume{55}\bibnumber{(5)}\thinspace{}\textnormal{:
   }\bibpages{1041\thinspace{}\textnormal{--}\thinspace{}1056}\@.
 
-\bibitem{Gear1971a}
-\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
-  ordinary differential equations}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
-  \bibyear{1971}\@.
-
 \bibitem{Dong2013}
 \bibauthor{Dong S}\@. \bibtitle{Blended Time Integration Algorithms for
-  Nonlinear Dynamics}\bibmark{[C]} //\thinspace{}\bibbooktitle{Structures,
-  Structural Dynamics, and Materials Conference Aiaa/ASME/AHS Adaptive
-  Structures Conference}\@. \bibyear{2013}\@.
+  Nonlinear Dynamics}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Aiaa/asme/asce/ahs/asc Structures, Structural
+  Dynamics, and Materials Conference Aiaa/asme/ahs Adaptive Structures
+  Conference}\@. \bibyear{2013}\@.
 
 \bibitem{Park1975}
 \bibauthor{Park K~C}\@. \bibtitle{An improved stiffly stable method for direct

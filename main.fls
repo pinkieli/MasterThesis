@@ -629,6 +629,7 @@ INPUT body/ch2.tex
 OUTPUT body/ch3.aux
 INPUT body/ch3.tex
 INPUT body/ch3.tex
+INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 OUTPUT body/ch4.aux
 INPUT body/ch4.tex
 INPUT body/ch4.tex
