@@ -9,27 +9,32 @@ A level-1 auxiliary file: body/ch5.aux
 A level-1 auxiliary file: back/conclusion.aux
 The style file: hithesis.bst
 A level-1 auxiliary file: back/publications.aux
-A level-1 auxiliary file: back/ceindex.aux
 A level-1 auxiliary file: back/acknowledgements.aux
-A level-1 auxiliary file: back/resume.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: reference.bib
+Warning--string name "dec" is undefined
+--line 4999 of file reference.bib
+Warning--string name "jun" is undefined
+--line 55331 of file reference.bib
 Warning--string name "apr" is undefined
---line 55657 of file reference.bib
+--line 55561 of file reference.bib
 Warning--string name "jan" is undefined
---line 70925 of file reference.bib
-Warning--I didn't find a database entry for "Chopra2011"
-Warning--I didn't find a database entry for "Zienkiewicz1977a"
-Warning--I didn't find a database entry for "Bathe2012a"
-Warning--I didn't find a database entry for "Gear1971a"
+--line 70835 of file reference.bib
+Warning--string name "apr" is undefined
+--line 70951 of file reference.bib
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
 Warning--Require journal: Lunk2005
 Warning--Require address: 吴志桥2009
 Warning--Require citedate: Yin2013
+Warning--Require address: Chopra2011
+Warning--Require citedate: Zienkiewicz1977a
 Warning--Require citedate: Lees1966
+Warning--Require citedate: Grosseholz2015
+Warning--Require citedate: SoaresJr2016a
+Warning--Require address: Quarteroni2010
 Warning--Require citedate: Tarnow1994
 Warning--Require citedate: Fung1998
 Warning--Require citedate: Zhang2017
@@ -37,45 +42,48 @@ Warning--Require journal: Kumara
 Warning--Require year: Kumara
 Warning--Require journal: Guwahati
 Warning--Require year: Guwahati
-You've used 33 entries,
+Warning--Require address: Gear1971a
+Warning--Require citedate: Wen2017c
+Warning--Require citedate: Noh2013
+You've used 52 entries,
             3103 wiz_defined-function locations,
-            958 strings with 11566 characters,
-and the built_in function-call counts, 42257 in all, are:
-= -- 4366
-> -- 94
-< -- 221
-+ -- 3251
-- -- 313
-* -- 1518
-:= -- 4434
+            1070 strings with 14831 characters,
+and the built_in function-call counts, 68280 in all, are:
+= -- 7100
+> -- 148
+< -- 347
++ -- 5291
+- -- 492
+* -- 2449
+:= -- 7162
 add.period$ -- 0
-call.type$ -- 33
+call.type$ -- 52
 change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 5880
-empty$ -- 1915
-format.name$ -- 244
-if$ -- 11081
+chr.to.int$ -- 3
+cite$ -- 73
+duplicate$ -- 9567
+empty$ -- 3064
+format.name$ -- 380
+if$ -- 17898
 int.to.chr$ -- 0
-int.to.str$ -- 33
+int.to.str$ -- 52
 missing$ -- 0
-newline$ -- 126
-num.names$ -- 33
-pop$ -- 642
+newline$ -- 183
+num.names$ -- 52
+pop$ -- 1033
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 457
+skip$ -- 700
 stack$ -- 0
-substring$ -- 4860
-swap$ -- 1564
+substring$ -- 7917
+swap$ -- 2509
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 13
-while$ -- 611
-width$ -- 35
-write$ -- 486
-(There were 19 warnings)
+warning$ -- 21
+while$ -- 969
+width$ -- 54
+write$ -- 763
+(There were 26 warnings)

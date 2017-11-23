@@ -15,30 +15,38 @@
 \contentsline {section}{\numberline {2.2}IRK方法}{6}{section.2.2}
 \contentsline {section}{\numberline {2.3}本章小结}{6}{section.2.3}
 \contentsline {chapter}{\numberline {第3章}结构动响应数值算法研究现状}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}隐式直接积分法}{7}{section.3.1}
+\contentsline {section}{\numberline {3.1}直接积分法}{7}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}BEF算法}{7}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}BADF-TR算法}{8}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}结构依赖型直接积分法}{8}{section.3.2}
-\contentsline {section}{\numberline {3.3}复合型子步隐式算法}{8}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}TR-BDF2算法}{8}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}BDF2-Newmark算法}{10}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}BDF型积分算法}{10}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}TTBDF算法}{13}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}BDF2-BDF3算法}{13}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}BDF3BDF2-Newmark算法}{14}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}CTFEA算法}{15}{subsection.3.3.7}
-\contentsline {section}{\numberline {3.4}本章小结}{17}{section.3.4}
-\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{18}{chapter.4}
-\contentsline {section}{\numberline {4.1}本章小结}{18}{section.4.1}
-\contentsline {chapter}{\numberline {第5章}数值算例}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}本章小结}{19}{section.5.1}
-\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{20}{section*.16}
-\contentsline {chapter}{\heiti 参考文献}{21}{section*.19}
-\contentsline {chapter}{\numberline {附录 A}带章节的附录}{24}{appendix.A}
-\contentsline {section}{\numberline {A.1}附录节的内容}{24}{section.A.1}
-\contentsline {chapter}{\numberline {附录 B}这个星球上最好的免费Linux软件列表}{25}{appendix.B}
-\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{26}{section*.25}
-\contentsline {chapter}{\heiti 索引}{27}{section*.27}
-\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{30}{section*.35}
-\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{31}{section*.37}
-\contentsline {chapter}{\heiti 个人简历}{32}{section*.39}
+\contentsline {subsection}{\numberline {3.1.3}GCD-BDF2算法}{8}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Soares-Jr型算法}{8}{subsection.3.1.4}
+\contentsline {subsubsection}{\numberline {3.1.4.1}SJ算法格式1\cite {SoaresJr2016}}{9}{subsubsection.3.1.4.1}
+\contentsline {subsubsection}{\numberline {3.1.4.2}SJ算法格式2\cite {Jr2014}}{10}{subsubsection.3.1.4.2}
+\contentsline {subsubsection}{\numberline {3.1.4.3}SJ算法格式3\cite {Soares2015}}{11}{subsubsection.3.1.4.3}
+\contentsline {subsubsection}{\numberline {3.1.4.4}SJ算法格式4\cite {Soares2014}}{11}{subsubsection.3.1.4.4}
+\contentsline {section}{\numberline {3.2}预测-校正算法}{11}{section.3.2}
+\contentsline {section}{\numberline {3.3}结构依赖型直接积分法}{11}{section.3.3}
+\contentsline {section}{\numberline {3.4}复合型子步隐式算法}{11}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}TR-BDF2算法}{12}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}TR-TR-Houbolt算法}{13}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}BDF2-Newmark算法}{14}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}BDF型积分算法}{14}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}TTBDF算法}{17}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}BDF2-BDF3算法}{18}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}BDF3BDF2-Newmark算法}{19}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.8}CTFEA算法}{20}{subsection.3.4.8}
+\contentsline {subsection}{\numberline {3.4.9}TR-BDF2-Houbolt算法}{21}{subsection.3.4.9}
+\contentsline {subsection}{\numberline {3.4.10}TR-NBDDF算法}{22}{subsection.3.4.10}
+\contentsline {section}{\numberline {3.5}复合型子步显式算法}{23}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Noh-Bathe两子步算法}{23}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Kwon-Lee四子步算法}{25}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}本章小结}{26}{section.3.6}
+\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{27}{chapter.4}
+\contentsline {section}{\numberline {4.1}本章小结}{27}{section.4.1}
+\contentsline {chapter}{\numberline {第5章}数值算例}{28}{chapter.5}
+\contentsline {section}{\numberline {5.1}本章小结}{28}{section.5.1}
+\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{29}{section*.16}
+\contentsline {chapter}{\heiti 参考文献}{30}{section*.19}
+\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{35}{section*.21}
+\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{38}{section*.27}
+\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{39}{section*.29}

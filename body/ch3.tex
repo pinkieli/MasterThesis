@@ -6,7 +6,7 @@
 \end{equation}
 带有合适的初值条件的求解。最常用的就是直接积分法，该方法的要求运动方程(\ref{eq:DyEq})在离散的时刻精确满足。同时假定位移和速度的更新方程，利用离散时刻的平衡方程求得对应时刻的加速度，进而求得速度和位移。特别地，自从Newmark-$\beta$算法\cite{Newmark1959}、Wilson-$\theta$法\cite{Wilson1968}和Houbolt法\cite{Chopra2011}等直接积分法提出以来，许多的研究学者在此之后基于各种原理提出了许多性能优良的积分算法。
 
-\section{隐式直接积分法}
+\section{直接积分法}
 \subsection{BEF算法}
 清华大学的刘天云副研究员给出了一个利用向后Euler公式(BEF)求解结构动响应\cite{Liu2012}。该算法具有
 \begin{itemize}
@@ -38,6 +38,144 @@
 
 其实，参数$\beta=\gamma=\frac{1}{2}$早被Lee所推导出来求解拟线性双曲微分方程\cite{Zienkiewicz1977a,Lees1966}。
 
+\subsection{GCD-BDF2算法}
+清华大学的李庆斌等人\cite{Zhang2015a}利用广义中心差分法和三点向后微分公式结合（其速度更新公式利用三点向后微分公式而加速度则利用广义中心差分法），提出了一个新的复合型算法。该算法是二阶收敛的、无条件稳定的单解算法。而且每一个时间步长内只需要求解一次非线性方程组，其计算量较Trapezoidal规则相当。
+
+在$t+\Delta t$时刻的加速度${^{t+\Delta t}\!\ddot{U}}$可以由向前Euler差分公式得到
+\begin{equation}
+{^{t+\Delta t}\!\ddot{U}}={^t\!\ddot{U}}+\Delta t{^{t}\!U^{(3)}}\label{eq:Zhang6}
+\end{equation}
+其中二阶、三阶段微分表达式则利用中心差分公式得到
+\begin{equation}
+{^t\!\ddot{U}}=\frac{{^{t+\Delta t}\!U}-2{^t\!U}+{^{t-\Delta t}\!U}}{\Delta t^2},\qquad {^{t}\!U^{(3)}}=\frac{{^{t+\Delta t}\!\dot{U}}-2{^t\!\dot{U}}+{^{t-\Delta t}\!\dot{U}}}{\Delta t^2}\label{eq:Zhang7}
+\end{equation}
+将公式(\ref{eq:Zhang7})带入到(\ref{eq:Zhang6})可以得到其加速度${^{t+\Delta t}\!\ddot{U}}$的更新公式
+\begin{equation}
+{^{t+\Delta t}\!\ddot{U}}=\frac{{^{t+\Delta t}\!U}-2{^t\!U}+{^{t-\Delta t}\!U}}{\Delta t^2}+\frac{{^{t+\Delta t}\!\dot{U}}-2{^t\!\dot{U}}+{^{t-\Delta t}\!\dot{U}}}{\Delta t}\label{eq:ZhangA}
+\end{equation}
+同时，其速度${^{t+\Delta t}\!\dot{U}}$的更新公式则利用三点向后微分公式
+\begin{equation}
+{^{t+\Delta t}\!\dot{U}}=\frac{1}{2\Delta t}\left(3{^{t+\Delta t}\!U}-4{^t\!U}+{^{t-\Delta t}\!U}\right)\label{eq:ZhangV}
+\end{equation}
+
+于是，公式(\ref{eq:ZhangA})-(\ref{eq:ZhangV})结合在$t+\Delta t$时刻的平衡方程，就得到了GCD-BDF2算法。
+
+\subsection{Soares-Jr型算法}
+Soares Jr近来提出了一些耗散性的时间积分算法\cite{Jr2014,Soares2014,Grosseholz2015,SoaresJr2016,Soares2015,Soares2016a,SoaresJr2016a}，其特点是算法参数依赖于系统的频率值。
+\subsubsection{SJ算法格式1\cite{SoaresJr2016}}
+考虑带有合适初值问题的运动方程(\ref{eq:DyEq})的数值积分算法时，在时间步长$\Delta t$时积分则有
+\begin{equation}
+M\int_{t-\Delta t/2}^{t+\Delta t/2}\ddot{U}(\tau)d\tau+C\int_{t-\Delta t/2}^{t+\Delta t/2}\dot{U}(\tau)d\tau+K\int_{t-\Delta t/2}^{t+\Delta t/2}{U}(\tau)d\tau=\int_{t-\Delta t/2}^{t+\Delta t/2}F(\tau)d\tau\label{eq:SJAMM3}
+\end{equation}
+其中，等式左边的积分可近似为
+\begin{subequations}
+\begin{align}
+\int_{t-\Delta t/2}^{t+\Delta t/2}\ddot{U}(\tau)d\tau&\approx{^{t+\Delta t}\!\dot{U}}-{^{t}\!\dot{U}}\qquad \int_{t-\Delta t/2}^{t+\Delta t/2}\dot{U}(\tau)d\tau\approx{^{t+\Delta t}\!{U}}-{^{t}\!{U}}\\
+\int_{t-\Delta t/2}^{t+\Delta t/2}{U}(\tau)d\tau&\approx{^t\!U}\Delta t+\frac{\Delta t^2}{2}(\alpha_1{^{t+\Delta t}\!\dot{U}}+\alpha_2{^{t}\!\dot{U}})\label{eq:SJAMM43}
+\end{align}\label{eq:SJAMM4}
+\end{subequations}
+而右边的外力荷载积分项可以使用数值积分方法计算，如Trapezoidal积分规则和Simpson积分规则等\cite{Quarteroni2010}。
+
+在$t+\Delta t$时刻的位移使用Trapezoidal规则\cite{book:dover}计算，即
+\begin{equation}
+{^{t+\Delta t}\!U}={^t\!U}+\frac{\Delta t}{2}({^{t+\Delta t}\!\dot{U}}+{^{t}\!\dot{U}})\label{eq:SJAMM5}
+\end{equation}
+
+将等式(\ref{eq:SJAMM4})-(\ref{eq:SJAMM5})带入到(\ref{eq:SJAMM3})可得
+\begin{equation}
+[M+\frac{1}{2}\Delta tC+\frac{1}{2}\alpha_1\Delta t^2K]{^{t+\Delta t}\!\dot{U}}=[M{^t\!\dot{U}}-\frac{1}{2}\Delta tC{^t\!\dot{U}}-K(\Delta t{^t\!U}+\frac{1}{2}\alpha_2\Delta t^2{^t\!\dot{U}})]+{_{F_i}\!\Im}\label{eq:SJAMM6}
+\end{equation}
+其中，${_{F_i}\!\Im}$表示等式(\ref{eq:SJAMM3})右端的荷载积分项。于是在$t+\Delta t$时刻的速度可以通过求解等式(\ref{eq:SJAMM6})获得。结合等式(\ref{eq:SJAMM5})，一个完整的直接积分格式可以被获得。算法参数$\alpha_1,\alpha_2$控制着算法的各项数值性能，其选取规则如下
+\begin{equation}
+\alpha_1=\frac12+\frac{3}{2}\tanh(a\omega\Delta t)\qquad\alpha_2=2\sqrt{2\alpha_1}-\alpha_1-1
+\end{equation}
+其中$a$为控制参数，$\omega$为系统的固有频率。在求解多自由度系统时，由$\omega_i=\sqrt{K_{ii}/M_{ii}}$近似求解，此时的参数$\alpha_i,i=1,2$是两个向量。
+
+特别地，算法的耗散能力的大小与控制参数$a$成正比，当$a=0$且荷载积分项选择适当的积分规则时，上述算法将退化为标准的常平均加速度算法\cite{book:dover}。当$a\ge0$时，算法实现无条件稳定性。该算法的特点是
+\begin{itemize}
+\item[\ddag] 真正意义上的自启动算法。省略了求解加速度响应值。
+\item[\ddag] 基于速度和位移格式的单步单解算法。
+\item[\ddag] 实现无条件稳定性(L-稳定)。
+\item[\ddag] 实现二阶精度
+\item[\ddag] 尽管理论分析得出在位移上存在超调，但其数值阻尼将其完全滤去。故实际上，该算法没有超调现象发生。
+\item[\ddag] 在中频段，数值阻尼大小可控。
+\end{itemize}
+
+文\inlinecite{Soares2016a}中着重分析了该算法的一个条件稳定子域
+\begin{equation}
+(\alpha_1,\alpha_2)\in\{0<\alpha_1<\frac{1}{2},\alpha_2\ge1-\alpha_1\}
+\end{equation}
+当$\alpha_2=1-\alpha_1$时，该条件稳定稳定算法没有数值阻尼，而对于$\alpha_2>1-\alpha_1$时，数值阻尼则被引入。具体的参数$\alpha_1,\alpha_2$的取值建议为
+\begin{equation}
+\alpha_1=\frac{1}{2}\tanh(\frac{1}{4}\Omega_{max})\qquad\left\{
+\begin{aligned}
+\alpha_2&=1-\alpha_1\ \text{无数值阻尼}\\
+\alpha_2&=2\sqrt{2\alpha_1+(2/\Omega_s)^2}-(1+\alpha_1)\ \text{最大数值阻尼}
+\end{aligned}\right.
+\end{equation}
+其中，$\Omega_{max},\Omega_s$分别为系统的无量纲最大采样频率和谱半径分岔点处的采样频率（此时谱半径实现最大化）。
+
+\subsubsection{SJ算法格式2\cite{Jr2014}}
+若在$t+\Delta t$时刻的位移计算公式(\ref{eq:SJAMM5})改写成一般性的计算格式
+\begin{equation}
+{^{t+\Delta t}\!U}={^t\!U}+\delta_1{^{t+\Delta t}\!\dot{U}}+\delta_2{^{t}\!\dot{U}}
+\end{equation}
+则计算$t+\Delta t$时刻的速度公式变为
+\begin{equation}
+[M+\delta_1\Delta tC+\frac{1}{2}\alpha_1\Delta t^2K]{^{t+\Delta t}\!\dot{U}}=[M{^t\!\dot{U}}-\delta_2\Delta tC{^t\!\dot{U}}-K(\Delta t{^t\!U}+\frac{1}{2}\alpha_2\Delta t^2{^t\!\dot{U}})]+{_{F_i}\!\Im}
+\end{equation}
+其中${_{F_i}\!\Im}$仍表示等式(\ref{eq:SJAMM3})右端的荷载积分项。其算法参数$\alpha_i,\delta_i,i = 1,2$可取值为
+\begin{itemize}
+\item[$\clubsuit$] \textbf{显式算法}
+\begin{equation}
+\delta_1 = \frac12+d\omega\Delta t\quad\alpha_1=0\quad\delta_2=1-\delta_1\quad\alpha_2=2\delta_2
+\end{equation}
+\item[$\clubsuit$] \textbf{隐式算法}
+\begin{equation}
+\left\{
+\begin{aligned}
+\delta_1 &= \frac12+d\omega\Delta t\quad\alpha_1=\frac12+\frac{3}{2}\tanh(a\omega\Delta t)\\
+\delta_2& =\frac12-d\omega\Delta t\quad\alpha_2=2\sqrt{2\alpha_1}-\alpha_1-2\delta_1
+\end{aligned}\right.
+\end{equation}
+\end{itemize}
+其中，参数$d,a$控制算法的数值特性，如周期误差、中频段的数值阻尼等。该算法的特点类似于SJ算法格式1。
+
+\subsubsection{SJ算法格式3\cite{Soares2015}}
+当SJ算法格式1\cite{SoaresJr2016}中的公式(\ref{eq:SJAMM43})修改为
+\begin{equation}
+\int_{t-\Delta t/2}^{t+\Delta t/2}{U}(\tau)d\tau\approx{^t\!U}\Delta t+\frac{\Delta t^2}{2}[\alpha{^{t+\Delta t}\!\dot{U}}+(1-\alpha){^{t}\!\dot{U}}]
+\end{equation}
+其余计算格式不变，此时在$t+\Delta t$时刻的速度计算方程为
+\begin{equation}
+[M+\frac{1}{2}\Delta tC+\frac{1}{2}\alpha\Delta t^2K]{^{t+\Delta t}\!\dot{U}}=[M{^t\!\dot{U}}-\frac{1}{2}\Delta tC{^t\!\dot{U}}-K(\Delta t{^t\!U}+\frac{1}{2}(1-\alpha)\Delta t^2{^t\!\dot{U}})]+{_{F_i}\!\Im}
+\end{equation}
+同理，其${_{F_i}\!\Im}$表示等式(\ref{eq:SJAMM3})右端的荷载积分项。其自适应参数$\alpha$取值为
+\begin{equation}
+\alpha=\frac{1}{2}\tanh(a\omega\Delta t),\quad a\ge0.24567002
+\end{equation}
+
+\subsubsection{SJ算法格式4\cite{Soares2014}}
+当在公式(\ref{eq:SJAMM43})中取$\alpha_1=0$时，SJ算法格式1\cite{SoaresJr2016}将退化为一个显式的直接积分格式\cite{Soares2014}。同时令其余计算格式不变，此时在$t+\Delta t$时刻的速度计算方程为
+\begin{equation}
+[M+\frac{1}{2}\Delta tC]{^{t+\Delta t}\!\dot{U}}=[M{^t\!\dot{U}}-\frac{1}{2}\Delta tC{^t\!\dot{U}}-K(\Delta t{^t\!U}+\frac{1}{2}\alpha_2\Delta t^2{^t\!\dot{U}})]+{_{F_i}\!\Im}
+\end{equation}
+${_{F_i}\!\Im}$依旧表示等式(\ref{eq:SJAMM3})右端的荷载积分项。其自适应参数$\alpha_2$取值为
+\begin{equation}
+\alpha_2=1+a\omega\Delta t
+\end{equation}
+
+当$\alpha_2\ge1$时，算法是条件稳定的；否则，算法是无条件不稳定的。当$\alpha_2=1$时，算法具有中心差分法的数值特性；当$\alpha_2>1$时，算法引入数值阻尼，此时基于稳定性理论的临界采样频率为
+\begin{equation}
+\Omega_c=\frac{2}{\sqrt{\alpha_2}}
+\end{equation}
+而谱半径分岔点处的采样频率为
+\begin{equation}
+\Omega_b=\frac{4}{1+\alpha_2}
+\end{equation}
+一般情况下，参数$\alpha_2$建议取值范围在$1\le\alpha_2\le3$。
+
+\section{预测-校正算法}
 
 
 \section{结构依赖型直接积分法}
@@ -79,6 +217,11 @@ Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将�
 \end{equation}
 通过利用方程(\ref{eq:batheV2})-(\ref{eq:batheDyEq1})就可以求出在时刻$t+\Delta t$的位移${^{t+\Delta t}\!U}$、速度${^{t+\Delta t}\!\dot{U}}$和加速度${^{t+\Delta t}\!\ddot{U}}$。这样就完成了状态量从$t$时刻到$t+\Delta t$的转换，进而可以求解到满意的时间内的位移、速度和加速度值。
 
+K.J. Bathe教授在文\inlinecite{Bathe2005,Bathe2007,Bathe2012a}并没有给出在第二个子步内求解非线性问题时，迭代的位移初值选择规则。而文\inlinecite{Silva2008}中给出了下列的预测值计算格式
+\begin{equation}
+{^{t+\Delta t}\!U}={^{t+\gamma\Delta t}\!U}+(1-\gamma)\Delta t{^{t+\gamma\Delta t}\!\dot{U}}+\frac{(1-\gamma)^2\Delta t^2}{4}{^{t+\gamma\Delta t}\!\ddot{U}}
+\end{equation}
+
 需要说明的是，章杰等人\cite{Zhang2017}已经证明了，若在第一子步内使用Newmark算法\cite{book:dover}，则K.J.Bethe所提出的复合型子步算法在众多算法中具有最优性。同时，K.J. Bathe在文章\inlinecite{Bathe2005}中使用了$\gamma=0.5$来求解非线性问题较Trapezoidal规则取得了一定的优势。另外一个值得推荐的$\gamma$取值是$2-\sqrt{2}$。$\gamma=2-\sqrt{2}$的使用具有以下几方面的意义：
 \begin{itemize}
 	\item 在求解非线性问题时，可以使得在两个子步内的有效刚度矩阵是一致的，进而降低计算量\cite{Dharmaraja2009,Bathe2007,Bathe2012a}。如求解线性问题，该值可以给出问题的最优数值响应值\cite{Bathe2007,Bathe2012a}。
@@ -90,8 +233,46 @@ Tarnow和Simo在1994年提出了一个子步复合方法\cite{Tarnow1994}，将�
 
 当然，上述的复合子步技巧也可以用于多个子步，亦即在一个时间步长$\Delta t$内，将其分为$n$份，每份不一定要求相等，而在每一个子步内使用不同的积分方法进行求解，进而复合成新的直接积分法。利用该技巧，许多学者又提出了新的复合型子步算法。
 %=====================================================================================================================
+\subsection{TR-TR-Houbolt算法}
+K.J. Bathe等人将上述思想一般化，提出了一个三子步复合型算法\cite{Bathe2005}。将时间步长均分为三个相等的子步长$\Delta t/3$，在前两个子步长内均使用Trapezoidal规则，在第三个子步长内，利用已知的$t,t+\Delta t/3,t+2\Delta t/3$时刻的信息雇用Houbolt算法\cite{Chopra2011,book:dover}进行计算获得在$t+\Delta t$时刻的状态量。在三个子步内的更新公式分别如下
+\begin{equation}
+\text{第一个子步}\left\{
+\begin{aligned}
+{^{t+\Delta t/3}\!\dot{U}}&={^{t}\!\dot{U}}+\frac{1}{6}\Delta t({^t\!\ddot{U}}+{^{t+\Delta t/3}\!\ddot{U}})\\
+{^{t+\Delta t/3}\!{U}}&={^{t}\!{U}}+\frac{1}{6}\Delta t({^t\!\dot{U}}+{^{t+\Delta t/3}\!\dot{U}})
+\end{aligned}\right.
+\end{equation}
+\begin{equation}
+\text{第二个子步}\left\{
+\begin{aligned}
+{^{t+2\Delta t/3}\!\dot{U}}&={^{t+\Delta t/3}\!\dot{U}}+\frac{1}{6}\Delta t({^{t+\Delta t/3}\!\ddot{U}}+{^{t+2\Delta t/3}\!\ddot{U}})\\
+{^{t+2\Delta t/3}\!{U}}&={^{t+\Delta t/3}\!{U}}+\frac{1}{6}\Delta t({^{t+\Delta t/3}\!\dot{U}}+{^{t+2\Delta t/3}\!\dot{U}})
+\end{aligned}\right.
+\end{equation}
+\begin{equation}
+\text{第三个子步}\left\{
+\begin{aligned}
+\Delta t\cdot{^{t+\Delta t}\!\dot{U}}&=d_1{^t\!U}+d_2{^{t+\Delta t/3}\!U}+d_3{^{t+2\Delta t/3}\!U}+d_4{^{t+\Delta t}\!U}\\
+\Delta t\cdot{^{t+\Delta t}\!\ddot{U}}&=d_1{^t\!\dot{U}}+d_2{^{t+\Delta t/3}\!\dot{U}}+d_3{^{t+2\Delta t/3}\!\dot{U}}+d_4{^{t+\Delta t}\!\dot{U}}
+\end{aligned}\right.
+\end{equation}%============
+其系数取值为
+\begin{equation}
+d_1=-1\quad d_2=\frac{9}{2}\quad d_3=-9\quad d_4 = \frac{11}{2}
+\end{equation}
 \subsection{BDF2-Newmark算法}
-利用复合子步的技巧，许多学者\cite{Kumara,Guwahati,Zhang2017}将时间步长$\Delta t$一份为二，在前一个子步内使用Newmark算法\cite{Newmark1959}，后一个使用三点向后微分公式(BDF2)\cite{Gear1971a}。同时假定在两个子步不一定均分。进而分析了子步的不均等划分以及Newmark参数对数值性能的影响。
+利用复合子步的技巧，许多学者\cite{Kumara,Guwahati,Zhang2017}将时间步长$\Delta t$一份为二，在前一个子步内使用Newmark算法\cite{Newmark1959}，后一个使用三点向后微分公式(BDF2)\cite{Gear1971a}。同时假定在两个子步不一定均分。进而分析了子步的不均等划分以及Newmark参数对数值性能的影响。在第一个子步内使用Newmark算法有
+\begin{align}
+{^{t+p\Delta t}\!\dot{U}}&={^t\!\dot{U}}+p\Delta t[(1-\gamma){^t\!\ddot{U}}+\gamma{^{t+p\Delta t}\!\ddot{U}}]\\
+{^{t+p\Delta t}\!U}&={^t\!U}+p\Delta t{^t\!\dot{U}}+(p\Delta t)^2\left[(\frac{1}{2}-\beta){^t\!\ddot{U}}+\beta{^{t+p\Delta t}\!\ddot{U}}\right]
+\end{align}
+在第二个子步内使用三点向后微分公式(\ref{eq:batheV2})-(\ref{eq:batheA2})。
+
+文\inlinecite{Zhang2017}已经给出结论，当参数取值满足
+\begin{equation}
+p=2-\sqrt{2}\qquad\gamma=\frac{1}{2}\qquad\beta=\frac{1}{4}
+\end{equation}
+TR-Newmark算法给出了位移和加速度的最小误差主项。此时，TR-Newmark算法将退化为TR-BDF2算法。
 \subsection{BDF型积分算法}
 对K.J. Bathe提出的复合型子步算法进行扩展的策略是利用下列基于向后微分公式的广义四步线性多步法\cite{Dong2010}：
 \begin{equation}
@@ -335,11 +516,182 @@ d_4&=\frac{\theta_2-1}{\gamma(\theta_2-\gamma)}\qquad d_5=\frac{(\theta_2-1)(\ga
 \item $\gamma$合适的选择能提高数值阻尼的同时也能增加周期误差。
 \item 当求解线性系统时，$\gamma$的选择能减小计算量。如，$\gamma$的合适选择可以使得两个子步内的等效刚度矩阵一致。
 \end{itemize}
+\subsection{TR-BDF2-Houbolt算法}
+北京大学的魏文彬等人提出了一个三子步复合型算法\cite{Wen2017c}。亦即将一个时间步长分为三个子步长$p\Delta t,(1-2p)\Delta t,p\Delta t$，其中$0<p<0.5$。在第一个时间子步长内，Trapezoidal规则被雇用，即
+\begin{align}
+{^{t+p\Delta t}\!\dot{U}}&={^{t}\!\dot{U}}+\frac{1}{2}p\Delta t({^t\!\ddot{U}}+{^{t+p\Delta t}\!\ddot{U}})\\
+{^{t+p\Delta t}\!{U}}&={^{t}\!{U}}+\frac{1}{2}p\Delta t({^t\!\dot{U}}+{^{t+p\Delta t}\!\dot{U}})
+\end{align}
+结合在$t+p\Delta t$时刻的平衡方程
+\begin{equation}
+M{^{t+p\Delta t}\!\ddot{U}}+C{^{t+p\Delta t}\!\dot{U}}+K{^{t+p\Delta t}\!U}={^{t+p\Delta t}\!F}
+\end{equation}
 
+在第二个子步内，使用了三点向后微分公式
+\begin{align}
+\Delta t\cdot{^{t+(1-p)\Delta t}\!\dot{U}}&=c_1{^t\!U}+c_2{^{t+p\Delta t}\!U}+c_3{^{t+(1-p)\Delta t}\!U}\\
+\Delta t\cdot{^{t+(1-p)\Delta t}\!\ddot{U}}&=c_1{^t\!\dot{U}}+c_2{^{t+p\Delta t}\!\dot{U}}+c_3{^{t+(1-p)\Delta t}\!\dot{U}}
+\end{align}
+其中，系数取值为
+\begin{equation}
+c_1=\frac{2p-1}{p(p-1)}\quad c_2=\frac{1-p}{p(2p-1)}\quad c_3 = \frac{2-3p}{(p-1)(2p-1)}
+\end{equation}
+仍然使用在$t+(1-p)\Delta t$时刻的平衡方程
+\begin{equation}
+M{^{t+(1-p)\Delta t}\!\ddot{U}}+C{^{t+(1-p)\Delta t}\!\dot{U}}+K{^{t+(1-p)\Delta t}\!U}={^{t+(1-p)\Delta t}\!F}
+\end{equation}
 
+最后，在第三个子步内使用Houbolt方法\cite{Chopra2011,book:dover}进行计算$t+\Delta t$时刻的响应值。
+\begin{align}
+\Delta t\cdot{^{t+\Delta t}\!\dot{U}}&=d_1{^t\!U}+d_2{^{t+p\Delta t}\!U}+d_3{^{t+(1-p)\Delta t}\!U}+d_4{^{t+\Delta t}\!U}\\
+\Delta t\cdot{^{t+\Delta t}\!\ddot{U}}&=d_1{^t\!\dot{U}}+d_2{^{t+p\Delta t}\!\dot{U}}+d_3{^{t+(1-p)\Delta t}\!\dot{U}}+d_4{^{t+\Delta t}\!\dot{U}}
+\end{align}
+系数$d_i,i=1,2,3,4$的取值如下
+\begin{equation}
+d_1=-1\quad d_2=\frac{1}{(p-1)(2p-1)}\quad d_3=\frac{1}{p(2p-1)}\quad d_4 = \frac{p^2-p-1}{p(p-1)}
+\end{equation}
+再结合$t+\Delta t$时刻的平衡方程(\ref{eq:batheDyEq1})。
 
+文\inlinecite{Wen2017c}中数值试验表明，就精度和数值耗散特性而言，参数$p=1/3$是众多可取$p$值中最佳选择方案。
 
+\subsection{TR-NBDDF算法}
+文\inlinecite{Rezaiee-Pajand2010}将三点向后微分公式看作牛顿向后插值\cite{Gear1971a}的特例，则可以得到其更加一般化的复合型子步算法。当时间步长均分为两份时，该算法退化为TR-BDF2算法。对于均分为$m$份的复合型子步算法，可参见原文\cite{Rezaiee-Pajand2010}。这里仅显式地给出均分为3份的三子步复合型算法。
+在第一个子步内，使用Trapezoidal规则，则有
+\begin{align}
+{^{t+\Delta t/3}\!\dot{U}}&=\frac{6}{\Delta t}({^{t+\Delta t/3}\!U}-{^{t}\!U})-{^t\!\dot{U}}\\
+{^{t+\Delta t/3}\!\ddot{U}}&=\frac{6}{\Delta t}({^{t+\Delta t/3}\!\dot{U}}-{^{t}\!\dot{U}})-{^t\!\ddot{U}}
+\end{align}
 
+在第二个子步内，使用
+\begin{align}
+{^{t+2\Delta t/3}\!\dot{U}}&=\frac{3}{2\Delta t}{^t\!U}-\frac{6}{\Delta t}{^{t+\Delta t/3}\!U}+\frac{9}{2\Delta t}{^{t+2\Delta t/3}\!U}\\
+{^{t+2\Delta t/3}\!\ddot{U}}&=\frac{27}{4\Delta t^2}{^t\!U}-\frac{27}{\Delta t^2}{^{t+\Delta t/3}\!U}+\frac{81}{4\Delta t^2}{^{t+2\Delta t/3}\!U}+\frac{9}{2\Delta t}{^t\!\dot{U}}-\frac{6}{\Delta t}{^{t+\Delta t/3}\!\dot{U}}
+\end{align}
+
+而在第三个子步内，计算格式则为
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&=-\frac{1}{\Delta t}{^t\!U}+\frac{9}{2\Delta t}{^{t+\Delta t/3}\!U}-\frac{9}{\Delta t}{^{t+2\Delta t/3}\!U}+\frac{11}{2\Delta t}{^{t+\Delta t}\!U}\\
+{^{t+\Delta t}\!\ddot{U}}&=-\frac{11}{2\Delta t^2}{^t\!U}+\frac{11}{4\Delta t^2}{^{t+\Delta t/3}\!U}-\frac{99}{2\Delta t^2}{^{t+2\Delta t/3}\!U}+\frac{121}{4\Delta t^2}{^{t+\Delta t}\!U}\notag\\
+&\qquad -\frac{1}{\Delta t}{^t\!\dot{U}}+\frac{9}{2\Delta t}{^{t+\Delta t/3}\!\dot{U}}-\frac{9}{\Delta t}{^{t+2\Delta t/3}\!\dot{U}}
+\end{align}
+
+三个子步结合三个时刻的平衡方程即可求解在$t+\Delta t$时刻的状态量。
+\section{复合型子步显式算法}
+\subsection{Noh-Bathe两子步算法}
+K.J. Bathe等人\cite{Noh2013}提出了一个两子步复合型显式算法来求解波的传播问题。在第一个子步长$p\Delta t$内，使用
+\begin{align}
+M{^{t+p\Delta t}\!\ddot{U}}+C{^{t+p\Delta t}\!\tilde{\dot{U}}}+K{^{t+p\Delta t}\!{U}}&={^{t+p\Delta t}\!F}\\
+{^{t+p\Delta t}\!U}&={^t\!U}+(p\Delta t){^t\!\dot{U}}+\frac{1}{2}(p\Delta t)^2\cdot{^t\!\ddot{U}}\\
+{^{t+p\Delta t}\!\tilde{\dot{U}}}&=(1-s)[{^t\!\dot{U}}+\frac{1}{2}(p\Delta t){^t\!\ddot{U}}]+s\cdot{^t\!\dot{U}}\\
+{^{t+p\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\frac{1}{2}(p\Delta t)({^t\!\ddot{U}}+{^{t+p\Delta t}\!\ddot{U}})
+\end{align}
+
+非常有意思的是，这里的带入平衡方程的速度更新公式并不是最后获得速度响应值的表达式。这二者分别由不同的速度更新公式计算。同时表达式${^{t+p\Delta t}\!F}$使用Trapezoidal规则\cite{Erlicher2002The}进行计算。
+
+在第二个子步内，使用
+\begin{align}
+{^{t+\Delta t}\!F}&=M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\tilde{\dot{U}}}+K{^{t+\Delta t}\!{U}}\\
+{^{t+\Delta t}\!U}&={^{t+p\Delta t}\!U}+[(1-p)\Delta t]{^{t+p\Delta t}\!\dot{U}}+\frac{1}{2}[(1-p)\Delta t]^2\cdot{^{t+p\Delta t}\!\ddot{U}}\\
+{^{t+\Delta t}\!\tilde{\dot{U}}}&=(1-s)[{^{t+p\Delta t}\!\dot{U}}+\frac{1}{2}[(1-p)\Delta t]{^{t+p\Delta t}\!\ddot{U}}]+s\cdot{^{t+p\Delta t}\!\dot{U}}\\
+{^{t+\Delta t}\!\dot{U}}&={^{t+p\Delta t}\!\dot{U}}+\frac{1}{2}[(1-p)\Delta t]{^{t+p\Delta t}\!\ddot{U}}+[(1-p)\Delta t]\left(q_0{^t\!\ddot{U}}+q_1{^{t+p\Delta t}\!\ddot{U}}+q_2{^{t+\Delta t}\!\ddot{U}}\right)
+\end{align}
+为了在有无结构阻尼情况都实现二阶精度，上述参数应该满足
+\begin{equation}
+q_0+q_1+q_2=\frac{1}{2}\quad q_2=\frac{1}{2}-pq_1\quad s=-1
+\end{equation}
+使用Routh-Hurwitz稳定性准则\cite{book:dover}可以得到其最大的稳定性极限值
+\begin{equation}
+\Omega_s^2=\frac{1}{\gamma p(1-p)}
+\end{equation}
+其中
+\begin{equation}
+\gamma = \frac{1}{4}-\frac12(1-p)q_1\qquad -\frac{1}{4(1-p)}\le q_1\le\frac{4p(1-p)-1}{8p(1-p)^2}\label{eq:Noh17}
+\end{equation}
+特别地，当$p=0.5,q_1=0$时，其稳定性极限为$\Omega=4$，是中心差分法\cite{book:dover}的稳定性极限($\Omega_s=2$)的两倍。
+
+为了使得分岔点处的频率值尽可能大，参数$q_1$需满足
+\begin{equation}
+q_1=\frac{1-2p}{2p(1-p)}
+\end{equation}
+此时的分岔点处的频率值$\Omega_b$\footnote{文\inlinecite{Noh2013}中计算结果为$\Omega_b=\frac{2}{p}$，有误。}和稳定性极限$\Omega_s$最大，分别为
+\begin{equation}
+\Omega_b=\sqrt{\frac{2}{p(1-p)}}\qquad \Omega_s=\frac{2}{\sqrt{(1-p)(1-3p)}}
+\end{equation}
+同时，根据不等式关系(\ref{eq:Noh17})可得$p$的取值范围为
+\begin{equation}
+\frac{1}{2}\le p\le\frac{2}{3}\label{eq:Nohp}
+\end{equation}
+
+进一步，若使用分岔点处的谱半径值$\rho_b$来刻画显式算法的耗散性能，则有下列关系\footnote{文\inlinecite{Noh2013}中结果为$p=\frac{2-\sqrt{2+2\rho_b}}{1-\rho_b}$，有误，原因是$\Omega_b$的计算错误导致。}成立
+\begin{equation}
+p=\frac{1}{1+\rho_b}\label{eq:Noh23}
+\end{equation}
+
+由等式(\ref{eq:Nohp})可知，分岔点处的谱半径值应满足$0.5\le\rho_b\le1$时。当$\rho_b=1$和$0.5$，该算法分别实现无耗散和最大的耗散特性，但不能实现$\rho_b=0$的渐进消弭特性。
+
+于是该复合型子步的显式算法实际为单参数算法($p$或$\rho_b$)。各参数取值如下
+\begin{equation}
+\left\{\begin{aligned}
+s&=-1\\
+q_0&=\frac{2p-1}{2p}\\
+q_1&=\frac{1-2p}{2p(1-p)}\\
+q_2&=\frac{p}{2(1-p)}
+\end{aligned}\right.
+\end{equation}
+
+\subsection{Kwon-Lee四子步算法}
+Kwon和Lee等人\cite{Kwon2017}，基于四阶的中心差分格式和一个高阶导数项去最小化高频振动解，提出了一阶精度的四子步显式复合型算法。该算法将时间步长$\Delta t$分为相等的四个子步长$\Delta t/4$。
+
+在第一个子步内使用
+\begin{equation}
+\begin{split}
+M{^{t+\Delta t/4}\!\ddot{U}}+C{^{t+\Delta t/4}\!\dot{U}}+K{^{t+\Delta t/4}\!{U}}&={^{t+\Delta t/4}\!\hat{R}}\\
+{^{t+\Delta t/4}\!U}&={^t\!U}+\frac{\Delta t}{4}{^t\!\dot{U}}+\frac12\left(\frac{\Delta t}{4}\right)^2{^t\!\ddot{U}}\\
+{^{t+\Delta t/4}\!\dot{U}}&={^t\!\dot{U}}+\frac{\Delta t}{4}{^t\!\ddot{U}}
+\end{split}
+\end{equation}
+
+在第二个子步内则使用
+\begin{equation}
+\begin{split}
+M{^{t+\Delta t/2}\!\ddot{U}}+C{^{t+\Delta t/2}\!\dot{U}}+K{^{t+\Delta t/2}\!{U}}&={^{t+\Delta t/2}\!\hat{R}}\\
+{^{t+\Delta t/2}\!U}&={^t\!U}+\frac{\Delta t}{2}{^{t+\Delta t/4}\!\dot{U}}+\frac12\left(\frac{\Delta t}{2}\right)^2{^{t+\Delta t/4}\!\ddot{U}}\\
+{^{t+\Delta t/2}\!\dot{U}}&={^t\!\dot{U}}+\frac{\Delta t}{2}{^{t+\Delta t/4}\!\ddot{U}}
+\end{split}
+\end{equation}
+
+在第三个子步内则使用
+\begin{equation}
+\begin{split}
+M{^{t+3\Delta t/4}\!\ddot{U}}+C{^{t+3\Delta t/4}\!\dot{U}}+K{^{t+3\Delta t/4}\!{U}}&={^{t+3\Delta t/4}\!\hat{R}}\\
+{^{t+3\Delta t/4}\!U}&={^{t+\Delta t/4}\!U}+\frac{\Delta t}{2}{^{t+\Delta t/2}\!\dot{U}}+\frac12\left(\frac{\Delta t}{2}\right)^2{^{t+\Delta t/2}\!\ddot{U}}\\
+{^{t+3\Delta t/4}\!\dot{U}}&={^{t+\Delta t/4}\!\dot{U}}+\frac{\Delta t}{2}{^{t+\Delta t/2}\!\ddot{U}}
+\end{split}
+\end{equation}
+
+最后，在第四个子步内使用
+\begin{equation}
+\begin{split}
+M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!{U}}&={^{t+\Delta t}\!{R}}\\
+{^{t+\Delta t}\!U}&=8{^{t+3\Delta t/4}\!U}-8{^{t+\Delta t/4}\!U}+{^t\!U}-3\Delta t{^{t+\Delta t/2}\!\dot{U}}+\alpha{^{t+\Delta t/2}\!U^{(4)}}(\Delta t)^4\\
+{^{t+\Delta t}\!\dot{U}}&=8{^{t+3\Delta t/4}\!\dot{U}}-8{^{t+\Delta t/4}\!\dot{U}}+{^t\!\dot{U}}-3\Delta t{^{t+\Delta t/2}\!\ddot{U}}+\alpha{^{t+\Delta t/2}\!U^{(5)}}(\Delta t)^4
+\end{split}
+\end{equation}
+其中$U^{(i)}$表示第$i$阶导数值。参数$\alpha$控制算法的稳定性和精度，其取值为$0.0409\le\alpha\le0.045$。同时${^{t+\Delta t/2}\!U^{(4)}}$和${^{t+\Delta t/2}\!U^{(5)}}$分别由
+\begin{align}
+{^{t+\Delta t/2}\!U^{(4)}}&=\frac{{^{t+3\Delta t/4}\!\dot{U}}-3{^{t+\Delta t/2}\!\dot{U}}+3{^{t+\Delta t/4}\!\dot{U}}-{^{t}\!\dot{U}}}{(\Delta t)^3/32}\\
+{^{t+\Delta t/2}\!U^{(5)}}&=\frac{{^{t+3\Delta t/4}\!\ddot{U}}-3{^{t+\Delta t/2}\!\ddot{U}}+3{^{t+\Delta t/4}\!\ddot{U}}-{^{t}\!\ddot{U}}}{(\Delta t)^3/32}
+\end{align}
+
+上述算法中的外荷载项在$t+i\Delta/4,i=1,2,3,4$时刻的计算公式如下
+\begin{equation}
+\left\{
+\begin{aligned}
+{^{t+\Delta t/4}\!\hat{R}}&=\frac{1}{4}(3{^t\!R}+{^{t+\Delta t}\!R})\\
+{^{t+\Delta t/2}\!\hat{R}}&=\frac{1}{2}({^t\!R}+{^{t+\Delta t}\!R})\\
+{^{t+3\Delta t/4}\!\hat{R}}&=\frac{1}{4}({^t\!R}+3{^{t+\Delta t}\!R})
+\end{aligned}\right.
+\end{equation}
 
 \section{本章小结}
 

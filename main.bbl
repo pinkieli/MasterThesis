@@ -131,6 +131,14 @@
   Analysis of Underground Structure}\bibmark{[J]}\@. \bibjournal{Dynamic
   Loads}\@, \bibyear{1968}\@.
 
+\bibitem{Chopra2011}
+\bibauthor{Chopra A~K}\@. \bibbooktitle{Prentice-Hall International Series in
+  Civil Engineering and Engineering Mechanics\thinspace{}\textnormal{:
+  }Dynamics of Structures: Theory and applications to earthquake
+  engineering}\bibmark{[M]}\@. \bibedition{\mbox{4th~ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{2011}\@.
+
 \bibitem{Liu2012}
 \bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
   Euler time-integration method for nonlinear dynamic analysis of
@@ -145,6 +153,15 @@
   \bibvolume{56}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{798\thinspace{}\textnormal{--}\thinspace{}804}\@.
 
+\bibitem{Zienkiewicz1977a}
+\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the newmark, houbolt and
+  other time stepping formulas. A weighted residual
+  approach}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
+  Dynamics}\@, \bibyear{1977}\@,
+  \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
+
 \bibitem{Lees1966}
 \bibauthor{Lees M}\@. \bibtitle{A Linear Three-Level Difference Scheme for
   Quasilinear Parabolic Equations}\bibmark{[J/OL]}\@. \bibjournal{Mathematics
@@ -152,6 +169,70 @@
   \bibvolume{20}\bibnumber{(96)}\thinspace{}\textnormal{:
   }\bibpages{516\thinspace{}\textnormal{--}\thinspace{}522}\@.
   \newline\url{http://www.jstor.org/stable/2003541}\@.
+
+\bibitem{Zhang2015a}
+\bibauthor{Zhang L\@, Liu T\@, Li Q}\@. \bibtitle{A Robust and Efficient
+  Composite Time Integration Algorithm for Nonlinear Structural Dynamic
+  Analysis}\bibmark{[J]}\@. \bibjournal{Mathematical Problems in
+  Engineering,2015,(2015-5-20)}\@, \bibyear{2015}\@,
+  \bibvolume{2015}\bibnumber{(1–4)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
+
+\bibitem{Jr2014}
+\bibauthor{Soares~Jr D}\@. \bibtitle{A simple and effective new family of time
+  marching procedures for dynamics}\bibmark{[J]}\@. \bibjournal{Computer
+  Methods in Applied Mechanics \& Engineering}\@, \bibyear{2014}\@,
+  \bibvolume{283}\thinspace{}\textnormal{:
+  }\bibpages{1138\thinspace{}\textnormal{--}\thinspace{}1166}\@.
+
+\bibitem{Soares2014}
+\bibauthor{Soares~Jr D}\@. \bibtitle{An explicit family of time marching
+  procedures with adaptive dissipation control}\bibmark{[J]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{2014}\@, \bibvolume{100}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{165\thinspace{}\textnormal{--}\thinspace{}182}\@.
+
+\bibitem{Grosseholz2015}
+\bibauthor{Grosseholz G\@, Soares~Jr D\@, von Estorff O}\@. \bibtitle{A
+  stabilized central difference scheme for dynamic analysis}\bibmark{[J/OL]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{2015}\@, \bibvolume{102}\bibnumber{(11)}\thinspace{}\textnormal{:
+  }\bibpages{1750\thinspace{}\textnormal{--}\thinspace{}1760}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.4869}\@.
+
+\bibitem{SoaresJr2016}
+\bibauthor{Soares~Jr D}\@. \bibtitle{An implicit family of time marching
+  procedures with adaptive dissipation control}\bibmark{[J]}\@.
+  \bibjournal{Applied Mathematical Modelling}\@, \bibyear{2015}\@,
+  \bibvolume{40}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{3325\thinspace{}\textnormal{--}\thinspace{}3341}\@.
+
+\bibitem{Soares2015}
+\bibauthor{Soares~Jr D}\@. \bibtitle{A Second-order Time-marching Procedure
+  with Enhanced Accuracy}\bibmark{[J]}\@. \bibjournal{Computer Modeling in
+  Engineering \& Sciences}\@, \bibyear{2015}\@,
+  \bibvolume{105}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{341\thinspace{}\textnormal{--}\thinspace{}360}\@.
+
+\bibitem{Soares2016a}
+\bibauthor{Soares~Jr D}\@. \bibtitle{A simple and effective single‐step time
+  marching technique based on adaptive time integrators}\bibmark{[J]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{2016}\@.
+
+\bibitem{SoaresJr2016a}
+\bibauthor{Soares~Jr D}\@. \bibtitle{A novel family of explicit time marching
+  techniques for structural dynamics and wave propagation
+  models}\bibmark{[J/OL]}\@. \bibjournal{Computer Methods in Applied Mechanics
+  \& Engineering}\@, \bibyear{2016}\@, \bibvolume{311}\thinspace{}\textnormal{:
+  }\bibpages{838\thinspace{}\textnormal{--}\thinspace{}855}\@.
+  \newline\url{http://dx.doi.org/10.1016/j.cma.2016.09.021}\@.
+
+\bibitem{Quarteroni2010}
+\bibauthor{Quarteroni A\@, Sacco R\@, Saleri F}\@. \bibbooktitle{Numerical
+  mathematics\thinspace{}\textnormal{: }Vol~37}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer Science
+  \& Business Media}\@, \bibyear{2010}\@.
 
 \bibitem{Tarnow1994}
 \bibauthor{Tarnow N\@, Simo J}\@. \bibtitle{How to render second order accurate
@@ -184,6 +265,20 @@
   \bibvolume{85}\bibnumber{(7–8)}\thinspace{}\textnormal{:
   }\bibpages{437\thinspace{}\textnormal{--}\thinspace{}445}\@.
 
+\bibitem{Bathe2012a}
+\bibauthor{Bathe K\@, Noh G}\@. \bibtitle{Insight into an implicit time
+  integration scheme for structural dynamics}\bibmark{[J]}\@.
+  \bibjournal{Computers \& Structures}\@,
+  \bibyear{2012}\thinspace{}\textnormal{: }\bibpages{1–6}\@.
+
+\bibitem{Silva2008}
+\bibauthor{Silva W~T~M\@, Bezerra L~M}\@. \bibtitle{Performance of Composite
+  Implicit Time Integration Scheme for Nonlinear Dynamic
+  Analysis}\bibmark{[J]}\@. \bibjournal{Mathematical Problems in
+  Engineering}\@, \bibyear{2008}\@,
+  \bibvolume{2008}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{267\thinspace{}\textnormal{--}\thinspace{}290}\@.
+
 \bibitem{Zhang2017}
 \bibauthor{Zhang J\@, Liu Y\@, Liu D}\@. \bibtitle{Accuracy of a composite
   implicit time integration scheme for structural dynamics}\bibmark{[J/OL]}\@.
@@ -213,6 +308,12 @@
 \bibitem{Guwahati}
 \bibauthor{Guwahati}\@. \bibtitle{Analysis of A Composite Time Integration
   Scheme}\bibmark{[J]}\@, \@.
+
+\bibitem{Gear1971a}
+\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
+  ordinary differential equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{1971}\@.
 
 \bibitem{Dong2010}
 \bibauthor{Dong S}\@. \bibtitle{BDF-like methods for nonlinear dynamic
@@ -246,5 +347,43 @@
   \bibjournal{International Journal of Structural Stability \& Dynamics}\@,
   \bibyear{2016}\@, \bibvolume{17}\bibnumber{(2)}\thinspace{}\textnormal{:
   }\bibpages{1750024}\@.
+
+\bibitem{Wen2017c}
+\bibauthor{Wen W~B\@, Wei K\@, Lei H~S, et~al}\@. \bibtitle{A novel sub-step
+  composite implicit time integration scheme for structural
+  dynamics}\bibmark{[J/OL]}\@. \bibjournal{Computers \& Structures}\@,
+  \bibyear{2017}\@, \bibvolume{182}\bibnumber{(C)}\thinspace{}\textnormal{:
+  }\bibpages{176\thinspace{}\textnormal{--}\thinspace{}186}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/S0045794916313712}\@.
+
+\bibitem{Rezaiee-Pajand2010}
+\bibauthor{Rezaiee-Pajand M\@, Sarafrazi S~R}\@. \bibtitle{A mixed and
+  multi-step higher-order implicit time integration family}\bibmark{[J]}\@.
+  \bibjournal{ARCHIVE Proceedings of the Institution of Mechanical Engineers
+  Part C Journal of Mechanical Engineering Science 1989-1996 (vols 203-210)}\@,
+  \bibyear{2010}\@, \bibvolume{1}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}12}\@.
+
+\bibitem{Noh2013}
+\bibauthor{Noh G\@, Bathe K-J}\@. \bibtitle{An explicit time integration scheme
+  for the analysis of wave propagations}\bibmark{[J/OL]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2013}\@,
+  \bibvolume{129}\thinspace{}\textnormal{:
+  }\bibpages{178\thinspace{}\textnormal{--}\thinspace{}193}\@.
+  \newline\url{http://dx.doi.org/10.1016/j.compstruc.2013.06.007}\@.
+
+\bibitem{Erlicher2002The}
+\bibauthor{Erlicher S\@, Bonaventura L\@, Bursi O~S}\@. \bibtitle{The analysis
+  of the Generalized-$\alpha$ method for non-linear dynamic
+  problems}\bibmark{[J]}\@. \bibjournal{Computational Mechanics}\@,
+  \bibyear{2002}\@, \bibvolume{28}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{83\thinspace{}\textnormal{--}\thinspace{}104}\@.
+
+\bibitem{Kwon2017}
+\bibauthor{Kwon S-B\@, Lee J-M}\@. \bibtitle{A non-oscillatory time integration
+  method for numerical simulation of stress wave propagations}\bibmark{[J]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2017}\@,
+  \bibvolume{192}\bibnumber{(Supplement C)}\thinspace{}\textnormal{:
+  }\bibpages{248 \thinspace{}\textnormal{--}\thinspace{} 268}\@.
 
 \end{thebibliography}
