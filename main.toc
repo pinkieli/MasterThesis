@@ -38,17 +38,18 @@
 \contentsline {subsection}{\numberline {3.4.7}BDF3BDF2-Newmark算法}{20}{subsection.3.4.7}
 \contentsline {subsection}{\numberline {3.4.8}CTFEA算法}{21}{subsection.3.4.8}
 \contentsline {subsection}{\numberline {3.4.9}TR-BDF2-Houbolt算法}{22}{subsection.3.4.9}
-\contentsline {subsection}{\numberline {3.4.10}TR-NBDDF算法}{23}{subsection.3.4.10}
-\contentsline {section}{\numberline {3.5}复合型子步显式算法}{24}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Noh-Bathe两子步算法}{24}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.4.10}TR-NBDDF-N算法}{23}{subsection.3.4.10}
+\contentsline {subsection}{\numberline {3.4.11}TR-RP算法}{24}{subsection.3.4.11}
+\contentsline {section}{\numberline {3.5}复合型子步显式算法}{25}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Noh-Bathe两子步算法}{25}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Kwon-Lee四子步算法}{26}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}本章小结}{27}{section.3.6}
-\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{28}{chapter.4}
-\contentsline {section}{\numberline {4.1}本章小结}{28}{section.4.1}
-\contentsline {chapter}{\numberline {第5章}数值算例}{29}{chapter.5}
-\contentsline {section}{\numberline {5.1}本章小结}{29}{section.5.1}
-\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{30}{section*.16}
-\contentsline {chapter}{\heiti 参考文献}{31}{section*.19}
-\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{36}{section*.21}
-\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{39}{section*.27}
-\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{40}{section*.29}
+\contentsline {section}{\numberline {3.6}本章小结}{28}{section.3.6}
+\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}本章小结}{29}{section.4.1}
+\contentsline {chapter}{\numberline {第5章}数值算例}{30}{chapter.5}
+\contentsline {section}{\numberline {5.1}本章小结}{30}{section.5.1}
+\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{31}{section*.16}
+\contentsline {chapter}{\heiti 参考文献}{32}{section*.19}
+\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{37}{section*.21}
+\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{40}{section*.27}
+\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{41}{section*.29}

@@ -364,6 +364,14 @@
   \bibyear{2010}\@, \bibvolume{1}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}12}\@.
 
+\bibitem{Rezaiee-Pajand2015}
+\bibauthor{Rezaiee-Pajand M\@, Karimi-Rad M}\@. \bibtitle{More accurate and
+  stable time integration scheme}\bibmark{[J/OL]}\@. \bibjournal{Engineering
+  with Computers}\@, \bibyear{2015}\@,
+  \bibvolume{31}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{791\thinspace{}\textnormal{--}\thinspace{}812}\@.
+  \newline\url{http://dx.doi.org/10.1007/s00366-014-0390-x}\@.
+
 \bibitem{Noh2013}
 \bibauthor{Noh G\@, Bathe K-J}\@. \bibtitle{An explicit time integration scheme
   for the analysis of wave propagations}\bibmark{[J/OL]}\@.

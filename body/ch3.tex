@@ -593,7 +593,7 @@ d_1=-1\quad d_2=\frac{1}{(p-1)(2p-1)}\quad d_3=\frac{1}{p(2p-1)}\quad d_4 = \fra
 
 文\inlinecite{Wen2017c}中数值试验表明，就精度和数值耗散特性而言，参数$p=1/3$是众多可取$p$值中最佳选择方案。
 
-\subsection{TR-NBDDF算法}
+\subsection{TR-NBDDF-N算法}
 文\inlinecite{Rezaiee-Pajand2010}将三点向后微分公式看作牛顿向后插值\cite{Gear1971a}的特例，则可以得到其更加一般化的复合型子步算法。当时间步长均分为两份时，该算法退化为TR-BDF2算法。对于均分为$m$份的复合型子步算法，可参见原文\cite{Rezaiee-Pajand2010}。这里仅显式地给出均分为3份的三子步复合型算法。
 在第一个子步内，使用Trapezoidal规则，则有
 \begin{align}
@@ -615,6 +615,45 @@ d_1=-1\quad d_2=\frac{1}{(p-1)(2p-1)}\quad d_3=\frac{1}{p(2p-1)}\quad d_4 = \fra
 \end{align}
 
 三个子步结合三个时刻的平衡方程即可求解在$t+\Delta t$时刻的状态量。
+
+\subsection{TR-RP算法}
+Rezaiee-Pajand提出了一个两子步复合型算法\cite{Rezaiee-Pajand2015}。在第一个时间步长内，使用Trapezoidal规则进行计算。而在第二个子步内，引入更具一般性的算法格式
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t[A{^t\!\dot{U}}+B{^{t+\Delta t}\!\dot{U}}]+\Delta t^2[C{^{t}\!\ddot{U}}+D{^{t+\Delta t/2}\!\ddot{U}}]\label{eq:PR3}\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\Delta t[E{^t\ddot{U}}+F{^{t+\Delta t/2}\!\ddot{U}}+G{^{t+\Delta t}\!\ddot{U}}]\label{eq:PR4}
+\end{align}
+若满足二阶精度，则要求下列等式成立
+\begin{equation}
+\left\{\begin{aligned}
+A+B&=1\qquad B+C+D&=\frac{1}{2}\\
+E+F+G&=1\qquad\quad \frac{1}{2}F+G&=\frac12
+\end{aligned}\right.
+\end{equation}
+于是，上述等式(\ref{eq:PR3})-(\ref{eq:PR4})整理为两参数算法
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t[\alpha{^t\!\dot{U}}+(1-\alpha){^{t+\Delta t}\!\dot{U}}]+\Delta t^2[\beta{^{t}\!\ddot{U}}+(\alpha-\beta-\frac{1}{2}){^{t+\Delta t/2}\!\ddot{U}}]\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\Delta t[(1-\alpha){^t\ddot{U}}+(2\alpha-1){^{t+\Delta t/2}\!\ddot{U}}+(1-\alpha){^{t+\Delta t}\!\ddot{U}}]
+\end{align}
+其中，参数$\alpha,\beta$的选取依据为
+\begin{equation}
+\alpha=2(\beta-0.125)+0.75\qquad 0<\beta<0.125\qquad 0.5<\alpha<0.75
+\end{equation}
+以满足算法实现
+\begin{itemize}
+\item[\ddag] 对线性系统无条件稳定。
+\item[\ddag] 复合型算法实现二阶精度的同时，实现最小化低频、最大化高频耗散。
+\item[\ddag] 新算法较Trapezoidal规则\cite{book:dover}和TR-BDF2算法\cite{Bathe2005,Bathe2007,Bathe2012a}精度更高。
+\item[\ddag] 对Trapezoidal算法求解失败的非线性问题，新算法仍保持稳定性。
+\end{itemize}
+
+
+
+
+
+
+
+
+
 \section{复合型子步显式算法}
 \subsection{Noh-Bathe两子步算法}
 K.J. Bathe等人\cite{Noh2013}提出了一个两子步复合型显式算法来求解波的传播问题。在第一个子步长$p\Delta t$内，使用

@@ -14,6 +14,8 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: reference.bib
+Warning--string name "oct" is undefined
+--line 4343 of file reference.bib
 Warning--string name "dec" is undefined
 --line 4999 of file reference.bib
 Warning--string name "jun" is undefined
@@ -21,9 +23,9 @@ Warning--string name "jun" is undefined
 Warning--string name "apr" is undefined
 --line 55561 of file reference.bib
 Warning--string name "jan" is undefined
---line 70835 of file reference.bib
+--line 70837 of file reference.bib
 Warning--string name "apr" is undefined
---line 70951 of file reference.bib
+--line 70953 of file reference.bib
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
 Warning--Require journal: Lunk2005
@@ -44,46 +46,47 @@ Warning--Require journal: Guwahati
 Warning--Require year: Guwahati
 Warning--Require address: Gear1971a
 Warning--Require citedate: Wen2017c
+Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Noh2013
-You've used 52 entries,
+You've used 53 entries,
             3103 wiz_defined-function locations,
-            1070 strings with 14831 characters,
-and the built_in function-call counts, 68280 in all, are:
-= -- 7100
-> -- 148
-< -- 347
-+ -- 5291
-- -- 492
-* -- 2449
-:= -- 7162
+            1078 strings with 15021 characters,
+and the built_in function-call counts, 70091 in all, are:
+= -- 7302
+> -- 151
+< -- 354
++ -- 5453
+- -- 503
+* -- 2505
+:= -- 7362
 add.period$ -- 0
-call.type$ -- 52
+call.type$ -- 53
 change.case$ -- 0
 chr.to.int$ -- 3
-cite$ -- 73
-duplicate$ -- 9567
-empty$ -- 3064
-format.name$ -- 380
-if$ -- 17898
+cite$ -- 75
+duplicate$ -- 9825
+empty$ -- 3130
+format.name$ -- 388
+if$ -- 18376
 int.to.chr$ -- 0
-int.to.str$ -- 52
+int.to.str$ -- 53
 missing$ -- 0
-newline$ -- 183
-num.names$ -- 52
-pop$ -- 1033
+newline$ -- 186
+num.names$ -- 53
+pop$ -- 1057
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 700
+skip$ -- 710
 stack$ -- 0
-substring$ -- 7917
-swap$ -- 2509
+substring$ -- 8139
+swap$ -- 2564
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 21
-while$ -- 969
-width$ -- 54
-write$ -- 763
-(There were 26 warnings)
+warning$ -- 22
+while$ -- 991
+width$ -- 55
+write$ -- 780
+(There were 28 warnings)
