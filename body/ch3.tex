@@ -175,6 +175,45 @@ ${_{F_i}\!\Im}$依旧表示等式(\ref{eq:SJAMM3})右端的荷载积分项。其
 \end{equation}
 一般情况下，参数$\alpha_2$建议取值范围在$1\le\alpha_2\le3$。
 
+\subsubsection{SJ算法格式4\cite{SoaresJr2016a}}
+Soares Jr基于前面提出的SJ算法格式2\cite{Jr2014}，提出了一个新的显式积分算法\cite{SoaresJr2016a}。针对无阻尼矩阵情况($C=0$)，该算法格式为
+\begin{align}
+ M{^{t+\Delta t}\!\dot{U}}&={_{F_i}\!\Im}+M{^t\!\dot{U}}-K({^t\!U}\Delta t+\frac12{^t\!\dot{U}}\Delta t^2)\\
+ M{^{t+\Delta t}\!U}&=M[{^t\!U}+\frac{\Delta t}{2}({^t\!\dot{U}}+{^{t+\Delta t}\!\dot{U}})]-K[(\beta b_1b_2){^t\!\dot{U}}\Delta t^3+(\frac{1}{16}+\beta b_1){^{t+\Delta t}\!\dot{U}}\Delta t^3]
+\end{align}
+其中，${_{F_i}\!\Im}$则为前述提及的荷载积分项。同时参数$\beta,b_1$和$b_2$取值分别为
+\begin{equation}
+b_1=8.567\cdot10^{-3}\qquad b_2=8.590\cdot10^{-1}\qquad 0\le\beta\le1
+\end{equation}
+此时，算法的谱半径曲线光滑，无凸起。而参数$\beta=0$对于无数值阻尼情形，其基于稳定性理论的采样频率极限为$\Omega_c=4$；而当$\beta=1$时，谱半径在分岔点达到最小值$\rho_b=0$，其最大采样频率为$\Omega_c\approx3.571$。
+
+该算法的优点主要是
+\begin{itemize}
+\item[\ddag] 真正意义上的自启动，不需要任何求解加速度的机制。
+\item[\ddag] 算法简单，求解方便且实现二阶精度。
+\item[\ddag] 显式的条件稳定稳定算法，其稳定域是中心差分法的二倍，但计算量几乎相当。
+\item[\ddag] 实现数值阻尼的可控性(由参数$\beta\in[0,1]$控制)。
+\end{itemize}
+
+\subsubsection{稳定化的中心差分法}
+Gro\ss eholz和Soares Jr等人\cite{Grosseholz2015}利用一个依赖于结构的参数引入人工质量矩阵进而将传统的中心差分法\cite{Chopra2011}实现了无条件稳定。该算法针对单自由度无阻尼自由振动系统
+\begin{equation}
+\ddot{U}(t)+\omega^2U(t)=0
+\end{equation}
+引入依赖于结构的参数后
+\begin{equation}
+(1+a(\Delta t\omega)^2)\ddot{U}(t)+\omega^2U(t)=0
+\end{equation}
+对$\ddot{U}(t)$使用二阶中心差分后并带入上式得
+\begin{equation}
+{^{t+\Delta t}\!U}=\left(2-\frac{(\Delta t\omega)^2}{1+a(\Delta t\omega)^2}\right){^t\!U}-{^{t-\Delta t}\!U}
+\end{equation}
+如果需要，其速度和加速度仍使用传统的中心差分法求解格式\cite{Chopra2011}计算。
+
+参数$a$满足$0\le a\le0.25$；当$a=0$时，该稳定化的中心差分法退化为传统的中心差分法\cite{Chopra2011}；当$a=0.25$时，该方法与常平均加速度算法\cite{book:dover}是谱等价的。数值实验表明，引进的稳定化中心差分法精度较传统的中心差分法和常平均加速度算法高。但引入的技术也需要事先对待分析的系统的频率进行估计和计算，尤其是求解大规模多自由度系统中，可能是一件比较麻烦的事情。
+
+
+
 \section{预测-校正算法}
 
 

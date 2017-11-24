@@ -24,29 +24,31 @@
 \contentsline {subsubsection}{\numberline {3.1.4.2}SJ算法格式2\cite {Jr2014}}{10}{subsubsection.3.1.4.2}
 \contentsline {subsubsection}{\numberline {3.1.4.3}SJ算法格式3\cite {Soares2015}}{11}{subsubsection.3.1.4.3}
 \contentsline {subsubsection}{\numberline {3.1.4.4}SJ算法格式4\cite {Soares2014}}{11}{subsubsection.3.1.4.4}
-\contentsline {section}{\numberline {3.2}预测-校正算法}{11}{section.3.2}
-\contentsline {section}{\numberline {3.3}结构依赖型直接积分法}{11}{section.3.3}
-\contentsline {section}{\numberline {3.4}复合型子步隐式算法}{11}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}TR-BDF2算法}{12}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}TR-TR-Houbolt算法}{13}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}BDF2-Newmark算法}{14}{subsection.3.4.3}
-\contentsline {subsection}{\numberline {3.4.4}BDF型积分算法}{14}{subsection.3.4.4}
-\contentsline {subsection}{\numberline {3.4.5}TTBDF算法}{17}{subsection.3.4.5}
-\contentsline {subsection}{\numberline {3.4.6}BDF2-BDF3算法}{18}{subsection.3.4.6}
-\contentsline {subsection}{\numberline {3.4.7}BDF3BDF2-Newmark算法}{19}{subsection.3.4.7}
-\contentsline {subsection}{\numberline {3.4.8}CTFEA算法}{20}{subsection.3.4.8}
-\contentsline {subsection}{\numberline {3.4.9}TR-BDF2-Houbolt算法}{21}{subsection.3.4.9}
-\contentsline {subsection}{\numberline {3.4.10}TR-NBDDF算法}{22}{subsection.3.4.10}
-\contentsline {section}{\numberline {3.5}复合型子步显式算法}{23}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Noh-Bathe两子步算法}{23}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Kwon-Lee四子步算法}{25}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}本章小结}{26}{section.3.6}
-\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{27}{chapter.4}
-\contentsline {section}{\numberline {4.1}本章小结}{27}{section.4.1}
-\contentsline {chapter}{\numberline {第5章}数值算例}{28}{chapter.5}
-\contentsline {section}{\numberline {5.1}本章小结}{28}{section.5.1}
-\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{29}{section*.16}
-\contentsline {chapter}{\heiti 参考文献}{30}{section*.19}
-\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{35}{section*.21}
-\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{38}{section*.27}
-\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{39}{section*.29}
+\contentsline {subsubsection}{\numberline {3.1.4.5}SJ算法格式4\cite {SoaresJr2016a}}{11}{subsubsection.3.1.4.5}
+\contentsline {subsubsection}{\numberline {3.1.4.6}稳定化的中心差分法}{12}{subsubsection.3.1.4.6}
+\contentsline {section}{\numberline {3.2}预测-校正算法}{13}{section.3.2}
+\contentsline {section}{\numberline {3.3}结构依赖型直接积分法}{13}{section.3.3}
+\contentsline {section}{\numberline {3.4}复合型子步隐式算法}{13}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}TR-BDF2算法}{13}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}TR-TR-Houbolt算法}{15}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}BDF2-Newmark算法}{15}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}BDF型积分算法}{16}{subsection.3.4.4}
+\contentsline {subsection}{\numberline {3.4.5}TTBDF算法}{19}{subsection.3.4.5}
+\contentsline {subsection}{\numberline {3.4.6}BDF2-BDF3算法}{19}{subsection.3.4.6}
+\contentsline {subsection}{\numberline {3.4.7}BDF3BDF2-Newmark算法}{20}{subsection.3.4.7}
+\contentsline {subsection}{\numberline {3.4.8}CTFEA算法}{21}{subsection.3.4.8}
+\contentsline {subsection}{\numberline {3.4.9}TR-BDF2-Houbolt算法}{22}{subsection.3.4.9}
+\contentsline {subsection}{\numberline {3.4.10}TR-NBDDF算法}{23}{subsection.3.4.10}
+\contentsline {section}{\numberline {3.5}复合型子步显式算法}{24}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Noh-Bathe两子步算法}{24}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Kwon-Lee四子步算法}{26}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}本章小结}{27}{section.3.6}
+\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}本章小结}{28}{section.4.1}
+\contentsline {chapter}{\numberline {第5章}数值算例}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}本章小结}{29}{section.5.1}
+\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{30}{section*.16}
+\contentsline {chapter}{\heiti 参考文献}{31}{section*.19}
+\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{36}{section*.21}
+\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{39}{section*.27}
+\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{40}{section*.29}
