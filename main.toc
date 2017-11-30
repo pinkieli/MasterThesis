@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {3.4.11}TR-RP算法}{24}{subsection.3.4.11}
 \contentsline {section}{\numberline {3.5}复合型子步显式算法}{25}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Noh-Bathe两子步算法}{25}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Kwon-Lee四子步算法}{26}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.2}Kwon-Lee四子步算法}{27}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}本章小结}{28}{section.3.6}
 \contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{29}{chapter.4}
 \contentsline {section}{\numberline {4.1}本章小结}{29}{section.4.1}

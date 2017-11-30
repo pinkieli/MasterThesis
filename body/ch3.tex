@@ -195,6 +195,16 @@ b_1=8.567\cdot10^{-3}\qquad b_2=8.590\cdot10^{-1}\qquad 0\le\beta\le1
 \item[\ddag] 实现数值阻尼的可控性(由参数$\beta\in[0,1]$控制)。
 \end{itemize}
 
+对于有阻尼系统($\xi\neq0$)时，该算法格式如下
+\begin{align}
+ [M+\frac{1}{2}\Delta tC]{^{t+\Delta t}\!\dot{U}}&={_{F_i}\!\Im}+M{^t\!\dot{U}}-\frac12{^{t}\!\dot{U}}C\Delta t-K({^t\!U}\Delta t+\frac12{^t\!\dot{U}}\Delta t^2)\\
+ [M+\frac{1}{2}\Delta tC]{^{t+\Delta t}\!U}&=[M+\frac{1}{2}\Delta tC]\cdot[{^t\!U}+\frac{\Delta t}{2}({^t\!\dot{U}}+{^{t+\Delta t}\!\dot{U}})]\notag\\
+ &-\frac12{^{t+\Delta t}\!\dot{U}}\Delta t^2C-K[(\beta b_1b_2){^t\!\dot{U}}\Delta t^3+(\frac{1}{16}+\beta b_1){^{t+\Delta t}\!\dot{U}}\Delta t^3]
+\end{align}
+
+
+
+
 \subsubsection{稳定化的中心差分法}
 Gro\ss eholz和Soares Jr等人\cite{Grosseholz2015}利用一个依赖于结构的参数引入人工质量矩阵进而将传统的中心差分法\cite{Chopra2011}实现了无条件稳定。该算法针对单自由度无阻尼自由振动系统
 \begin{equation}
@@ -211,7 +221,7 @@ Gro\ss eholz和Soares Jr等人\cite{Grosseholz2015}利用一个依赖于结构�
 如果需要，其速度和加速度仍使用传统的中心差分法求解格式\cite{Chopra2011}计算。
 
 参数$a$满足$0\le a\le0.25$；当$a=0$时，该稳定化的中心差分法退化为传统的中心差分法\cite{Chopra2011}；当$a=0.25$时，该方法与常平均加速度算法\cite{book:dover}是谱等价的。数值实验表明，引进的稳定化中心差分法精度较传统的中心差分法和常平均加速度算法高。但引入的技术也需要事先对待分析的系统的频率进行估计和计算，尤其是求解大规模多自由度系统中，可能是一件比较麻烦的事情。
-
+% ======================================================================================
 
 
 \section{预测-校正算法}
