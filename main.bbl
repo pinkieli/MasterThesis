@@ -139,6 +139,88 @@
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
   \bibyear{2011}\@.
 
+\bibitem{Wood}
+\bibauthor{Wood W~L}\@. \bibbooktitle{Practical time-stepping
+  schemes.}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Oxford: Clarendon}\@, \bibyear{1990}\@.
+
+\bibitem{Zienkiewicz1991a}
+\bibauthor{Zienkiewicz O~C\@, Taylor R~L}\@. \bibbooktitle{The finite element
+  method\thinspace{}\textnormal{: }Vol~3}\bibmark{[M]}\@.
+  \bibedition{\mbox{4th~ed}}\@. \bibaddress{New York}\thinspace{}\textnormal{:
+  }\bibpublisher{McGraw-hill London}\@, \bibyear{1991}\@.
+
+\bibitem{Hairer1993}
+\bibauthor{Gerhard~Wanner Ernst~Hairer S~P~N}\@. \bibbooktitle{Springer Series
+  in Computational Mathematics 8\thinspace{}\textnormal{: }Solving Ordinary
+  Differential Equations I: Nonstiff Problems}\bibmark{[M]}\@.
+  \bibedition{\mbox{2nd~ed}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer-Verlag Berlin Heidelberg}\@, \bibyear{1993}\@.
+
+\bibitem{ErnstHairer1996}
+\bibauthor{Ernst~Hairer G~W}\@. \bibbooktitle{Springer Series in Computational
+  Mathematics 14\thinspace{}\textnormal{: }Solving Ordinary Differential
+  Equations II: Stiff and Differential-Algebraic Problems}\bibmark{[M]}\@.
+  \bibedition{\mbox{2nd~ed}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer-Verlag Berlin Heidelberg}\@, \bibyear{1996}\@.
+
+\bibitem{Dokainish1989}
+\bibauthor{Dokainish M\@, Subbaraj K}\@. \bibtitle{A survey of direct
+  time-integration methods in computational structural dynamics—I. Explicit
+  methods}\bibmark{[J/OL]}\@. \bibjournal{Computers \& Structures}\@,
+  \bibyear{1989}\@, \bibvolume{32}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1371 \thinspace{}\textnormal{--}\thinspace{} 1386}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/0045794989903143}\@.
+
+\bibitem{Subbaraj1989}
+\bibauthor{Subbaraj K\@, Dokainish M}\@. \bibtitle{A survey of direct
+  time-integration methods in computational structural dynamics—II. Implicit
+  methods}\bibmark{[J/OL]}\@. \bibjournal{Computers \& Structures}\@,
+  \bibyear{1989}\@, \bibvolume{32}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1387 \thinspace{}\textnormal{--}\thinspace{} 1401}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/0045794989903155}\@.
+
+\bibitem{Fung1996e}
+\bibauthor{Fung T\@, Leung A}\@. \bibtitle{On the accuracy of discontinuous
+  Galerkin methods in the time domain}\bibmark{[J]}\@. \bibjournal{JVC/Journal
+  of Vibration and Control}\@, \bibyear{1996}\@,
+  \bibvolume{2}\bibnumber{(2)}\thinspace{}\textnormal{: }\bibpages{193
+  \thinspace{}\textnormal{--}\thinspace{} 217}\@.
+
+\bibitem{Fung1996a}
+\bibauthor{Fung T}\@. \bibtitle{Unconditionally stable higher-order accurate
+  hermitian time finite elements}\bibmark{[J/OL]}\@. \bibjournal{International
+  Journal for Numerical Methods in Engineering}\@, \bibyear{1996}\@,
+  \bibvolume{39}\bibnumber{(20)}\thinspace{}\textnormal{:
+  }\bibpages{3475\thinspace{}\textnormal{--}\thinspace{}3495}\@.
+  \newline\url{http://dx.doi.org/10.1002/(SICI)1097-0207(19961030)39:20<3475::AID-NME10>3.0.CO;2-H}\@.
+
+\bibitem{Butcher2008}
+\bibauthor{Butcher J~C}\@. \bibbooktitle{Numerical Methods for Ordinary
+  Differential Equations}\bibmark{[M/OL]}\@. \bibedition{\mbox{2nd ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
+  \bibyear{2008}\@.
+  \newline\url{http://gen.lib.rus.ec/book/index.php?md5=B23D7885C152FE31A577F318308DAFF3}\@.
+
+\bibitem{Jackiewicz2009}
+\bibauthor{Jackiewicz Z}\@. \bibbooktitle{General linear methods for ordinary
+  differential equations}\bibmark{[M/OL]}\@. \bibedition{\mbox{First
+  Edition}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Wiley}\@, \bibyear{2009}\@.
+  \newline\url{http://gen.lib.rus.ec/book/index.php?md5=C7D7B1DD95FCF4E5A3F1E5492F76EDB5}\@.
+
+\bibitem{Gear1971a}
+\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
+  ordinary differential equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{1971}\@.
+
+\bibitem{张雄2007}
+\bibauthor{张雄\@, 王天舒\@, 刘岩}\@.
+  \bibbooktitle{计算动力学}\bibmark{[M]}\@. \bibedition{\mbox{2nd~ed}}\@.
+  \bibaddress{北京}\thinspace{}\textnormal{:
+  }\bibpublisher{清华大学出版社}\@, \bibyear{2007}\@.
+
 \bibitem{Liu2012}
 \bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
   Euler time-integration method for nonlinear dynamic analysis of
@@ -177,6 +259,65 @@
   Engineering,2015,(2015-5-20)}\@, \bibyear{2015}\@,
   \bibvolume{2015}\bibnumber{(1–4)}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
+
+\bibitem{Tamma1988}
+\bibauthor{Tamma K~K\@, Namburu R~R}\@. \bibtitle{A new finite element based
+  Lax-Wendroff/Taylor-Galerkin methodology for computational
+  dynamics}\bibmark{[J]}\@. \bibjournal{Computer Methods in Applied Mechanics
+  \& Engineering}\@, \bibyear{1988}\@,
+  \bibvolume{71}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{137\thinspace{}\textnormal{--}\thinspace{}150}\@.
+
+\bibitem{Tamma1988c}
+\bibauthor{Tamma K~K\@, Namburu R~R}\@. \bibtitle{An explicit velocity based
+  Lax-Wendroff/Taylor-Galerkin methodology of computation for the dynamics of
+  structures}\bibmark{[J]}\@. \bibjournal{Computers \& Structures}\@,
+  \bibyear{1988}\@, \bibvolume{30}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{1017\thinspace{}\textnormal{--}\thinspace{}1024}\@.
+
+\bibitem{Tamma1989}
+\bibauthor{Tamma K~K\@, Namburu R~R}\@. \bibtitle{A new unified explicit
+  architecture of thermal/structural dynamic algorithms: Applications to
+  coupled thermoelasticity}\bibmark{[J]}\@. \bibjournal{Computers \&
+  Structures}\@, \bibyear{1989}\@,
+  \bibvolume{37}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{535\thinspace{}\textnormal{--}\thinspace{}545}\@.
+
+\bibitem{Tamma1990a}
+\bibauthor{Tamma K~K\@, Namburu R~R}\@. \bibtitle{A robust self‐starting
+  explicit computational methodology for structural dynamic applications:
+  Architecture and representations}\bibmark{[J]}\@. \bibjournal{International
+  Journal for Numerical Methods in Engineering}\@, \bibyear{1990}\@,
+  \bibvolume{29}\bibnumber{(7)}\thinspace{}\textnormal{:
+  }\bibpages{1441\thinspace{}\textnormal{--}\thinspace{}1454}\@.
+
+\bibitem{Tamma1990}
+\bibauthor{Tamma K~K\@, Namburu R~R}\@. \bibtitle{Applicability and evaluation
+  of an implicit self-starting unconditionally stable methodology for the
+  dynamics of structures}\bibmark{[J]}\@. \bibjournal{Computers \&
+  Structures}\@, \bibyear{1990}\@,
+  \bibvolume{34}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{835\thinspace{}\textnormal{--}\thinspace{}842}\@.
+
+\bibitem{Tamma1992}
+\bibauthor{Tamma K~K\@, D'Costa J~F}\@. \bibtitle{A new explicit variable
+  time-integration self-starting methodology for computational structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{International Journal for Numerical
+  Methods in Engineering}\@, \bibyear{1992}\@,
+  \bibvolume{33}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1165\thinspace{}\textnormal{--}\thinspace{}1180}\@.
+
+\bibitem{Namburu1992}
+\bibauthor{Namburu R~R\@, Tamma K~K}\@. \bibtitle{A Generalized
+  $\gamma_s$-family of self-starting algorithms for computational structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{AIAA Journal}\@, \bibyear{1992}\@.
+
+\bibitem{Tamma1993}
+\bibauthor{Tamma K\@, Maocheng L~I\@, Namburu R}\@. \bibtitle{Evaluation and
+  applicability of explicit self-starting formulations for nonlinear structural
+  dynamics}\bibmark{[C]} //\thinspace{}\bibbooktitle{34th
+  AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics \& Materials
+  Conference}\@. \bibyear{1993}\@.
 
 \bibitem{Jr2014}
 \bibauthor{Soares~Jr D}\@. \bibtitle{A simple and effective new family of time
@@ -265,12 +406,6 @@
   \bibvolume{85}\bibnumber{(7–8)}\thinspace{}\textnormal{:
   }\bibpages{437\thinspace{}\textnormal{--}\thinspace{}445}\@.
 
-\bibitem{Bathe2012a}
-\bibauthor{Bathe K\@, Noh G}\@. \bibtitle{Insight into an implicit time
-  integration scheme for structural dynamics}\bibmark{[J]}\@.
-  \bibjournal{Computers \& Structures}\@,
-  \bibyear{2012}\thinspace{}\textnormal{: }\bibpages{1–6}\@.
-
 \bibitem{Silva2008}
 \bibauthor{Silva W~T~M\@, Bezerra L~M}\@. \bibtitle{Performance of Composite
   Implicit Time Integration Scheme for Nonlinear Dynamic
@@ -308,12 +443,6 @@
 \bibitem{Guwahati}
 \bibauthor{Guwahati}\@. \bibtitle{Analysis of A Composite Time Integration
   Scheme}\bibmark{[J]}\@, \@.
-
-\bibitem{Gear1971a}
-\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
-  ordinary differential equations}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
-  \bibyear{1971}\@.
 
 \bibitem{Dong2010}
 \bibauthor{Dong S}\@. \bibtitle{BDF-like methods for nonlinear dynamic

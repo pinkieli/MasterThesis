@@ -15,23 +15,36 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: reference.bib
 Warning--string name "oct" is undefined
---line 4343 of file reference.bib
+--line 4355 of file reference.bib
 Warning--string name "dec" is undefined
---line 4999 of file reference.bib
+--line 5013 of file reference.bib
 Warning--string name "jun" is undefined
---line 55331 of file reference.bib
+--line 55105 of file reference.bib
 Warning--string name "apr" is undefined
---line 55561 of file reference.bib
+--line 55335 of file reference.bib
 Warning--string name "jan" is undefined
---line 70837 of file reference.bib
+--line 70323 of file reference.bib
 Warning--string name "apr" is undefined
---line 70953 of file reference.bib
+--line 70439 of file reference.bib
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "Bathe2012a"
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
 Warning--Require journal: Lunk2005
 Warning--Require address: 吴志桥2009
 Warning--Require citedate: Yin2013
 Warning--Require address: Chopra2011
+Warning--Require address: Wood
+Warning--Require address: Hairer1993
+Warning--Require address: ErnstHairer1996
+Warning--Require citedate: Dokainish1989
+Warning--Require citedate: Subbaraj1989
+Warning--Require citedate: Fung1996a
+Warning--Require address: Butcher2008
+Warning--Require citedate: Butcher2008
+Warning--Require address: Jackiewicz2009
+Warning--Require citedate: Jackiewicz2009
+Warning--Require address: Gear1971a
 Warning--Require citedate: Zienkiewicz1977a
 Warning--Require citedate: Lees1966
 Warning--Require citedate: Grosseholz2015
@@ -44,49 +57,48 @@ Warning--Require journal: Kumara
 Warning--Require year: Kumara
 Warning--Require journal: Guwahati
 Warning--Require year: Guwahati
-Warning--Require address: Gear1971a
 Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Noh2013
-You've used 53 entries,
+You've used 71 entries,
             3103 wiz_defined-function locations,
-            1078 strings with 15021 characters,
-and the built_in function-call counts, 70091 in all, are:
-= -- 7302
-> -- 151
-< -- 354
-+ -- 5453
-- -- 503
-* -- 2505
-:= -- 7362
+            1193 strings with 18246 characters,
+and the built_in function-call counts, 94986 in all, are:
+= -- 9930
+> -- 208
+< -- 479
++ -- 7370
+- -- 665
+* -- 3423
+:= -- 9961
 add.period$ -- 0
-call.type$ -- 53
+call.type$ -- 71
 change.case$ -- 0
-chr.to.int$ -- 3
-cite$ -- 75
-duplicate$ -- 9825
-empty$ -- 3130
-format.name$ -- 388
-if$ -- 18376
+chr.to.int$ -- 24
+cite$ -- 103
+duplicate$ -- 13387
+empty$ -- 4233
+format.name$ -- 516
+if$ -- 24879
 int.to.chr$ -- 0
-int.to.str$ -- 53
+int.to.str$ -- 71
 missing$ -- 0
-newline$ -- 186
-num.names$ -- 53
-pop$ -- 1057
+newline$ -- 240
+num.names$ -- 71
+pop$ -- 1393
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 710
+skip$ -- 952
 stack$ -- 0
-substring$ -- 8139
-swap$ -- 2564
+substring$ -- 11093
+swap$ -- 3467
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 22
-while$ -- 991
-width$ -- 55
-write$ -- 780
-(There were 28 warnings)
+warning$ -- 32
+while$ -- 1300
+width$ -- 73
+write$ -- 1044
+(There were 40 warnings)

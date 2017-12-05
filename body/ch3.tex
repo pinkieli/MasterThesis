@@ -1,12 +1,237 @@
-\chapter{结构动响应数值算法研究现状}
-
-对于结构动力学运动方程(\ref{eq:DyEq})
+\chapter{结构动响应数值算法}
+对于结构动力学问题，在经过合适的空间离散离散离散之后，得到一个关于时间的二阶常微分方程，即结构动力学运动方程(\ref{eq:DyEq})
 \begin{equation}
 	M\ddot{U}(t)+C\dot{U}(t)+KU(t)=F(t)\label{eq:DyEq}
 \end{equation}
-带有合适的初值条件的求解。最常用的就是直接积分法，该方法的要求运动方程(\ref{eq:DyEq})在离散的时刻精确满足。同时假定位移和速度的更新方程，利用离散时刻的平衡方程求得对应时刻的加速度，进而求得速度和位移。特别地，自从Newmark-$\beta$算法\cite{Newmark1959}、Wilson-$\theta$法\cite{Wilson1968}和Houbolt法\cite{Chopra2011}等直接积分法提出以来，许多的研究学者在此之后基于各种原理提出了许多性能优良的积分算法。
+带有初值条件(\ref{eq:DyEqInitCon})
+\begin{equation}
+{U}(0)={^0\!U}\qquad \dot{U}(0)={^0\!\dot{U}}\label{eq:DyEqInitCon}
+\end{equation}
 
-\section{直接积分法}
+对于该微分方程的求解，最常用的技术手段就是直接积分法，该方法的要求运动方程(\ref{eq:DyEq})在离散的时刻精确满足。同时假定位移和速度的更新方程，利用离散时刻的平衡方程求得对应时刻的加速度，进而求得速度和位移。特别地，自从Newmark-$\beta$算法\cite{Newmark1959}、Wilson-$\theta$法\cite{Wilson1968}和Houbolt法\cite{Chopra2011}等直接积分法提出以来，许多的研究学者在此之后基于各种原理提出了许多性能优良的积分算法。各种不同类型的直接积分法可以参见书籍\cite{Wood,book:dover,Zienkiewicz1991a,Hairer1993,ErnstHairer1996}以及两篇关于显、隐式直接积分法的综述文章\cite{Dokainish1989,Subbaraj1989}。
+
+在方程(\ref{eq:DyEq})中的$M,C,K$分别表示质量、阻尼和刚度矩阵；而$F(t)$表示系统所受到外力荷载，它一般情况下是关于时间$t$的已知函数；而$U(t)$表示系统的位移向量，而其上标的$(\cdot{})$代表对时间的微分，亦即$\dot{U}(t),\ddot{U}(t)$分别表示其速度和加速度。
+
+特别地，若引入中间变量$\dot{U}(t)=V(t)$可将二阶的微分方程(\ref{eq:DyEq})转换为一阶微分方程组
+\begin{equation}
+\begin{bmatrix}
+\dot{U}(t)\\
+\dot{V}(t)
+\end{bmatrix}=\begin{bmatrix}
+\mathbf{0}&\mathbf{I}\\
+-M^{-1}K&-M^{-1}C
+\end{bmatrix}\begin{bmatrix}
+{U}(t)\\
+{V}(t)
+\end{bmatrix}+\begin{bmatrix}
+\mathbf{0}\\
+M^{-1}F(t)
+\end{bmatrix}\label{eq:DynqFirstOrder}
+\end{equation}
+其初始条件为
+\begin{equation}
+{U}(0)={^0\!U}\qquad V(0)={^0\!\dot{U}}
+\end{equation}
+其中，$\mathbf{0}$和$\mathbf{I}$分别为零矩阵和单位矩阵\footnote{其矩阵维度与系统自由度数相同。特别地，在不引起混淆的情况下，后面都不再特别指明矩阵的维度问题。}。于是，在常微分方程理论中的数值算法都可以运用到该一阶微分方程中求解。但是在转换后的位移-速度场情况下进行求解，系数矩阵的维度增加，同时位移、速度的微分关系只能以弱形式满足。需要说明的是，在后文中提及算法设计时所说的位移-速度场亦指该算法的设计是以一阶运动方程(\ref{eq:DynqFirstOrder})为基础的；而(单)位移场则说明算法设计是以二阶运动方程(\ref{eq:DyEq})为基础的。
+
+一般情况下，对多自由度运动方程进行算法的设计和分析是一件非常繁琐和复杂的工作。幸运的是，借助模态正交性原则\cite{book:dover}且假设阻尼为经典的粘性阻尼，可以将多自由度运动方程(\ref{eq:DyEq})解耦为单自由度模态方程
+\begin{equation}
+\ddot{u}(t)+2\xi\omega\dot{u}(t)+\omega^2u(t)=f(t)
+\end{equation}
+其中，$\xi,\omega$和$f(t)$分别为阻尼率、系统的固有频率和模态外激励力；$u(t)$为未知的位移。
+
+类似的，对于一阶解耦的运动方程也可以由上述一阶位移场的运动方程经引入中间变量转换得到。这里给出另外一种等价表述方式\cite{Fung1996e,Fung1996a}
+\begin{equation}
+\left\{
+\begin{aligned}
+\dot{y}_1(t)&=\lambda_2y_1(t)+f(t)\\
+\dot{y}_2(t)&=\lambda_1y_2(t)+f(t)
+\end{aligned}\right.
+\end{equation}
+其中，
+\begin{equation}
+\lambda_{1,2}=-\xi\omega\pm j\sqrt{1-\xi^2}\omega
+\end{equation}
+而$j=\sqrt{-1}$为虚数单位且$0\le\xi<1$。原始的一阶微分方程的解$u(t)$与该一阶方程组的解$y_1(t),y_2(t)$的关系为
+\begin{equation}
+\left\{
+\begin{aligned}
+y_1(t)&=\dot{u}(t)-\lambda_1u(t)\\
+y_2(t)&=\dot{u}(t)-\lambda_2u(t)
+\end{aligned}
+\right.
+\end{equation}
+于是就有
+\begin{equation}
+u(t)=-\frac{y_1(t)-y_2(t)}{\lambda_1-\lambda_2}
+\end{equation}
+注意，变量$\lambda_{1,2}$和$y_{1,2}(t)$为复数。而最终的计算结果$u(t)$为实数。
+
+迄今为止，构造直接积分算法的主要框架有
+\begin{itemize}
+\item[$\bigstar$] 有限差分法(线性多步法)[Finite Difference Methods/Linear Multistep Methods]。
+\item[$\bigstar$] 多级法(Runge-Kutta法)[Multistage Methods/Runge-Kutta Methods]。
+\item[$\bigstar$] 加权残值法[Weighted Residual Methods]。
+\item[$\bigstar$] 泰勒级数配点法[Taylor Series Collocation Methods]。
+\item[$\bigstar$] 哈密顿原理/定律[Hamilton's Principle/Law]。
+\item[$\bigstar$] 最小二乘法[Least-Squares Methods]。
+\item[$\bigstar$] 时间子步策略[Composite Sub-steps Techinques]。
+\item[$\bigstar$] 结构依赖型参数策略[Structure-dependent Parameters Techinques]。
+\end{itemize}
+
+本章后续内容，将对这些不同的策略和框架算法进行简单的总结和归纳。同时，在作者力所能及的范围内尽可能阐述清楚。
+% ========================================================================
+\section{有限差分法(线性多步法)}
+考虑带有初值条件$y(0)=y(t_0=0)$的单变量一阶微分方程
+\begin{equation}
+\dot{y}(t)=f(y,t)\label{eq:firstSystem}
+\end{equation}
+在时间$t\in[0,T]$上的数值解。将时间区间$[0,T]$划分为互不重叠的相等的小区间，即
+\begin{equation}
+[0,T]=\bigcup_{n=0}^{N-1}[t_n,t_{n+1}]
+\end{equation}
+而$\Delta t=t_{n+1}-t_n$为时间步长大小，在本文中都假定为常值不可变，亦即本文将不考虑变时间步长的积分算法。而时间积分算法一般是假定在$t_n$时刻的响应已知，求$t_{n+1}$时刻的响应。
+\subsection{向前欧拉法}
+向前欧拉法可以通过将$y(t_{n+1})={^{n+1}\!y}$在$t_n$时刻进行泰勒级数展开获得。即
+\begin{equation}
+{^{n+1}\!y}={^{n}\!y}+\Delta t{^n\!\dot{y}}+\frac{\Delta t^2}{2!}{^n\!\ddot{y}}+\frac{\Delta t^3}{3!}{^n\!y^{(3)}}+\cdots
+\end{equation}
+上式可以写为
+\begin{equation}
+{^{n+1}\!y}={^{n}\!y}+\Delta t{^n\!\dot{y}}+\mathcal{O}(\Delta t^2)
+\end{equation}
+其中，$\mathcal{O}(\Delta t^2)$表示为局部截断误差。因此一阶导数可以由下列的向前差分得到
+\begin{equation}
+{^n\!\dot{y}}=\frac{{^{n+1}\!y}-{^n\!y}}{\Delta t}+E_{trunc}(y,\Delta t)
+\end{equation}
+
+于是，向前欧拉法由下式给出
+\begin{equation}
+\frac{{^{n+1}\!y}-{^n\!y}}{\Delta t}={^n\!\dot{y}}
+\end{equation}
+亦即
+\begin{equation}
+{^{n+1}\!y}={^n\!y}+\Delta t{^n\!\dot{y}}={^n\!y}+\Delta tf({^n\!y},t_n)
+\end{equation}
+可以看出，当在$t_n$时刻的${^n\!y}$已知时，根据上述就可以求得在$t_{n+1}$时刻的${^{n+1}\!y}$值，而不需要求解(非)线性方程组。故向前欧拉法是单步显式方法，同时该算法是一阶条件稳定算法。
+
+向前欧拉法是最简单也是最早被提出的一个数值算法。后续的许多学者基于此提出了许多改进欧拉法的方案，进而引出了许多其他性能较优的算法。感兴趣的读者可以参考书籍\inlinecite{Butcher2008,Jackiewicz2009}。
+\subsection{向后欧拉法}
+同理，若关于时间的一阶导数$\dot{y}(t)$用向后差分公式进行逼近，则可以得到向后欧拉法
+\begin{equation}
+{^{n+1}\!y}={^n\!y}+\Delta t{^{n+1}\!\dot{y}}={^n\!y}+\Delta tf({^{n+1}\!y},t_n)
+\end{equation}
+可以看出，为了求解${^{n+1}\!y}$，需要求解一个线性方程组或者非线性方程组(取决于$f(y,t)$的形式)，于是向后欧拉法是单步隐式算法。同时，向后欧拉法是无条件稳定带渐进消弭特性的算法。即是L-稳定的。
+\subsection{广义梯形算法}
+通过将${^n\!\dot{y}}$和${^{n+1}\!\dot{y}}$进行凸组合\cite{book:dover,Wood}，即$(0\le\alpha\le1)$
+\begin{equation}
+{^{n+\alpha}\!\dot{y}}=(1-\alpha){^n\!\dot{y}}+\alpha{^{n+1}\!\dot{y}}
+\end{equation}
+结合
+\begin{equation}
+{^{n+1}\!y}-{^n\!y}=\Delta t{^{n+\alpha}\!\dot{y}}
+\end{equation}
+就可以得到具有如下形式的广义梯形公式
+\begin{equation}
+{^{n+1}\!y}={^n\!y}+\Delta t[(1-\alpha){^n\!\dot{y}}+\alpha{^{n+1}\!\dot{y}}]
+\end{equation}
+需要说明的时，当$\alpha=0$时，广义梯形公式退化为向前欧拉法；当$\alpha=1$时，广义梯形公式退化为向后欧拉法；而当$\alpha=\frac12$时，得到梯形公式
+\begin{equation}
+{^{n+1}\!y}={^n\!y}+\frac{\Delta t}{2}({^n\!\dot{y}}+{^{n+1}\!\dot{y}})
+\end{equation}
+该梯形公式也称为Crank-Nicolson公式。特别地，类似于梯形公式的运用在后续算法设计中使用频率相当高，读者应引起注意。
+
+对于如下的半离散化方程
+\begin{equation}
+M\dot{d}+Kd=F
+\end{equation}
+的广义梯形公式形式为
+\begin{align}
+M{^{n+1}\!\dot{d}}+K{^{n+1}\!d}&={^{n+1}\!F}\\
+{^{n+1}\!d}&={^n\!d}+\Delta t{^{n+\alpha}\!\dot{d}}\\
+{^{n+\alpha}\!\dot{d}}&={^n\!\dot{d}}(1-\alpha)+{^{n+1}\!\dot{d}}\alpha
+\end{align}
+将上述三式化为位移$d$和$F$的关系，则为
+\begin{equation}
+(M+\alpha\Delta tK){^{n+1}\!d}=[M-(1-\alpha)\Delta tK]{^n\!d}+\Delta t[{^{n+1}\!F}\alpha+{^n\!F}(1-\alpha)]
+\end{equation}
+当$\alpha=\theta$时，上述算法也称为$\theta$-格式\cite{Wood}。
+\subsection{中点公式}
+当考虑变量$y$的如下$\alpha$凸组合时
+\begin{equation}
+{^{n+\alpha}\!y}={^{n+1}\!y}\alpha+{^n\!y}(1-\alpha)
+\end{equation}
+同时，关于时间$t$的$\beta$凸组合有
+\begin{equation}
+t_{n+\beta}=\beta t_{n+1}+(1-\beta)t_n
+\end{equation}
+则变量$y$在区间$[t_n,t_{n+1}]$的中点值${^{n+1/2}\!y}$为
+\begin{equation}
+{^{n+1/2}\!y}=\frac{{^{n+1}\!y}+{^n\!y}}{2}
+\end{equation}
+与此同时，关于时间的中点值为
+\begin{equation}
+t_{n+\frac{1}{2}}=\frac{t_{n+1}+t_n}{2}
+\end{equation}
+
+对于一般的非线性情况，下式一般情况下不成立
+\begin{equation}
+{^{n+1/2}\!y}\neq y(t_{n+\frac{1}{2}})
+\end{equation}
+
+根据${^{n+1/2}\!y}$是否做近似处理时，可以得到两个中点公式：
+
+\textbf{显式中点公式\cite{Gear1971a}}
+\begin{align}
+{^{n+1}\!y}&={^n\!y}+\Delta t{^{n+1/2}\!\dot{y}}={^n\!y}+\Delta tf({^{n+1/2}\!{y}},t_{n+\frac{1}{2}})\\
+{^{n+1/2}\!{y}}&={^n\!y}+\frac{\Delta t}{2}f({^n\!y},t_n)\\
+t_{n+\frac12}&=\frac{t_{n+1}+t_n}{2}
+\end{align}
+
+\textbf{隐式中点公式\cite{Hairer1993}}
+\begin{align}
+{^{n+1}\!y}&={^n\!y}+\Delta t{^{n+1/2}\!\dot{y}}={^n\!y}+\Delta tf({^{n+1/2}\!{y}},t_{n+\frac{1}{2}})\\
+t_{n+\frac12}&=\frac{t_{n+1}+t_n}{2}
+\end{align}
+
+对于线性系统，中点公式将退化为梯形公式(Crank-Nicolson公式)。
+
+\subsection{中心差分法}
+对于一阶系统(\ref{eq:firstSystem})，使用中心差分公式计算其一阶导数项，则有其中心差分格式为
+\begin{equation}
+{^n\!\dot{y}}=\frac{{^{n+1}\!y}-{^{n-1}\!y}}{2\Delta t}
+\end{equation}
+亦即
+\begin{equation}
+{^{n+1}\!y}={^{n-1}\!y}+2\Delta t{^n\!\dot{y}}={^{n-1}\!y}+2\Delta tf({^n\!y},t_n)
+\end{equation}
+
+而对于二阶微分方程
+\begin{equation}
+\ddot{y}(t)=f(y(t),\dot{y}(t),t)\label{eq:secondSystem}
+\end{equation}
+其二阶导数的中心差分仍可由泰勒级数展开得到，即
+\begin{equation}
+{^n\!\ddot{y}}=\frac{{^{n+1}\!y}-2{^n\!y}+{^{n-1}\!y}}{\Delta t^2}
+\end{equation}
+于是，二阶微分方程(\ref{eq:secondSystem})的中心差分格式为
+\begin{equation}
+{^{n+1}\!y}=-{^{n-1}\!y}+2{^n\!y}+\Delta t^2{^n\!\ddot{y}}=-{^{n-1}\!y}+2{^n\!y}+\Delta t^2f({^n\!y},{^n\!\dot{y}},t)
+\end{equation}
+
+对于位移场的运动方程(\ref{eq:DyEq})，其中心差分格式则可描述如下
+\begin{align}
+M{^{t}\!\ddot{U}}+C{^{t}\!\dot{U}}+K{^{t}\!U}&={^{t}\!F}\\
+{^t\!\dot{U}}&=\frac{1}{2\Delta t}({^{t+\Delta t}\!{U}}-{^{t-\Delta t}\!{U}})\\
+{^t\!\ddot{U}}&=\frac{1}{\Delta t^2}({^{t+\Delta t}\!{U}}-2{^t\!{U}}+{^{t-\Delta t}\!{U}})
+\end{align}
+
+对于给定的初始条件，中心差分法并没有办法进行自启动；于是还需要引入额外的启动机制去计算${^{-\Delta t}\!U}$才能进行后续计算。常用的一个启动机制\cite{张雄2007}为
+\begin{equation}
+{^{-\Delta t}\!U}={^0\!U}-{^0\!\dot{U}}\Delta t+\frac{1}{2}{^0\!\ddot{U}}\Delta t^2
+\end{equation}
+
+\section{时间子步策略}
 \subsection{BEF算法}
 清华大学的刘天云副研究员给出了一个利用向后Euler公式(BEF)求解结构动响应\cite{Liu2012}。该算法具有
 \begin{itemize}
@@ -60,6 +285,41 @@
 
 于是，公式(\ref{eq:ZhangA})-(\ref{eq:ZhangV})结合在$t+\Delta t$时刻的平衡方程，就得到了GCD-BDF2算法。
 
+\subsection{基于速度更新的$\gamma_s$格式}
+Namburu和Tamma在20世纪90年代左右基于一般形式的守恒律微分方程的Lax-Wendroff/Taylor-Galerkin离散得到了一类速度更新的显式/隐式直接积分算法\cite{Tamma1988,Tamma1988c,Tamma1989,Tamma1990a,Tamma1990,Tamma1992,Namburu1992,}。其中，具有一般表达性的是$\gamma_s$族算法\cite{Namburu1992}
+\begin{align}
+[M+\Delta t\gamma_1C+\Delta t^2\gamma_1\gamma_2K]{^{t+\Delta t}\!\dot{U}}&=[M-\Delta t(1-\gamma_1)C-\Delta t^2\gamma_1(1-\gamma_2)K]{^t\!\dot{U}}\notag\\
+&\quad -\Delta tK{^t\!U}+\Delta t[(1-\gamma_1){^t\!F}+\gamma_1{^{t+\Delta t}\!F}]\\
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t[\gamma_3{^{t+\Delta t}\!\dot{U}}+(1-\gamma_3){^t\!\dot{U}}]\label{eq:TammaU}
+\end{align}
+
+对于参数选取条件，在无阻尼情况下$\xi=0$时，
+\begin{equation}
+\gamma_1+\gamma_3=1\qquad 1-2\gamma_1=0
+\end{equation}
+可保证实现二阶精度。
+在有阻尼时，仅需要$\gamma_1+\gamma_3=1$即可。
+
+同时，对于具体的参数取值，原文\inlinecite{Namburu1992}给出如下情况($0\le\xi\le1$)
+\begin{itemize}
+\item[\ddag] 当$\gamma_1=\gamma_2=\gamma_3=\frac{1}{2}$时，可以实现无条件稳定的二阶隐式算法\cite{Tamma1990}。
+\item[\ddag] 当$\gamma_1=\gamma_3=\frac{1}{2},\gamma_2<0.5$时，可以实现条件稳定的二阶隐式算法。
+\item[\ddag] 当$\gamma_1=\gamma_3=\frac{1}{2},\gamma_2=0$时，可以实现条件稳定的二阶显式算法\cite{Tamma1988,Tamma1988c,Tamma1989,Tamma1990a,Tamma1992}，其稳定域为$\Omega_{cr}=2$。
+\end{itemize}
+
+\textbf{非线性的应用} 上述格式在求解非线性动力学方程时，可采用如下更具一般性的算法格式\cite{Tamma1993}
+\begin{equation}
+M{^{t+\Delta t}\!\Delta \dot{U}}=\Delta t({^{t+\Delta t/2}\!F_{int}}+{^{t+\Delta t/2}\!F_{ext}})\label{eq:Tamma1992}
+\end{equation}
+而位移更新公式则仍使用公式(\ref{eq:TammaU})。实现上，上述方程的物理含义就是：\textbf{系统动量的增量($M\Delta \dot{U}$)等于系统所受到外力的冲量(和$\Delta tF_{\text{合}}$)}。
+其中，$F_{int}$和$F_{ext}$分别为系统的内力和外力。对于线性系统，二者可分别看作$-C\dot{U}(t)-KU(t)$和$F(t)$。而上标$t+\Delta t/2$表示在$t+\Delta t/2$时刻进行计算。因此对于不同的内力和外力在$t+\Delta t/2$时刻的逼近表达式可以导出不同的积分格式。如采用下列等式计算
+\begin{align}
+{^{t+\Delta t/2}\!F_{int}}&=\frac{1}{2}[(-C{^t\!\dot{U}}-K{^t\!U})+(-C{^{t+\Delta t}\!\dot{U}}-K{^{t+\Delta t}\!U})]\\
+{^{t+\Delta t/2}\!F_{ext}}&=\frac{1}{2}({^t\!F}+{^{t+\Delta t}\!F})
+\end{align}
+于是，算法格式(\ref{eq:Tamma1992})将导出$\gamma_1=\gamma_2=\gamma_3=\frac{1}{2}$的算法\cite{Tamma1990}。
+
+特别地，当上述参数依赖于结构的特性时，将导出一类依赖于结构的直接积分法。如下面的Soares-Jr型算法族。
 \subsection{Soares-Jr型算法}
 Soares Jr近来提出了一些耗散性的时间积分算法\cite{Jr2014,Soares2014,Grosseholz2015,SoaresJr2016,Soares2015,Soares2016a,SoaresJr2016a}，其特点是算法参数依赖于系统的频率值。
 \subsubsection{SJ算法格式1\cite{SoaresJr2016}}
@@ -115,6 +375,7 @@ M\int_{t-\Delta t/2}^{t+\Delta t/2}\ddot{U}(\tau)d\tau+C\int_{t-\Delta t/2}^{t+\
 \end{equation}
 其中，$\Omega_{max},\Omega_s$分别为系统的无量纲最大采样频率和谱半径分岔点处的采样频率（此时谱半径实现最大化）。
 
+
 \subsubsection{SJ算法格式2\cite{Jr2014}}
 若在$t+\Delta t$时刻的位移计算公式(\ref{eq:SJAMM5})改写成一般性的计算格式
 \begin{equation}
@@ -140,6 +401,13 @@ M\int_{t-\Delta t/2}^{t+\Delta t/2}\ddot{U}(\tau)d\tau+C\int_{t-\Delta t/2}^{t+\
 \end{equation}
 \end{itemize}
 其中，参数$d,a$控制算法的数值特性，如周期误差、中频段的数值阻尼等。该算法的特点类似于SJ算法格式1。
+
+需要指出的是，当$\delta_1+\delta_2 = 1$且$a=0$时，上述隐式算法将于Tamma等人在1990年提出的一个隐式自启动无条件稳定算法\cite{Tamma1990}一致，即当$C=0$时
+\begin{align}
+[M+\frac{\Delta t^2}{4}K]{^{t+\Delta t}\!\dot{U}}&=[M-\frac{\Delta t^2}{4}K]{^t\!\dot{U}}-\Delta tK{^t\!U}+\frac{\Delta t}{2}({^t\!F}+{^{t+\Delta t}\!F})\\
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t[(1-\gamma){^t\!\dot{U}}+\gamma{^{t+\Delta t}\!\dot{U}}]
+\end{align}
+对于参数$\gamma=0.5$可实现无条件稳定和二阶精度\cite{Tamma1990}。
 
 \subsubsection{SJ算法格式3\cite{Soares2015}}
 当SJ算法格式1\cite{SoaresJr2016}中的公式(\ref{eq:SJAMM43})修改为
@@ -174,6 +442,13 @@ ${_{F_i}\!\Im}$依旧表示等式(\ref{eq:SJAMM3})右端的荷载积分项。其
 \Omega_b=\frac{4}{1+\alpha_2}
 \end{equation}
 一般情况下，参数$\alpha_2$建议取值范围在$1\le\alpha_2\le3$。
+
+特别地，当参数$a=0$，且${_{F_i}\!\Im}=\Delta t{^t\!F}+\frac{1}{2}{^t\!\dot{F}}\Delta t^2$时，上述算法将与Kumar K. Tamma等人在20世纪八、九十年代提出的基于Lax-Wendroff/Taylor-Galerkin方法的显式速度格式\cite{Tamma1988,Tamma1988c,Tamma1989,Tamma1990a}一致。即
+\begin{align}
+[M+\frac{1}{2}C\Delta t]{^{t+\Delta t}\!\dot{U}}&=-\Delta t{^t\!U}K+[M-\frac{1}{2}\Delta tC-\frac{1}{2}\Delta t^2K]{^t\!\dot{U}}+\Delta t{^t\!F}+\frac{1}{2}{^t\!\dot{F}}\Delta t^2\\
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t[(1-\gamma){^t\!\dot{U}}+\gamma{^{t+\Delta t}\!\dot{U}}]
+\end{align}
+其中，参数$\gamma\in[0.5,1]$保证了算法的稳定性。当$\gamma=0.5$时，可以实现二阶精度和最大的稳定域，即$\Omega_{cr}=2$。
 
 \subsubsection{SJ算法格式4\cite{SoaresJr2016a}}
 Soares Jr基于前面提出的SJ算法格式2\cite{Jr2014}，提出了一个新的显式积分算法\cite{SoaresJr2016a}。针对无阻尼矩阵情况($C=0$)，该算法格式为
