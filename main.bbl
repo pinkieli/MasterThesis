@@ -195,6 +195,19 @@
   }\bibpages{3475\thinspace{}\textnormal{--}\thinspace{}3495}\@.
   \newline\url{http://dx.doi.org/10.1002/(SICI)1097-0207(19961030)39:20<3475::AID-NME10>3.0.CO;2-H}\@.
 
+\bibitem{Gear1971a}
+\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
+  ordinary differential equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{1971}\@.
+
+\bibitem{Geradin2006}
+\bibauthor{Geradin M}\@. \bibtitle{A classification and discussion of
+  integration operators for transient structural response}\bibmark{[J]}\@.
+  \bibjournal{AIAA Journal}\@, \bibyear{1974}\@,
+  \bibvolume{108}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1868\thinspace{}\textnormal{--}\thinspace{}1876}\@.
+
 \bibitem{Butcher2008}
 \bibauthor{Butcher J~C}\@. \bibbooktitle{Numerical Methods for Ordinary
   Differential Equations}\bibmark{[M/OL]}\@. \bibedition{\mbox{2nd ed}}\@.
@@ -209,17 +222,93 @@
   }\bibpublisher{Wiley}\@, \bibyear{2009}\@.
   \newline\url{http://gen.lib.rus.ec/book/index.php?md5=C7D7B1DD95FCF4E5A3F1E5492F76EDB5}\@.
 
-\bibitem{Gear1971a}
-\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
-  ordinary differential equations}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
-  \bibyear{1971}\@.
-
 \bibitem{张雄2007}
 \bibauthor{张雄\@, 王天舒\@, 刘岩}\@.
   \bibbooktitle{计算动力学}\bibmark{[M]}\@. \bibedition{\mbox{2nd~ed}}\@.
   \bibaddress{北京}\thinspace{}\textnormal{:
   }\bibpublisher{清华大学出版社}\@, \bibyear{2007}\@.
+
+\bibitem{JasonHar2012}
+\bibauthor{Har J\@, Tamma K~K}\@. \bibbooktitle{Advances in Computational
+  Dynamics of Particles, Materials and Structures}\bibmark{[M/OL]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
+  \bibyear{2012}\@.
+  \newline\url{http://gen.lib.rus.ec/book/index.php?md5=534447fc6336c941295a051b4b4cf1e3}\@.
+
+\bibitem{Lees1966}
+\bibauthor{Lees M}\@. \bibtitle{A Linear Three-Level Difference Scheme for
+  Quasilinear Parabolic Equations}\bibmark{[J/OL]}\@. \bibjournal{Mathematics
+  of Computation}\@, \bibyear{1966}\@,
+  \bibvolume{20}\bibnumber{(96)}\thinspace{}\textnormal{:
+  }\bibpages{516\thinspace{}\textnormal{--}\thinspace{}522}\@.
+  \newline\url{http://www.jstor.org/stable/2003541}\@.
+
+\bibitem{Dahlquist1963}
+\bibauthor{Dahlquist G~G}\@. \bibtitle{A special stability problem for linear
+  multistep methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
+  Mathematics}\@, \bibyear{1963}\@,
+  \bibvolume{3}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}43}\@.
+  \newline\url{http://dx.doi.org/10.1007/BF01963532}\@.
+
+\bibitem{Hilber1978}
+\bibauthor{Hilber H~M\@, Hughes T~J~R}\@. \bibtitle{Collocation, dissipation
+  and 'overshoot' for time integration schemes in structural
+  dynamics}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
+  Dynamics}\@, \bibyear{1978}\@,
+  \bibvolume{6}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{99\thinspace{}\textnormal{--}\thinspace{}117}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.4290060111}\@.
+
+\bibitem{Hilber1977}
+\bibauthor{Hilber H~M\@, Hughes T~J~R\@, Taylor R~L}\@. \bibtitle{Improved
+  numerical dissipation for time integration algorithms in structural
+  dynamics}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
+  Dynamics}\@, \bibyear{1977}\@,
+  \bibvolume{5}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{283\thinspace{}\textnormal{--}\thinspace{}292}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.4290050306}\@.
+
+\bibitem{Wood1980a}
+\bibauthor{Wood W\@, Bossak M\@, Zienkiewicz O}\@. \bibtitle{An alpha
+  modification of Newmark's method}\bibmark{[J/OL]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{1980}\@, \bibvolume{15}\bibnumber{(10)}\thinspace{}\textnormal{:
+  }\bibpages{1562\thinspace{}\textnormal{--}\thinspace{}1566}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.1620151011}\@.
+
+\bibitem{KaiPing2008}
+\bibauthor{Yu K}\@. \bibtitle{A new family of generalized-$\alpha$ time
+  integration algorithms without overshoot for structural
+  dynamics}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
+  Dynamics}\@, \bibyear{2008}\@,
+  \bibvolume{{37}}\bibnumber{({12})}\thinspace{}\textnormal{:
+  }\bibpages{{1389\thinspace{}\textnormal{--}\thinspace{}1409}}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.818}\@.
+
+\bibitem{Zhou2004c}
+\bibauthor{Zhou X\@, Tamma K~K}\@. \bibtitle{Design, analysis, and synthesis of
+  generalized single step single solve and optimal algorithms for structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{International Journal for Numerical
+  Methods in Engineering}\@, \bibyear{2004}\@,
+  \bibvolume{59}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{597–668}\@.
+
+\bibitem{Mohammadzadeh2017}
+\bibauthor{Mohammadzadeh S\@, Ghassemieh M\@, Park Y}\@.
+  \bibtitle{Structure-dependent improved Wilson-θ method with higher order of
+  accuracy and controllable amplitude decay}\bibmark{[J/OL]}\@.
+  \bibjournal{Applied Mathematical Modelling}\@, \bibyear{2017}\@,
+  \bibvolume{52}\thinspace{}\textnormal{: }\bibpages{417
+  \thinspace{}\textnormal{--}\thinspace{} 436}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/S0307904X17305061}\@.
+
+\bibitem{Benitez2013}
+\bibauthor{Benítez J~M\@, Montáns F~J}\@. \bibtitle{The value of numerical
+  amplification matrices in time integration methods}\bibmark{[J]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2013}\@,
+  \bibvolume{128}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{243\thinspace{}\textnormal{--}\thinspace{}250}\@.
 
 \bibitem{Liu2012}
 \bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
@@ -243,14 +332,6 @@
   \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
   \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
-
-\bibitem{Lees1966}
-\bibauthor{Lees M}\@. \bibtitle{A Linear Three-Level Difference Scheme for
-  Quasilinear Parabolic Equations}\bibmark{[J/OL]}\@. \bibjournal{Mathematics
-  of Computation}\@, \bibyear{1966}\@,
-  \bibvolume{20}\bibnumber{(96)}\thinspace{}\textnormal{:
-  }\bibpages{516\thinspace{}\textnormal{--}\thinspace{}522}\@.
-  \newline\url{http://www.jstor.org/stable/2003541}\@.
 
 \bibitem{Zhang2015a}
 \bibauthor{Zhang L\@, Liu T\@, Li Q}\@. \bibtitle{A Robust and Efficient

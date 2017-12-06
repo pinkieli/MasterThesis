@@ -90,7 +90,31 @@ u(t)=-\frac{y_1(t)-y_2(t)}{\lambda_1-\lambda_2}
 \begin{equation}
 [0,T]=\bigcup_{n=0}^{N-1}[t_n,t_{n+1}]
 \end{equation}
-而$\Delta t=t_{n+1}-t_n$为时间步长大小，在本文中都假定为常值不可变，亦即本文将不考虑变时间步长的积分算法。而时间积分算法一般是假定在$t_n$时刻的响应已知，求$t_{n+1}$时刻的响应。
+而$\Delta t=t_{n+1}-t_n$为时间步长大小，在本文中都假定为常值不可变，亦即本文将不考虑变时间步长的积分算法。而时间积分算法一般是假定在$t_n$时刻之前的响应已知，求$t_{n+1}$时刻的响应。
+
+针对一阶微分方程(\ref{eq:firstSystem})的$k$-步线性多步法\cite{book:dover,Gear1971a}被定义如下
+\begin{equation}
+\begin{split}
+\alpha_0{^{t+\Delta t}\!y}+&\alpha_1{^{t}\!y}+\cdots+\alpha_k{^{t+(1-k)\Delta t}\!y}\\
+&=\Delta t[\beta_0f({^{t+\Delta t}\!y},t_{n+1}+\beta_1f({^{t}\!y},t_{n})+\cdots+\beta_kf({^{t+(1-k)\Delta t}\!y},t_{n+1-k})]
+\end{split}
+\end{equation}
+其中，$\alpha_i,\beta_i$为算法参数。上述方程可以改成为
+\begin{equation}
+\sum_{i=0}^k\{\alpha_i{^{t+(1-i)\Delta t}\!y}+\Delta t\beta_if({^{t+(1-i)\Delta t}\!y},t_{n+1-i}) \}=0\label{eq:firstsystemLMS}
+\end{equation}
+注意到各项之间是线性关系，且当$\beta_0=0$时，该线性$k$-步法为显式格式；否则为$k$-步隐式算法。
+
+考虑到在求解结构动力学问题时，经过有限元离散之后往往等到一个二阶微分方程，故针对一般形式的二阶微分方程
+\begin{equation}
+\ddot{y}=f(\dot{y}(t),y(t),t)=g_0y(t)+g_1\dot{y}(t)+h(t)\label{eq:secondsystem}
+\end{equation}
+其中，$g_0,g_1\in\mathbf{R}$是常数。同时该微分方程也是假定为线性的。对于二阶微分方程(\ref{eq:secondsystem})的$k$-步的线性多步法\cite{Geradin2006}
+\begin{equation}
+\sum_{i=0}^{k}\{\alpha_i{^{t+(1-i)\Delta t}\!y}+\Delta t\beta_ig_1{^{t+(1-i)\Delta t}\!y}+\Delta t^2\gamma_i[g_0{^{t+(1-i)\Delta t}\!y}+h(t_{n+1-i})]\}=0
+\end{equation}
+其中，$\alpha_i,\beta_i$和$\gamma_i$均为算法参数。当参数$\beta_0=0$，上述算法得到显式算法；否则是隐式的。关于该公式的更多的应用可以参考原文\inlinecite{Geradin2006}。
+%===================================================================
 \subsection{向前欧拉法}
 向前欧拉法可以通过将$y(t_{n+1})={^{n+1}\!y}$在$t_n$时刻进行泰勒级数展开获得。即
 \begin{equation}
@@ -230,6 +254,230 @@ M{^{t}\!\ddot{U}}+C{^{t}\!\dot{U}}+K{^{t}\!U}&={^{t}\!F}\\
 \begin{equation}
 {^{-\Delta t}\!U}={^0\!U}-{^0\!\dot{U}}\Delta t+\frac{1}{2}{^0\!\ddot{U}}\Delta t^2
 \end{equation}
+\subsection{Houbolt算法}
+Houbolt算法\cite{Geradin2006}是最早计算结构动力学数值响应的算法之一。该算法使用了在$t+\Delta t$时刻的运动平衡方程和两个向后微分公式。而向后微分公式通过使用连续四个节点的值来构造三次多项式完成。其算法格式可以描述如下
+\begin{subequations}
+\begin{align}
+M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!U}&={^{t+\Delta t}\!F}\\
+{^{t+\Delta t}\!\dot{U}}&=\frac{1}{6\Delta t}(11{^{t+\Delta t}\!U}-18{^{t}\!U}+9{^{t-\Delta t}\!U}-2{^{t-2\Delta t}\!U})\\
+{^{t+\Delta t}\!\ddot{U}}&=\frac{1}{\Delta t^2}(2{^{t+\Delta t}\!U}-5{^{t}\!U}+4{^{t-\Delta t}\!U}-{^{t-2\Delta t}\!U})
+\end{align}
+\end{subequations}
+通过使用速度和加速度的更新公式，在平衡方程中消去速度和加速度得到仅关于位移的差分方程如下
+\begin{equation}
+\begin{split}
+\left[\frac{2}{\Delta t^2}M+\frac{11}{6\Delta t}+K\right]{^{t+\Delta t}\!U}&={^{t+\Delta t}\!F}+\left[\frac{5}{\Delta t^2}M+\frac{3}{\Delta t}C\right]{^t\!U}\\
+&-\left[\frac{4}{\Delta t^2}M+\frac{3}{2\Delta t}C\right]{^{t-\Delta t}\!U}+\left[\frac{1}{\Delta t^2}M+\frac{1}{3\Delta t}C\right]{^{t-2\Delta t}\!U}
+\end{split}
+\end{equation}
+显然，Houbolt算法不是自启动的。对于在第一个时间步长内需要知道${^{-\Delta t}\!U}$和${^{-2\Delta t}\!U}$，这就意味着需要引入额外的启动机制。同时该算法是无条件稳定的、二阶精度的隐式算法。Houbolt算法在高频段引入了很强的数值耗散。严格地说，它具有渐进消弭特性，即当$\omega\Delta t\to \infty$时，有$\rho_{\infty}=0$。它的无条件稳定性加消弭特性意味着Houbolt算法是L-稳定的。同时它的低频段耗散和相对周期误差在常用的数值算法中也是最高的，这也可以看成它除了非自启动外的另外一个重要的缺陷。
+
+当考虑Geradin给出的对于二阶微分方程的如下逼近格式\cite{JasonHar2012}时，
+\begin{subequations}
+\begin{align}
+M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!U}&={^{t+\Delta t}\!F}\\
+\sum_{i=0}^{k}\alpha_i{^{t+(1-i)\Delta t}\!U}&=\Delta t\sum_{i=0}^{k}\beta_i{^{t+(1-i)\Delta t}\!\dot{U}}\\
+\sum_{i=0}^{k}\gamma_i{^{t+(1-i)\Delta t}\!U}&=\Delta t^2\sum_{i=0}^{k}\eta_i{^{t+(1-i)\Delta t}\!\ddot{U}}
+\end{align}\label{eq:SecondSystemBDF}
+\end{subequations}
+Houbolt算法则可以由以下参数表示：$(k=3)$
+\begin{equation}
+\left\{\begin{aligned}
+\alpha_0&=11,\alpha_1=-18,\alpha_2=9,\alpha_3=-2\\
+\beta_0&=6,\beta_1=\beta_2=\beta_3=0\\
+\gamma_0&=2,\gamma_1=-5,\gamma_2=4,\gamma_3=-1\\
+\eta_0&=1,\eta_1=\eta_2=\eta_3=0
+\end{aligned}\right.
+\end{equation}
+\subsection{带终点加速度的中点公式}
+当半离散化的位移场二阶运动微分方程$(\ref{eq:DyEq})$在$t_{n+\frac{1}{2}}$时，有
+\begin{equation}
+M{^{t+\Delta t/2}\!\ddot{U}}+C{^{t+\Delta t/2}\!\dot{U}}+K{^{t+\Delta t/2}\!U}={^{t+\Delta t/2}\!F}\label{eq:Tamma13.56}
+\end{equation}
+同时，其速度和位移的更新公式为
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t{^{t+\Delta t/2}\!\dot{U}}\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\Delta t{^{t+\Delta t/2}\!\ddot{U}}
+\end{align}
+\end{subequations}
+在方程(\ref{eq:Tamma13.56})中的位移、速度、加速度以及外力在时刻$t_{n+\frac{1}{2}}$的逼近表达式为
+\begin{equation}
+\left\{\begin{split}
+{^{t+\Delta t/2}\!{U}}&=\frac{1}{2}({^t}\!{U}+{^{t+\Delta t}\!{U}})\\
+{^{t+\Delta t/2}\!\dot{U}}&=\frac{1}{2}({^t}\!\dot{U}+{^{t+\Delta t}\!\dot{U}})\\
+{^{t+\Delta t/2}\!\ddot{U}}&=\frac{1}{2}({^t}\!\ddot{U}+{^{t+\Delta t}\!\ddot{U}})\\
+{^{t+\Delta t/2}\!F}&=\frac{1}{2}({^t\!F}+{^{t+\Delta t}\!F})
+\end{split}\right.\label{eq:Tamma13.58}
+\end{equation}
+
+将等式(\ref{eq:Tamma13.58})带入上两式，就可得到
+\begin{equation}
+\begin{split}
+\left[\frac{1}{2}M+\frac{\Delta t}{4}C+\frac{\Delta t^2}{8}K\right]&{^{t+\Delta t}\!\ddot{U}}=\frac{1}{2}({^t\!F}+{^{t+\Delta t}\!F})\\
+&-\left[\frac{1}{2}M+\frac{\Delta t}{4}C+\frac{\Delta t^2}{8}K\right]{^t\!\ddot{U}}-\left[C+\frac{\Delta t}{2}K\right]{^t\!\dot{U}}-K{^t\!U}
+\end{split}
+\end{equation}
+带有位移和速度更新公式
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+{^t\!\dot{U}}\Delta t+\frac{\Delta t^2}{4}({^t\!\ddot{U}}+{^{t+\Delta t}\!\ddot{U}})\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\frac{\Delta t}{2}({^t\!\ddot{U}}+{^{t+\Delta t}\!\ddot{U}})
+\end{align}
+\end{subequations}
+
+这个算法被K. K. Tamma等人称为带终点加速度的中点公式\cite{JasonHar2012}[Midpoint Rule method with end-point acceleration](MPR-EPA)。同时在上一个时间步长内的加速度在当前的计算中起着很重要的作用。特别地，该算法对线性结构动力学系统是能量、动量以及角动量都是守恒的。
+
+\subsection{Newmark算法}
+在众多的求解结构动力学数值响应算法中，Newmark家族算法\cite{Newmark1959}可能是被公认使用最为广泛的算法。该算法在时间区间$[t_n,t_{n+1}]$内使用加速度的凸组合进行计算，即
+\begin{equation}
+\hat{\ddot{U}}=(1-\gamma){^t\!\ddot{U}}+\gamma{^{t+\Delta t}\!\ddot{U}}
+\end{equation}
+其中，$\gamma$表示自由参数。通过使用在$t_{n+1}$时刻的平衡方程，同时对上述进行积分得到下列的Newmark算法家族：
+\begin{subequations}
+\begin{align}
+M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!U}&={^{t+\Delta t}\!F}\\
+{^{t+\Delta t}\!{U}}&={^t\!U}+{^t\!\dot{U}}\Delta t+\frac{\Delta t^2}{2}[(1-2\beta){^t\!\ddot{U}}+2\beta{^{t+\Delta t}\!\ddot{U}}]\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\Delta t[(1-\gamma){^t\!\ddot{U}}+\gamma{^{t+\Delta t}\!\ddot{U}}]
+\end{align}
+\end{subequations}
+其中，参数$\gamma,\beta$控制着算法的数值性能。同时Newmark算法运用十分广泛。在线性结构动力学中，使用最广泛的是a-形式。即先显式的求解位移和速度
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!\widetilde{U}}&={^t\!U}+{^t\!\dot{U}}\Delta t+\frac{\Delta t^2}{2}(1-2\beta){^t\!\ddot{U}}\\
+{^{t+\Delta t}\!\widetilde{\dot{U}}}&={^t\!\dot{U}}+\Delta t(1-\gamma){^t\!\ddot{U}}
+\end{align}
+\end{subequations}
+其初始加速度${^0\!\ddot{U}}$由初始时刻的平衡方程得到
+\begin{equation}
+{^0\!\ddot{U}}=M^{-1}({^0\!F}-C{^0\!\dot{U}}-K{^0\!U})
+\end{equation}
+于是，在$t_{n+1}$时刻的加速度由求解下来方程组得到
+\begin{equation}
+(M+\gamma \Delta tC+\beta\Delta t^2K){^{t+\Delta t}\!\ddot{U}}={^{t+\Delta t}\!F}-C{^{t+\Delta t}\!\widetilde{\dot{U}}}-K{^{t+\Delta t}\!\widetilde{U}}
+\end{equation}
+同时，在$t_{n+1}$时刻的速度和位移由
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!{U}}&={^{t+\Delta t}\!\widetilde{U}}+\beta\Delta t^2{^{t+\Delta t}\!\ddot{U}}\\
+{^{t+\Delta t}\!\dot{U}}&={^{t+\Delta t}\!\widetilde{\dot{U}}}+\gamma\Delta t{^{t+\Delta t}\!\ddot{U}}
+\end{align}
+\end{subequations}
+计算而得。
+
+Newmark算法的无条件稳定性的要求
+\begin{equation}
+2\beta\ge\gamma\ge\frac{1}{2}
+\end{equation}
+对于条件稳定性，应满足条件
+\begin{equation}
+\gamma\ge\frac{1}{2},\quad\beta<\frac{1}{2}\gamma\quad\text{和}\quad\Omega\le\Omega_{cr}
+\end{equation}
+其中，$\Omega=\omega\Delta t$并且
+\begin{equation}
+\Omega_{cr}=\frac{\xi(\gamma-\frac{1}{2})+\sqrt{\frac{1}{2}\gamma-\beta+\xi^2(\gamma-\frac12)^2}}{\frac{1}{2}\gamma-\beta}\label{eq:Tamma13.76}
+\end{equation}
+
+需要注意的是，其稳定性条件应对系统的每个模态系统均成立，故一般情况下，最高阶模态系统应满足条件(\ref{eq:Tamma13.76})。特别地，对于参数$\gamma<\frac{1}{2}$，Newmark算法将产生负阻尼，进而产生无界振动的数值解；而对于$\gamma>\frac{1}{2}$，将产生正的数值阻尼，且此时系统的粘性阻尼不能扩大系统的临界采样频率，故对于系统的模态阻尼估计不充分时，临界采样频率建议取值如下
+\begin{equation}
+\Omega_{cr}=\frac{1}{\sqrt{\gamma/2-\beta}}
+\end{equation}
+同时，当$\gamma>\frac12$，Newmark算法尽管引入了数值耗散，但是算法的精度却退化为一阶。同时对于给定的$\gamma>\frac{1}{2}$，可以通过选择$\beta$来实现最优耗散，即高频耗散最大化。其$\beta$取值为
+\begin{equation}
+\beta=\frac{(\gamma+\frac{1}{2})^2}{4}
+\end{equation}
+Newmark算法带有参数$\beta=1$和$\gamma=\frac{3}{2}$提出了可能的最大高频耗散，但该算法对低频求解精度较低，一般很少使用。
+
+于是，大多数情况下，$\gamma=\frac{1}{2}$被使用；此时算法没有数值耗散，但实现二阶精度。
+
+当参数$\gamma,\beta$选择不同的值时，可以产生不同的数值直接算法，如下表所示：
+\begin{table}[htbp]
+\bicaption[table1]{}{Newmark算法家族的著名成员}{Table$\!$}{Some well-known members for the Newmark family}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{ccccc}
+\toprule[1.5pt]
+$\gamma$&$\beta$&名称&精度&稳定性\\
+\midrule[1pt]
+$1/2$ & $0$ & 中心差分法/Leap-Frog格式 & 2 & $\Omega_{cr}\le2$\\
+$1/2$ & $1/12$ & Fox-Goodwin格式 & 3 & $\Omega_{cr}\le\sqrt{6}$\\
+%$1/2$ & $1/10$ & Wilson-$\theta$($\theta=1.0$) & 2 & $\Omega_{cr}\le2\sqrt{3}$\\
+$1/2$ & $1/6$ & 线平均加速度法 & 2 & $\Omega_{cr}\le2\sqrt{3}$\\
+$1/2$ & $1/4$ & 常平均加速度法/Trapeoidal规则 & 2 & $\Omega_{cr}\le\infty$\\
+$1/2$ & $1/2$ & Lee's算法\cite{Lees1966} & 2 & $--$\\
+$3/2$ & $4/5$ & Galerkin方法 & 1 & $--$\\
+$3/2$ & $1$ & 向后微分公式 & 1 & $--$\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+
+其中，中心差分法是显式的，也是被认为最为经济、求解方便的积分算法，在显式算法中使用较广；对于常平均加速度算法，该算法在二阶的隐式算法中，拥有最小的误差主项\cite{Dahlquist1963}，同时该算法也是Trapeoidal规则在二阶运动方程中的体现；对于Fox-Goodwin格式，当$C\neq\mathbf{0}$时，实现三阶精度，而当无阻尼时，可以实现四阶精度。
+
+最后，需要说明的是对于Newmark算法的位移和速度更新格式是现阶段直接积分法中使用最为广泛的更新格式。后续很多学者基于此提出了许多新的积分算法\cite{Hilber1978,Hilber1977,Wood1980a,KaiPing2008}。
+ 
+\subsection{Wilson-$\theta$法}
+
+Wilson-$\theta$法\cite{Wilson1968}本质上是平均加速度法的拓展。该算法假设在时间区间$(t_n,t_{n}+\theta\Delta t)$内，加速度线性变换，即
+\begin{equation}
+{^{t+\tau}\!\ddot{U}}={^t\!\ddot{U}}+\frac{\tau}{\theta\Delta t}({^{t+\Delta t}\!\ddot{U}}-{^t\!\ddot{U}})\label{eq:Tamma13.77}
+\end{equation}
+其中，$\theta$为自由参数，控制着算法的稳定性和精度，并且$0\le\tau\le\theta\Delta t$。在区间内对等式(\ref{eq:Tamma13.77})向变量$\tau$积分两次得到
+\begin{subequations}
+\begin{align}
+{^{t+\tau}\!\dot{U}}&={^t\!\dot{U}}+{^t\!\ddot{U}}\tau+\frac{\tau^2}{2\theta\Delta t}({^{t+\theta}\!\ddot{U}}-{^t\!\ddot{U}})\\
+{^{t+\tau}\!U}&={^t\!U}+{^t\!\dot{U}}\tau+\frac{1}{2}{^t\!\ddot{U}}\tau^2+\frac{1}{6\theta\Delta t}\tau^3({^{t+\theta}\!\ddot{U}}-{^t\!\ddot{U}})
+\end{align}\label{eq:Tamma13.79}
+\end{subequations}
+其中，${^{t+\tau}\!U}=U(t_n+\tau)$并且${^{t+\theta}\!U}=U(t_n+\theta\Delta t)$。在上两式中雇佣$\tau=\theta\Delta t$并使用在$t+\theta\Delta t$时刻的平衡运动方程可得Wilson-$\theta$的算法格式如下
+\begin{subequations}
+\begin{align}
+M{^{t+\theta\Delta t}\!\ddot{U}}+C{^{t+\theta\Delta t}\!\dot{U}}+K{^{t+\theta\Delta t}\!U}&={^{t+\theta\Delta t}\!F}\\
+{^{t+\theta\Delta t}\!\ddot{U}}&=\frac{6}{\theta^2\Delta t^2}({^{t+\theta\Delta t}\!U}-{^t\!U})-\frac{6}{\theta}{^t\!\dot{U}}-2{^t\!\ddot{U}}\\
+{^{t+\theta\Delta t}\!\dot{U}}&=\frac{3}{\theta\Delta t}({^{t+\theta\Delta t}\!U}-{^t\!U})-2{^t\!\dot{U}}-\frac{\theta\Delta t}{2}{^t\!\ddot{U}}
+\end{align}\label{ee:Tammma13.80}
+\end{subequations}
+其中，${^{t+\theta\Delta t}\!F}={^t\!F}+\theta({^{t+\Delta t}\!F}-{^t\!F})$代表荷载的线性逼近。将Wilson-$\theta$改写为线性多步法的形式即有
+\begin{equation}
+\begin{split}
+&\left[\frac{6}{\theta^2\Delta t^2}M+\frac{3}{\theta\Delta t}C+K\right]{^{t+\theta\Delta t}\!U}={^t\!F}+\theta({^{t+\Delta t}\!F}-{^t\!F})\\
+&\qquad\qquad+M\left[\frac{6}{\theta^2\Delta t^2}{^t\!U}+\frac{6}{\theta\Delta t}{^t\!\dot{U}}+2{^t\!\ddot{U}}\right]+C\left[\frac{3}{\theta\Delta t}{^t\!U}+2{^t\!\dot{U}}+\frac{\theta\Delta t}{2}{^t\!\ddot{U}}\right]
+\end{split}
+\end{equation}
+在计算得到了${^{t+\theta\Delta t}\!U}$之后，经过等式(\ref{ee:Tammma13.80})就可以计算得到${^{t+\theta\Delta t}\!\dot{U}}$和${^{t+\theta\Delta t}\!\ddot{U}}$。进而由等式(\ref{eq:Tamma13.79})在$\tau=\Delta t$时计算得到在$t+\Delta t$时刻的位移和速度。即
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!\ddot{U}}&=\frac{6}{\theta^3\Delta t^2}({^{t+\theta\Delta t}\!U}-{^t\!U})-\frac{6}{\theta^2\Delta t}{^t\!\dot{U}}+\left(1-\frac{3}{\theta}\right){^t\!\ddot{U}}\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\frac{\Delta t}{2}({^{t+\Delta t}\!\ddot{U}}+{^t\!\ddot{U}})\\
+{^{t+\Delta t}\!U}&={^t\!U}+{^t\!\dot{U}}\Delta t+\frac{\Delta t^2}{6}({^{t+\Delta t}\!\ddot{U}}+2{^t\!\ddot{U}})
+\end{align}
+\end{subequations}
+
+Wilson-$\theta$法是一个隐式算法。该算法是自启动的，不需要引入额外的启动机制。同时当$\theta=1$时，对应Newmark算法家族的线性加速度法；当$\theta\ge1.37$时，算法是无条件稳定的，一般$\theta$取值为1.4。Wilson-$\theta$实现二阶精度，且为带有可控的数值耗散，其耗散能力由参数$\theta$控制。但当$\theta>2$时，算法将减小数值耗散，同时增加相对周期误差。特别需要提及的是Wilson-$\theta$法很严重的超调行为\cite{Zhou2004c}，这也是该算法最大的一个缺点。有意思的是，文\inlinecite{Mohammadzadeh2017}中通过引入一个结构依赖性的参数$\alpha$可以很好的处理Wilson-$\theta$的超调行为，而且文\inlinecite{Benitez2013}也分析了Wilson-$\theta$法严重的超调行为是由于初值加速度的不协调引起的，如果引入协调的初始加速度，该算法也将没有超调行为。
+
+\subsection{Park算法}
+Park算法是一个线性多步算法。它是隐式的、无条件稳定的二阶精度算法。而且带有渐进消弭特性，因此是L-稳定的。类似于Houbolt算法，Park算法也是基于在$t+\Delta t$的平衡运动方程和两个向后微分公式逼近速度和加速度得到。其算法格式描述如下
+\begin{subequations}
+\begin{align}
+M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!U}&={^{t+\Delta t}\!F}\\
+{^{t+\Delta t}\!\dot{U}}&=\frac{1}{6\Delta t}(10{^{t+\Delta t}\!U}-15{^{t}\!U}+6{^{t-\Delta t}\!U}-{^{t-2\Delta t}\!U})\\
+{^{t+\Delta t}\!\ddot{U}}&=\frac{1}{6\Delta t}(10{^{t+\Delta t}\!\dot{U}}-15{^{t}\!\dot{U}}+6{^{t-\Delta t}\!\dot{U}}-{^{t-2\Delta t}\!\dot{U}})
+\end{align}
+\end{subequations}
+
+该算法是刚性稳定的。除此之外，Park算法也可以通过Gear两步法\cite{Gear1971a}和三步刚性稳定算法\cite{Gear1971a}结合产生。因此该算法可以使用较大的时间步长求解刚性系统。它也拥有在高频段的强数值耗散，但在低频段其耗散较Houbolt算法低，同时也提高了相对周期误差。对于一阶微分系统(\ref{eq:firstSystem})的线性多步法公式(\ref{eq:firstsystemLMS})，Park算法对应的参数取值为$(k=3)$
+\begin{equation}
+\begin{split}
+\alpha_0&=10,\alpha_1=-15,\alpha_2=6,\alpha_3=-1\\
+\beta_0&=6,\beta_1=\beta_2=\beta_3=0
+\end{split}
+\end{equation}
+
+
+
+
+
+
+
+
 
 \section{时间子步策略}
 \subsection{BEF算法}
