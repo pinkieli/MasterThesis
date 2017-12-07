@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  7 DEC 2017 16:54
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  7 DEC 2017 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3422,42 +3422,43 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [26] [27] [28] [29] [30] [31] [32] [33] [34]
 
 Package natbib Warning: Citation `Bathe2012a' on page 35 undefined on input lin
-e 1083.
+e 1109.
 
 [35]
 
 Package natbib Warning: Citation `Bathe2012a' on page 36 undefined on input lin
-e 1117.
+e 1143.
+
+[36]
+
+Package natbib Warning: Citation `Bathe2012a' on page 37 undefined on input lin
+e 1150.
 
 
-Package natbib Warning: Citation `Bathe2012a' on page 36 undefined on input lin
-e 1124.
+Package natbib Warning: Citation `Bathe2012a' on page 37 undefined on input lin
+e 1150.
 
+[37] [38] [39] [40]
 
-Package natbib Warning: Citation `Bathe2012a' on page 36 undefined on input lin
-e 1124.
+Package natbib Warning: Citation `Bathe2012a' on page 41 undefined on input lin
+e 1305.
 
-[36] [37] [38] [39]
+[41] [42] [43] [44]
 
-Package natbib Warning: Citation `Bathe2012a' on page 40 undefined on input lin
-e 1279.
+Package natbib Warning: Citation `Bathe2012a' on page 45 undefined on input lin
+e 1436.
 
-[40] [41] [42] [43]
-
-Package natbib Warning: Citation `Bathe2012a' on page 44 undefined on input lin
-e 1410.
-
-[44] [45] [46]
+[45] [46] [47]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 1552.
+(Font)              scaled to size 9.03374pt on input line 1578.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.03374pt on input line 1552.
- [47] [48]) [49]
+(Font)              scaled to size 9.03374pt on input line 1578.
+ [48] [49]) [50]
 \openout2 = `body/ch4.aux'.
 
  (./body/ch4.tex
 第4章
-) [50
+) [51
 
 
 
@@ -3468,7 +3469,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
  (./body/ch5.tex
 第5章
-) [51
+) [52
 
 
 
@@ -3482,7 +3483,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 2.
 
-) [52
+) [53
 
 
 
@@ -3496,7 +3497,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 1.
 
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
-[53
+[54
 
 
 
@@ -3507,7 +3508,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 191--197
 ]0207(19961030 ) 39 : 20<[]3475 ::
  []
 
-[54]
+[55]
 Overfull \hbox (18.37909pt too wide) in paragraph at lines 212--217
 []$\T1/ntxtlf/m/n/12.045 http : / / gen . lib . rus . ec / book / index . php ?
  md5 = B23D7885C152FE31A577F318308DAFF3$[]. 
@@ -3519,10 +3520,10 @@ Overfull \hbox (28.533pt too wide) in paragraph at lines 219--224
  md5 = C7D7B1DD95FCF4E5A3F1E5492F76EDB5$[]. 
  []
 
-[55]
+[56]
 Missing character: There is no θ in font ntx-Regular-tlf-t1!
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
- [56] [57] [58]
+ [57] [58] [59]
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
 
 Underfull \hbox (badness 10000) in paragraph at lines 531--537
@@ -3530,7 +3531,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--537
 ]0207(19980115 ) 41 : 1<[]65 :: AID-[]NME270 >[] 3 .
  []
 
-[59] [60]) [61]
+[60] [61]) [62]
 \openout2 = `back/publications.aux'.
 
  (./back/publications.tex
@@ -3538,7 +3539,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--537
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 3.
 
-) [62
+) [63
 
 
 
@@ -3547,7 +3548,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- [63
+ [64
 
 
 
@@ -3556,7 +3557,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
- [64
+ [65
 
 
 
@@ -3565,7 +3566,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 97.
 
-[65
+[66
 
 
 
@@ -3579,7 +3580,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.045pt on input line 7.
-) [66
+) [67
 
 
 
@@ -3615,12 +3616,12 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 48905 strings out of 493005
- 923094 string characters out of 6137956
+ 48910 strings out of 493005
+ 923162 string characters out of 6137956
  1025618 words of memory out of 5000000
- 52014 multiletter control sequences out of 15000+600000
+ 52019 multiletter control sequences out of 15000+600000
  121008 words of font info for 200 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,19n,78p,10439b,14266s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (75 pages, 729992 bytes).
+Output written on main.xdv (76 pages, 738176 bytes).

@@ -791,11 +791,37 @@ SSpj算法家族\cite{Zienkiewicz1984a,Wood1984} & $\theta_1$ & $\theta_2$ & $\t
 \end{tabular}
 \end{table}
 
+无论阻尼存在与否时，当下列条件被满足时，该算法实现二阶精度
+\begin{equation}
+\gamma=\theta_1(\eta-1)+\frac{1}{2}
+\end{equation}
+类似地，Hoff在文\inlinecite{Hoff1988}中要求，当$\omega\Delta t\to0$时，虚假根$\lambda_3\to0$，即
+\begin{equation}
+\theta_1\eta=1
+\end{equation}
+而$\theta_2=\theta_3$则使得算法没有超调行为。同时，当
+\begin{equation}
+\theta_2=1\qquad \beta=\frac{1}{4\theta_1^2}
+\end{equation}
+时，单步隐式的$\theta_1$算法在谱半径、数值耗散以及相对周期误差上都拥有最好的结果。此时，算法的数值格式可重新写为
+\begin{subequations}
+\begin{align}
+\big[ M+(\frac{3}{2}-\theta_1)\Delta tC&+\frac{1}{4\theta_1^2}\Delta t^2K \big]\Delta\ddot{U}=(1-\theta_0){^t\!F}+\theta_0{^{t+\Delta t}\!F}\\
+&-M{^t\!\ddot{U}}-C({^t\!\dot{U}}+\theta_1\Delta t{^t\!\ddot{U}})-K({^t\!U}+\theta_1\Delta t{^t\!\dot{U}}+\frac{1}{2}{^t\!\ddot{U}}\Delta t^2)\notag\\
+{^{t+\Delta t}\!\ddot{U}}&={^t\!\ddot{U}}+\Delta \ddot{U}\\
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\Delta t{^t\!\ddot{U}}+(\frac{3}{2}-\theta_1)\Delta t\Delta\ddot{U}\\
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta t{^t\!\dot{U}}+\frac12\Delta t^2{^t\!\ddot{U}}+\frac{1}{4\theta_1^2}\Delta t^2\Delta\ddot{U}
+\end{align}
+\end{subequations}
+并且参数$\theta_1$满足$0.95\le\theta_1\le1.0$。实现上，对于无条件稳定域要求，其参数$\theta_1$取值可为$0.5\le\theta_1\le1.0$，但只有前者可以达到最优的数值耗散性能。当$\theta_1=1$时，单步隐式的$\theta_1$算法将退化为Trapeoidal规则。
 
-
-
-
-
+单步隐式的$\theta_1$算法的特点总结如下
+\begin{itemize}
+\item[\ddag] 实现无条件稳定的二阶精度。
+\item[\ddag] 在低频段，没有虚假根，高频段具有可控的数值阻尼。
+\item[\ddag] 谱半径曲线没有分岔点出现。
+\item[\ddag] 没有超调行为。
+\end{itemize}
 
 
 
