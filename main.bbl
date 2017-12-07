@@ -310,36 +310,12 @@
   \bibvolume{128}\bibnumber{(5)}\thinspace{}\textnormal{:
   }\bibpages{243\thinspace{}\textnormal{--}\thinspace{}250}\@.
 
-\bibitem{Liu2012}
-\bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
-  Euler time-integration method for nonlinear dynamic analysis of
-  structures}\bibmark{[J]}\@. \bibjournal{Computers \& Structures}\@,
-  \bibyear{2012}\@, \bibvolume{106-107}\bibnumber{(5)}\thinspace{}\textnormal{:
-  }\bibpages{20\thinspace{}\textnormal{--}\thinspace{}28}\@.
-
-\bibitem{Liu2013}
-\bibauthor{Liu T~Y\@, Qingbin L~I\@, Zhao C~B}\@. \bibtitle{An efficient
-  time-integration method for nonlinear dynamic analysis of solids and
-  structures}\bibmark{[J]}\@. \bibjournal{Science China}\@, \bibyear{2013}\@,
-  \bibvolume{56}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{798\thinspace{}\textnormal{--}\thinspace{}804}\@.
-
-\bibitem{Zienkiewicz1977a}
-\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the newmark, houbolt and
-  other time stepping formulas. A weighted residual
-  approach}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
-  Dynamics}\@, \bibyear{1977}\@,
-  \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
-  \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
-
-\bibitem{Zhang2015a}
-\bibauthor{Zhang L\@, Liu T\@, Li Q}\@. \bibtitle{A Robust and Efficient
-  Composite Time Integration Algorithm for Nonlinear Structural Dynamic
-  Analysis}\bibmark{[J]}\@. \bibjournal{Mathematical Problems in
-  Engineering,2015,(2015-5-20)}\@, \bibyear{2015}\@,
-  \bibvolume{2015}\bibnumber{(1–4)}\thinspace{}\textnormal{:
-  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
+\bibitem{Erlicher2002}
+\bibauthor{Erlicher S\@, Bonaventura L\@, Bursi O~S}\@. \bibtitle{The analysis
+  of the Generalized-$\alpha$ method for non-linear dynamic
+  problems}\bibmark{[J]}\@. \bibjournal{Computational Mechanics}\@,
+  \bibyear{2002}\@, \bibvolume{28}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{83\thinspace{}\textnormal{--}\thinspace{}104}\@.
 
 \bibitem{Tamma1988}
 \bibauthor{Tamma K~K\@, Namburu R~R}\@. \bibtitle{A new finite element based
@@ -393,12 +369,98 @@
   $\gamma_s$-family of self-starting algorithms for computational structural
   dynamics}\bibmark{[J]}\@. \bibjournal{AIAA Journal}\@, \bibyear{1992}\@.
 
+\bibitem{Simo1992b}
+\bibauthor{Simo J~C\@, Tarnow N}\@. \bibbooktitle{The discrete energy-momentum
+  method: conserving algorithms for nonlinear elastodynamics}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Birkhauser
+  Verlag}\@, \bibyear{1992}\thinspace{}\textnormal{:
+  }\bibpages{757\thinspace{}\textnormal{--}\thinspace{}792}\@.
+
 \bibitem{Tamma1993}
 \bibauthor{Tamma K\@, Maocheng L~I\@, Namburu R}\@. \bibtitle{Evaluation and
   applicability of explicit self-starting formulations for nonlinear structural
   dynamics}\bibmark{[C]} //\thinspace{}\bibbooktitle{34th
   AIAA/ASME/ASCE/AHS/ASC Structures, Structural Dynamics \& Materials
   Conference}\@. \bibyear{1993}\@.
+
+\bibitem{Chung1993}
+\bibauthor{Chung J\@, Hulbert G~M}\@. \bibtitle{A time integration algorithm
+  for structural dynamics with improved numerical dissipation: The
+  generalized-$\alpha$ method}\bibmark{[J]}\@. \bibjournal{Journal of Applied
+  Mechanics}\@, \bibyear{1993}\@, \bibvolume{60}\thinspace{}\textnormal{:
+  }\bibpages{371}\@.
+
+\bibitem{邵慧萍1988}
+\bibauthor{邵慧萍\@, 蔡承文}\@.
+  \bibtitle{结构动力学方程数值积分的三参数算法}\bibmark{[J]}\@.
+  \bibjournal{应用力学学报}\@,
+  \bibyear{1988}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{78\thinspace{}\textnormal{--}\thinspace{}83+139}\@.
+
+\bibitem{Hulbert1994}
+\bibauthor{Hulbert G~M\@, Chung J}\@. \bibtitle{The unimportance of the
+  spurious root of time integration algorithms for structural
+  dynamics}\bibmark{[J/OL]}\@. \bibjournal{Communications in Numerical Methods
+  in Engineering}\@, \bibyear{1994}\@,
+  \bibvolume{10}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{591\thinspace{}\textnormal{--}\thinspace{}597}\@.
+  \newline\url{http:https://dx.doi.org/10.1002/cnm.1640100803}\@.
+
+\bibitem{Hoff1988}
+\bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
+  with numerical dissipation for time integration algorithms in structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{Computer Methods in Applied Mechanics
+  \& Engineering}\@, \bibyear{1988}\@,
+  \bibvolume{67}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{367\thinspace{}\textnormal{--}\thinspace{}385}\@.
+
+\bibitem{Zienkiewicz1984a}
+\bibauthor{Zienkiewicz O~C\@, Wood W~L\@, Hine N~W, et~al}\@. \bibtitle{A
+  unified set of single step algorithms. Part 1: General formulation and
+  applications}\bibmark{[J/OL]}\@. \bibjournal{International Journal for
+  Numerical Methods in Engineering}\@, \bibyear{1984}\@,
+  \bibvolume{20}\bibnumber{(8)}\thinspace{}\textnormal{:
+  }\bibpages{1529\thinspace{}\textnormal{--}\thinspace{}1552}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.1620200814}\@.
+
+\bibitem{Wood1984}
+\bibauthor{Wood W~L}\@. \bibtitle{A unified set of single step algorithms. Part
+  2: Theory}\bibmark{[J/OL]}\@. \bibjournal{International Journal for Numerical
+  Methods in Engineering}\@, \bibyear{1984}\@,
+  \bibvolume{20}\bibnumber{(12)}\thinspace{}\textnormal{:
+  }\bibpages{2303\thinspace{}\textnormal{--}\thinspace{}2309}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.1620201210}\@.
+
+\bibitem{Liu2012}
+\bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
+  Euler time-integration method for nonlinear dynamic analysis of
+  structures}\bibmark{[J]}\@. \bibjournal{Computers \& Structures}\@,
+  \bibyear{2012}\@, \bibvolume{106-107}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{20\thinspace{}\textnormal{--}\thinspace{}28}\@.
+
+\bibitem{Liu2013}
+\bibauthor{Liu T~Y\@, Qingbin L~I\@, Zhao C~B}\@. \bibtitle{An efficient
+  time-integration method for nonlinear dynamic analysis of solids and
+  structures}\bibmark{[J]}\@. \bibjournal{Science China}\@, \bibyear{2013}\@,
+  \bibvolume{56}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{798\thinspace{}\textnormal{--}\thinspace{}804}\@.
+
+\bibitem{Zienkiewicz1977a}
+\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the newmark, houbolt and
+  other time stepping formulas. A weighted residual
+  approach}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
+  Dynamics}\@, \bibyear{1977}\@,
+  \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
+
+\bibitem{Zhang2015a}
+\bibauthor{Zhang L\@, Liu T\@, Li Q}\@. \bibtitle{A Robust and Efficient
+  Composite Time Integration Algorithm for Nonlinear Structural Dynamic
+  Analysis}\bibmark{[J]}\@. \bibjournal{Mathematical Problems in
+  Engineering,2015,(2015-5-20)}\@, \bibyear{2015}\@,
+  \bibvolume{2015}\bibnumber{(1–4)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}11}\@.
 
 \bibitem{Jr2014}
 \bibauthor{Soares~Jr D}\@. \bibtitle{A simple and effective new family of time
@@ -582,6 +644,14 @@
   }\bibpages{791\thinspace{}\textnormal{--}\thinspace{}812}\@.
   \newline\url{http://dx.doi.org/10.1007/s00366-014-0390-x}\@.
 
+\bibitem{Bathe2012}
+\bibauthor{Bathe K-J\@, Noh G}\@. \bibtitle{Insight into an implicit time
+  integration scheme for structural dynamics}\bibmark{[J/OL]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2012}\@,
+  \bibvolume{98–99}\thinspace{}\textnormal{: }\bibpages{1
+  \thinspace{}\textnormal{--}\thinspace{} 6}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/S0045794912000107}\@.
+
 \bibitem{Noh2013}
 \bibauthor{Noh G\@, Bathe K-J}\@. \bibtitle{An explicit time integration scheme
   for the analysis of wave propagations}\bibmark{[J/OL]}\@.
@@ -589,13 +659,6 @@
   \bibvolume{129}\thinspace{}\textnormal{:
   }\bibpages{178\thinspace{}\textnormal{--}\thinspace{}193}\@.
   \newline\url{http://dx.doi.org/10.1016/j.compstruc.2013.06.007}\@.
-
-\bibitem{Erlicher2002The}
-\bibauthor{Erlicher S\@, Bonaventura L\@, Bursi O~S}\@. \bibtitle{The analysis
-  of the Generalized-$\alpha$ method for non-linear dynamic
-  problems}\bibmark{[J]}\@. \bibjournal{Computational Mechanics}\@,
-  \bibyear{2002}\@, \bibvolume{28}\bibnumber{(2)}\thinspace{}\textnormal{:
-  }\bibpages{83\thinspace{}\textnormal{--}\thinspace{}104}\@.
 
 \bibitem{Kwon2017}
 \bibauthor{Kwon S-B\@, Lee J-M}\@. \bibtitle{A non-oscillatory time integration

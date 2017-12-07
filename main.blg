@@ -15,20 +15,19 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: reference.bib
 Warning--string name "oct" is undefined
---line 4355 of file reference.bib
+--line 4363 of file reference.bib
 Warning--string name "dec" is undefined
---line 5013 of file reference.bib
+--line 5021 of file reference.bib
 Warning--string name "jun" is undefined
---line 55085 of file reference.bib
+--line 55093 of file reference.bib
 Warning--string name "apr" is undefined
---line 55315 of file reference.bib
+--line 55323 of file reference.bib
 Warning--string name "oct" is undefined
---line 59783 of file reference.bib
+--line 59765 of file reference.bib
 Warning--string name "jan" is undefined
---line 70303 of file reference.bib
+--line 70257 of file reference.bib
 Warning--string name "apr" is undefined
---line 70419 of file reference.bib
-Warning--I didn't find a database entry for ""
+--line 70373 of file reference.bib
 Warning--I didn't find a database entry for "Bathe2012a"
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
@@ -56,6 +55,10 @@ Warning--Require citedate: Hilber1977
 Warning--Require citedate: Wood1980a
 Warning--Require citedate: KaiPing2008
 Warning--Require citedate: Mohammadzadeh2017
+Warning--Require address: Simo1992b
+Warning--Require citedate: Hulbert1994
+Warning--Require citedate: Zienkiewicz1984a
+Warning--Require citedate: Wood1984
 Warning--Require citedate: Zienkiewicz1977a
 Warning--Require citedate: Grosseholz2015
 Warning--Require citedate: SoaresJr2016a
@@ -69,46 +72,47 @@ Warning--Require journal: Guwahati
 Warning--Require year: Guwahati
 Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
+Warning--Require citedate: Bathe2012
 Warning--Require citedate: Noh2013
-You've used 81 entries,
+You've used 89 entries,
             3103 wiz_defined-function locations,
-            1266 strings with 20161 characters,
-and the built_in function-call counts, 111085 in all, are:
-= -- 11677
-> -- 238
-< -- 549
-+ -- 8661
-- -- 769
-* -- 3969
-:= -- 11650
+            1320 strings with 21708 characters,
+and the built_in function-call counts, 123215 in all, are:
+= -- 12966
+> -- 262
+< -- 605
++ -- 9591
+- -- 854
+* -- 4383
+:= -- 12895
 add.period$ -- 0
-call.type$ -- 81
+call.type$ -- 89
 change.case$ -- 0
 chr.to.int$ -- 24
-cite$ -- 121
-duplicate$ -- 15741
-empty$ -- 4906
-format.name$ -- 596
-if$ -- 29058
+cite$ -- 134
+duplicate$ -- 17517
+empty$ -- 5447
+format.name$ -- 660
+if$ -- 32203
 int.to.chr$ -- 0
-int.to.str$ -- 81
+int.to.str$ -- 89
 missing$ -- 0
-newline$ -- 270
-num.names$ -- 81
-pop$ -- 1632
+newline$ -- 294
+num.names$ -- 89
+pop$ -- 1830
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1065
+skip$ -- 1166
 stack$ -- 0
-substring$ -- 13067
-swap$ -- 4012
+substring$ -- 14530
+swap$ -- 4440
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 40
-while$ -- 1509
-width$ -- 83
-write$ -- 1204
-(There were 49 warnings)
+warning$ -- 45
+while$ -- 1683
+width$ -- 91
+write$ -- 1327
+(There were 53 warnings)
