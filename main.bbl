@@ -121,6 +121,23 @@
   \bibyear{2016}\bibnumber{(s1)}\thinspace{}\textnormal{:
   }\bibpages{45\thinspace{}\textnormal{--}\thinspace{}49}\@.
 
+\bibitem{Hoff1988}
+\bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
+  with numerical dissipation for time integration algorithms in structural
+  dynamics}\bibmark{[J]}\@. \bibjournal{Computer Methods in Applied Mechanics
+  \& Engineering}\@, \bibyear{1988}\@,
+  \bibvolume{67}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{367\thinspace{}\textnormal{--}\thinspace{}385}\@.
+
+\bibitem{Hoff198887}
+\bibauthor{Hoff C\@, Pahl P}\@. \bibtitle{Practical performance of the
+  $\theta_1$-method and comparison with other dissipative algorithms in
+  structural dynamics}\bibmark{[J/OL]}\@. \bibjournal{Computer Methods in
+  Applied Mechanics and Engineering}\@, \bibyear{1988}\@,
+  \bibvolume{67}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{87
+  \thinspace{}\textnormal{--}\thinspace{} 110}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/0045782588900709}\@.
+
 \bibitem{Newmark1959}
 \bibauthor{Newmark N~M}\@. \bibtitle{A method of computation for structural
   dynamics}\bibmark{[J]}\@. \bibjournal{J. Engrg. Mech. Div.}\@,
@@ -406,13 +423,14 @@
   }\bibpages{591\thinspace{}\textnormal{--}\thinspace{}597}\@.
   \newline\url{http:https://dx.doi.org/10.1002/cnm.1640100803}\@.
 
-\bibitem{Hoff1988}
-\bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
-  with numerical dissipation for time integration algorithms in structural
-  dynamics}\bibmark{[J]}\@. \bibjournal{Computer Methods in Applied Mechanics
-  \& Engineering}\@, \bibyear{1988}\@,
-  \bibvolume{67}\bibnumber{(3)}\thinspace{}\textnormal{:
-  }\bibpages{367\thinspace{}\textnormal{--}\thinspace{}385}\@.
+\bibitem{Bazzi1982}
+\bibauthor{Bazzi G\@, Anderheggen E}\@. \bibtitle{The ρ-family of algorithms
+  for time-step integration with improved numerical
+  dissipation}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \&
+  Structural Dynamics}\@, \bibyear{1982}\@,
+  \bibvolume{10}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{537\thinspace{}\textnormal{--}\thinspace{}550}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.4290100404}\@.
 
 \bibitem{Zienkiewicz1984a}
 \bibauthor{Zienkiewicz O~C\@, Wood W~L\@, Hine N~W, et~al}\@. \bibtitle{A

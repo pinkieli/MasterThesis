@@ -1,5 +1,6 @@
 \chapter{积分算法设计指标}
 
+
 \section{相容性}
 
 \section{稳定性}
@@ -15,6 +16,18 @@
 \section{超调行为}
 
 \section{虚假根分析}
+
+\section{直接积分法的放大矩阵}
+
+\begin{definition}
+直接积分算法的一致性\cite{Hoff1988}。如果两个直接积分算法的放大矩阵$A$的对应元素分别相等\footnote{这也是矩阵相等的定义。}，则称这两个积分算法是一致的。
+\end{definition}
+
+\begin{definition}
+直接积分算法的相似性/谱等价\cite{Hoff1988}。如果两个直接积分算法的放大矩阵$A$的不变量分别对应相等，则称这两个积分算法是相似的/谱等价的。
+\end{definition}
+
+需要说明的是，一般情况下，两个谱等价的算法并不一定能导出一致的数值算法特性；而两个算法的一致性可以保证。这样的例子可以参见文献\inlinecite{Hoff198887}。
 
 \section{本章小结}
 

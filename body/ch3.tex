@@ -645,7 +645,7 @@ M{^{t+\Delta t}\!\Delta \dot{U}}=\Delta t({^{t+\Delta t/2}\!F_{int}}+{^{t+\Delta
 \end{aligned}\right.
 \end{equation}
 
-\subsection{CH-$\alpha$算法}
+\subsubsection{CH-$\alpha$算法}
 Chung和Hulbert于1993年在应用力学杂志发表了CH-$\alpha$算法\cite{Chung1993}。该算法实质上与前述的三参数优化算法一致。其算法的平衡方程加权组合如下
 \begin{equation}
 M{^{n+(1-\alpha_m)}\!\ddot{U}}+C{^{n+(1-\alpha_f)}\!\dot{U}}+K{^{n+(1-\alpha_f)}\!U}={^{n+(1-\alpha_f)}\!F}
@@ -714,13 +714,13 @@ M{^{n+(1-\alpha_m)}\!\ddot{U}}+C{^{n+(1-\alpha_f)}\!\dot{U}}+K{^{n+(1-\alpha_f)}
 \end{itemize}
 
 特别地，参数$\mu$满足
-
 \begin{equation}
 \mu=\frac{\rho_{\infty}}{\rho_{\infty}+1}
 \end{equation}
 时，广义$\alpha$算法没有超调行为。
 {}
 其广义$\alpha$算法对应的不同算法成员如下表\ref{table2}所示
+\vspace{-1cm}
 \begin{table}[htbp]
 \bicaption[table2]{}{广义$\alpha$积分算法成员的参数取值}{Table$\!$}{Algorithmic parameters of the generalized-$\alpha$ method family}
 \vspace{0.5em}\centering\wuhao
@@ -753,6 +753,74 @@ $\rho_{\infty}$ & $[0,1]$ & $[0,1]$ & $[0.5,1]$ & $[0.5,1]$ & $[0,1]$ & $[0,1]$\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{加权残值法}
+\subsection{$\rho$-算法}
+$\rho$-算法\cite{Bazzi1982}是通过假设在时间区间$[t_n,t_{n+1}]$内的位移满足
+\begin{equation}
+U(t)=N_1(t){^t\!U}+N_2(t){^t\!\dot{U}}+N_3(t){^t\!\ddot{U}}+N_4(t){^{t+\Delta t}\!{U}}
+\end{equation}
+其中，$N_i(t),i=1,2,3,4$是时间域上的形函数，亦即表明上式实质上是进行了时间有限元的离散。同时，通过引入权重函数$W(t)\equiv1$在区间内进行残差积分，并限制其值为零。即
+\begin{equation}
+\int_{t_n}^{t_{n+1}}[M\ddot{U}(t)+C\dot{U}(t)+KU(t)-F(t)]=0
+\end{equation}
+经过复杂的计算\footnote{事实上，原文作者也是空降得到下面的计算格式，而且关于其增量的计算格式根据后文的精度分析反推可知有误，在此更正。}，就可以得到如下的位移、速度和加速度的更新公式
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta U\\
+{^{t+\Delta t}\!\dot{U}}&=-{^t\!\dot{U}}+\frac{1-\rho_{\infty}}{1+\rho_{\infty}}{^t\!\ddot{U}}\Delta t+\frac{2}{\Delta t}\Delta U\\
+{^{t+\Delta t}\!\ddot{U}}&=\frac{(1+\rho_{\infty})(1+\rho_{\infty}^2)}{\Delta t^2}(\Delta U-{^t\!\dot{U}}\Delta t)+(1-\rho_{\infty}-\rho_{\infty}^3){^t\!\ddot{U}}
+\end{align}
+\end{subequations}
+其位移的增量$\Delta U$的计算公式为
+\begin{equation}
+[M+\frac{\Delta t}{2}C+\frac{\Delta t^2}{2(\rho_{\infty}+1)}K]\Delta U=-\frac{1}{2}K{^t\!U}\Delta t^2+M{^t\!\dot{U}}\Delta t+\frac{\rho_{\infty}-1}{2(\rho_{\infty}+1)}M{^t\!\ddot{U}}\Delta t^2+\frac{\Delta t^2}{2}{^t\!F^*}
+\end{equation}
+其中，
+\begin{equation}
+{^t\!F^*}=\frac{1}{\Delta t}\int_{t_n}^{t_{n+1}}F(t)dt\label{eq:Bazzi11}
+\end{equation}
+表示在时间区间内的外力平均值。其参数$\rho_{\infty}$实质上表示算法在高频极限下的谱半径值，亦即表示算法的耗散能力大小。当$\rho_{\infty}=1$时，$\rho$-算法退化为Trapeoidal规则。
+
+特别需要说明的是，$\rho$-算法在无阻尼情况下实现二阶精度；而在有阻尼情况仅有一阶精度，这也是它的缺点。同时，文中\inlinecite{Bazzi1982}陈述该$\rho$-算法满足Hughes所提的六个准则\cite{book:dover,Hilber1978}，但是经过简单的计算，可以发现该算法是存在速度上的超调行为。除此之外，$\rho$-算法另外一个重大的缺陷是其糟糕的虚假根；其虚假根的模值异常大，导致其算法精度降低\cite{Hulbert1994,Hoff198887}。此时，针对异常的虚假根存在，常用的数值阻尼和相对周期误差来测量算法的精度将不再适用\cite{Hoff1988}。
+
+\subsubsection{$\rho$算法的显式格式}
+文\inlinecite{Bazzi1982}中也给出了$\rho$-算法的显式格式，其算法描述为
+\begin{subequations}
+\begin{align}
+[M+\frac{\Delta t}{2}C]\Delta U&=M{^t\!\dot{U}}\Delta t-\frac{\Delta t^2}{2}K({^t\!U}+\frac{\Delta t}{2}{^t\!\dot{U}})+\frac{\Delta t^2}{2}{^t\!F^*}\\
+{^{t+\Delta t}\!U}&={^t\!U}+\Delta U\\
+{^{t+\Delta t}\!\dot{U}}&=\frac{2}{\Delta t}\Delta U-{^t\!\dot{U}}
+\end{align}
+\end{subequations}
+其中，${^t\!F^*}$来源于等式(\ref{eq:Bazzi11})。该显式算法的特点是
+\begin{itemize}
+\item[\ddag] 相容且实现二阶精度。
+\item[\ddag] 条件稳定，且其稳定域满足$\Omega_{cr}\le2\sqrt{1-\xi^2}$。当$\xi=0$时，其稳定域大小与中心差分法一致。
+\item[\ddag] 无数值耗散，且引入负相对周期误差。
+\item[\ddag] 真正意义上的自启动，不需要引入额外的启动机制，包括初始加速度的计算。
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{单步隐式的$\theta_1$格式}
 单步隐式的$\theta_1$算法\cite{Hoff1988}是利用加权残值的思想推导得到。通过假定位移、速度和加速度在时间区间$[t,t+\Delta t]$内的变化关系，带入其平衡方程得到其其残差值，最后通过利用任意的权重函数限定在时间区间$[0,\Delta t]$内的积分为零得到其加速度增量$\Delta\ddot{U}$的关系式，如下
 \begin{equation}
@@ -773,7 +841,7 @@ $\rho_{\infty}$ & $[0,1]$ & $[0,1]$ & $[0.5,1]$ & $[0.5,1]$ & $[0,1]$ & $[0,1]$\
 \item[\ddag] 荷载加权组合参数$\theta_0$是独立于算法的其他参数值的选取。
 \end{itemize}
 
-值得一提的是，当参数选择不同值，单步隐式的$\theta_1$算法将退化为前述的一些积分算法。具体情况见下表\ref{table3}：
+值得一提的是，当参数选择不同值，单步隐式的$\theta_1$算法将退化为前述的一些积分算法。具体情况见表\ref{table3}。
 \begin{table}[htbp]
 \bicaption[table3]{}{单步隐式的$\theta_1$算法的算法成员}{Table$\!$}{Some members of the one-step implicit $\theta_1$ algorithms}
 \vspace{0.5em}\centering\wuhao
@@ -823,10 +891,23 @@ SSpj算法家族\cite{Zienkiewicz1984a,Wood1984} & $\theta_1$ & $\theta_2$ & $\t
 \item[\ddag] 没有超调行为。
 \end{itemize}
 
+事实上，该算法可以看作是隐式的预测校正格式(为了求解${^{t+\Delta t}\!\ddot{U}}$的速度和位移与最终在$t+\Delta t$时刻的位移和速度表达式不一致)。即
+\begin{subequations}
+\begin{align}
+M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\widetilde{\dot{U}}}+K{^{t+\Delta t}\!\widetilde{{U}}}&={^{t+\theta_0}\!F}\\
+{^{t+\Delta t}\!\widetilde{\dot{U}}}&={^t\!\dot{U}}+(2\theta_1-\frac{3}{2}){^t\!\ddot{U}}\Delta t+(\frac{3}{2}-\theta_1){^{t+\Delta t}\!\ddot{U}}\Delta t\\
+{^{t+\Delta t}\!\widetilde{{U}}}&={^t\!U}+\theta_1{^t\!\dot{U}}\Delta t+\frac{1}{4}(2-\frac{1}{\theta_1^2}){^t\!\ddot{U}}\Delta t^2+\frac{1}{4\theta_1^2}{^{t+\Delta t}\!\ddot{U}}\Delta t^2
+\end{align}
+\end{subequations}
+可以看出${^{t+\Delta t}\!\widetilde{\dot{U}}}$和${^{t+\Delta t}\!\widetilde{{U}}}$是为了求解${^{t+\Delta t}\!\ddot{U}}$而存在的，其真正的位移和速度用使用下式求解：
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+(\theta_1-\frac{1}{2}){^t\!\ddot{U}}\Delta t+(\frac{3}{2}-\theta_1){^{t+\Delta t}\!\ddot{U}}\Delta t\\
+{^{t+\Delta t}\!U}&={^t\!U}+{^t\!\dot{U}}\Delta t+(\frac12-\frac{1}{4\theta_1^2}){^t\!\ddot{U}}\Delta t^2+\frac{1}{4\theta_1^2}{^t\!\ddot{U}}\Delta t^2
+\end{align}
+\end{subequations}
 
-
-
-
+关于单步隐式的$\theta_1$算法在非线性系统中的应用可以参考文献\inlinecite{Hoff198887}。
 
 
 
