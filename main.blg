@@ -76,45 +76,45 @@ Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Bathe2012
 Warning--Require citedate: Noh2013
-You've used 91 entries,
+You've used 92 entries,
             3103 wiz_defined-function locations,
-            1335 strings with 22196 characters,
-and the built_in function-call counts, 125982 in all, are:
-= -- 13248
-> -- 268
-< -- 619
-+ -- 9790
-- -- 876
-* -- 4493
-:= -- 13170
+            1342 strings with 22354 characters,
+and the built_in function-call counts, 126923 in all, are:
+= -- 13334
+> -- 270
+< -- 624
++ -- 9838
+- -- 883
+* -- 4540
+:= -- 13247
 add.period$ -- 0
-call.type$ -- 91
+call.type$ -- 92
 change.case$ -- 0
 chr.to.int$ -- 24
-cite$ -- 138
-duplicate$ -- 17918
-empty$ -- 5578
-format.name$ -- 676
-if$ -- 32906
+cite$ -- 139
+duplicate$ -- 18056
+empty$ -- 5638
+format.name$ -- 680
+if$ -- 33141
 int.to.chr$ -- 0
-int.to.str$ -- 91
+int.to.str$ -- 92
 missing$ -- 0
-newline$ -- 300
-num.names$ -- 91
-pop$ -- 1882
+newline$ -- 303
+num.names$ -- 92
+pop$ -- 1901
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1186
+skip$ -- 1197
 stack$ -- 0
-substring$ -- 14854
-swap$ -- 4552
+substring$ -- 14963
+swap$ -- 4606
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 47
-while$ -- 1729
-width$ -- 93
-write$ -- 1361
+while$ -- 1745
+width$ -- 94
+write$ -- 1376
 (There were 55 warnings)

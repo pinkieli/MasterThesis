@@ -436,11 +436,51 @@ U(t)=\sum_{i}N_i(t){^i\!U},\qquad i=t-\Delta t,t,t+\Delta t
 其中，假定外力荷载$F(t)$也使用了相同的形函数进行插值计算。而形函数的显式表达为$(-1\le\xi=t/\Delta t\le1)$
 \begin{equation}
 \left.\begin{aligned}
-N_{n+1}(t)&=\xi(1+\xi)/2\\
-N_n(t)&=(1-\xi)(1+\xi)\\
-N_{n-1}(t)&=-\xi(1-\xi)/2
+N_{t+\Delta t}&=\xi(1+\xi)/2\\
+N_t&=(1-\xi)(1+\xi)\\
+N_{t-\Delta t}&=-\xi(1-\xi)/2
 \end{aligned}\right\}
 \end{equation}
+其形函数如图\ref{Fig:NewmarkShapFun}所示。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1.7,yscale=1.2]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [thin,dashed] (1,0)--(1,1);
+\draw [red,very thick,domain = -1:1] plot (\x,{\x*(1+\x)/2});
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\node at (0,0.5) {$N_{t+\Delta t}$};
+%=============================================
+\draw [thin] (1.9,0) -- (4.1,0);
+\draw [thin,dashed] (3,0)--(3,1);
+\draw [red,very thick,domain = 2:4] plot (\x,{(1-(\x-3))*(1+(\x-3))});
+\draw [thin,fill] (2,0) circle [radius = 0.03];
+\draw [thin,fill] (3,0) circle [radius = 0.03];
+\draw [thin,fill] (4,0) circle [radius = 0.03];
+\node [below] at (2,0) {$t-\Delta t$};
+\node [below] at (3,0) {$t$};
+\node [below] at (4,0) {$t+\Delta t$};
+\node [left] at (3,0.5) {$N_{t}$};
+%=============================================
+\draw [thin] (4.9,0) -- (7.1,0);
+\draw [thin,dashed] (5,0)--(5,1);
+\draw [red,very thick,domain = 5:7] plot (\x,{-(\x-6)*(1-(\x-6))/2});
+\draw [thin,fill] (5,0) circle [radius = 0.03];
+\draw [thin,fill] (6,0) circle [radius = 0.03];
+\draw [thin,fill] (7,0) circle [radius = 0.03];
+\node [below] at (5,0) {$t-\Delta t$};
+\node [below] at (6,0) {$t$};
+\node [below] at (7,0) {$t+\Delta t$};
+\node at (6,0.5) {$N_{t-\Delta t}$};
+\end{tikzpicture}
+\bicaption[Fig:NewmarkShapFun]{}{$N_{t+\Delta t},N_t,N_{t-\Delta t}$二次形函数}{Fig.$\!$}{Parabolic shape functions}
+\end{figure}
+
 于是，经过上述计算可以得到类似于(\ref{eq:NewmarkDisF})的表达式。进一步，若作如下参数规定
 \begin{subequations}
 \begin{align}
@@ -448,12 +488,210 @@ N_{n-1}(t)&=-\xi(1-\xi)/2
 \beta&=\frac{\frac{1}{2}\int_{-1}^1W(t)\xi(1+\xi)d\xi}{\int_{-1}^1W(t)d\xi}
 \end{align}
 \end{subequations}
-则，推导得到的关系将与等式(\ref{eq:NewmarkDisF})一致，意味着得到了Newmark算法。
+则，推导得到的关系将与等式(\ref{eq:NewmarkDisF})一致，意味着得到了Newmark算法。特别地，表\ref{Tab:NewWeighFun}给出了选择不同的权重函数$W(t)$时，将分别得到不同参数$\beta,\gamma$所对应的积分算法。从表\ref{Tab:NewWeighFun}可以发现，当$\gamma=\frac{1}{2}$时，所对应的权重函数都是对称的。
 
-\begin{tikzpicture}[scale = 3]
-\draw [<->] (0,2) -- (0,0) -- (3,0);
-\draw[help lines,line width=0.2mm] (0,0) grid (3,2);
+\begin{table}[htbp]
+\bicaption[Tab:NewWeighFun]{}{Newmark算法成员所对应的权重函数$W(t)$}{Table$\!$}{The weighted function $W(t)$ for some members of the Newmark family}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{cccc}
+\toprule[1.5pt]
+$\gamma$&$\beta$&名称& $W(t)$\\
+\midrule[1pt]
+$\displaystyle-\frac12$ & $\displaystyle 0$ & $--$ & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [very thick,red] (-1,0)--(-1,1);
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture}\\
+$\displaystyle\frac12$ & $\displaystyle 0$ & 中心差分法 & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [very thick,red] (0,0)--(0,1);
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture}\\
+$\displaystyle\frac32$ & $\displaystyle 1$ & 向后微分公式 & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [very thick,red] (1,0)--(1,1);
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture} \\
+$\displaystyle\frac12$ & $\displaystyle\frac{1}{12}$ & Fox-Goodwin格式 & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [thin,dashed] (0,0)--(0,1);
+\draw [red,very thick,domain = -1:0] plot (\x,{\x+1});
+\draw [red,very thick,domain = 0:1] plot (\x,{1-\x});
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture} \\
+%$1/2$ & $1/10$ & Wilson-$\theta$($\theta=1.0$) & 2 & $\Omega_{cr}\le2\sqrt{3}$\\
+$\displaystyle\frac12$ & $\displaystyle\frac16$ & 线平均加速度法 & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [thin,dashed] (-1,0)--(-1,1);
+\draw [thin,dashed] (1,0)--(1,1);
+\draw [red,very thick,domain = -1:1] plot (\x,{1});
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture} \\
+$\displaystyle\frac12$ & $\displaystyle\frac14$ & 常平均加速度法/Trapeoidal规则 & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [thin,dashed] (-1,0)--(-1,1);
+\draw [thin,dashed] (1,0)--(1,1);
+\draw [red,very thick,domain = -1:0] plot (\x,{-\x});
+\draw [red,very thick,domain = 0:1] plot (\x,{\x});
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture} \\
+$\displaystyle\frac12$ & $\displaystyle\frac{1}{10}$ & $--$ & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [thin,dashed] (0,0)--(0,1);
+\draw [red,very thick,domain = -1:1] plot (\x,{1-\x*\x});
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture}\\
+$\displaystyle\frac{3}{2}$ & $\displaystyle\frac45$ & Galerkin方法 & \begin{tikzpicture}[xscale=1.2,yscale=0.9]
+\draw [thin] (-1.1,0) -- (1.1,0);
+\draw [thin,dashed] (1,0)--(1,1);
+\draw [red,very thick,domain = -1:1] plot (\x,{\x*(1+\x)/2});
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\end{tikzpicture}\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+
+当使用更多的时间节点时，该有限元-加权残差方法可以推导出更高阶的算法格式。文\inlinecite{Zienkiewicz1977a}中给出了时间节点$t-2\Delta t,t-\Delta t,t,t+\Delta t$四个节点的使用三次多项式插值的离散格式。其算法格式为
+\begin{equation}
+\begin{aligned}
+&[M(\gamma-1)+(\frac12\beta-\gamma+\frac13)\Delta tC+(\frac16\alpha-\frac12\beta+\frac13\gamma)\Delta t^2K]{^{t+\Delta t}\!U}\\
+&\qquad+[(4-3\gamma)M+(4\gamma-\frac32\beta-\frac32)\Delta tC+(2\beta-\frac12\alpha-\frac32\gamma)\Delta t^2K]{^t\!U}\\
+&\qquad+[(3\gamma-5)M+(\frac32-5\gamma+3)\Delta tC+(\frac12\alpha-\frac52\beta+3\gamma)\Delta t^2K]{^{t-\Delta t}\!U}\\
+&\qquad+[(2-\gamma)M+(2\gamma-\frac{1}{2}\beta-\frac{11}{6})\Delta tC+(\beta-\frac16\alpha-\frac{11}{6}\gamma+1)\Delta t^2K]{^{t-2\Delta t}\!U}\\
+&\qquad+(\frac16\alpha-\frac12\beta+\frac13\gamma){^{t+\Delta t}\!F}\Delta t^2+(2\beta-\frac12\alpha-\frac32\gamma){^t\!F}\Delta t^2\\
+&\qquad+(\frac12\alpha-\frac52\beta+3\gamma){^{t-\Delta t}\!F}\Delta t^2+(\beta+1-\frac16\alpha-\frac{11}{6}\gamma){^{t-2\Delta t}\!F}\Delta t^2
+\end{aligned}\label{eq:ZienANewLook13}
+\end{equation}
+其中，参数$\alpha,\beta,\gamma$被定义如下
+\begin{equation}
+\left\{\begin{aligned}
+\alpha&=\frac{\int_0^3W\xi^3d\xi}{\int_0^3Wd\xi}\\
+\beta&=\frac{\int_0^3W\xi^2d\xi}{\int_0^3Wd\xi}\\
+\gamma&=\frac{\int_0^3W\xi d\xi}{\int_0^3Wd\xi}
+\end{aligned}\right.
+\end{equation}
+
+有意思的是，当权重函数$W(t)$使用在$t+\Delta t$时刻的单位脉冲函数时，有参数$\alpha=27,\beta=9,\gamma=3$，可以得到Houbolt算法\cite{Houbolt1950}。而当参数满足如下关系时
+\begin{equation}
+\left\{\begin{aligned}
+\alpha&=2+4\theta+3\theta^2+\theta^3\\
+\beta&=\frac43+2\theta+\theta^2\\
+\gamma&=1+\theta
+\end{aligned}\right.
+\end{equation}
+算法格式(\ref{eq:ZienANewLook13})将退化为Wilson-$\theta$法。
+
+文\inlinecite{Zienkiewicz1977a}中也考虑了在分段线性时间元的离散，而离散的形函数更加一般化，亦即在时刻$t+i\Delta t$有$W_{t+i\Delta t}=1$，其他时刻为均为零。其分段线性时间元和形函数表示如图\ref{Fig:NewmarkGenShapFun}。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1.5,yscale=1.2]
+\draw [thin,->] (-2.2,0) -- (2.2,0) node [below] {$t$};
+\draw [thin,dashed] (-1,0)--(-1,1.1);
+\draw [thin,dashed] (1,0)--(1,1.1);
+%============================================
+\draw [red,very thick,domain =-1:0] plot (\x,{\x+1});
+\draw [red,very thick,domain =0:1] plot (\x,{-\x+1});
+\draw [red,dashed,very thick,domain =-2:-1] plot (\x,{\x+2});
+\draw [red,dashed,very thick,domain =-1:0] plot (\x,{-\x});
+\draw [red,dashed,very thick,domain =0:1] plot (\x,{\x});
+\draw [red,dashed,very thick,domain =1:2] plot (\x,{-\x+2});
+%=============================================
+\draw [thin,dashed,<->] (0,0)--(0,1);
+%===============================================
+\draw [thin,fill] (-2,0) circle [radius = 0.03];
+\draw [thin,fill] (-1,0) circle [radius = 0.03];
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1,0) circle [radius = 0.03];
+\draw [thin,fill] (2,0) circle [radius = 0.03];
+%=========================================
+\node [below] at (-1,0) {$t-\Delta t$};
+\node [below] at (0,0) {$t$};
+\node [below] at (1,0) {$t+\Delta t$};
+\node [above] at (-1,1) {$N_{t-\Delta t}$};
+\node [above] at (0,1) {$N_{t}$};
+\node [above] at (1,1) {$N_{t+\Delta t}$};
+\node [right] at (0,0.5) {$1$};
+\node at (-2,0.9) {(a)};
+%**************************************************
+\draw [thin,->] (3.3,0) -- (7.3,0) node [below] {$t$};
+\draw [very thick,red] (3.4,0) -- (4,0) to [out=65,in=135] (5,1) to [out=-45,in=220] (5.5,0.6) to [out=40,in=158] (6,0) -- (7.1,0);
+\draw [thin,dashed,<->] (5,0) -- (5,1) node [below left] {$1$};
+\draw [thin,fill] (4,0) circle [radius = 0.03];
+\draw [thin,fill] (5,0) circle [radius = 0.03];
+\draw [thin,fill] (6,0) circle [radius = 0.03];
+\node [below] at (4,0) {$t-\Delta t$};
+\node [below] at (5,0) {$t$};
+\node [below] at (6,0) {$t+\Delta t$};
+\node at (6,0.4) {$W_{t}$};
+\node at (3.3,1) {(b)};
 \end{tikzpicture}
+\bicaption[Fig:NewmarkGenShapFun]{}{(a):$N_{t+\Delta t},N_t,N_{t-\Delta t}$分段线性的形函数;(b):一般性的加权函数$W(t)$示意图}{Fig.$\!$}{(a):The piecewise linear shape functions;(b):The general weighting function $W(t)$}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -277,6 +277,13 @@
   }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
   \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
 
+\bibitem{Houbolt1950}
+\bibauthor{Houbolt J~C}\@. \bibtitle{A Recurrence Matrix Solution for the
+  Dynamic Response of Elastic Aircraft}\bibmark{[J]}\@. \bibjournal{Journal of
+  the Aeronautical Sciences}\@, \bibyear{1950}\@,
+  \bibvolume{17}\bibnumber{(9)}\thinspace{}\textnormal{:
+  }\bibpages{540\thinspace{}\textnormal{--}\thinspace{}550}\@.
+
 \bibitem{Hilber1978}
 \bibauthor{Hilber H~M\@, Hughes T~J~R}\@. \bibtitle{Collocation, dissipation
   and 'overshoot' for time integration schemes in structural
