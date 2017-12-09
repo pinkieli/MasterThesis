@@ -339,7 +339,7 @@ M{^{t+\Delta t/2}\!\ddot{U}}+C{^{t+\Delta t/2}\!\dot{U}}+K{^{t+\Delta t/2}\!U}={
 M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\dot{U}}+K{^{t+\Delta t}\!U}&={^{t+\Delta t}\!F}\\
 {^{t+\Delta t}\!{U}}&={^t\!U}+{^t\!\dot{U}}\Delta t+\frac{\Delta t^2}{2}[(1-2\beta){^t\!\ddot{U}}+2\beta{^{t+\Delta t}\!\ddot{U}}]\\
 {^{t+\Delta t}\!\dot{U}}&={^t\!\dot{U}}+\Delta t[(1-\gamma){^t\!\ddot{U}}+\gamma{^{t+\Delta t}\!\ddot{U}}]
-\end{align}
+\end{align}\label{eq:Newmark}
 \end{subequations}
 其中，参数$\gamma,\beta$控制着算法的数值性能。同时Newmark算法运用十分广泛。在线性结构动力学中，使用最广泛的是a-形式。即先显式的求解位移和速度
 \begin{subequations}
@@ -411,6 +411,56 @@ $3/2$ & $1$ & 向后微分公式 & 1 & $--$\\
 \end{table}
 
 其中，中心差分法是显式的，也是被认为最为经济、求解方便的积分算法，在显式算法中使用较广；对于常平均加速度算法，该算法在二阶的隐式算法中，拥有最小的误差主项\cite{Dahlquist1963}，同时该算法也是Trapeoidal规则在二阶运动方程中的体现；对于Fox-Goodwin格式，当$C\neq\mathbf{0}$时，实现三阶精度，而当无阻尼时，可以实现四阶精度。
+
+\subsubsection{基于有限元离散的加权残差推导}
+Newmark算法除了使用在$t+\Delta t$时刻的位移和速度的泰勒级数展开来获得其计算格式外，还可以通过假设在$t-\Delta t,t,t+\Delta t$时刻的有限元离散，在进行加权残差推导亦可获得其计算格式\cite{Zienkiewicz1977a}，而且后者更可以获得其他新的高阶精度算法。
+
+消去Newmark算法(\ref{eq:Newmark})中的速度和加速度，可以得到如下的关于位移的迭代式
+\begin{equation}
+\begin{aligned}
+&[M+\gamma\Delta tC+\beta\Delta t^2K]{^{t+\Delta t}\!U}\\
+&\qquad+[-2M+(1-2\gamma)\Delta tC+(\frac{1}{2}+\gamma-2\beta)\Delta t^2K]{^t\!U}\\
+&\qquad+[M+(-1+\gamma)\Delta tC+(\frac12-\gamma+\beta)\Delta t^2K]{^{t-\Delta t}\!U}\\
+&\qquad+\beta{^{t+\Delta t}\!F}\Delta t^2+(\frac{1}{2}+\gamma-2\beta){^t\!F}\Delta t^2+(\frac{1}{2}-\gamma+\beta){^{t-\Delta t}\!F}\Delta t^2=0
+\end{aligned}\label{eq:NewmarkDisF}
+\end{equation}
+在时间域$t-\Delta t,t,t+\Delta t$上，位移$U(t)$可以表示为
+\begin{equation}
+U(t)=\sum_{i}N_i(t){^i\!U},\qquad i=t-\Delta t,t,t+\Delta t
+\end{equation}
+
+使用权重残差在时间域$0,2\Delta t$内积分得到
+\begin{equation}
+\int_{0}^{2\Delta t}W(t)[M\sum\ddot{N}_i{^i\!U}+C\sum\dot{N}_i{^i\!U}+K\sum N_i{^i\!U}-\sum{^i\!F}N_i]dt=0
+\end{equation}
+其中，假定外力荷载$F(t)$也使用了相同的形函数进行插值计算。而形函数的显式表达为$(-1\le\xi=t/\Delta t\le1)$
+\begin{equation}
+\left.\begin{aligned}
+N_{n+1}(t)&=\xi(1+\xi)/2\\
+N_n(t)&=(1-\xi)(1+\xi)\\
+N_{n-1}(t)&=-\xi(1-\xi)/2
+\end{aligned}\right\}
+\end{equation}
+于是，经过上述计算可以得到类似于(\ref{eq:NewmarkDisF})的表达式。进一步，若作如下参数规定
+\begin{subequations}
+\begin{align}
+\gamma&=\frac{\int_{-1}^1W(t)\xi d\xi}{\int_{-1}^1W(t)d\xi}+\frac12\\
+\beta&=\frac{\frac{1}{2}\int_{-1}^1W(t)\xi(1+\xi)d\xi}{\int_{-1}^1W(t)d\xi}
+\end{align}
+\end{subequations}
+则，推导得到的关系将与等式(\ref{eq:NewmarkDisF})一致，意味着得到了Newmark算法。
+
+\begin{tikzpicture}[scale = 3]
+\draw [<->] (0,2) -- (0,0) -- (3,0);
+\draw[help lines,line width=0.2mm] (0,0) grid (3,2);
+\end{tikzpicture}
+
+
+
+
+
+
+
 
 最后，需要说明的是对于Newmark算法的位移和速度更新格式是现阶段直接积分法中使用最为广泛的更新格式。后续很多学者基于此提出了许多新的积分算法\cite{Hilber1978,Hilber1977,Wood1980a,KaiPing2008}。
  

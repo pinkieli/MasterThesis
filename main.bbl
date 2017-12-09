@@ -268,6 +268,15 @@
   }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}43}\@.
   \newline\url{http://dx.doi.org/10.1007/BF01963532}\@.
 
+\bibitem{Zienkiewicz1977a}
+\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the newmark, houbolt and
+  other time stepping formulas. A weighted residual
+  approach}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
+  Dynamics}\@, \bibyear{1977}\@,
+  \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
+  \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
+
 \bibitem{Hilber1978}
 \bibauthor{Hilber H~M\@, Hughes T~J~R}\@. \bibtitle{Collocation, dissipation
   and 'overshoot' for time integration schemes in structural
@@ -462,15 +471,6 @@
   structures}\bibmark{[J]}\@. \bibjournal{Science China}\@, \bibyear{2013}\@,
   \bibvolume{56}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{798\thinspace{}\textnormal{--}\thinspace{}804}\@.
-
-\bibitem{Zienkiewicz1977a}
-\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the newmark, houbolt and
-  other time stepping formulas. A weighted residual
-  approach}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
-  Dynamics}\@, \bibyear{1977}\@,
-  \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{413\thinspace{}\textnormal{--}\thinspace{}418}\@.
-  \newline\url{http://dx.doi.org/10.1002/eqe.4290050407}\@.
 
 \bibitem{Zhang2015a}
 \bibauthor{Zhang L\@, Liu T\@, Li Q}\@. \bibtitle{A Robust and Efficient
