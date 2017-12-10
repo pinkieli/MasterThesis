@@ -777,7 +777,7 @@
   type     = {Journal Article},
 }
 
-@Article{1984-ZienkiewiczO.C.andWoodW.L.andHineN.W.andTaylorR.L.-p1529-1552,
+@Article{Zienkiewicz1984a,
   author    = {Zienkiewicz, O. C. and Wood, W. L. and Hine, N. W. and Taylor, R. L.},
   title     = {A unified set of single step algorithms. Part 1: General formulation and applications},
   journal   = {International Journal for Numerical Methods in Engineering},
@@ -792,7 +792,7 @@
   url       = {http://dx.doi.org/10.1002/nme.1620200814},
 }
 
-@Article{1984-WoodW.L.-p2303-2309,
+@Article{Wood1984,
   author    = {Wood, W. L.},
   title     = {A unified set of single step algorithms. Part 2: Theory},
   journal   = {International Journal for Numerical Methods in Engineering},
@@ -807,7 +807,7 @@
   url       = {http://dx.doi.org/10.1002/nme.1620201210},
 }
 
-@Article{1985-KatonaMichaelC.andZienkiewiczO.C.-p1345-1359,
+@Article{Katona1985,
   author    = {Katona, Michael C. and Zienkiewicz, O. C.},
   title     = {A unified set of single step algorithms part 3: The beta-m method, a generalization of the Newmark scheme},
   journal   = {International Journal for Numerical Methods in Engineering},
@@ -823,7 +823,7 @@
   url       = {http://dx.doi.org/10.1002/nme.1620210713},
 }
 
-@Article{1986-WoodW.L.-p929-944,
+@Article{Wood1986,
   author    = {Wood, W. L.},
   title     = {A unified set of single step algorithms. Part 4: Backward error analysis applied to the solution of the dynamic vibration equation},
   journal   = {International Journal for Numerical Methods in Engineering},

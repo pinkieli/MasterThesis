@@ -269,8 +269,8 @@
   \newline\url{http://dx.doi.org/10.1007/BF01963532}\@.
 
 \bibitem{Zienkiewicz1977a}
-\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the newmark, houbolt and
-  other time stepping formulas. A weighted residual
+\bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the Newmark, Houbolt and
+  other time stepping formulas: A weighted residual
   approach}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
   Dynamics}\@, \bibyear{1977}\@,
   \bibvolume{5}\bibnumber{(4)}\thinspace{}\textnormal{:
@@ -284,9 +284,27 @@
   \bibvolume{17}\bibnumber{(9)}\thinspace{}\textnormal{:
   }\bibpages{540\thinspace{}\textnormal{--}\thinspace{}550}\@.
 
+\bibitem{Hoff1990}
+\bibauthor{Hoff C\@, Taylor R~L}\@. \bibtitle{Higher derivative explicit one
+  step methods for non-linear dynamic problems. Part I: Design and
+  theory}\bibmark{[J/OL]}\@. \bibjournal{International Journal for Numerical
+  Methods in Engineering}\@, \bibyear{1990}\@,
+  \bibvolume{29}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{275\thinspace{}\textnormal{--}\thinspace{}290}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.1620290205}\@.
+
+\bibitem{Hoff1990a}
+\bibauthor{Hoff C\@, Taylor R~L}\@. \bibtitle{Higher derivative explicit one
+  step methods for non-linear dynamic problems. Part II: Practical calculations
+  and comparisons with other higher order methods}\bibmark{[J/OL]}\@.
+  \bibjournal{International Journal for Numerical Methods in Engineering}\@,
+  \bibyear{1990}\@, \bibvolume{29}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{291\thinspace{}\textnormal{--}\thinspace{}301}\@.
+  \newline\url{http://dx.doi.org/10.1002/nme.1620290206}\@.
+
 \bibitem{Hilber1978}
 \bibauthor{Hilber H~M\@, Hughes T~J~R}\@. \bibtitle{Collocation, dissipation
-  and 'overshoot' for time integration schemes in structural
+  and ‘overshoot’ for time integration schemes in structural
   dynamics}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \& Structural
   Dynamics}\@, \bibyear{1978}\@,
   \bibvolume{6}\bibnumber{(1)}\thinspace{}\textnormal{:
@@ -440,8 +458,8 @@
   \newline\url{http:https://dx.doi.org/10.1002/cnm.1640100803}\@.
 
 \bibitem{Bazzi1982}
-\bibauthor{Bazzi G\@, Anderheggen E}\@. \bibtitle{The ρ-family of algorithms
-  for time-step integration with improved numerical
+\bibauthor{Bazzi G\@, Anderheggen E}\@. \bibtitle{The $\rho$-family of
+  algorithms for time-step integration with improved numerical
   dissipation}\bibmark{[J/OL]}\@. \bibjournal{Earthquake Engineering \&
   Structural Dynamics}\@, \bibyear{1982}\@,
   \bibvolume{10}\bibnumber{(4)}\thinspace{}\textnormal{:

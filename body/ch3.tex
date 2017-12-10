@@ -489,7 +489,7 @@ N_{t-\Delta t}&=-\xi(1-\xi)/2
 \end{align}
 \end{subequations}
 则，推导得到的关系将与等式(\ref{eq:NewmarkDisF})一致，意味着得到了Newmark算法。特别地，表\ref{Tab:NewWeighFun}给出了选择不同的权重函数$W(t)$时，将分别得到不同参数$\beta,\gamma$所对应的积分算法。从表\ref{Tab:NewWeighFun}可以发现，当$\gamma=\frac{1}{2}$时，所对应的权重函数都是对称的。
-
+\vspace{-0.5cm}
 \begin{table}[htbp]
 \bicaption[Tab:NewWeighFun]{}{Newmark算法成员所对应的权重函数$W(t)$}{Table$\!$}{The weighted function $W(t)$ for some members of the Newmark family}
 \vspace{0.5em}\centering\wuhao
@@ -668,11 +668,32 @@ $\displaystyle\frac{3}{2}$ & $\displaystyle\frac45$ & Galerkin方法 & \begin{ti
 \bicaption[Fig:NewmarkGenShapFun]{}{(a):$N_{t+\Delta t},N_t,N_{t-\Delta t}$分段线性的形函数;(b):一般性的加权函数$W(t)$示意图}{Fig.$\!$}{(a):The piecewise linear shape functions;(b):The general weighting function $W(t)$}
 \end{figure}
 
+然后在一个更大的时间域$[0,m\Delta t]$上进行加权残差积分后得到
+\begin{equation}
+\begin{aligned}
+&[M+\gamma_2\Delta tC+\beta_2\Delta t^2K]{^{t+\Delta t}\!U}\\
+&\qquad+[-2M+(\gamma_1-\gamma_2)\Delta tC+(\beta_1-\beta_2+\gamma_2)\Delta t^2K]{^t\!U}\\
+&\qquad+[M-\gamma_1\Delta tC+(\gamma_1-\beta_1)\Delta t^2K]{^{t-\Delta t}\!U}\\
+&\qquad+\beta_2{^{t+\Delta t}\!F}\Delta t^2+(\beta_1-\beta_2+\gamma_2){^t\!F}\Delta t^2+(\gamma_1-\beta_1){^{t-\Delta t}\!F}\Delta t^2=0
+\end{aligned}\label{eq:ZienANew15}
+\end{equation}
+其中，
+\begin{equation}
+\left\{\begin{aligned}
+\gamma_1&=\int_{n-1}^nWd\xi \qquad \gamma_2=\int_{n}^{n+1}Wd\xi\\
+\beta_1&=\int_{n-1}^nW\xi d\xi \qquad \beta_2=\int_{n}^{n+1}W\xi d\xi
+\end{aligned}\right.
+\end{equation}
+这里的$n-1,n,n+1$分别代表$t-\Delta t,t,t+\Delta t$时刻，后文也将继续这样进行混用而不再特别指明，一般情况下是很容易分清的。当参数满足
+\begin{equation}
+\begin{aligned}
+\gamma_2&=\gamma\qquad\beta_2=\beta\\
+\gamma_1&=1-\gamma\quad \beta_1=\frac12-\beta
+\end{aligned}
+\end{equation}
+算法格式(\ref{eq:ZienANew15})将退化为经典的Newmark算法(\ref{eq:NewmarkDisF})。同时，对算法(\ref{eq:ZienANew15})进行相容性分析将使得四个独立的参数退化为两个。
 
-
-
-
-
+需要特别指明的是，如果将上述有限元离散的加权残差方法应用到位移-速度场的一阶运动微分方程(\ref{eq:DynqFirstOrder})，则可以使用两个不同的加权函数$W_1(t),W_2(t)$进而推导出新的算法格式，如高阶导数的显式算法\cite{Hoff1990,Hoff1990a}。
 
 
 
@@ -1196,6 +1217,118 @@ M{^{t+\Delta t}\!\ddot{U}}+C{^{t+\Delta t}\!\widetilde{\dot{U}}}+K{^{t+\Delta t}
 \end{subequations}
 
 关于单步隐式的$\theta_1$算法在非线性系统中的应用可以参考文献\inlinecite{Hoff198887}。
+
+\subsection{高阶导数的单步显式算法}
+当单位移场的二阶运动微分方程(\ref{eq:DyEq})转换为位移-速度场的一阶微分方程(\ref{eq:DynqFirstOrder})后，再使用加权残差法可以得到新的算法格式。其中高阶导数的单步显式算法\cite{Hoff1990,Hoff1990a}就是其中之一。其算法格式推导概括如下。
+
+首先，在时间区间$[t_n,t_{n+1}]$内引入变量$\tau=t-t_n$，再进行位移和速度泰勒级数展开得到
+\begin{equation}
+\left\{\begin{aligned}
+U(\tau)&={^t\!U}+{^t\!\dot{U}}\tau+\beta_2{^t\!\ddot{U}}\tau^2+\beta_3\frac{\Delta\ddot{U}}{\Delta t}\tau^3\\
+\dot{U}(\tau)&={^t\!\dot{U}}+{^t\!\ddot{U}}\tau+\gamma_2\frac{\Delta \ddot{U}}{\Delta t}\tau^2\\
+\ddot{U}(\tau)&={^t\!\ddot{U}}+\frac{\Delta\ddot{U}}{\Delta t}\tau
+\end{aligned}\right.
+\end{equation}\vspace{-0.5cm}
+\begin{equation}
+\left\{\begin{aligned}
+V(\tau)&={^t\!V}+{^t\!\dot{V}}\tau+\eta_2{^t\!\ddot{V}}\tau^2+\eta_3\frac{\Delta\ddot{V}}{\Delta t}\tau^3\\
+\dot{V}(\tau)&={^t\!\dot{V}}+{^t\!\ddot{V}}\tau+\kappa_2\frac{\Delta \ddot{V}}{\Delta t}\tau^2\\
+\ddot{V}(\tau)&={^t\!\ddot{V}}+\frac{\Delta\ddot{V}}{\Delta t}\tau
+\end{aligned}\right.
+\end{equation}
+其中,荷载也进行泰勒级数展开得到
+\begin{equation}
+F(\tau)\triangleq p(\tau)={^t\!p}+{^t\!\dot{p}}\tau+\frac12{^t\!\ddot{p}}\tau^2+\frac16\frac{\Delta\ddot{p}}{\Delta t}\tau^3
+\end{equation}
+
+然后，选择两个独立的加权函数$w_1(\tau),W_2(\tau)$进行加权残差积分得到
+\begin{align}
+\frac{1}{\Delta t}\int_0^{\Delta t}[M\dot{V}(\tau)+CV(\tau)+KU(\tau)-p(\tau)]w_1(\tau)d\tau&=0\\
+\frac{1}{\Delta t}\int_0^{\Delta t}[\dot{U}(\tau)-V(\tau)]w_2(\tau)d\tau&=0
+\end{align}
+这里，并没有显式的给出加权函数的表达式，而是将其列为算法的积分参数进行后续的分析(这个技巧在其他的加权残差方法用也会用到)。
+\begin{equation}
+\begin{aligned}
+\frac{1}{\Delta t}\int_0^{\Delta t}w_j(\tau)d\tau&=1\qquad j=1,2\\
+\frac{1}{\Delta t}\int_0^{\Delta t}w_1(\tau)\tau^id\tau&=\Psi_i\Delta t^i\qquad i\ge1\\
+\frac{1}{\Delta t}\int_0^{\Delta t}w_2(\tau)\tau^id\tau&=\Pi_i\Delta t^i\qquad i\ge1
+\end{aligned}
+\end{equation}
+于是，对上述的两个残差函数进行积分计算得到如下的两个表达式
+\begin{equation}
+\begin{aligned}
+(\kappa_2\Psi_2\Delta tM+\eta_3\Psi_3\Delta t^2C)\Delta\ddot{V}&={^t\!p}+\Psi_1{^t\!\dot{p}}\Delta t+\frac12\Psi_2{^t\!\ddot{p}}\Delta t^2+\frac16\Psi_3\Delta\ddot{p}\Delta t^2\\
+&-M({^t\!\dot{V}}+\Psi_1{^t\!\ddot{V}}\Delta t)-C({^t\!V}+\Psi_1{^t\!\dot{V}}\Delta t+\eta_2\Psi_2{^t\!\ddot{V}}\Delta t^2)\\
+&-K({^t\!U}+\Psi_1{^t\!\dot{U}}\Delta t+\beta_2\Psi_2{^t\!\ddot{U}}\Delta t^2+\beta_3\Psi_3\Delta\ddot{U}\Delta t^2)
+\end{aligned}
+\end{equation}
+\vspace{-0.5cm}
+\begin{equation}
+\begin{aligned}
+\gamma_2\Pi_2\Delta\ddot{U}\Delta t&={^t\!V}-{^t\!\dot{U}}+\Pi_1{^t\!\dot{V}}\Delta t-\Pi_1{^t\!\ddot{U}}\Delta t+\eta_2\Pi_2{^t\!\ddot{V}}\Delta t^2+\eta_3\Pi_3\Delta\ddot{V}\Delta t^2
+\end{aligned}
+\end{equation}
+在$t+\Delta t$时刻的响应值就由上述两式求得，而主要的未知量$\Delta\ddot{V}$和$\Delta\ddot{U}$可以通过上述公式计算得到。
+
+最后，令$\Psi_3=0$就可以获得显式算法如下
+\begin{equation}
+\begin{aligned}
+\kappa_2\Psi_2M\Delta\ddot{V}\Delta t=&{^t\!p}+\Psi_1{^t\!\dot{p}}\Delta t+\frac12\Psi_2{^t\!\ddot{p}}\Delta t^2-M({^t\!\dot{V}}+\Psi_1{^t\!\ddot{V}}\Delta t)\\
+&-C({^t\!\dot{V}}+\Psi_1{^t\!\dot{V}}\Delta t+\eta_2\Psi_2{^t\!\ddot{V}}\Delta t^2)\\
+&-K({^t\!U}+\Psi_1{^t\!V}\Delta t+\beta_2\Psi_2{^t\!\dot{V}}\Delta t^2)
+\end{aligned}
+\end{equation}
+\vspace{-0.75cm}
+\begin{equation}
+\gamma_2\Pi_2\Delta\ddot{U}=\eta_2\Pi_2{^t\!\ddot{V}}\Delta t+\eta_3\Pi_3\Delta\ddot{V}\Delta t
+\end{equation}
+其中下一时刻的状态量由
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+{^t\!{V}}\Delta t+\beta_2{^t\!\dot{V}}\Delta t^2+\beta_3\Delta\ddot{U}\Delta t^2\\
+{^{t+\Delta t}\!V}&={^t\!V}+{^{t}\!\dot{V}}\Delta t+\eta_2{^t\!\ddot{V}}\Delta t^2+\eta_3\Delta\ddot{V}\Delta t^2\\
+{^{t+\Delta t}\!\ddot{V}}&={^t\!\ddot{V}}+\Delta\ddot{V}\\
+{^{t+\Delta t}\!\dot{V}}&=M^{-1}({^{t+\Delta t}\!F}-C{^{t+\Delta t}\!V}-K{^{t+\Delta t}\!U})
+\end{align}
+\end{subequations}
+计算得到。
+
+通过相容性分析，得到如下的精度条件
+\begin{align}
+\text{二阶精度:}&\qquad\beta_2=1-\eta_2\\
+\text{三阶精度:}&\qquad\frac{\beta_3}{\gamma_2}=\frac{\eta_3-\frac{1}{12}-\eta_2(1-\eta_2)(1-\frac{1}{\kappa_2})-\eta_2}{\eta_3\frac{\Pi_3}{\Pi_2}(1-\frac{1}{\Psi_1})-\eta_2}\\
+\text{四阶精度:}&\qquad\frac{\Pi_3}{\Pi_2}=\frac{1}{\eta_3\frac{\beta_3}{\gamma_2}(2-\frac{1}{\Psi_1})}\Big\{\frac{\beta_3}{\gamma_2}\eta_2[2-\frac{1}{\kappa_2}(1-\eta_2)]+\eta_3(2-\eta_2)\notag\\
+&\qquad\qquad-\eta_2(3-2\eta_2)-(1-\eta_2)\frac{1}{\kappa_2}(\eta_3-2\eta_2)\Big\}
+\end{align}
+同时，为了获得最大的稳定性极限，令
+\begin{equation}
+\Psi_1=1
+\end{equation}
+以及在低频段令谱半径$\rho=1$有
+\begin{equation}
+\frac{\Psi_1}{\Psi_2\kappa_2}=1
+\end{equation}
+
+最后，剩余两个参数$\gamma_2,\Pi_2$，文\inlinecite{Hoff1990}中令其取值为$1$。即
+\begin{equation}
+\gamma_2=\Pi_2=1
+\end{equation}
+
+将参数的限定条件带入原始的算法格式化简后，得到如下更加简洁的显式积分格式
+\begin{equation}
+\begin{aligned}
+M\Delta\ddot{V}\Delta t&=
+\end{aligned}
+\end{equation}
+
+
+
+
+
+
+
+
+
 
 
 
