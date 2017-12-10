@@ -483,6 +483,13 @@
   }\bibpages{2303\thinspace{}\textnormal{--}\thinspace{}2309}\@.
   \newline\url{http://dx.doi.org/10.1002/nme.1620201210}\@.
 
+\bibitem{Kujawski1984}
+\bibauthor{Kujawski J\@, Gallagher R}\@. \bibtitle{A family of higher order
+  explicit algorithms for transient dynamic analysis}\bibmark{[J]}\@.
+  \bibjournal{Transactions of the Society for Computer Simulation}\@,
+  \bibyear{1984}\@, \bibvolume{1}\thinspace{}\textnormal{:
+  }\bibpages{155\thinspace{}\textnormal{--}\thinspace{}166}\@.
+
 \bibitem{Liu2012}
 \bibauthor{Liu T\@, Zhao C\@, Li Q, et~al}\@. \bibtitle{An efficient backward
   Euler time-integration method for nonlinear dynamic analysis of

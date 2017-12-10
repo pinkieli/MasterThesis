@@ -695,32 +695,6 @@ $\displaystyle\frac{3}{2}$ & $\displaystyle\frac45$ & Galerkin方法 & \begin{ti
 
 需要特别指明的是，如果将上述有限元离散的加权残差方法应用到位移-速度场的一阶运动微分方程(\ref{eq:DynqFirstOrder})，则可以使用两个不同的加权函数$W_1(t),W_2(t)$进而推导出新的算法格式，如高阶导数的显式算法\cite{Hoff1990,Hoff1990a}。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 最后，需要说明的是对于Newmark算法的位移和速度更新格式是现阶段直接积分法中使用最为广泛的更新格式。后续很多学者基于此提出了许多新的积分算法\cite{Hilber1978,Hilber1977,Wood1980a,KaiPing2008}。
  
 \subsection{Wilson-$\theta$法}
@@ -1052,14 +1026,6 @@ $\rho_{\infty}$ & $[0,1]$ & $[0,1]$ & $[0.5,1]$ & $[0.5,1]$ & $[0,1]$ & $[0,1]$\
 注意到NOCH-$\alpha$、NOHHT-$\alpha$和NOWBZ-$\alpha$是三个新的广义$\alpha$成员，其前缀“NO”表示在速度和位移上都没有超调行为。而且这三个算法满足Hughes所提出的一个具有竞争性算法的六个属性\cite{book:dover,Hilber1978}。
 
 
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{加权残值法}
 \subsection{$\rho$-算法}
@@ -1107,28 +1073,6 @@ U(t)=N_1(t){^t\!U}+N_2(t){^t\!\dot{U}}+N_3(t){^t\!\ddot{U}}+N_4(t){^{t+\Delta t}
 \item[\ddag] 无数值耗散，且引入负相对周期误差。
 \item[\ddag] 真正意义上的自启动，不需要引入额外的启动机制，包括初始加速度的计算。
 \end{itemize}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \subsection{单步隐式的$\theta_1$格式}
 单步隐式的$\theta_1$算法\cite{Hoff1988}是利用加权残值的思想推导得到。通过假定位移、速度和加速度在时间区间$[t,t+\Delta t]$内的变化关系，带入其平衡方程得到其其残差值，最后通过利用任意的权重函数限定在时间区间$[0,\Delta t]$内的积分为零得到其加速度增量$\Delta\ddot{U}$的关系式，如下
@@ -1296,9 +1240,9 @@ F(\tau)\triangleq p(\tau)={^t\!p}+{^t\!\dot{p}}\tau+\frac12{^t\!\ddot{p}}\tau^2+
 通过相容性分析，得到如下的精度条件
 \begin{align}
 \text{二阶精度:}&\qquad\beta_2=1-\eta_2\\
-\text{三阶精度:}&\qquad\frac{\beta_3}{\gamma_2}=\frac{\eta_3-\frac{1}{12}-\eta_2(1-\eta_2)(1-\frac{1}{\kappa_2})-\eta_2}{\eta_3\frac{\Pi_3}{\Pi_2}(1-\frac{1}{\Psi_1})-\eta_2}\\
+\text{三阶精度:}&\qquad\frac{\beta_3}{\gamma_2}=\frac{\eta_3-\frac{1}{12}-\eta_2(1-\eta_2)(1-\frac{1}{\kappa_2})-\eta_2}{\eta_3\frac{\Pi_3}{\Pi_2}(1-\frac{1}{\Psi_1})-\eta_2}\label{eq:Hoff1990:34}\\
 \text{四阶精度:}&\qquad\frac{\Pi_3}{\Pi_2}=\frac{1}{\eta_3\frac{\beta_3}{\gamma_2}(2-\frac{1}{\Psi_1})}\Big\{\frac{\beta_3}{\gamma_2}\eta_2[2-\frac{1}{\kappa_2}(1-\eta_2)]+\eta_3(2-\eta_2)\notag\\
-&\qquad\qquad-\eta_2(3-2\eta_2)-(1-\eta_2)\frac{1}{\kappa_2}(\eta_3-2\eta_2)\Big\}
+&\qquad\qquad-\eta_2(3-2\eta_2)-(1-\eta_2)\frac{1}{\kappa_2}(\eta_3-2\eta_2)\Big\}\label{eq:Hoff1990:35}
 \end{align}
 同时，为了获得最大的稳定性极限，令
 \begin{equation}
@@ -1317,21 +1261,56 @@ F(\tau)\triangleq p(\tau)={^t\!p}+{^t\!\dot{p}}\tau+\frac12{^t\!\ddot{p}}\tau^2+
 将参数的限定条件带入原始的算法格式化简后，得到如下更加简洁的显式积分格式
 \begin{equation}
 \begin{aligned}
-M\Delta\ddot{V}\Delta t&=
-\end{aligned}
+M\Delta\ddot{V}\Delta t=&{^t\!p}+{^t\!\dot{p}}\Delta t+\frac12\Psi_2{^t\!\ddot{p}}\Delta t^2-M({^t\!\dot{V}}+{^t\!\ddot{V}}\Delta t)\\
+&-C({^t\!\dot{V}}+{^t\!\dot{V}}\Delta t+\eta_2\Psi_2{^t\!\ddot{V}}\Delta t^2)\\
+&-K({^t\!U}+{^t\!V}\Delta t+(1-\eta_2)\Psi_2{^t\!\dot{V}}\Delta t^2)
+\end{aligned}\label{eq:Hoff1990:45}
 \end{equation}
+其中下一时刻的状态量由
+\begin{subequations}
+\begin{align}
+{^{t+\Delta t}\!U}&={^t\!U}+{^t\!{V}}\Delta t+(1-\eta_2){^t\!\dot{V}}\Delta t^2+\beta_3\eta_2{^t\!\ddot{V}}\Delta t^3+\beta_3\eta_3\Pi_3\Delta\ddot{V}\Delta t^3\\
+{^{t+\Delta t}\!V}&={^t\!V}+{^{t}\!\dot{V}}\Delta t+\eta_2{^t\!\ddot{V}}\Delta t^2+\eta_3\Delta\ddot{V}\Delta t^2\\
+{^{t+\Delta t}\!\ddot{V}}&={^t\!\ddot{V}}+\Delta\ddot{V}\\
+{^{t+\Delta t}\!\dot{V}}&=M^{-1}({^{t+\Delta t}\!F}-C{^{t+\Delta t}\!V}-K{^{t+\Delta t}\!U})
+\end{align}\label{eq:Hoff1990:46}
+\end{subequations}
+该高阶导数的单步显式算法(\ref{eq:Hoff1990:45}-\ref{eq:Hoff1990:46})至少是二阶精度的。为了实现更高的精度，需要引入新的参数条件，如等式(\ref{eq:Hoff1990:34}-\ref{eq:Hoff1990:35})以及考虑稳定性要求。特别地，当参数选取不同时，提出的高阶导数的单步显式算法将与一些算法谱等价。具体参数取值见表\ref{Tab:Hoff1990I}。
+\vspace{-0.4cm}
+\begin{table}[htbp]
+\bicaption[Tab:Hoff1990I]{}{高阶导数的单步显式算法参数取值}{Table$\!$}{Parameter adjusting for the higher derivative single step explicit algorithms}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{cccccc}
+\toprule[1.5pt]
+算法简称&$\eta_2$& $\eta_3$ & $\beta_3$ & $\Psi_2$ & $\Pi_3$ \\
+\midrule[1pt]
+中心差分法 & $0$ & $0$ & $0$ & $1$ & $1$ \\
+NF\cite{Kujawski1984} & $\eta_3$ & $\frac{\beta_3}{2}[\sqrt{1+\frac{4}{\beta_3}}-1]$ & $\beta_3$ & $\frac{1}{1-\eta_3}$ & $\frac{\beta_3}{\beta_3-\eta_3^2}$\\
+HDSSE4 & $\eta_3$ & $\eta_3$ & $\frac{2}{\eta_3}(\frac{1}{24}-\eta_3^2)$ & $\frac{1+\eta_3}{1-\eta_3}$ & $\frac{1}{1-24\eta_3^2}-\eta_3$\\
+HDSSE3D & $\frac{7}{30}$ & $\frac{1}{4}$ & $\frac{341}{630}$ & $\frac23$ & $\frac{39}{40}$\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+其中，“HDSSE”代表高阶导数的单步显式算法，而后面的数字表示其对应的阶数，字母“D”表示存在数值阻尼。同时对于不同的高阶算法的数值性能比较在表\ref{Tab:Hoff1990II}给出。
+\vspace{-0.4cm}
+\begin{table}[htbp]
+\bicaption[Tab:Hoff1990II]{}{高阶导数的单步显式算法子成员的数值性能比较}{Table$\!$}{Characteristics of the higher order methods covered by the higher derivative single step explicit algorithms}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{ccccccc}
+\toprule[1.5pt]
+算法简称& 参数取值 & 精度 & 数值耗散 & 函数计算 & 稳定域$\Omega_{cr}$ & 注释 \\
+\midrule[1pt]
+中心差分法 &  & 2 & No & 1 & 2 & 谱等价\\
+NF2 & $\beta_3=\frac{1}{16}$ & 2 & No & 2 & 4 & 谱等价\\
+NF4 & $\beta_3=\frac{1}{12}$ & 4 & No & 2 & $2\sqrt{3}$ & 谱等价\\
+HDSSE4 & $\beta_3=\frac12[\sqrt{\frac{7}{6}}-1]$ & 4 & No & 2 & $2\sqrt{3}$ & 无数值阻尼\\
+HDSSE4D & $\beta_3=\frac38[\sqrt{\frac{7}{6}}-1]$ & 4 & 轻微 & 2 & $2\sqrt{3}$ & 数值阻尼不大\\
+HDSSE3D &  & 3 & Yes & 2 & $3.88$ & 存在数值阻尼\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
 
-
-
-
-
-
-
-
-
-
-
-
+最后，上述的高阶导数单步显式算法也可以以预测-校正形式书写，且与其他算法的性能比较可以参见文献\inlinecite{Hoff1990a}。
 
 \subsection{单步单解算法框架/GSSSS算法}
 Zhou和Tamma等人针对线性多步法在结构动力学数值响应算法设计中的应用，提出了一个一般性的单步单解算法\cite{Zhou2004c}(The generalized single step single solve algorithms)[GSSSS]。该算法不仅可以将现阶段基于单位移场二阶运动微分方程提出的单步算法\footnote{这里的单步算法是指其发展思想是在线性多步法的理论框架之下发展的，而非单步多级法，如Runge-Kutta法。}作为其特例，而且也提供了一些新的算法家族。同时，Zhou等人也在文\inlinecite{Zhou2004c}中证明了GSSSS算法是线性多步法在结构动力学数值算法应用中单步算法的体现。换言之，GSSSS算法是与线性多步法一一对应的。因此由于Dahlquist定理\cite{Dahlquist1963}的存在，GSSSS算法仅实现了二阶精度的无条件稳定性。该算法通过使用时间上的加权残值得到其一般性算法格式，其算法格式的$a$-形式描述如下
