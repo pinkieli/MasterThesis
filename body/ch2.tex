@@ -1,4 +1,324 @@
-\chapter{积分算法设计指标}
+\chapter{积分算法的设计及基本分析}
+对于结构动力学运动方程
+\begin{equation}
+M\ddot{U}(t)+C\dot{U}(t)+KU(t)=F(t)\label{eq:ch2DyEq}
+\end{equation}
+的数值求解及其数值算法的设计分析，许多的基本概念借助于数学上对一阶微分方程
+\begin{equation}
+\dot{y}(t)=f(y,t)\label{eq:ch2Firsty}
+\end{equation}
+的数值算法的设计分析，如数值算法的相容性、稳定性和收敛性等。事实上，结构动力学运动方程(\ref{eq:ch2DyEq})本质上就是一个二阶的线性微分方程，通过引入速度为独立的变量，可以将其二阶微分形式降维为具有形如(\ref{eq:ch2Firsty})形式的更高阶一阶微分方程。因此，在这一节主要针对(\ref{eq:ch2Firsty})进行数值算法性能指标分析，如果一些定义对于二阶微分方程有差异，再具体指出。
+
+由于广义线性法是求解微分方程(\ref{eq:ch2Firsty})更具一般性的方法，因此本节先通过最简单的数值算法(Euler法)分析引出广义线性法，而后后续的算法性能分析都尽可能在广义线性的基础上进行定义及分析。而常见的线性多步法和Runge-Kutta法将是由其特例导出。
+
+\section{广义线性法}
+在20世纪初.Euler在他的著作中，针对如下自治的一阶微分方程
+\begin{equation}
+\dot{y}(t)=f(y(x))\label{eq:ch2FirstAuto}
+\end{equation}
+带有合适的初始条件$y(x_0)=y_0\in\mathbf{X}$的数值求解，给出了如下的数值格式
+\begin{equation}
+y_n=y_{n-1}+h_nf(y_{n-1}),\qquad n=1,2,\cdots\label{eq:ch2Euler}
+\end{equation}
+对于每一个给定的$n$值，其$y_n$都可以根据上式由$y_{n-1}$计算得到。同时，$h_n$为在第$n$的积分步长，一般情况下没必要要求在整个积分过程中相等，亦即变时间步长积分。但在本文整个分析过程中，我们假定其数值算法都是在相等的时间步长内进行积分及计算的。亦即
+\begin{equation}
+h_n\equiv h\qquad n=1,2,\cdots
+\end{equation}
+
+显然，该数值格式的优劣很大程度依赖于积分步长$h$以及等式(\ref{eq:ch2FirstAuto})右端项$f(y)$随变量$y$的变化快慢程度。而后者通常由$f(y)$满足的Lipschitz常数$L$来度量。同时，我们也需要提及该条件也保证了微分方程(\ref{eq:ch2FirstAuto})解的存在唯一性。于是，我们在本全文中都假定分析的微分方程都满足该Lipschitz条件。关于该条件的对其微分方程解的存在唯一性的证明，读者可以翻阅任意一本常微分方程的书籍都可以查到。这里不再做过多累述。
+
+事实上，Euler格式(\ref{eq:ch2Euler})简单易用，但它却是条件稳定的且只有一阶精度。在很多时候，并不是很实用。因此，后续许多学者提出了很多改进Euler格式的算法。其中，至少有两个策略进行改进Euler方法
+\begin{itemize}
+\item[\ddag] 单步内使用更多、更复杂的计算，如Runge-Kutta法。
+\item[\ddag] 使用更多已知节点的逼近值。如线性多步法。
+\item[\ddag] 更高阶导数值的使用。如Rosenbrock方法。
+\item[\ddag] 多步-多级-多导数方法。如拟Runge-Kutta方法。
+\end{itemize}
+
+从简单的Euler格式出发，我们可以建立如图\ref{Fig:ch2GeneraAxis}的改进策略坐标系
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1.2,yscale=1.2]
+\draw [thin,->] (0,0) -- (2,1) node [align=center,below right] {每步更多的\\ 计算量};
+\draw [thin,->] (0,0)--(-2,1.5) node [align=center,below left] {更多的\\ 已知节点值};
+\draw [thin,->] (0,0)--(0,2) node [left] {$y$的导数};
+\draw [thin,->] (0,2) -- (0,4) node [left] {$f$的导数};
+%============================================
+\draw [thin,fill,red] (0,0) circle [radius = 0.03] node [below] {Euler格式};
+\end{tikzpicture}
+\bicaption[Fig:ch2GeneraAxis]{}{Euler格式的改进策略示意图}{Fig.$\!$}{Generalizations of the Euler method}
+\end{figure}
+
+在图\ref{Fig:ch2GeneraAxis}的坐标系下，现阶段的大多数的数值算法都可以被建立在这个三维算法格式空间中，如图\ref{Fig:ch2GeneraEuler}所示。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1.2,yscale=1.2]
+\draw [thin] (0,0) -- (2.5,1) node [right] {Runge-Kutta法};
+\draw [thin] (0,0)--(-2,1.5) node [left] {线性多步法};
+\draw [thin,dashed] (-2,1.5)--(0.5,2.5);
+\draw [thin,dashed] (2.5,1) -- (0.5,2.5);
+%============================================
+\draw [thin] (0,3) node [left] {泰勒级数法} -- (2.5,4);
+\draw [thin] (0,3)--(-2,4.5) node [left] {Obreshkov方法};
+\draw [thin,dashed] (-2,4.5)--(0.5,5.5);
+\draw [thin,dashed] (2.5,4) -- (0.5,5.5);
+%--------------------------------
+\draw [thin] (0,3) -- (0,0);
+\draw [thin] (2.5,4) -- (2.5,1);
+\draw [thin] (-2,4.5) -- (-2,1.5);
+\draw [thin,dashed] (0.5,2.5) -- (0.5,5.5);
+%=-==========================================
+\draw [thin] (0,6) -- (2.5,7) node [right] {Rosenbrock方法};
+\draw [thin] (0,6)--(-2,7.5);
+\draw [thin] (-2,7.5)--(0.5,8.5);
+\draw [thin] (2.5,7) -- (0.5,8.5);
+%--------------------------------
+\draw [thin] (0,6) -- (0,3);
+\draw [thin] (2.5,7) -- (2.5,4);
+\draw [thin] (-2,7.5) -- (-2,4.5);
+\draw [thin,dashed] (0.5,5.5) -- (0.5,8.5);
+%=-==========================================
+\draw [thin,fill,red] (0,0) circle [radius = 0.03] node [below] {Euler格式};
+\draw [thin,fill,blue] (0.5,2.5) circle [radius = 0.03] node [right] {广义线性法};
+\draw [thin,fill] (0,3) circle [radius = 0.03];
+\draw [thin,fill] (2.5,7) circle [radius = 0.03];
+\draw [thin,fill] (-2,4.5) circle [radius = 0.03];
+\draw [thin,fill] (2.5,1) circle [radius = 0.03];
+\draw [thin,fill] (-2,1.5) circle [radius = 0.03];
+\end{tikzpicture}
+\bicaption[Fig:ch2GeneraEuler]{}{Euler格式的改进算法框架}{Fig.$\!$}{Generalized formworks of the Euler method}
+\end{figure}
+于是，可以知道广义线性法是线性多步法和Runge-Kutta法的结合，更是Euler格式的一般化推广。同时，从该图可以知道，广义线性法并不能包括所有的数值格式，它仅仅是现阶段数值算法的一大类。
+
+广义线性方法即结合了线性多步法的多值特点，又使用了Runge-Kutta方法的多级属性。并且它首次由Butcher教授在1966年提出\cite{Butcher1966}。下面提及的广义线性法的矩阵表示形式则是由Burrage和Butcher在1980年引入而来\cite{Burrage1980}。
+
+假定在单步内进行转换的量有$r$个。在第$n$步的开始，这$r$个量被表示为$y_1^{[n-1]},y_2^{[n-1]},\cdots,y_r^{[n-1]}$。当第$n$步完成计算时，对应的$r$量分别为$y_1^{[n]},y_2^{[n]},\cdots,y_r^{[n]}$，并且这些量将作为下一个时间步内的起始值进行后续计算。同时，在单步内计算的$s$个级数值$Y_1,Y_2,\cdots,Y_s$所对应的级数导数值为$F_1,F_2,\cdots,F_S$。为了表示方便，引入如下的$r$或$s$维向量表示，即
+\begin{equation}
+y^{[n-1]}=\begin{bmatrix}
+y_1^{[n-1]}\\
+y_2^{[n-1]}\\
+\vdots\\
+y_r^{[n-1]}
+\end{bmatrix},\quad
+y^{[n]}=\begin{bmatrix}
+y_1^{[n]}\\
+y_2^{[n]}\\
+\vdots\\
+y_r^{[n]}
+\end{bmatrix},\quad
+Y^{[n]}=\begin{bmatrix}
+Y_1^{[n]}\\
+Y_2^{[n]}\\
+\vdots\\
+Y_s^{[n]}
+\end{bmatrix},\quad
+F(Y^{[n]})=\begin{bmatrix}
+f(Y_1^{[n]})\\
+f(Y_2^{[n]})\\
+\vdots\\
+f(Y_s^{[n]})
+\end{bmatrix}
+\end{equation}
+
+类似于Runge-Kutta方法，级数值$Y_i$是依赖于级数导数值$F_i$的线性组合来计算，但是现在的广义线性法将其推广为不仅依赖于级数导数值的线性组合，也依赖于前述已知节点逼近值$y_i$的线性组合。即
+\begin{equation}
+Y_i=\sum_{j=1}^{s}ha_{ij}f(Y_j^{[n]})+\sum_{j=1}^{r}u_{ij}y_j^{[n-1]},\qquad i=1,2,\cdots,s
+\end{equation}
+同理，对于输出量$y_i^{[n]}$也是不仅线性依赖于各个级数导数值$F_i=f(Y_i)$而且也是线性依赖于前述已知节点逼近值$y_i$，即
+\begin{equation}
+y_i^{[n]}=\sum_{j=1}^{s}hb_{ij}f(Y_j^{[n]})+\sum_{j=1}^{r}v_{ij}y_j^{[n-1]},\qquad i=1,2,\cdots,r
+\end{equation}
+
+令$A=[a_{ij}]_{s\times s},U=[u_{ij}]_{s\times r},B=[b_{ij}]_{r\times s}$以及$V=[v_{ij}]_{r\times r}$，同时使用Kronecker积符号($\otimes$)，广义线性法则可以表示为
+\begin{align}
+Y^{[n]}&=h(A\otimes I)F(Y^{[n]})+(U\otimes I)y^{[n-1]}\\
+y^{[n]}&=h(B\otimes I)F(Y^{[n]})+(V\otimes I)y^{[n-1]}
+\end{align}
+其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下
+\begin{equation}
+A\otimes I=\begin{bmatrix}
+a_{11} I&&a_{12}I&&\cdots && a_{1s} I\\
+a_{21}I&&a_{22}I&&\cdots && a_{2s}I\\
+\vdots &&\vdots && &&\vdots\\
+a_{s1}I &&a_{s2}I&&\cdots &&a_{ss}I
+\end{bmatrix}
+\end{equation}
+进一步，广义线性法可以被表达为如下形式
+\begin{equation}
+\begin{bmatrix}
+\begin{array}{c}
+Y^{[n]}\\ \hline
+y^{[n]}
+\end{array}
+\end{bmatrix}=\begin{bmatrix}
+\begin{array}{c|c}
+A\otimes I & U\otimes I \\ \hline
+B\otimes I & V\otimes I
+\end{array}
+\end{bmatrix}\begin{bmatrix}
+\begin{array}{c}
+hF(Y^{[n]})\\ \hline
+y^{[n-1]}
+\end{array}
+\end{bmatrix}
+\end{equation}
+
+通常情况下，广义线性法的数值性能就被这四个矩阵所决定，即$A,U,B$和$V$。因此对于一个广义线性法，可以用如下的分块矩阵刻画
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+	A & U \\
+	B & V
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+
+当四个矩阵取值不同时，对应着不同的广义线性法。特别地，线性多步法和Runge-Kutta都是其特例。
+\subsection{线性多步法}
+考虑对于一阶微分方程(\ref{eq:ch2Firsty})的$k$步线性多步法
+\begin{equation}
+y_n=\sum_{j=1}^{k}\alpha_jy_{n-j}+h\sum_{j=0}^{k}\beta_jf(y_{n-j})\label{eq:ch2lms}
+\end{equation}
+令$Y^{[n]}=y_n$，并且
+\begin{subequations}
+\begin{align}
+y^{[n]}&=[y_n,y_{n-1},\cdots,y_{n-k+1},hf(y_n),hf(y_{n-1}),\cdots,hf(y_{n-k+1})]^{\text{T}}\\
+y^{[n-1]}&=[y_{n-1},y_{n-2},\cdots,y_{n-k},hf(y_{n-1}),hf(y_{n-2}),\cdots,hf(y_{n-k})]^{\text{T}}
+\end{align}
+\end{subequations}
+于是，对于$k$步的线性多步法(\ref{eq:ch2lms})可以写成广义线性法的形式\cite{Burrage1980}，即$r=2k,s=1$
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+A & U\\
+B & V
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cccccccc}{c:cccccccc}
+\beta_0 & \alpha_1 & \cdots & \alpha_{k-1} & \alpha_k & \beta_1 & \cdots & \beta_{k-1} & \beta_k\\
+\beta_0 & \alpha_1 & \cdots & \alpha_{k-1} & \alpha_k & \beta_1 & \cdots & \beta_{k-1} & \beta_k\\
+0 & 1 & \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+\vdots & \vdots & \ddots &\vdots & \vdots &\vdots &\ddots &\vdots &\vdots \\
+0 & 0 &\cdots & 1 & 0 &0 &\cdots & 0 & 0 \\
+1 & 0 & \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+0 & 0 & \cdots & 0 & 0 & 1 & \cdots & 0 & 0\\
+\vdots & \vdots & \ddots &\vdots & \vdots &\vdots &\ddots &\vdots &\vdots \\
+0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 1 & 0
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+特别地，$k$步的线性多步法(\ref{eq:ch2lms})也可以写成$r=k,s=1$的广义线性法形式\cite{Butcher2006c}。文\inlinecite{Butcher2006c}中定义
+\begin{equation}
+y_i^{[n-1]}=\sum_{j=k-i+1}^{k}(\alpha_jy_{n+k-i-j}+h\beta_jf(y_{n+k-i-j})),\quad i=1,2,\cdots,k\label{eq:ch2skeel}
+\end{equation}
+其实，公式(\ref{eq:ch2skeel})在文献\inlinecite{Skeel1979}就已经被提出来了，只不过没有涉及广义线性法的应用。于是，线性多步法(\ref{eq:ch2lms})则可以写成如下形式
+\begin{equation}
+y_n=h\beta_0f(y_n)+\sum_{j=1}^{k}(\alpha_jy_{n-j}+h\beta_jf(y_{n-j}))=h\beta_0f(y_n)+y_k^{[n-1]}
+\end{equation}
+进一步，在$n$步结束时有
+\begin{equation}
+\begin{aligned}
+y_i^{[n]}&=\sum_{j=k-i+1}^{k}(\alpha_jy_{n+1+k-i-j}+h\beta_jf(y_{n+1+k-i-j}))\\
+&=\alpha_{k-i+1}y_n+h\beta_{k-i+1}f(y_n)+\sum_{j=k-i+2}^{k}(\alpha_jy_{n+1+k-i-j}+h\beta_jf(y_{n+1+k-i-j}))\\
+&=(\alpha_{k-i+1}\beta_0+\beta_{k-i+1})hf(y_n)+\alpha_{k-i+1}y_k^{[n-1]}+y_{i-1}^{[n-1]}
+\end{aligned}
+\end{equation}
+其中，$i=1,2,\cdots,k$。线性多步法(\ref{eq:ch2lms})的另外一种广义线性法的表出形式为
+\begin{equation}\displaystyle
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+A & U\\
+B & V
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cccccc}{c:cccccc}
+\beta_0 & 0 & 0 & 0 & \cdots & 0 & 1\\
+\alpha_k\beta_0+\beta_k & 0 & 0 & 0 & \cdots & 0 & \alpha_k\\
+\alpha_{k-1}\beta_0+\beta_{k-1} & 1 & 0 & 0 & \cdots & 0 & \alpha_{k-1}\\
+\alpha_{k-2}\beta_0+\beta_{k-2} & 0 & 1 & 0 & \cdots & 0 & \alpha_{k-2}\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+\alpha_{2}\beta_0+\beta_{2} & 0 & 0 & 0 & \cdots & 0 & \alpha_{2}\\
+\alpha_{1}\beta_0+\beta_{1} & 0 & 0 & 0 & \cdots & 1 & \alpha_{1}\\
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$Y^{[n]}=y_n$，而$y^{[n]}$则为
+\begin{equation}
+y^{[n]}=[y_1^{[n]},y_2^{[n]},\cdots,y_{k-1}^{[n]},y_{k}^{[n]}]^{\text{T}}
+\end{equation}
+\subsubsection{Adams算法}
+线性多步法中，求解非刚性问题时最常用的方法就是Adams方法族。对于线性多步法公式(\ref{eq:ch2lms})中，令
+\begin{equation}
+\alpha_1=1,\qquad \alpha_i=0,\ i>1
+\end{equation}
+于是，Adams算法的一般形式为
+\begin{equation}
+y_n=y_{n-1}+h\sum_{j=0}^{k}\beta_jf(y_{n-j})\label{eq:ch2Adams}
+\end{equation}
+需要说明的是，算法(\ref{eq:ch2Adams})的显式形式通常称为Adams-Bashforth算法；而其隐式算法则称为Adams-Moulton算法。
+
+于是将Adams算法改写成广义线性法的形式，则有
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cccccc}
+Y_1\\
+y_n\\
+hf(y_n)\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+\vdots\\
+hf(y_{n-k+1})
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cccccc}{c:cccccc}
+\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\
+\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+1		& 0 & 0		  & 0   &\cdots &0 &0\\
+0		& 0 & 1		  & 0   &\cdots &0 &0\\
+0		& 0 & 0		  & 1   &\cdots &0 &0\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0	& 0 & 0		  & 0   &\cdots &1 &0
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cccccc}
+hf(Y_1)\\
+y_{n-1}\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+hf(y_{n-3})\\
+\vdots\\
+hf(y_{n-k})
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+
+尽管Adams-Moulton算法是隐式的，由于其较小的稳定域，它们也仅仅只在求解非刚性问题时使用。除此之外，它们也常常在作为预测-校正格式使用。
+\subsubsection{预测-校正格式}
+预测-校正格式中，使用Adams-Bashforth方法作为一个预测逼近算法，而Adams-Moulton作为校正格式算法。同时，预测-校正格式通常简写为“PEC”或者“PECE”，其中“P”代表预测格式，而“E”表示计算，“C”表示校正格式。其算法一般形式可写为
+\begin{subequations}
+\begin{align}
+y_n^*&=y_{n-1}+h\sum_{j=1}^{k}\beta_j^*f(y_{n-j})\\
+y_n&=y_{n-1}+h\beta_0f(y_n^*)+h\sum_{j=1}^{k}\beta_jf(y_{n-j})
+\end{align}
+\end{subequations}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \section{相容性}

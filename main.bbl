@@ -121,6 +121,27 @@
   \bibyear{2016}\bibnumber{(s1)}\thinspace{}\textnormal{:
   }\bibpages{45\thinspace{}\textnormal{--}\thinspace{}49}\@.
 
+\bibitem{Burrage1980}
+\bibauthor{Burrage K\@, Butcher J~C}\@. \bibtitle{Non-linear stability of a
+  general class of differential equation methods}\bibmark{[J/OL]}\@.
+  \bibjournal{BIT Numerical Mathematics}\@, \bibyear{1980}\@,
+  \bibvolume{20}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{185\thinspace{}\textnormal{--}\thinspace{}203}\@.
+  \newline\url{https://doi.org/10.1007/BF01933191}\@.
+
+\bibitem{Butcher2006c}
+\bibauthor{Butcher J~C\@, Hill A~T}\@. \bibtitle{Linear Multistep Methods as
+  Irreducible General Linear Methods}\bibmark{[J]}\@. \bibjournal{Bit Numerical
+  Mathematics}\@, \bibyear{2006}\@,
+  \bibvolume{46}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{5\thinspace{}\textnormal{--}\thinspace{}19}\@.
+
+\bibitem{Skeel1979}
+\bibauthor{Skeel R~D}\@. \bibtitle{Equivalent forms of multistep
+  formulas}\bibmark{[J]}\@. \bibjournal{Mathematics of Computation}\@,
+  \bibyear{1979}\@, \bibvolume{33}\bibnumber{(148)}\thinspace{}\textnormal{:
+  }\bibpages{1229\thinspace{}\textnormal{--}\thinspace{}1250}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural
