@@ -97,7 +97,7 @@
 \bibitem{吴志桥2009}
 \bibauthor{吴志桥}\@.
   \bibtitle{L-稳定格式求解结构动力学方程和多体系统动力学方程}\bibmark{[D]}\@.
-  \bibaddress{[出版地不详]}\thinspace{}\textnormal{:
+  \bibaddress{长沙}\thinspace{}\textnormal{:
   }\bibschool{国防科学技术大学}\@, \bibyear{2009}\@.
 
 \bibitem{Yin2013}
@@ -220,6 +220,54 @@
   problems}\bibmark{[J]}\@. \bibjournal{Bit Numerical Mathematics}\@,
   \bibyear{1991}\@, \bibvolume{31}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{124\thinspace{}\textnormal{--}\thinspace{}143}\@.
+
+\bibitem{Cash1980}
+\bibauthor{Cash J~R}\@. \bibtitle{On the integration of stiff systems of
+  O.D.E.s using extended backward differentiation formulae}\bibmark{[J]}\@.
+  \bibjournal{Numerische Mathematik}\@, \bibyear{1980}\@,
+  \bibvolume{34}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{235\thinspace{}\textnormal{--}\thinspace{}246}\@.
+
+\bibitem{Cash1983}
+\bibauthor{Cash J~R}\@. \bibtitle{The integration of stiff initial value
+  problems in ODEs using modified extended backward differentiation
+  formulae}\bibmark{[J]}\@. \bibjournal{Computers \& Mathematics with
+  Applications}\@, \bibyear{1983}\@,
+  \bibvolume{9}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{645\thinspace{}\textnormal{--}\thinspace{}657}\@.
+
+\bibitem{Jackiewicz1995a}
+\bibauthor{Jackiewicz Z\@, Tracogna S}\@. \bibtitle{A General Class of Two-Step
+  Runge-Kutta Methods for Ordinary Differential Equations}\bibmark{[J]}\@.
+  \bibjournal{Siam Journal on Numerical Analysis}\@, \bibyear{1995}\@,
+  \bibvolume{32}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{1390\thinspace{}\textnormal{--}\thinspace{}1427}\@.
+
+\bibitem{Burrage1994}
+\bibauthor{Burrage K\@, Sharp P~W}\@. \bibtitle{A class of variable-step
+  explicit Nordsieck multivalue methods}\bibmark{[J]}\@. \bibjournal{SIAM
+  Journal on Numerical Analysis}\@, \bibyear{1994}\thinspace{}\textnormal{:
+  }\bibpages{1434\thinspace{}\textnormal{--}\thinspace{}1451}\@.
+
+\bibitem{Burrage1978a}
+\bibauthor{Burrage K}\@. \bibtitle{High order algebraically stable Runge-Kutta
+  methods}\bibmark{[J]}\@. \bibjournal{BIT}\@, \bibyear{1978}\@,
+  \bibvolume{18}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{373\thinspace{}\textnormal{--}\thinspace{}383}\@.
+
+\bibitem{Burrage1988}
+\bibauthor{Burrage K}\@. \bibtitle{Order Properties of Implicit Multivalue
+  Methods for Ordinary Differential Equations}\bibmark{[J]}\@. \bibjournal{SIma
+  Journal of Numerical Analysis}\@, \bibyear{1988}\@,
+  \bibvolume{8}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{43\thinspace{}\textnormal{--}\thinspace{}69}\@.
+
+\bibitem{Schmitt2004}
+\bibauthor{Schmitt B~A\@, Weiner R}\@. \bibtitle{Parallel Two-Step W-Methods
+  with Peer Variables}\bibmark{[J]}\@. \bibjournal{Siam Journal on Numerical
+  Analysis}\@, \bibyear{2004}\@,
+  \bibvolume{42}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{265\thinspace{}\textnormal{--}\thinspace{}282}\@.
 
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method

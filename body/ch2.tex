@@ -617,6 +617,216 @@ B & V
 \end{equation}
 关于One-leg方法的另外一种书写方式可以参见文献\inlinecite{Butcher2006c}。
 
+\subsection{扩展的向后微分格式}
+Cash提出了扩展到向后微分公式(Extended backward differentiation formulas:EBDFs)\cite{Cash1980}求解刚性微分方法。该格式涉及到$t_{n+k+1}$时刻$f$的计算，其算法可描述为
+\begin{equation}
+\sum_{j=0}^{k}\alpha_jy_{n+j}=h\beta_kf(y_{n+k})+h\beta_{k+1}f(y_{n+k+1})\label{eq:ch2EBDFs}
+\end{equation}
+其中，参数$\alpha_j,j=0,1,\cdots,k,\beta_k,\beta_{k+1}$可通过算法格式的$k+1$阶精度条件确定，而不失一般性的可以假定
+\begin{equation}
+\alpha_k=1
+\end{equation}
+对于$k=1,2,3$，上述EBDFs算法格式可实现A稳定和L稳定；而对于$k=4,5,6,7,8$，仅仅是$A(\alpha)$稳定的。其稳定域大小可见文\inlinecite{Cash1980,ErnstHairer1996}。
+
+假设变量逼近值$y_n,y_{n+1},\cdots,y_{n+k-1}$已知，则基于EBDF格式的计算步骤可描述为
+\begin{itemize}
+\item[i.] 基于经典的向后微分格式计算$\overline{y}_{n+k}$
+\begin{equation}
+\overline{y}_{n+k}+\sum_{j=0}^{k-1}\hat{\alpha}_jy_{n+j}=h\hat{\beta}_kf(\overline{y}_{n+k})
+\end{equation}
+\item[ii.] 继续用上式中的向后微分公式计算$\overline{y}_{n+k+1}$的值，即
+\begin{equation}
+\overline{y}_{n+k+1}+\hat{\alpha}_{k-1}\overline{y}_{n+k}+\sum_{j=0}^{k-2}\hat{\alpha}_jy_{n+j+1}=h\hat{\beta}_kf(\overline{y}_{n+k+1})
+\end{equation}
+\item[iii.] 丢弃$\overline{y}_{n+k}$，在EBDF格式(\ref{eq:ch2EBDFs})中引入$\overline{y}_{n+k+1}$求解$y_{n+k}$可得
+\begin{equation}
+y_{n+k}+\sum_{j=0}^{k-1}\alpha_jy_{n+j}=h\beta_kf(y_{n+k})+h\beta_{k+1}f(\overline{y}_{n+k+1})
+\end{equation}
+\end{itemize}
+正如文\inlinecite{Cash1983}所指出的，上述EBDF格式的缺点是在步骤(i,ii)中需要求解带有相同雅可比矩阵($I-h\hat{\beta}_kJ,J=\partial f/\partial y$)的非线性方程组，但在第iii步骤中，却又有一个不同的雅可比矩阵($I-h\beta_kJ$)进行非线性求解，这就导致了额外的计算量。为了弥补这个缺点，Cash又提出了修改版的EBDF格式(MEBDF)\cite{Cash1983}，即
+\begin{equation}
+\sum_{j=0}^{k}\alpha_jy_{n+j}=h\hat{\beta}_kf(y_{n+k})+h(\beta_k-\hat{\beta}_k)f(\overline{y}_{n+k})+h\beta_{k+1}f(\overline{y}_{n+k+1})
+\end{equation}
+
+数值格式(MEBDF)对于$k=1,2,3$也是A稳定和L稳定的；而对于$k=4,5,6,7,8$都是带有较对应的EBDF格式更大$\alpha$角度的$A(\alpha)$稳定算法。对于BDF、EBDF和MEBDF算法所对应的$\alpha$角度列于表\ref{Tab:ch2AalphaBDF}。
+\begin{table}[htbp]
+\bicaption[Tab:ch2AalphaBDF]{}{BDF、EBDF和MEBDF算法所对应的$A(\alpha)$稳定的$\alpha$角度值}{Table$\!$}{Angles $\alpha$ of $A(\alpha)$-stability for BDF, EBDF and MEBDF schemes}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{ccccccccc}
+\toprule[1.5pt]
+k & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\midrule[1pt]
+BDF & $90^\circ$ & $90^\circ$ & $88^\circ$ & $73^\circ$ & $51^\circ$ & $18^\circ$ & $*$ & $*$\\
+EBDF & $90^\circ$ & $90^\circ$ & $90^\circ$ & $87.61^\circ$ & $80.21^\circ$ & $67.73^\circ$ & $48.82^\circ$ & $19.98^\circ$\\
+MEBDF & $90^\circ$ & $90^\circ$ & $90^\circ$ & $88.36^\circ$ & $83.07^\circ$ & $74.48^\circ$ & $61.98^\circ$ & $42.87^\circ$\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+注意，表格中带有“$*$”表示不是$A(\alpha)$稳定的。
+
+将步骤i中的$\overline{y}_{n+k}$带入到步骤ii中的方程中，得
+\begin{equation}
+\begin{aligned}
+\overline{y}_{n+k+1}=&\hat{\alpha}_{k-1}\hat{\alpha}_0y_n+\sum_{j=1}^{k-1}(\hat{\alpha}_{k-1}\hat{\alpha}_j-\hat{\alpha}_{j-1})y_{n+j}\\
+&-h\hat{\alpha}_{k-1}\hat{\beta}_{k}f(\overline{y}_{n+k})+h\hat{\beta}_{k}f(\overline{y}_{n+k+1})
+\end{aligned}
+\end{equation}
+于是，基于MEBDF格式，其广义线性法的表示形式中的四个矩阵可写为
+\begin{equation}
+Y^{[n]}=\begin{bmatrix}
+\overline{y}_{n+k}\\
+\overline{y}_{n+k+1}\\
+{y}_{n+k}
+\end{bmatrix},\quad F(Y^{[n]})=\begin{bmatrix}
+f(\overline{y}_{n+k})\\
+f(\overline{y}_{n+k+1})\\
+f({y}_{n+k})\\
+\end{bmatrix},\quad y^{[n]}=\begin{bmatrix}
+y_{n+k}\\
+y_{n+k-1}\\
+\vdots\\
+y_{n+1}
+\end{bmatrix}
+\end{equation}
+其系数矩阵$A,B,U$和$V$分别为
+\begin{subequations}
+\begin{align}
+& \qquad \qquad \qquad\quad A=\begin{bmatrix}
+\hat{\beta}_k & 0 & 0\\
+-\hat{\alpha}_{k-1}\hat{\beta}_{k} & \hat{\beta}_{k} & 0\\
+\beta_k-\hat{\beta}_k & \beta_{k+1} & \hat{\beta}_k
+\end{bmatrix}\\
+U &= \begin{bmatrix}
+-\hat{\alpha}_{k-1} &-\hat{\alpha}_{k-2} & \cdots & -\hat{\alpha}_1 & -\hat{\alpha}_0\\
+\hat{\alpha}_{k-1}\hat{\alpha}_{k-1}-\hat{\alpha}_{k-2} & \hat{\alpha}_{k-1}\hat{\alpha}_{k-2}-\hat{\alpha}_{k-3} & \cdots & \hat{\alpha}_{k-1}\hat{\alpha}_1-\hat{\alpha}_0 & \hat{\alpha}_{k-1}\hat{\alpha}_0\\
+-\alpha_{k-1} & -\alpha_{k-2} & \cdots & -\alpha_1 & -\alpha_0
+\end{bmatrix}\\
+B&=\begin{bmatrix}
+\beta_k-\hat{\beta}_k & \beta_{k+1} & \hat{\beta}_k\\
+0 & 0 & 0\\
+\vdots & \vdots & \vdots \\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix},\qquad V=\begin{bmatrix}
+-\alpha_{k-1} & -\alpha_{k-2} & \cdots & -\alpha_1 & -\alpha_0\\
+1 & 0 & \cdots & 0 & 0\\
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & \cdots & 0 & 0\\
+0 & 0 & \cdots & 1 & 0\\
+\end{bmatrix}
+\end{align}
+\end{subequations}
+\subsection{两步Runge-Kutta方法}
+考虑文\inlinecite{Jackiewicz1995a}中提出的两步Runge-Kutta方法(Two-step Runge-Kutta: TSRK)。该类算法依赖于两个连续步的极数值，其算法可以描述为
+\begin{subequations}
+\begin{align}
+Y_i^{[n]}&=(1-\mu_i)y_{n-1}+\mu_iy_{n-2}+h\sum_{j=1}^{s}\left(a_{ij}f(Y_j^{[n]})+b_{ij}f(Y_j^{[n-1]})\right)\\
+y_n&=(1-\vartheta)y_{n-1}+\vartheta y_{n-2}+h\sum_{j=1}^{s}\left(v_jf(Y_j^{[n]})+w_jf(Y_j^{[n-1]}) \right)
+\end{align}\label{eq:ch2TSRK}
+\end{subequations}
+其中，$i=1,2,\cdots,s$，且$Y_i^{[n]}$是$y(t_{n-1}+c_ih)$的逼近值。TSRK也可以由下列的Butcher表格给出
+\begin{equation}
+\begin{BMAT}[5pt]{c|c|c}{c|c}
+\mathbf{u} & \mathbf{A} & \mathbf{B}\\
+\vartheta & \mathbf{v}^T & \mathbf{w}^T
+\end{BMAT}
+\end{equation}
+在广义线性法的表示形式下，则有$r=s+2$
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:ccc}
+Y^{[n]}\\ y_n\\ y_{n-1}\\ hF(Y^{[n]})
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:ccc}{c:ccc}
+\mathbf{A} & \mathbf{e-u} & \mathbf{u} & \mathbf{B}\\
+\mathbf{v}^T & 1-\vartheta & \vartheta & \mathbf{w}^T\\
+0 & 1 & 0 & 0\\
+\mathbf{I} & \mathbf{0} & \mathbf{0} & \mathbf{0}
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[4.2pt]{c}{c:ccc}
+hF(Y^{[n]})\\ y_{n-1}\\ y_{n-2}\\ hF(Y^{[n-1]})
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$\mathbf{I}$是维度为$s$的单位矩阵，而$\mathbf{0}$是带有合适维度的全零矩阵，$\mathbf{A}=[a_{ij}]_{s\times s},\mathbf{B}=[b_{ij}]_{s\times s},\mathbf{v}=[v_j]_{s\times 1},\mathbf{w}=[w_j]_{s\times 1}$，而$\mathbf{e}$为$s$维元素全为1的列向量。
+
+\subsection{多步Runge-Kutta方法}
+Burrage和Sharp等人研究如下形式的多步Runge-Kutta方法(Multistep Runge-Kutta: MRK)\cite{Burrage1994,Burrage1978a,Burrage1988}。
+\begin{subequations}
+\begin{align}
+Y_i^{[n]}&=h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n]})+\sum_{j=1}^{k}u_{ij}y_{n+1-j}\\
+y_{n+1}&=h\sum_{j=1}^{s}b_jf(Y_j^{[n]})+\sum_{j=1}^{k}v_{j}y_{n+1-j}
+\end{align}\label{eq:ch2MRK}
+\end{subequations}
+其中，$i=1,2,\cdots,s$。而$Y_i^{[n]}$是$y(t_n+c_ih)$的逼近值。对于$k=1$，上述的MRK方法就退化为普通的Runge-Kutta算法;而对于$k=2$，MRK方法并不能退化为前述提及的TSRK方法(\ref{eq:ch2TSRK})。这是因为MRK方法仅仅依{}赖于当前步内的级数值$Y_i^{[n]}$，而TSRK方法却依赖于连续两个时间步长内的级数值$Y_i^{[n]},Y_i^{[n-1]}$。
+
+通过令
+\begin{equation}
+y^{[n]}=[y_{n+1}\quad y_n\quad \cdots\quad y_{n-k+2}]^T
+\end{equation}
+MRK方法(\ref{eq:ch2MRK})可以写成广义线性法的形式如下
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+A & U\\
+B & V
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{cccc:ccccc}{cccc:ccccc}
+a_{11} & a_{12} & \cdots & a_{1s} & u_{11} & u_{12} & \cdots & u_{1,k-1} & u_{1k}\\
+a_{21} & a_{22} & \cdots & a_{2s} & u_{21} & u_{22} & \cdots & u_{2,k-1} & u_{2k}\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+a_{s1} & a_{s2} & \cdots & a_{ss} & u_{s1} & u_{s2} & \cdots & u_{s,k-1} & u_{sk}\\
+b_1 & b_2 & \cdots & b_s & v_1 & v_2 & \cdots & v_{k-1} & v_k\\
+0 & 0 & \cdots & 0 & 1 & 0 & \cdots & 0 & 0\\
+\vdots & \vdots & \ddots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 1 & 0
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+\subsection{Peer方法}
+Weiner等人提出了Peer方法\cite{Schmitt2004}，该方法使得所有的级数值都有相同的特点，同时没有额外的求解向量使用。对于两步Peer方法，在一致网格划分下有如下形式
+\begin{equation}
+Y_i^{[n]}=\sum_{j=1}^{s}b_{ij}Y_j^{[n]}+h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n-1]})+h\sum_{j=1}^{s}r_{ij}f(Y_j^{{n}})
+\end{equation}
+其中，$i=1,2,\cdots,s$，在向量形式下有
+\begin{equation}
+Y^{[n]}=(\mathbf{B}\otimes \mathbf{I})Y^{[n-1]}+h(\mathbf{A}\otimes \mathbf{I})F(Y^{[n-1]})+h(\mathbf{R}\otimes \mathbf{I})F(Y^{[n]})
+\end{equation}
+而$Y^{[n]}$是$y(t_n+c_ih),i=1,2,\cdots,s$的逼近值。上述格式在广义线性法的形式下表出为
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cc}
+Y^{[n]}\\ Y^{[n]}\\ hF(Y^{[n]})
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cc}{c:cc}
+\mathbf{R} & \mathbf{B} & \mathbf{A}\\
+\mathbf{R} & \mathbf{B} & \mathbf{A}\\
+\mathbf{I} & \mathbf{0} & \mathbf{0}
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[4.2pt]{c}{c:cc}
+hF(Y^{[n]})\\ Y^{[n-1]}\\ hF(Y^{[n-1]})
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
