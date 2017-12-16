@@ -119,7 +119,15 @@
   \RequirePackage{pifont}
 \fi
 \RequirePackage{CJKfntef}
-\RequirePackage[amsmath,thmmarks,hyperref]{ntheorem}
+%=====================================================
+% 我修改了定理环境，其选项前加了framed
+\RequirePackage[amsmath,thmmarks,hyperref,framed]{ntheorem}
+%======================================================
+% 我自己添加到宏包，目的是为了完成定理环境的书写
+\RequirePackage{framed}
+% 自己添加的项
+\renewcommand*\FrameCommand{{\color{gray}\vrule width 5pt \hspace{5pt}}}
+%==============END===================
 \RequirePackage{longtable}
 \RequirePackage{booktabs}
 \RequirePackage[sort&compress]{natbib}

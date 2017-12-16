@@ -23,11 +23,11 @@ Warning--string name "jun" is undefined
 Warning--string name "apr" is undefined
 --line 55185 of file reference.bib
 Warning--string name "oct" is undefined
---line 59625 of file reference.bib
+--line 59623 of file reference.bib
 Warning--string name "jan" is undefined
---line 70127 of file reference.bib
+--line 70125 of file reference.bib
 Warning--string name "apr" is undefined
---line 70243 of file reference.bib
+--line 70241 of file reference.bib
 Warning--I didn't find a database entry for "Bathe2012a"
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
@@ -42,14 +42,14 @@ Warning--Require address: 李寿佛2010
 Warning--Require address: Lambert1973
 Warning--Require address: Butcher1987
 Warning--Require booktitle: Dahlquist1976
+Warning--Require address: Burrage1995
+Warning--Require address: Jackiewicz2009
 Warning--Require citedate: Hoff198887
 Warning--Require address: Chopra2011
 Warning--Require address: Wood
 Warning--Require citedate: Dokainish1989
 Warning--Require citedate: Subbaraj1989
 Warning--Require citedate: Fung1996a
-Warning--Require address: Jackiewicz2009
-Warning--Require citedate: Jackiewicz2009
 Warning--Require address: JasonHar2012
 Warning--Require citedate: JasonHar2012
 Warning--Require citedate: Lees1966
@@ -81,45 +81,45 @@ Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Bathe2012
 Warning--Require citedate: Noh2013
-You've used 113 entries,
+You've used 114 entries,
             3103 wiz_defined-function locations,
-            1477 strings with 25628 characters,
-and the built_in function-call counts, 152303 in all, are:
-= -- 15884
-> -- 325
-< -- 757
-+ -- 11609
-- -- 1067
-* -- 5542
-:= -- 15745
+            1480 strings with 25661 characters,
+and the built_in function-call counts, 152823 in all, are:
+= -- 15922
+> -- 327
+< -- 762
++ -- 11640
+- -- 1071
+* -- 5572
+:= -- 15801
 add.period$ -- 0
-call.type$ -- 113
+call.type$ -- 114
 change.case$ -- 0
 chr.to.int$ -- 27
-cite$ -- 165
-duplicate$ -- 21676
-empty$ -- 6919
-format.name$ -- 812
-if$ -- 39712
+cite$ -- 166
+duplicate$ -- 21724
+empty$ -- 6955
+format.name$ -- 816
+if$ -- 39861
 int.to.chr$ -- 0
-int.to.str$ -- 113
+int.to.str$ -- 114
 missing$ -- 0
-newline$ -- 366
-num.names$ -- 114
-pop$ -- 2321
+newline$ -- 369
+num.names$ -- 115
+pop$ -- 2325
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1475
+skip$ -- 1493
 stack$ -- 0
-substring$ -- 17907
-swap$ -- 5676
+substring$ -- 17945
+swap$ -- 5708
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 52
-while$ -- 2126
-width$ -- 116
-write$ -- 1683
+while$ -- 2133
+width$ -- 117
+write$ -- 1693
 (There were 60 warnings)

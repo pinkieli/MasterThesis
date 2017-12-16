@@ -269,6 +269,18 @@
   \bibvolume{42}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{265\thinspace{}\textnormal{--}\thinspace{}282}\@.
 
+\bibitem{Burrage1995}
+\bibauthor{Burrage K}\@. \bibbooktitle{Parallel and sequential methods for
+  ordinary differential equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Clarendon Press
+  ;}\@, \bibyear{1995}\@.
+
+\bibitem{Jackiewicz2009}
+\bibauthor{Jackiewicz Z}\@. \bibbooktitle{General linear methods for ordinary
+  differential equations}\bibmark{[M]}\@. \bibedition{\mbox{First Edition}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
+  \bibyear{2009}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural
@@ -352,13 +364,6 @@
   \bibjournal{AIAA Journal}\@, \bibyear{1974}\@,
   \bibvolume{108}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{1868\thinspace{}\textnormal{--}\thinspace{}1876}\@.
-
-\bibitem{Jackiewicz2009}
-\bibauthor{Jackiewicz Z}\@. \bibbooktitle{General linear methods for ordinary
-  differential equations}\bibmark{[M/OL]}\@. \bibedition{\mbox{First
-  Edition}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{Wiley}\@, \bibyear{2009}\@.
-  \newline\url{http://gen.lib.rus.ec/book/index.php?md5=C7D7B1DD95FCF4E5A3F1E5492F76EDB5}\@.
 
 \bibitem{张雄2007}
 \bibauthor{张雄\@, 王天舒\@, 刘岩}\@.

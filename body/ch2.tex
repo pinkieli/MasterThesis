@@ -1,7 +1,7 @@
 \chapter{积分算法的设计及基本分析}
 对于结构动力学运动方程
 \begin{equation}
-M\ddot{U}(t)+C\dot{U}(t)+KU(t)=F(t)\label{eq:ch2DyEq}
+\bm{M}\ddot{\bm{U}}(t)+\bm{C}\dot{\bm{U}}(t)+\bm{KU}(t)=\bm{F}(t)\label{eq:ch2DyEq}
 \end{equation}
 的数值求解及其数值算法的设计分析，许多的基本概念借助于数学上对一阶微分方程
 \begin{equation}
@@ -16,7 +16,7 @@ M\ddot{U}(t)+C\dot{U}(t)+KU(t)=F(t)\label{eq:ch2DyEq}
 \begin{equation}
 \dot{y}(t)=f(y(x))\label{eq:ch2FirstAuto}
 \end{equation}
-带有合适的初始条件$y(x_0)=y_0\in\mathbf{X}$的数值求解，给出了如下的数值格式
+带有合适的初始条件$y(x_0)=y_0\in\mathbb{X}$的数值求解，给出了如下的数值格式
 \begin{equation}
 y_n=y_{n-1}+h_nf(y_{n-1}),\qquad n=1,2,\cdots\label{eq:ch2Euler}
 \end{equation}
@@ -134,14 +134,14 @@ y_i^{[n]}=\sum_{j=1}^{s}hb_{ij}f(Y_j^{[n]})+\sum_{j=1}^{r}v_{ij}y_j^{[n-1]},\qqu
 Y^{[n]}&=h(A\otimes I)F(Y^{[n]})+(U\otimes I)y^{[n-1]}\\
 y^{[n]}&=h(B\otimes I)F(Y^{[n]})+(V\otimes I)y^{[n-1]}
 \end{align}
-其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下，若$A\in\mathbf{R}^{m_1\times n_1}$和$B\in\mathbf{R}^{m_2\times n_2}$，则有
+其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下，若$A\in\mathbb{R}^{m_1\times n_1}$和$B\in\bm{R}^{m_2\times n_2}$，则有
 \begin{equation}
 A\otimes B=\begin{bmatrix}
 a_{11} B&&a_{12}B&&\cdots && a_{1,n_1} B\\
 a_{21}B&&a_{22}B&&\cdots && a_{2,n_1}B\\
 \vdots &&\vdots && &&\vdots\\
 a_{m_1,1}B &&a_{m_1,2}B&&\cdots &&a_{m_1,n_1}B
-\end{bmatrix}\in\mathbf{R}^{m_1m_2\times n_1n_2}
+\end{bmatrix}\in\mathbb{R}^{m_1m_2\times n_1n_2}
 \end{equation}
 进一步，广义线性法可以被表达为如下形式
 \begin{equation}
@@ -160,15 +160,15 @@ B\otimes I & V\otimes I
 hF(Y^{[n]})\\ \hline
 y^{[n-1]}
 \end{array}
-\end{bmatrix}
+\end{bmatrix}\label{eq:ch2GLM}
 \end{equation}
 
 通常情况下，广义线性法的数值性能就被这四个矩阵所决定，即$A,U,B$和$V$。因此对于一个广义线性法，可以用如下的分块矩阵刻画
 \begin{equation}
 \begin{bmatrix}
 \begin{BMAT}[5pt]{c:c}{c:c}
-	A & U \\
-	B & V
+	\bm{A} & \bm{U} \\
+	\bm{B} & \bm{V}
 \end{BMAT}
 \end{bmatrix}
 \end{equation}
@@ -727,8 +727,8 @@ y_n&=(1-\vartheta)y_{n-1}+\vartheta y_{n-2}+h\sum_{j=1}^{s}\left(v_jf(Y_j^{[n]})
 其中，$i=1,2,\cdots,s$，且$Y_i^{[n]}$是$y(t_{n-1}+c_ih)$的逼近值。TSRK也可以由下列的Butcher表格给出
 \begin{equation}
 \begin{BMAT}[5pt]{c|c|c}{c|c}
-\mathbf{u} & \mathbf{A} & \mathbf{B}\\
-\vartheta & \mathbf{v}^T & \mathbf{w}^T
+\bm{u} & \bm{A} & \bm{B}\\
+\vartheta & \bm{v}^T & \bm{w}^T
 \end{BMAT}
 \end{equation}
 在广义线性法的表示形式下，则有$r=s+2$
@@ -739,10 +739,10 @@ Y^{[n]}\\ y_n\\ y_{n-1}\\ hF(Y^{[n]})
 \end{BMAT}
 \end{bmatrix}=\begin{bmatrix}
 \begin{BMAT}[5pt]{c:ccc}{c:ccc}
-\mathbf{A} & \mathbf{e-u} & \mathbf{u} & \mathbf{B}\\
-\mathbf{v}^T & 1-\vartheta & \vartheta & \mathbf{w}^T\\
+\bm{A} & \bm{e-u} & \bm{u} & \bm{B}\\
+\bm{v}^T & 1-\vartheta & \vartheta & \bm{w}^T\\
 0 & 1 & 0 & 0\\
-\mathbf{I} & \mathbf{0} & \mathbf{0} & \mathbf{0}
+\bm{I} & \bm{0} & \bm{0} & \bm{0}
 \end{BMAT}
 \end{bmatrix}\begin{bmatrix}
 \begin{BMAT}[4.2pt]{c}{c:ccc}
@@ -750,7 +750,7 @@ hF(Y^{[n]})\\ y_{n-1}\\ y_{n-2}\\ hF(Y^{[n-1]})
 \end{BMAT}
 \end{bmatrix}
 \end{equation}
-其中，$\mathbf{I}$是维度为$s$的单位矩阵，而$\mathbf{0}$是带有合适维度的全零矩阵，$\mathbf{A}=[a_{ij}]_{s\times s},\mathbf{B}=[b_{ij}]_{s\times s},\mathbf{v}=[v_j]_{s\times 1},\mathbf{w}=[w_j]_{s\times 1}$，而$\mathbf{e}$为$s$维元素全为1的列向量。
+其中，$\bm{I}$是维度为$s$的单位矩阵，而$\bm{0}$是带有合适维度的全零矩阵，$\bm{A}=[a_{ij}]_{s\times s},\bm{B}=[b_{ij}]_{s\times s},\bm{v}=[v_j]_{s\times 1},\bm{w}=[w_j]_{s\times 1}$，而$\bm{e}$为$s$维元素全为1的列向量。
 
 \subsection{多步Runge-Kutta方法}
 Burrage和Sharp等人研究如下形式的多步Runge-Kutta方法(Multistep Runge-Kutta: MRK)\cite{Burrage1994,Burrage1978a,Burrage1988}。
@@ -794,7 +794,7 @@ Y_i^{[n]}=\sum_{j=1}^{s}b_{ij}Y_j^{[n]}+h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n-1]})+h\su
 \end{equation}
 其中，$i=1,2,\cdots,s$，在向量形式下有
 \begin{equation}
-Y^{[n]}=(\mathbf{B}\otimes \mathbf{I})Y^{[n-1]}+h(\mathbf{A}\otimes \mathbf{I})F(Y^{[n-1]})+h(\mathbf{R}\otimes \mathbf{I})F(Y^{[n]})
+Y^{[n]}=(\bm{B}\otimes \bm{I})Y^{[n-1]}+h(\bm{A}\otimes \bm{I})F(Y^{[n-1]})+h(\bm{R}\otimes \bm{I})F(Y^{[n]})
 \end{equation}
 而$Y^{[n]}$是$y(t_n+c_ih),i=1,2,\cdots,s$的逼近值。上述格式在广义线性法的形式下表出为
 \begin{equation}
@@ -804,9 +804,9 @@ Y^{[n]}\\ Y^{[n]}\\ hF(Y^{[n]})
 \end{BMAT}
 \end{bmatrix}=\begin{bmatrix}
 \begin{BMAT}[5pt]{c:cc}{c:cc}
-\mathbf{R} & \mathbf{B} & \mathbf{A}\\
-\mathbf{R} & \mathbf{B} & \mathbf{A}\\
-\mathbf{I} & \mathbf{0} & \mathbf{0}
+\bm{R} & \bm{B} & \bm{A}\\
+\bm{R} & \bm{B} & \bm{A}\\
+\bm{I} & \bm{0} & \bm{0}
 \end{BMAT}
 \end{bmatrix}\begin{bmatrix}
 \begin{BMAT}[4.2pt]{c}{c:cc}
@@ -815,26 +815,81 @@ hF(Y^{[n]})\\ Y^{[n-1]}\\ hF(Y^{[n-1]})
 \end{bmatrix}
 \end{equation}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%================================================================================================
 \section{相容性}
+这一节，将建立广义线性法(\ref{eq:ch2GLM})的相容性条件。当然，从广义线性法的相容条件可以退化为线性多步法和Runge-Kutta法的相容性条件。假设下列两个向量存在
+\begin{align}
+\bm{q}_0=[q_{1,0}\quad {q}_{2,0}\quad \cdots \quad{q}_{r,0}]^T\\
+\bm{q}_1=[q_{1,1}\quad {q}_{2,1}\quad \cdots \quad{q}_{r,1}]^T
+\end{align}
+使得输入向量$y^{[n-1]}$满足
+\begin{equation}
+y_i^{[n-1]}=q_{i,0}y(t_{n-1})+q_{i,1}hy'(t_{n-1})+\mathcal{O}(h^2),\quad i=1,2,\cdots,r
+\end{equation}
+同时，要求级数值$Y^{[n]}$和输出向量$y^{[n]}$的分量满足
+\begin{align}
+Y^{[n]}_i&=y(t_{n-1}+c_ih)+\mathcal{O}(h^2),\quad i=1,2,\cdots,s\\
+y_i^{[n]}&=q_{i,0}y(t_{n})+q_{i,1}hy'(t_{n})+\mathcal{O}(h^2),\quad i=1,2,\cdots,r
+\end{align}
+
+正如文\inlinecite{Butcher2008,Burrage1995,Jackiewicz2009}所说，将这些关系带入广义线性法(\ref{eq:ch2GLM})可得
+\begin{equation}
+\begin{aligned}
+y(t_{n-1})+&hc_iy'(t_{n-1})=h\sum_{j=1}^{s}a_{ij}y'(t_{n-1})\\
+&+\sum_{j=1}^{r}u_{ij}\left(q_{j,0}y(t_{n-1})+hq_{j,1}y'(t_{n-1})\right)+\mathcal{O}(h^2),i=1,2,\cdots,s
+\end{aligned}
+\end{equation}\vspace{-0.5cm}
+\begin{equation}
+\begin{aligned}
+q_{i,0}y(t_{n})+&q_{i,1}hy'(t_{n})=h\sum_{j=1}^{s}b_{ij}y'(t_{n})\\
+&+\sum_{j=1}^{r}v_{ij}\left(q_{j,0}y(t_{n-1})+hq_{j,1}y'(t_{n-1})\right)+\mathcal{O}(h^2),i=1,2,\cdots,r
+\end{aligned}
+\end{equation}
+在上述两式总比较$\mathcal{O}(1)$和$\mathcal{O}(h)$项的系数可得
+\begin{equation}
+\sum_{j=1}^{r}u_{ij}q_{j,0}=1,\ i=1,2,\cdots,s\qquad \sum_{j=1}^{r}v_{ij}q_{j,0}=q_{i,0},\ i = 1,2,\cdots,r
+\end{equation}
+和
+\begin{subequations}
+\begin{align}
+\sum_{j=1}^{s}a_{ij}+\sum_{j=1}^{r}u_{ij}q_{j,1}&=c_i,\ i=1,2,\cdots,s\\
+\sum_{j=1}^{s}b_{ij}+\sum_{j=1}^{r}v_{ij}q_{j,1}&=q_{i,0}+q_{i,1},\ i=1,2,\cdots,r
+\end{align}
+\end{subequations}
+于是，就有如下定义
+\begin{definition}[预相容]
+广义线性法($\bm{c,A,U,B,V}$)是预相容的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果存在向量$\bm{q}_0$使得
+\begin{equation}
+\bm{Uq}_0=\bm{e},\quad \bm{Vq}_0=\bm{q}_0\label{eq:ch2PreConsistent}
+\end{equation}
+其中，$\bm{e}=[1,\cdots,1]^T\in\mathbb{R}^s$。而向量$\bm{q}_0$称为预相容向量。
+\end{definition}
+
+
+
+
+
+
+
+
+
+
+考虑一个非常简单的一阶微分方程
+\begin{equation}
+y'=0,\quad y(0)=y_0\label{eq:ch2FirstTestPro}
+\end{equation}
+显然，该问题的有精确的显式解$y(t)=y_0$。亦即对任何的数值算法求解该问题(\ref{eq:ch2FirstTestPro})都应该有获得有界的数值逼近解$y_n$。否则，若设计一个数值算法连求解(\ref{eq:ch2FirstTestPro})都存在发散问题，可能这样的设计也是失败的。于是，针对广义线性法(\ref{eq:ch2GLM})求解该问题有
+\begin{equation}
+y^{[n+1]}=Vy^{[n]}
+\end{equation}
+若想使广义线性法(\ref{eq:ch2GLM})求解该问题获得有界解，则要求矩阵$V$满足一定的要求。
+
+
+
+
+
+
+
 
 \section{稳定性}
 
