@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 \providecommand{\bibauthor}[1]{#1}
 \providecommand{\bibeditor}[1]{#1}
 \providecommand{\bibtranslator}[1]{#1}
@@ -142,6 +142,85 @@
   \bibyear{1979}\@, \bibvolume{33}\bibnumber{(148)}\thinspace{}\textnormal{:
   }\bibpages{1229\thinspace{}\textnormal{--}\thinspace{}1250}\@.
 
+\bibitem{Curtiss1952}
+\bibauthor{Curtiss C~F\@, Hirschfelder J~O}\@. \bibtitle{Integration of Stiff
+  Equations}\bibmark{[J]}\@. \bibjournal{Proceedings of the National Academy of
+  Sciences of the United States of America}\@, \bibyear{1952}\@,
+  \bibvolume{38}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{235\thinspace{}\textnormal{--}\thinspace{}243}\@.
+
+\bibitem{Gear1971a}
+\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
+  ordinary differential equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{1971}\@.
+
+\bibitem{Butcher2008}
+\bibauthor{Butcher J~C}\@. \bibbooktitle{Numerical Methods for Ordinary
+  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{2nd ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
+  \bibyear{2008}\@.
+
+\bibitem{Lapidus1971}
+\bibauthor{Lapidus L\@, Seinfeld J~H}\@. \bibbooktitle{Mathematics in Science
+  and Engineering 74\thinspace{}\textnormal{: }Numerical Solution of Ordinary
+  Differential Equations}\bibmark{[M]}\@. \bibaddress{New
+  York}\thinspace{}\textnormal{: }\bibpublisher{Academic Press}\@,
+  \bibyear{1971}\@.
+
+\bibitem{Hairer1993}
+\bibauthor{Gerhard~Wanner Ernst~Hairer S~P~N}\@. \bibbooktitle{Springer Series
+  in Computational Mathematics 8\thinspace{}\textnormal{: }Solving Ordinary
+  Differential Equations I: Nonstiff Problems}\bibmark{[M]}\@.
+  \bibedition{\mbox{2nd~ed}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer-Verlag Berlin Heidelberg}\@, \bibyear{1993}\@.
+
+\bibitem{ErnstHairer1996}
+\bibauthor{Ernst~Hairer G~W}\@. \bibbooktitle{Springer Series in Computational
+  Mathematics 14\thinspace{}\textnormal{: }Solving Ordinary Differential
+  Equations II: Stiff and Differential-Algebraic Problems}\bibmark{[M]}\@.
+  \bibedition{\mbox{2nd~ed}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer-Verlag Berlin Heidelberg}\@, \bibyear{1996}\@.
+
+\bibitem{李寿佛2010}
+\bibauthor{李寿佛}\@.
+  \bibbooktitle{刚性常微分方程及刚性泛函微分方程数值分析}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{湘潭大学出版社}\@, \bibyear{2010}\@.
+
+\bibitem{Lambert1973}
+\bibauthor{Lambert J~D}\@. \bibbooktitle{Computational Methods in Ordinary
+  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{1st~ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{John Wiley \&
+  Sons Inc}\@, \bibyear{1973}\@.
+
+\bibitem{Butcher1987}
+\bibauthor{Butcher J~C}\@. \bibbooktitle{The numerical analysis of ordinary
+  differential equations: Runge-Kutta and general linear
+  methods}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{John Wiley and Sons}\@, \bibyear{1987}\@.
+
+\bibitem{Dahlquist1976}
+\bibauthor{Dahlquist G}\@. \bibtitle{Error analysis for a class of methods for
+  stiff non-linear initial value problems}\bibmark{[M]}
+  //\thinspace{}\bibeditor{Watson G}\@. \@.
+  \bibaddress{Berlin}\thinspace{}\textnormal{: }\bibpublisher{Springer}\@,
+  \bibyear{1976}\thinspace{}\textnormal{:
+  }\bibpages{60\thinspace{}\textnormal{--}\thinspace{}72}\@.
+
+\bibitem{Dahlquist1983}
+\bibauthor{Dahlquist G}\@. \bibtitle{On One-Leg Multistep
+  Methods}\bibmark{[J]}\@. \bibjournal{Siam Journal on Numerical Analysis}\@,
+  \bibyear{1983}\@, \bibvolume{20}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{1130\thinspace{}\textnormal{--}\thinspace{}1138}\@.
+
+\bibitem{Hundsdorfer1991}
+\bibauthor{Hundsdorfer W~H\@, Steininger B~I}\@. \bibtitle{Convergence of
+  linear multistep and one-leg methods for stiff nonlinear initial value
+  problems}\bibmark{[J]}\@. \bibjournal{Bit Numerical Mathematics}\@,
+  \bibyear{1991}\@, \bibvolume{31}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{124\thinspace{}\textnormal{--}\thinspace{}143}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural
@@ -188,20 +267,6 @@
   \bibedition{\mbox{4th~ed}}\@. \bibaddress{New York}\thinspace{}\textnormal{:
   }\bibpublisher{McGraw-hill London}\@, \bibyear{1991}\@.
 
-\bibitem{Hairer1993}
-\bibauthor{Gerhard~Wanner Ernst~Hairer S~P~N}\@. \bibbooktitle{Springer Series
-  in Computational Mathematics 8\thinspace{}\textnormal{: }Solving Ordinary
-  Differential Equations I: Nonstiff Problems}\bibmark{[M]}\@.
-  \bibedition{\mbox{2nd~ed}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{Springer-Verlag Berlin Heidelberg}\@, \bibyear{1993}\@.
-
-\bibitem{ErnstHairer1996}
-\bibauthor{Ernst~Hairer G~W}\@. \bibbooktitle{Springer Series in Computational
-  Mathematics 14\thinspace{}\textnormal{: }Solving Ordinary Differential
-  Equations II: Stiff and Differential-Algebraic Problems}\bibmark{[M]}\@.
-  \bibedition{\mbox{2nd~ed}}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{Springer-Verlag Berlin Heidelberg}\@, \bibyear{1996}\@.
-
 \bibitem{Dokainish1989}
 \bibauthor{Dokainish M\@, Subbaraj K}\@. \bibtitle{A survey of direct
   time-integration methods in computational structural dynamics—I. Explicit
@@ -233,25 +298,12 @@
   }\bibpages{3475\thinspace{}\textnormal{--}\thinspace{}3495}\@.
   \newline\url{http://dx.doi.org/10.1002/(SICI)1097-0207(19961030)39:20<3475::AID-NME10>3.0.CO;2-H}\@.
 
-\bibitem{Gear1971a}
-\bibauthor{Gear C~W}\@. \bibbooktitle{Numerical initial value problems in
-  ordinary differential equations}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
-  \bibyear{1971}\@.
-
 \bibitem{Geradin2006}
 \bibauthor{Geradin M}\@. \bibtitle{A classification and discussion of
   integration operators for transient structural response}\bibmark{[J]}\@.
   \bibjournal{AIAA Journal}\@, \bibyear{1974}\@,
   \bibvolume{108}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{1868\thinspace{}\textnormal{--}\thinspace{}1876}\@.
-
-\bibitem{Butcher2008}
-\bibauthor{Butcher J~C}\@. \bibbooktitle{Numerical Methods for Ordinary
-  Differential Equations}\bibmark{[M/OL]}\@. \bibedition{\mbox{2nd ed}}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
-  \bibyear{2008}\@.
-  \newline\url{http://gen.lib.rus.ec/book/index.php?md5=B23D7885C152FE31A577F318308DAFF3}\@.
 
 \bibitem{Jackiewicz2009}
 \bibauthor{Jackiewicz Z}\@. \bibbooktitle{General linear methods for ordinary

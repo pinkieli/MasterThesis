@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  15 DEC 2017 13:15
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  16 DEC 2017 09:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3542,8 +3542,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.109 Y=\begin{bmatrix}
-                       
+l.109 Y^{[n]}=\begin{bmatrix}
+                             
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -3564,592 +3564,2338 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.115 F(Y^{[n]})=\begin{bmatrix}
+                                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+
+! LaTeX Error: \begin{equation} on input line 96 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \end{bmatrix}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (430.3113pt too wide) detected at line 121
+\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 y[][] y[][] [][] y[];  
+y[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 y[][] y[][] [][] y[];  Y[] \OT1/cmr/m/n/
+10 = \OML/cmm/m/it/10 Y[][] Y[][] [][] Y[];  F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10
+ Y[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y[]
+\OT1/cmr/m/n/10 )[] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y[]\OT1
+/cmr/m/n/10 )[] [][] \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y[]\OT
+1/cmr/m/n/10 )
+ []
+
+Missing character: There is no 类 in font nullfont!
+Missing character: There is no 似 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no 方 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 级 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no 依 in font nullfont!
+Missing character: There is no 赖 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 级 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 导 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 组 in font nullfont!
+Missing character: There is no 合 in font nullfont!
+Missing character: There is no 来 in font nullfont!
+Missing character: There is no 计 in font nullfont!
+Missing character: There is no 算 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 但 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no 现 in font nullfont!
+Missing character: There is no 在 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 将 in font nullfont!
+Missing character: There is no 其 in font nullfont!
+Missing character: There is no 推 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 为 in font nullfont!
+Missing character: There is no 不 in font nullfont!
+Missing character: There is no 仅 in font nullfont!
+Missing character: There is no 依 in font nullfont!
+Missing character: There is no 赖 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 级 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 导 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 组 in font nullfont!
+Missing character: There is no 合 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 也 in font nullfont!
+Missing character: There is no 依 in font nullfont!
+Missing character: There is no 赖 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 前 in font nullfont!
+Missing character: There is no 述 in font nullfont!
+Missing character: There is no 已 in font nullfont!
+Missing character: There is no 知 in font nullfont!
+Missing character: There is no 节 in font nullfont!
+Missing character: There is no 点 in font nullfont!
+Missing character: There is no 逼 in font nullfont!
+Missing character: There is no 近 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 组 in font nullfont!
+Missing character: There is no 合 in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 即 in font nullfont!
+
+Overfull \hbox (47.12679pt too wide) in paragraph at lines 123--124
+[]$\OML/cmm/m/it/10 Y[]$$F[]$$y[]$ 
+ []
+
+
+Overfull \hbox (213.12042pt too wide) detected at line 126
+\OML/cmm/m/it/10 Y[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ha[]f\OT1/cmr/m/n/10
+ (\OML/cmm/m/it/10 Y[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 u[]y[];  i \OT1/c
+mr/m/n/10 = 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; [] ; s
+ []
+
+Missing character: There is no 同 in font nullfont!
+Missing character: There is no 理 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 对 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 输 in font nullfont!
+Missing character: There is no 出 in font nullfont!
+Missing character: There is no 量 in font nullfont!
+Missing character: There is no 也 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no 不 in font nullfont!
+Missing character: There is no 仅 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 依 in font nullfont!
+Missing character: There is no 赖 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 各 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 级 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 导 in font nullfont!
+Missing character: There is no 数 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 而 in font nullfont!
+Missing character: There is no 且 in font nullfont!
+Missing character: There is no 也 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 依 in font nullfont!
+Missing character: There is no 赖 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 前 in font nullfont!
+Missing character: There is no 述 in font nullfont!
+Missing character: There is no 已 in font nullfont!
+Missing character: There is no 知 in font nullfont!
+Missing character: There is no 节 in font nullfont!
+Missing character: There is no 点 in font nullfont!
+Missing character: There is no 逼 in font nullfont!
+Missing character: There is no 近 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 即 in font nullfont!
+
+Overfull \hbox (35.54808pt too wide) in paragraph at lines 126--128
+$\OML/cmm/m/it/10 y[]$$F[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (31.117pt too wide) in paragraph at lines 126--128
+\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Y[]\OT1/cmr/m/n/10 )$$\OML/
+cmm/m/it/10 y[]$ 
+ []
+
+
+Overfull \hbox (217.4486pt too wide) detected at line 130
+\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 hb[]f\OT1/cmr/m/n/10
+ (\OML/cmm/m/it/10 Y[]\OT1/cmr/m/n/10 ) + [] \OML/cmm/m/it/10 v[]y[];  i \OT1/c
+mr/m/n/10 = 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; [] ; r
+ []
+
+Missing character: There is no 令 in font nullfont!
+Missing character: There is no 以 in font nullfont!
+Missing character: There is no 及 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 同 in font nullfont!
+Missing character: There is no 时 in font nullfont!
+Missing character: There is no 使 in font nullfont!
+Missing character: There is no 用 in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no 积 in font nullfont!
+Missing character: There is no 符 in font nullfont!
+Missing character: There is no 号 in font nullfont!
+Missing character: There is no ( in font nullfont!
+Missing character: There is no ) in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 则 in font nullfont!
+Missing character: There is no 可 in font nullfont!
+Missing character: There is no 以 in font nullfont!
+Missing character: There is no 表 in font nullfont!
+Missing character: There is no 示 in font nullfont!
+Missing character: There is no 为 in font nullfont!
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.133 \begin{align}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no Y in font nullfont!
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.115 
-      
+l.134 Y^
+        {[n]}&=h(A\otimes I)F(Y^{[n]})+(U\otimes I)y^{[n-1]}\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-! Display math should end with $$.
-<to be read again> 
-                   \par 
-l.115 
-      
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
+! Misplaced alignment tab character &.
+l.134 Y^{[n]}&
+              =h(A\otimes I)F(Y^{[n]})+(U\otimes I)y^{[n-1]}\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.135 y^{[n]}&
+              =h(B\otimes I)F(Y^{[n]})+(V\otimes I)y^{[n-1]}
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
 
 
-Overfull \hbox (253.16371pt too wide) detected at line 115
-\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 y[][] y[][] [][] y[];  
-y[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 y[][] y[][] [][] y[];  Y \OT1/cmr/m/n/10
- = \OML/cmm/m/it/10 Y[][] Y[][] [][] Y[]; 
- []
+! LaTeX Error: \begin{document} ended by \end{align}.
 
-! You can't use `\eqno' in vertical mode.
-\endequation ->\eqno 
-                     \hbox {\@eqnnum }$$\@ignoretrue 
-l.116 \end{equation}
-                    
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 116--116
-[] 
- []
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.136 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.116 \end{equation}
-                    
+l.136 \end{align}
+                 
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-! Display math should end with $$.
-<to be read again> 
-                   \endgroup 
-l.116 \end{equation}
-                    
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-! Undefined control sequence.
-l.124 \section
-              {相容性}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+Missing character: There is no 其 in font nullfont!
+Missing character: There is no 中 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 表 in font nullfont!
+Missing character: There is no 示 in font nullfont!
+Missing character: There is no 维 in font nullfont!
+Missing character: There is no 度 in font nullfont!
 Missing character: There is no 相 in font nullfont!
 Missing character: There is no 容 in font nullfont!
-Missing character: There is no 性 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 124--125
-[] 
- []
-
-! Undefined control sequence.
-l.126 \section
-              {稳定性}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 稳 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 单 in font nullfont!
+Missing character: There is no 位 in font nullfont!
+Missing character: There is no 矩 in font nullfont!
+Missing character: There is no 阵 in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 而 in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no 积 in font nullfont!
 Missing character: There is no 定 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 如 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 若 in font nullfont!
+Missing character: There is no 和 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 则 in font nullfont!
+Missing character: There is no 有 in font nullfont!
+
+Overfull \hbox (38.05553pt too wide) in paragraph at lines 132--138
+[]$\OML/cmm/m/it/10 A \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (55.10092pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 a[]\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 ; U \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (55.86232pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 u[]\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10 ; B \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (49.95374pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 b[]\OT1/cmr/m/n/10 ][]$$\OML/cmm/m/it/10 V \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (39.82997pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 v[]\OT1/cmr/m/n/10 ][]$$\OMS/cmsy/m/n/10 
+$
+ []
+
+
+Overfull \hbox (20.52664pt too wide) in paragraph at lines 132--138
+[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (24.9283pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 
+
+ []
+
+
+Overfull \hbox (50.44342pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 Y[]\OT1/cmr/m/n/10 ) +
+ []
+
+
+Overfull \hbox (19.58473pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 U \OMS/cmsy/m/n/10 
+
+ []
+
+
+Overfull \hbox (34.53831pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 y[][] 
+ []
+
+
+Overfull \hbox (25.78824pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (25.51509pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 h\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B \OMS/cmsy/m/n/10 
+
+ []
+
+
+Overfull \hbox (50.44342pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 Y[]\OT1/cmr/m/n/10 ) +
+ []
+
+
+Overfull \hbox (19.72226pt too wide) in paragraph at lines 132--138
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 V \OMS/cmsy/m/n/10 
+
+ []
+
+
+Overfull \hbox (34.53831pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 y[]$
+ []
+
+
+Overfull \hbox (22.12495pt too wide) in paragraph at lines 132--138
+\OML/cmm/m/it/10 I$$A \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (52.75128pt too wide) in paragraph at lines 132--138
+\OT1/cmr/bx/n/10 R[]$$\OML/cmm/m/it/10 B \OMS/cmsy/m/n/10 2
+ []
+
+
+Overfull \hbox (35.22008pt too wide) in paragraph at lines 132--138
+\OT1/cmr/bx/n/10 R[]$ 
+ []
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 A\otimes B=\begin{bmatrix}
+                                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.140 a_{11} B&
+               &a_{12}B&&\cdots && a_{1,n_1} B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.140 a_{11} B&&
+                a_{12}B&&\cdots && a_{1,n_1} B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.140 a_{11} B&&a_{12}B&
+                        &\cdots && a_{1,n_1} B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.140 a_{11} B&&a_{12}B&&
+                         \cdots && a_{1,n_1} B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.140 a_{11} B&&a_{12}B&&\cdots &
+                                 & a_{1,n_1} B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.140 a_{11} B&&a_{12}B&&\cdots &&
+                                   a_{1,n_1} B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 a_{21}B&
+              &a_{22}B&&\cdots && a_{2,n_1}B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 a_{21}B&&
+               a_{22}B&&\cdots && a_{2,n_1}B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 a_{21}B&&a_{22}B&
+                       &\cdots && a_{2,n_1}B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 a_{21}B&&a_{22}B&&
+                        \cdots && a_{2,n_1}B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 a_{21}B&&a_{22}B&&\cdots &
+                                & a_{2,n_1}B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.141 a_{21}B&&a_{22}B&&\cdots &&
+                                  a_{2,n_1}B\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.142 \vdots &
+              &\vdots && &&\vdots\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.142 \vdots &&
+               \vdots && &&\vdots\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.142 \vdots &&\vdots &
+                       & &&\vdots\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.142 \vdots &&\vdots &&
+                         &&\vdots\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.142 \vdots &&\vdots && &
+                          &\vdots\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.142 \vdots &&\vdots && &&
+                           \vdots\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.143 a_{m_1,1}B &
+                  &a_{m_1,2}B&&\cdots &&a_{m_1,n_1}B
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.143 a_{m_1,1}B &&
+                   a_{m_1,2}B&&\cdots &&a_{m_1,n_1}B
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.143 a_{m_1,1}B &&a_{m_1,2}B&
+                              &\cdots &&a_{m_1,n_1}B
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.143 a_{m_1,1}B &&a_{m_1,2}B&&
+                               \cdots &&a_{m_1,n_1}B
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.143 a_{m_1,1}B &&a_{m_1,2}B&&\cdots &
+                                       &a_{m_1,n_1}B
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.143 a_{m_1,1}B &&a_{m_1,2}B&&\cdots &&
+                                        a_{m_1,n_1}B
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{equation} on input line 138 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.144 \end{bmatrix}
+                   \in\mathbf{R}^{m_1m_2\times n_1n_2}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (393.08287pt too wide) detected at line 145
+\OML/cmm/m/it/10 A \OMS/cmsy/m/n/10 
+ \OML/cmm/m/it/10 B \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 a[]Ba[]B [] a[]B[] a[]Ba
+[]B [] a[]B[] [][][][] a[]Ba[]B [] a[]B \OMS/cmsy/m/n/10 2 \OT1/cmr/bx/n/10 R[]
+
+ []
+
+Missing character: There is no 进 in font nullfont!
+Missing character: There is no 一 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
 Missing character: There is no 性 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 126--127
-[] 
- []
-
-! Undefined control sequence.
-l.128 \section
-              {收敛性}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 收 in font nullfont!
-Missing character: There is no 敛 in font nullfont!
-Missing character: There is no 性 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 128--129
-[] 
- []
-
-! Undefined control sequence.
-l.130 \section
-              {精度分析}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 精 in font nullfont!
-Missing character: There is no 度 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 析 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 130--131
-[] 
- []
-
-! Undefined control sequence.
-l.132 \subsection
-                 {数值耗散}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 数 in font nullfont!
-Missing character: There is no 值 in font nullfont!
-Missing character: There is no 耗 in font nullfont!
-Missing character: There is no 散 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 132--133
-[] 
- []
-
-! Undefined control sequence.
-l.134 \subsection
-                 {数值弥散}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 数 in font nullfont!
-Missing character: There is no 值 in font nullfont!
-Missing character: There is no 弥 in font nullfont!
-Missing character: There is no 散 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 134--135
-[] 
- []
-
-! Undefined control sequence.
-l.136 \section
-              {超调行为}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 超 in font nullfont!
-Missing character: There is no 调 in font nullfont!
-Missing character: There is no 行 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 可 in font nullfont!
+Missing character: There is no 以 in font nullfont!
+Missing character: There is no 被 in font nullfont!
+Missing character: There is no 表 in font nullfont!
+Missing character: There is no 达 in font nullfont!
 Missing character: There is no 为 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 136--137
-[] 
- []
-
-! Undefined control sequence.
-l.138 \section
-              {虚假根分析}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 虚 in font nullfont!
-Missing character: There is no 假 in font nullfont!
-Missing character: There is no 根 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 析 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 138--139
-[] 
- []
-
-! Undefined control sequence.
-l.140 \section
-              {直接积分法的放大矩阵}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 直 in font nullfont!
-Missing character: There is no 接 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 放 in font nullfont!
-Missing character: There is no 大 in font nullfont!
-Missing character: There is no 矩 in font nullfont!
-Missing character: There is no 阵 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 140--141
-[] 
- []
-
-
-! LaTeX Error: Environment definition undefined.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.142 \begin{definition}
-                        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-Missing character: There is no 直 in font nullfont!
-Missing character: There is no 接 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 一 in font nullfont!
-Missing character: There is no 致 in font nullfont!
-Missing character: There is no 性 in font nullfont!
-Missing character: There is no [ in font nullfont!
-\citation{Hoff1988}
-! Undefined control sequence.
-<write> ...: Citation `\@citeb ' on page \thepage 
-                                                  \space undefined\on@line .^^J
-l.143 ...��积分算法的一致性\cite{Hoff1988}
-                                                  。如果两个直接积�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-LaTeX Warning: Citation `Hoff1988' on page  undefined on input line 143.
-
-Missing character: There is no ] in font nullfont!
-Missing character: There is no 。 in font nullfont!
 Missing character: There is no 如 in font nullfont!
-Missing character: There is no 果 in font nullfont!
-Missing character: There is no 两 in font nullfont!
-Missing character: There is no 个 in font nullfont!
-Missing character: There is no 直 in font nullfont!
-Missing character: There is no 接 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 放 in font nullfont!
-Missing character: There is no 大 in font nullfont!
-Missing character: There is no 矩 in font nullfont!
-Missing character: There is no 阵 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 对 in font nullfont!
-Missing character: There is no 应 in font nullfont!
-Missing character: There is no 元 in font nullfont!
-Missing character: There is no 素 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 别 in font nullfont!
-Missing character: There is no 相 in font nullfont!
-Missing character: There is no 等 in font nullfont!
-! Undefined control sequence.
-\@footnotetext ...tins {\reset@font \footnotesize 
-                                                  \interlinepenalty \interfo...
-l.143 ...otnote{这也是矩阵相等的定义。}
-                                                  ，则称这两个积分�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 形 in font nullfont!
+Missing character: There is no 式 in font nullfont!
 
-! Undefined control sequence.
-\@footnotetext ...}\color@begingroup \@makefntext 
-                                                  {\rule \z@ \footnotesep \i...
-l.143 ...otnote{这也是矩阵相等的定义。}
-                                                  ，则称这两个积分�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-Missing character: There is no 这 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 也 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 是 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 矩 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 阵 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 相 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 等 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 的 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 定 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 义 in font [lmroman10-regular]:mapping=tex-text;!
-Missing character: There is no 。 in font [lmroman10-regular]:mapping=tex-text;!
-
-Overfull \hbox (30.8pt too wide) in paragraph at lines 143--143
-[][]\TU/lmr/m/n/10 这也是矩阵相等的定义。| 
- []
-
-Missing character: There is no ， in font nullfont!
-Missing character: There is no 则 in font nullfont!
-Missing character: There is no 称 in font nullfont!
-Missing character: There is no 这 in font nullfont!
-Missing character: There is no 两 in font nullfont!
-Missing character: There is no 个 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 是 in font nullfont!
-Missing character: There is no 一 in font nullfont!
-Missing character: There is no 致 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 。 in font nullfont!
-
-! LaTeX Error: \begin{document} ended by \end{definition}.
+! LaTeX Error: Environment bmatrix undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.144 \end{definition}
-                      
+l.148 \begin{bmatrix}
+                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (37.41301pt too wide) in paragraph at lines 143--145
-[][]$\OML/cmm/m/it/10 A$[]
- []
-
-
-! LaTeX Error: Environment definition undefined.
+! LaTeX Error: \begin{equation} on input line 147 ended by \end{bmatrix}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.146 \begin{definition}
-                        
+l.153 \end{bmatrix}
+                   =\begin{bmatrix}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-Missing character: There is no 直 in font nullfont!
-Missing character: There is no 接 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 相 in font nullfont!
-Missing character: There is no 似 in font nullfont!
-Missing character: There is no 性 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 谱 in font nullfont!
-Missing character: There is no 等 in font nullfont!
-Missing character: There is no 价 in font nullfont!
-Missing character: There is no [ in font nullfont!
-\citation{Hoff1988}
-! Undefined control sequence.
-<write> ...: Citation `\@citeb ' on page \thepage 
-                                                  \space undefined\on@line .^^J
-l.147 ...�法的相似性/谱等价\cite{Hoff1988}
-                                                  。如果两个直接积�...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-
-LaTeX Warning: Citation `Hoff1988' on page  undefined on input line 147.
-
-Missing character: There is no ] in font nullfont!
-Missing character: There is no 。 in font nullfont!
-Missing character: There is no 如 in font nullfont!
-Missing character: There is no 果 in font nullfont!
-Missing character: There is no 两 in font nullfont!
-Missing character: There is no 个 in font nullfont!
-Missing character: There is no 直 in font nullfont!
-Missing character: There is no 接 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 放 in font nullfont!
-Missing character: There is no 大 in font nullfont!
-Missing character: There is no 矩 in font nullfont!
-Missing character: There is no 阵 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 不 in font nullfont!
-Missing character: There is no 变 in font nullfont!
-Missing character: There is no 量 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 别 in font nullfont!
-Missing character: There is no 对 in font nullfont!
-Missing character: There is no 应 in font nullfont!
-Missing character: There is no 相 in font nullfont!
-Missing character: There is no 等 in font nullfont!
-Missing character: There is no ， in font nullfont!
-Missing character: There is no 则 in font nullfont!
-Missing character: There is no 称 in font nullfont!
-Missing character: There is no 这 in font nullfont!
-Missing character: There is no 两 in font nullfont!
-Missing character: There is no 个 in font nullfont!
-Missing character: There is no 积 in font nullfont!
-Missing character: There is no 分 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 是 in font nullfont!
-Missing character: There is no 相 in font nullfont!
-Missing character: There is no 似 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no / in font nullfont!
-Missing character: There is no 谱 in font nullfont!
-Missing character: There is no 等 in font nullfont!
-Missing character: There is no 价 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 。 in font nullfont!
-
-! LaTeX Error: \begin{document} ended by \end{definition}.
+! LaTeX Error: Environment bmatrix undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.148 \end{definition}
-                      
+l.153 \end{bmatrix}=\begin{bmatrix}
+                                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (32.93001pt too wide) in paragraph at lines 147--149
-[][]$\OML/cmm/m/it/10 A$
+! LaTeX Error: \begin{equation} on input line 147 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 \end{bmatrix}
+                   \begin{bmatrix}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.158 \end{bmatrix}\begin{bmatrix}
+                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{equation} on input line 147 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.163 \end{bmatrix}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (121.63762pt too wide) detected at line 164
+[] \OT1/cmr/m/n/10 = [][]
  []
 
-Missing character: There is no 需 in font nullfont!
-Missing character: There is no 要 in font nullfont!
-Missing character: There is no 说 in font nullfont!
-Missing character: There is no 明 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 是 in font nullfont!
-Missing character: There is no ， in font nullfont!
-Missing character: There is no 一 in font nullfont!
-Missing character: There is no 般 in font nullfont!
+Missing character: There is no 通 in font nullfont!
+Missing character: There is no 常 in font nullfont!
 Missing character: There is no 情 in font nullfont!
 Missing character: There is no 况 in font nullfont!
 Missing character: There is no 下 in font nullfont!
 Missing character: There is no ， in font nullfont!
-Missing character: There is no 两 in font nullfont!
-Missing character: There is no 个 in font nullfont!
-Missing character: There is no 谱 in font nullfont!
-Missing character: There is no 等 in font nullfont!
-Missing character: There is no 价 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 算 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
 Missing character: There is no 法 in font nullfont!
-Missing character: There is no 并 in font nullfont!
-Missing character: There is no 不 in font nullfont!
-Missing character: There is no 一 in font nullfont!
-Missing character: There is no 定 in font nullfont!
-Missing character: There is no 能 in font nullfont!
-Missing character: There is no 导 in font nullfont!
-Missing character: There is no 出 in font nullfont!
-Missing character: There is no 一 in font nullfont!
-Missing character: There is no 致 in font nullfont!
 Missing character: There is no 的 in font nullfont!
 Missing character: There is no 数 in font nullfont!
 Missing character: There is no 值 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 特 in font nullfont!
 Missing character: There is no 性 in font nullfont!
-Missing character: There is no ； in font nullfont!
-Missing character: There is no 而 in font nullfont!
-Missing character: There is no 两 in font nullfont!
-Missing character: There is no 个 in font nullfont!
-Missing character: There is no 算 in font nullfont!
-Missing character: There is no 法 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 一 in font nullfont!
-Missing character: There is no 致 in font nullfont!
-Missing character: There is no 性 in font nullfont!
-Missing character: There is no 可 in font nullfont!
-Missing character: There is no 以 in font nullfont!
-Missing character: There is no 保 in font nullfont!
-Missing character: There is no 证 in font nullfont!
-Missing character: There is no 。 in font nullfont!
+Missing character: There is no 能 in font nullfont!
+Missing character: There is no 就 in font nullfont!
+Missing character: There is no 被 in font nullfont!
 Missing character: There is no 这 in font nullfont!
-Missing character: There is no 样 in font nullfont!
-Missing character: There is no 的 in font nullfont!
-Missing character: There is no 例 in font nullfont!
-Missing character: There is no 子 in font nullfont!
+Missing character: There is no 四 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 矩 in font nullfont!
+Missing character: There is no 阵 in font nullfont!
+Missing character: There is no 所 in font nullfont!
+Missing character: There is no 决 in font nullfont!
+Missing character: There is no 定 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 即 in font nullfont!
+Missing character: There is no 和 in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 因 in font nullfont!
+Missing character: There is no 此 in font nullfont!
+Missing character: There is no 对 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 一 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no ， in font nullfont!
 Missing character: There is no 可 in font nullfont!
 Missing character: There is no 以 in font nullfont!
-Missing character: There is no 参 in font nullfont!
-Missing character: There is no 见 in font nullfont!
-Missing character: There is no 文 in font nullfont!
-Missing character: There is no 献 in font nullfont!
-! Undefined control sequence.
-l.150 ...样的例子可以参见文献\inlinecite
-                                                  {Hoff198887}。
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Missing character: There is no 用 in font nullfont!
+Missing character: There is no 如 in font nullfont!
+Missing character: There is no 下 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 分 in font nullfont!
+Missing character: There is no 块 in font nullfont!
+Missing character: There is no 矩 in font nullfont!
+Missing character: There is no 阵 in font nullfont!
+Missing character: There is no 刻 in font nullfont!
+Missing character: There is no 画 in font nullfont!
 
-Missing character: There is no H in font nullfont!
-Missing character: There is no o in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no f in font nullfont!
-Missing character: There is no 1 in font nullfont!
-Missing character: There is no 9 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 8 in font nullfont!
-Missing character: There is no 7 in font nullfont!
+Overfull \hbox (59.3381pt too wide) in paragraph at lines 166--167
+[]$\OML/cmm/m/it/10 A; U; B$$V$ 
+ []
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.168 \begin{bmatrix}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment BMAT undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 \begin{BMAT}
+                  [5pt]{c:c}{c:c}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.170 ^^IA &
+             U \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.171 ^^IB &
+             V
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{equation} on input line 167 ended by \end{BMAT}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.172 \end{BMAT}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{equation} on input line 167 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.173 \end{bmatrix}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (84.73502pt too wide) detected at line 174
+\OT1/cmr/m/n/10 [5\OML/cmm/m/it/10 pt\OT1/cmr/m/n/10 ][][]\OML/cmm/m/it/10 AU[]
+ BV
+ []
+
+Missing character: There is no 当 in font nullfont!
+Missing character: There is no 四 in font nullfont!
+Missing character: There is no 个 in font nullfont!
+Missing character: There is no 矩 in font nullfont!
+Missing character: There is no 阵 in font nullfont!
+Missing character: There is no 取 in font nullfont!
+Missing character: There is no 值 in font nullfont!
+Missing character: There is no 不 in font nullfont!
+Missing character: There is no 同 in font nullfont!
+Missing character: There is no 时 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 对 in font nullfont!
+Missing character: There is no 应 in font nullfont!
+Missing character: There is no 着 in font nullfont!
+Missing character: There is no 不 in font nullfont!
+Missing character: There is no 同 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 法 in font nullfont!
 Missing character: There is no 。 in font nullfont!
-
-Overfull \hbox (20.0pt too wide) in paragraph at lines 150--151
-[] 
- []
-
+Missing character: There is no 特 in font nullfont!
+Missing character: There is no 别 in font nullfont!
+Missing character: There is no 地 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 多 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 和 in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no 都 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no 其 in font nullfont!
+Missing character: There is no 特 in font nullfont!
+Missing character: There is no 例 in font nullfont!
+Missing character: There is no 。 in font nullfont!
 ! Undefined control sequence.
-l.152 \section
-              {本章小结}
+l.177 \subsection
+                 {线性多步法}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-Missing character: There is no 本 in font nullfont!
-Missing character: There is no 章 in font nullfont!
-Missing character: There is no 小 in font nullfont!
-Missing character: There is no 结 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 多 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 考 in font nullfont!
+Missing character: There is no 虑 in font nullfont!
+Missing character: There is no 对 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 一 in font nullfont!
+Missing character: There is no 阶 in font nullfont!
+Missing character: There is no 微 in font nullfont!
+Missing character: There is no 分 in font nullfont!
+Missing character: There is no 方 in font nullfont!
+Missing character: There is no 程 in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+<write> ...erence `eq:ch2Firsty' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.178 ...�于一阶微分方程(\ref{eq:ch2Firsty}
+                                                  )的$k$步线性多步法
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 152--153
-[] 
+
+LaTeX Warning: Reference `eq:ch2Firsty' on page  undefined on input line 178.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 多 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 176--179
+[]
  []
 
-)
-! Emergency stop.
-<*> ./ch2.tex
-             
-*** (job aborted, no legal \end found)
 
- 
+Overfull \hbox (16.38084pt too wide) in paragraph at lines 176--179
+[]$\OML/cmm/m/it/10 k$ 
+ []
+
+
+Overfull \hbox (145.95747pt too wide) detected at line 181
+\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = [] \OML/cmm/m/it/10 ^^K[]y[] \OT1/cmr/m/
+n/10 + \OML/cmm/m/it/10 h [] ^^L[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]\OT1/cm
+r/m/n/10 )[]
+ []
+
+Missing character: There is no 令 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 并 in font nullfont!
+Missing character: There is no 且 in font nullfont!
+
+! LaTeX Error: Environment subequations undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.183 \begin{subequations}
+                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.184 \begin{align}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no y in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.185 y^
+        {[n]}&=[y_n,y_{n-1},\cdots,y_{n-k+1},hf(y_n),hf(y_{n-1}),\cdots,hf(y...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Misplaced alignment tab character &.
+l.185 y^{[n]}&
+              =[y_n,y_{n-1},\cdots,y_{n-k+1},hf(y_n),hf(y_{n-1}),\cdots,hf(y...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.185 ...,hf(y_{n-1}),\cdots,hf(y_{n-k+1})]^{\text
+                                                  {T}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Misplaced alignment tab character &.
+l.186 y^{[n-1]}&
+                =[y_{n-1},y_{n-2},\cdots,y_{n-k},hf(y_{n-1}),hf(y_{n-2}),\cd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Undefined control sequence.
+l.186 ...}),hf(y_{n-2}),\cdots,hf(y_{n-k})]^{\text
+                                                  {T}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.187 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.187 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+! LaTeX Error: \begin{document} ended by \end{subequations}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.188 \end{subequations}
+                        
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 是 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 对 in font nullfont!
+Missing character: There is no 于 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 多 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+<write> ...Reference `eq:ch2lms' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.189 ...�$k$步的线性多步法(\ref{eq:ch2lms}
+                                                  )可以写成广义线性�...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:ch2lms' on page  undefined on input line 189.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no 可 in font nullfont!
+Missing character: There is no 以 in font nullfont!
+Missing character: There is no 写 in font nullfont!
+Missing character: There is no 成 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 形 in font nullfont!
+Missing character: There is no 式 in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{Burrage1980}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.189 ...��义线性法的形式\cite{Burrage1980}
+                                                  ，即$r=2k,s=1$
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `Burrage1980' on page  undefined on input line 189.
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 即 in font nullfont!
+
+Overfull \hbox (28.55443pt too wide) in paragraph at lines 181--190
+$\OML/cmm/m/it/10 Y[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (10.34615pt too wide) in paragraph at lines 181--190
+\OML/cmm/m/it/10 y[]$
+ []
+
+
+Overfull \hbox (20.52664pt too wide) in paragraph at lines 181--190
+[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (252.30713pt too wide) in paragraph at lines 181--190
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 y[]; y[]; [] ; y[]; hf\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; hf\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; hf\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 y[]\OT1/cmr/m/n/10 )][][] 
+ []
+
+
+Overfull \hbox (36.02438pt too wide) in paragraph at lines 181--190
+\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (252.52933pt too wide) in paragraph at lines 181--190
+\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 y[]; y[]; [] ; y[]; hf\OT1/cmr/m/n/10 (\OML/c
+mm/m/it/10 y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; hf\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 y[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [] ; hf\OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 y[]\OT1/cmr/m/n/10 )][]$
+ []
+
+
+Overfull \hbox (37.15572pt too wide) in paragraph at lines 181--190
+\OML/cmm/m/it/10 k$[][]$r \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (30.20828pt too wide) in paragraph at lines 181--190
+\OT1/cmr/m/n/10 2\OML/cmm/m/it/10 k; s \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 181--190
+\OT1/cmr/m/n/10 1$ 
+ []
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.191 \begin{bmatrix}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment BMAT undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.192 \begin{BMAT}
+                  [5pt]{c:c}{c:c}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.193 A &
+          U\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.194 B &
+          V
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{equation} on input line 190 ended by \end{BMAT}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.195 \end{BMAT}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{equation} on input line 190 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \end{bmatrix}
+                   =\begin{bmatrix}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment bmatrix undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \end{bmatrix}=\begin{bmatrix}
+                                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment BMAT undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.197 \begin{BMAT}
+                  [5pt]{c:cccccccc}{c:cccccccc}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Misplaced alignment tab character &.
+l.198 \beta_0 &
+                \alpha_1 & \cdots & \alpha_{k-1} & \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 \beta_0 & \alpha_1 &
+                           \cdots & \alpha_{k-1} & \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 \beta_0 & \alpha_1 & \cdots &
+                                    \alpha_{k-1} & \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 \beta_0 & \alpha_1 & \cdots & \alpha_{k-1} &
+                                                   \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 ...ha_1 & \cdots & \alpha_{k-1} & \alpha_k &
+                                                   \beta_1 & \cdots & \beta_...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 ...ots & \alpha_{k-1} & \alpha_k & \beta_1 &
+                                                   \cdots & \beta_{k-1} & \b...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 ...pha_{k-1} & \alpha_k & \beta_1 & \cdots &
+                                                   \beta_{k-1} & \beta_k\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.198 ...lpha_k & \beta_1 & \cdots & \beta_{k-1} &
+                                                   \beta_k\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 \beta_0 &
+                \alpha_1 & \cdots & \alpha_{k-1} & \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 \beta_0 & \alpha_1 &
+                           \cdots & \alpha_{k-1} & \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 \beta_0 & \alpha_1 & \cdots &
+                                    \alpha_{k-1} & \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 \beta_0 & \alpha_1 & \cdots & \alpha_{k-1} &
+                                                   \alpha_k & \beta_1 & \cdo...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 ...ha_1 & \cdots & \alpha_{k-1} & \alpha_k &
+                                                   \beta_1 & \cdots & \beta_...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 ...ots & \alpha_{k-1} & \alpha_k & \beta_1 &
+                                                   \cdots & \beta_{k-1} & \b...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 ...pha_{k-1} & \alpha_k & \beta_1 & \cdots &
+                                                   \beta_{k-1} & \beta_k\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.199 ...lpha_k & \beta_1 & \cdots & \beta_{k-1} &
+                                                   \beta_k\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 &
+          1 & \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 &
+              \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 & \cdots &
+                       0 & 0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 & \cdots & 0 &
+                           0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 & \cdots & 0 & 0 &
+                               0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 & \cdots & 0 & 0 & 0 &
+                                   \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 & \cdots & 0 & 0 & 0 & \cdots &
+                                            0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.200 0 & 1 & \cdots & 0 & 0 & 0 & \cdots & 0 &
+                                                0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 \vdots &
+               \vdots & \ddots &\vdots & \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 \vdots & \vdots &
+                        \ddots &\vdots & \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 \vdots & \vdots & \ddots &
+                                \vdots & \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 \vdots & \vdots & \ddots &\vdots &
+                                         \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 \vdots & \vdots & \ddots &\vdots & \vdots &
+                                                 \vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 ...vdots & \ddots &\vdots & \vdots &\vdots &
+                                                  \ddots &\vdots &\vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 ...\ddots &\vdots & \vdots &\vdots &\ddots &
+                                                  \vdots &\vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.201 ...\vdots & \vdots &\vdots &\ddots &\vdots &
+                                                  \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.202 0 &
+          0 &\cdots & 1 & 0 &0 &\cdots & 0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &
+             \cdots & 1 & 0 &0 &\cdots & 0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &\cdots &
+                      1 & 0 &0 &\cdots & 0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &\cdots & 1 &
+                          0 &0 &\cdots & 0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &\cdots & 1 & 0 &
+                             0 &\cdots & 0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &\cdots & 1 & 0 &0 &
+                                \cdots & 0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &\cdots & 1 & 0 &0 &\cdots &
+                                         0 & 0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.202 0 & 0 &\cdots & 1 & 0 &0 &\cdots & 0 &
+                                             0 \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 &
+          0 & \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 &
+              \cdots & 0 & 0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 & \cdots &
+                       0 & 0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 & \cdots & 0 &
+                           0 & 0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 & \cdots & 0 & 0 &
+                               0 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 & \cdots & 0 & 0 & 0 &
+                                   \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 & \cdots & 0 & 0 & 0 & \cdots &
+                                            0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.203 1 & 0 & \cdots & 0 & 0 & 0 & \cdots & 0 &
+                                                0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 &
+          0 & \cdots & 0 & 0 & 1 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 &
+              \cdots & 0 & 0 & 1 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 & \cdots &
+                       0 & 0 & 1 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 & \cdots & 0 &
+                           0 & 1 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 & \cdots & 0 & 0 &
+                               1 & \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 & \cdots & 0 & 0 & 1 &
+                                   \cdots & 0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 & \cdots & 0 & 0 & 1 & \cdots &
+                                            0 & 0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.204 0 & 0 & \cdots & 0 & 0 & 1 & \cdots & 0 &
+                                                0\\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 \vdots &
+               \vdots & \ddots &\vdots & \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 \vdots & \vdots &
+                        \ddots &\vdots & \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 \vdots & \vdots & \ddots &
+                                \vdots & \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 \vdots & \vdots & \ddots &\vdots &
+                                         \vdots &\vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 \vdots & \vdots & \ddots &\vdots & \vdots &
+                                                 \vdots &\ddots &\vdots &\vd...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 ...vdots & \ddots &\vdots & \vdots &\vdots &
+                                                  \ddots &\vdots &\vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 ...\ddots &\vdots & \vdots &\vdots &\ddots &
+                                                  \vdots &\vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.205 ...\vdots & \vdots &\vdots &\ddots &\vdots &
+                                                  \vdots \\
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no . in font nullfont!
+! Misplaced alignment tab character &.
+l.206 0 &
+          0 & \cdots & 0 & 0 & 0 & \cdots & 1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 &
+              \cdots & 0 & 0 & 0 & \cdots & 1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 & \cdots &
+                       0 & 0 & 0 & \cdots & 1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 & \cdots & 0 &
+                           0 & 0 & \cdots & 1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 & \cdots & 0 & 0 &
+                               0 & \cdots & 1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 & \cdots & 0 & 0 & 0 &
+                                   \cdots & 1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 & \cdots & 0 & 0 & 0 & \cdots &
+                                            1 & 0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.206 0 & 0 & \cdots & 0 & 0 & 0 & \cdots & 1 &
+                                                0
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+! LaTeX Error: \begin{equation} on input line 190 ended by \end{BMAT}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.207 \end{BMAT}
+                
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{equation} on input line 190 ended by \end{bmatrix}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208 \end{bmatrix}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (814.34811pt too wide) detected at line 209
+\OT1/cmr/m/n/10 [5\OML/cmm/m/it/10 pt\OT1/cmr/m/n/10 ][][]\OML/cmm/m/it/10 AU[]
+ BV \OT1/cmr/m/n/10 = [5\OML/cmm/m/it/10 pt\OT1/cmr/m/n/10 ][][]\OML/cmm/m/it/1
+0 ^^L[]^^K[] [] ^^K[]^^K[]^^L[] [] ^^L[]^^L[][] ^^L[]^^K[] [] ^^K[]^^K[]^^L[] [
+] ^^L[]^^L[][] \OT1/cmr/m/n/10 01 [] 000 [] 00[] [][] [] [][][] [] [][][] 00 []
+ 100 [] 00[] 10 [] 000 [] 00[] 00 [] 001 [] 00[] [][] [] [][][] [] [][][] 00 []
+ 000 [] 10
+ []
+
+Missing character: There is no 特 in font nullfont!
+Missing character: There is no 别 in font nullfont!
+Missing character: There is no 地 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 多 in font nullfont!
+Missing character: There is no 步 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+<write> ...Reference `eq:ch2lms' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.210 ...�$k$步的线性多步法(\ref{eq:ch2lms}
+                                                  )也可以写成$r=k,s=1$�...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Reference `eq:ch2lms' on page  undefined on input line 210.
+
+Missing character: There is no ) in font nullfont!
+Missing character: There is no 也 in font nullfont!
+Missing character: There is no 可 in font nullfont!
+Missing character: There is no 以 in font nullfont!
+Missing character: There is no 写 in font nullfont!
+Missing character: There is no 成 in font nullfont!
+Missing character: There is no 的 in font nullfont!
+Missing character: There is no 广 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+Missing character: There is no 线 in font nullfont!
+Missing character: There is no 性 in font nullfont!
+Missing character: There is no 法 in font nullfont!
+Missing character: There is no 形 in font nullfont!
+Missing character: There is no 式 in font nullfont!
+Missing character: There is no [ in font nullfont!
+\citation{Butcher2006c}
+! Undefined control sequence.
+<write> ...: Citation `\@citeb ' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.210 ...�广义线性法形式\cite{Butcher2006c}
+                                                  。文\inlinecite{Butcher2...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: Citation `Butcher2006c' on page  undefined on input line 210.
+
+Missing character: There is no ] in font nullfont!
+Missing character: There is no 。 in font nullfont!
+Missing character: There is no 文 in font nullfont!
+! Undefined control sequence.
+l.210 ...��式\cite{Butcher2006c}。文\inlinecite
+                                                  {Butcher2006c}中定义
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no B in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no 2 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no 中 in font nullfont!
+Missing character: There is no 定 in font nullfont!
+Missing character: There is no 义 in font nullfont!
+
+Overfull \hbox (31.72572pt too wide) in paragraph at lines 209--211
+$\OML/cmm/m/it/10 k$[]$r \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (25.20827pt too wide) in paragraph at lines 209--211
+\OML/cmm/m/it/10 k; s \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (10.43001pt too wide) in paragraph at lines 209--211
+\OT1/cmr/m/n/10 1$[] 
+ []
+
+
+Overfull \hbox (271.13304pt too wide) detected at line 213
+\OML/cmm/m/it/10 y[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 ^^K[]y[] \OT1/cmr/m/
+n/10 + \OML/cmm/m/it/10 h^^L[]f\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y[]\OT1/cmr/m/
+n/10 ))\OML/cmm/m/it/10 ;  i \OT1/cmr/m/n/10 = 1\OML/cmm/m/it/10 ; \OT1/cmr/m/n
+/10 2\OML/cmm/m/it/10 ; [] ; k[]
+ []
+
+Missing character: There is no 其 in font nullfont!
+Missing character: There is no 实 in font nullfont!
+Missing character: There is no ， in font nullfont!
+Missing character: There is no 公 in font nullfont!
+Missing character: There is no 式 in font nullfont!
+Missing character: There is no ( in font nullfont!
+! Undefined control sequence.
+<write> ...ference `eq:ch2skeel' on page \thepage 
+                                                  \space undefined\on@line .^^J
+l.214 其实，公式(\ref{eq:ch2skeel}
+                                       )在文献\inlinecite{Skeel1979}就�...
+(That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
- 70 strings out of 493005
- 1206 string characters out of 6137956
- 65634 words of memory out of 5000000
- 4126 multiletter control sequences out of 15000+600000
- 4894 words of font info for 21 fonts, out of 8000000 for 9000
+ 73 strings out of 493005
+ 1178 string characters out of 6137956
+ 71634 words of memory out of 5000000
+ 4131 multiletter control sequences out of 15000+600000
+ 4886 words of font info for 20 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 23i,5n,21p,283b,154s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 21i,6n,21p,283b,154s stack positions out of 5000i,500n,10000p,200000b,80000s
+
 No pages of output.

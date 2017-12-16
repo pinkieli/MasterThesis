@@ -134,14 +134,14 @@ y_i^{[n]}=\sum_{j=1}^{s}hb_{ij}f(Y_j^{[n]})+\sum_{j=1}^{r}v_{ij}y_j^{[n-1]},\qqu
 Y^{[n]}&=h(A\otimes I)F(Y^{[n]})+(U\otimes I)y^{[n-1]}\\
 y^{[n]}&=h(B\otimes I)F(Y^{[n]})+(V\otimes I)y^{[n-1]}
 \end{align}
-其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下
+其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下，若$A\in\mathbf{R}^{m_1\times n_1}$和$B\in\mathbf{R}^{m_2\times n_2}$，则有
 \begin{equation}
-A\otimes I=\begin{bmatrix}
-a_{11} I&&a_{12}I&&\cdots && a_{1s} I\\
-a_{21}I&&a_{22}I&&\cdots && a_{2s}I\\
+A\otimes B=\begin{bmatrix}
+a_{11} B&&a_{12}B&&\cdots && a_{1,n_1} B\\
+a_{21}B&&a_{22}B&&\cdots && a_{2,n_1}B\\
 \vdots &&\vdots && &&\vdots\\
-a_{s1}I &&a_{s2}I&&\cdots &&a_{ss}I
-\end{bmatrix}
+a_{m_1,1}B &&a_{m_1,2}B&&\cdots &&a_{m_1,n_1}B
+\end{bmatrix}\in\mathbf{R}^{m_1m_2\times n_1n_2}
 \end{equation}
 进一步，广义线性法可以被表达为如下形式
 \begin{equation}
@@ -224,7 +224,7 @@ y_i^{[n]}&=\sum_{j=k-i+1}^{k}(\alpha_jy_{n+1+k-i-j}+h\beta_jf(y_{n+1+k-i-j}))\\
 \end{aligned}
 \end{equation}
 其中，$i=1,2,\cdots,k$。线性多步法(\ref{eq:ch2lms})的另外一种广义线性法的表出形式为
-\begin{equation}\displaystyle
+\begin{equation}
 \begin{bmatrix}
 \begin{BMAT}[5pt]{c:c}{c:c}
 A & U\\
@@ -289,8 +289,43 @@ hf(y_{n-3})\\
 \vdots\\
 hf(y_{n-k})
 \end{BMAT}
+\end{bmatrix}\label{eq:ch2GLMAdams}
+\end{equation}
+
+向前显式Euler法对应的参数为
+\begin{equation}
+k=1,\quad \beta_0=0,\quad\beta_1=1
+\end{equation}
+于是，从等式(\ref{eq:ch2GLMAdams})可知其在广义线性法框架下的表示形式为
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cc}{c:ccc}
+0 & 1 &1\\
+0 & 1 & 1\\
+1 & 0 & 0\\
+0 & 0 & 1
+\end{BMAT}
 \end{bmatrix}
 \end{equation}
+事实上，向前显式Euler法也可以写为如下更加简洁的形式
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c}{c:c}
+Y_1\\
+y_n
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+0 & 1\\ 1 & 1
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[5pt]{c}{c:c}
+hf(Y_1)\\
+y_n
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$Y_1=y_{n-1}$。
 
 尽管Adams-Moulton算法是隐式的，由于其较小的稳定域，它们也仅仅只在求解非刚性问题时使用。除此之外，它们也常常在作为预测-校正格式使用。
 \subsubsection{预测-校正格式}
@@ -302,17 +337,285 @@ y_n&=y_{n-1}+h\beta_0f(y_n^*)+h\sum_{j=1}^{k}\beta_jf(y_{n-j})
 \end{align}
 \end{subequations}
 
+于是，一个PEC格式可以由下列的广义线性法表示
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cccccc}
+Y_1\\
+y_n\\
+hf(y_n)\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+\vdots\\
+hf(y_{n-k+1})
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cccccc}{c:cccccc}
+0 & 1 & \beta_1^* & \beta_2^* & \cdots & \beta_{k-1}^* & \beta_k^*\\
+\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+1		& 0 & 0		  & 0   &\cdots &0 &0\\
+0		& 0 & 1		  & 0   &\cdots &0 &0\\
+0		& 0 & 0		  & 1   &\cdots &0 &0\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0	& 0 & 0		  & 0   &\cdots &1 &0
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cccccc}
+hf(Y_1)\\
+y_{n-1}\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+hf(y_{n-3})\\
+\vdots\\
+hf(y_{n-k})
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$Y_1=y_n^*$。而PECE格式则可以写为
+\begin{subequations}
+\begin{align}
+y_n^*&=y_{n-1}+h\sum_{j=1}^{k}\beta_j^*f(y_{n-j})\\
+y_n&=y_{n-1}+h\beta_0f(y_n^*)+h\sum_{j=1}^{k}\beta_jf(y_{n-j})
+\end{align}
+\end{subequations}
 
+于是，一个PEC格式可以由下列的广义线性法表示
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{cc:cccccc}
+Y_1\\
+Y_2\\
+y_n\\
+hf(y_n)\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+\vdots\\
+hf(y_{n-k+1})
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{cc:cccccc}{cc:cccccc}
+0 & 0 & 1 & \beta_1^* & \beta_2^* & \cdots & \beta_{k-1}^* & \beta_k^*\\
+\beta_0& 0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+\beta_0& 0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+0 & 1		& 0 & 0		  & 0   &\cdots &0 &0\\
+0& 0		& 0 & 1		  & 0   &\cdots &0 &0\\
+0&0		& 0 & 0		  & 1   &\cdots &0 &0\\
+\vdots &\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0&0	& 0 & 0		  & 0   &\cdots &1 &0
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{cc:cccccc}
+hf(Y_1)\\
+hf(Y_2)\\
+y_{n-1}\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+hf(y_{n-3})\\
+\vdots\\
+hf(y_{n-k})
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
 
+\subsubsection{向后微分公式}
+向后微分公式(BDF)是第一个被提出来求解刚性问题的数值算法。为了克服Adams算法在求解刚性问题的较小稳定域问题，Curtiss和Hirschfelder在1952年提出了向后微分公式\cite{Curtiss1952}。后来经过Gear的推广\cite{Gear1971a}，向后微分公式得到广泛的应用。
 
+向后微分公式可以由格式(\ref{eq:ch2lms})中，令
+\begin{equation}
+\beta_j=0,\qquad j>0
+\end{equation}
+得到。亦即逼近解仅仅依赖于当前步的导数值$f(y_n)$。其算法格式为
+\begin{equation}
+y_n=\sum_{j=1}^{k}\alpha_jy_{n-j}+h\beta_0f(y_n)\label{eq:ch2BDF}
+\end{equation}
+特别地，向后微分公式的精度可以达到7阶。7阶更高的向后微分公式是不稳定的\cite{Gear1971a}。其中，仅仅只有$k=1$和$k=2$是具有A稳定的。对于其他$k$值事实上不在适合求解刚性问题。对于$k=1\to 6$，其具体的算法格式如下
+\begin{align}
+k=1:y_n&=y_{n-1}+hf(y_n)\\
+k=2:y_n&=\frac{4}{3}y_{n-1}-\frac13y_{n-2}+\frac23hf(y_n)\\
+k=3:y_n&=\frac{18}{11}y_{n-1}-\frac{9}{11}y_{n-2}+\frac{2}{11}y_{n-3}+\frac{6}{11}hf(y_{n})\\
+k=4:y_n&=\frac{48}{25}y_{n-1}-\frac{36}{25}y_{n-2}+\frac{16}{25}y_{n-3}-\frac{3}{25}y_{n-4}+\frac{12}{25}hf(y_n)\\
+k=5:y_n&=\frac{300}{137}y_{n-1}-\frac{300}{137}y_{n-2}+\frac{200}{137}y_{n-3}-\frac{75}{137}y_{n-4}+\frac{12}{137}y_{n-5}+\frac{60}{137}hf(y_n)\\
+k=6:y_n&=\frac{120}{49}y_{n-1}-\frac{150}{49}y_{n-2}+\frac{400}{147}y_{n-3}-\frac{75}{49}y_{n-4}+\frac{24}{49}y_{n-5}-\frac{10}{147}y_{n-6}+\frac{20}{49}hf(y_n)
+\end{align}
 
+在广义线性法的表示形式下有
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cccccc}
+Y_1\\
+y_n\\
+hf(y_n)\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+\vdots\\
+hf(y_{n-k+1})
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:cccccc}{c:cccccc}
+\beta_0 & \alpha_1 & \alpha_2 & \alpha_3 & \cdots & \alpha_{k-1} & \alpha_k\\
+\beta_0 & \alpha_1 & \alpha_2 & \alpha_3 & \cdots & \alpha_{k-1} & \alpha_k\\
+0		& 1 & 0		  & 0   &\cdots &0 &0\\
+0		& 0 & 1		  & 0   &\cdots &0 &0\\
+0		& 0 & 0		  & 1   &\cdots &0 &0\\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots & \vdots\\
+0	& 0 & 0		  & 0   &\cdots &1 &0
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[4.5pt]{c}{c:cccccc}
+hf(Y_1)\\
+y_{n-1}\\
+hf(y_{n-1})\\
+hf(y_{n-2})\\
+hf(y_{n-3})\\
+\vdots\\
+hf(y_{n-k})
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$Y_1=y_n$。同时，$k=1$对应向后微分的隐式Euler算法。其广义线性法的表示形式为
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+1 & 1\\ 1 & 1
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+\subsection{Runge-Kutta法}
+对于求解微分方程(\ref{eq:ch2FirstAuto})的一般形式的Runge-Kutta方法可描述如下
+\begin{subequations}
+\begin{align}
+Y_i^{[n]}&=y_{n-1}+h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n]}),\quad i=1,2,\cdots,s\\
+y_n&=y_{n-1}+h\sum_{j=1}^{s}b_jf(Y_j^{[n]})
+\end{align}
+\end{subequations}
+一般情况下，Runge-Kutta法可通过Butcher表格表示，即
+\begin{equation}
+\begin{BMAT}[5pt]{c|c}{c|c}
+c & A\\  & b^T
+\end{BMAT}=\begin{BMAT}[3pt]{c|ccc}{ccc|c}
+c_1 & a_{11} & \cdots & a_{1s}\\
+\vdots & \vdots & \ddots &\vdots \\
+c_s & a_{s1}&\cdots & a_{ss}\\
+ & b_1 & \cdots & b_s
+\end{BMAT}
+\end{equation}
+其中，向量$c$表示在单步内极值的位置；而矩阵$A$表示极值对其他极值导数的依赖性；向量$b$表明了积分权重值，暗示了最后的输出量如何依赖于先前计算的极导数值。当然，也可以通过广义线性法的形式表出，即
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+A & e\\ b^T & 1
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[3pt]{ccc:c}{ccc:c}
+a_{11} & \cdots & a_{1s} & 1\\
+\vdots & \ddots & \vdots & \vdots \\
+a_{s1} & \cdots & a_{ss} & 1\\
+b_1 & \cdots & b_s & 1
+\end{BMAT}
+\end{bmatrix}\label{eq:ch2GLM2RK}
+\end{equation}
 
+有意思的是，前述提及的Euler法也可以看作一阶的Runge-Kutta法，其Butcher表格为
+\begin{equation}
+\begin{BMAT}[5pt]{c|c}{c|c}
+0 & \\
+ & 1
+\end{BMAT}
+\end{equation}
+而一般性的二阶精度带任意参数$\theta$的Runge-Kutta方法可用Butcher表格描述为
+\begin{equation}
+\begin{BMAT}[5pt]{c|cc}{cc|c}
+0 & & \\ \theta & \theta & \\
+ & 1-\frac{1}{2\theta} & \frac{1}{2\theta}
+\end{BMAT}
+\end{equation}
+当参数$\theta$取值分别为$\frac{1}{2}$和$1$，分别对应中点公式和Trapeoidal规则。在Runge-Kutta的框架下，这二者分别有RK22和RK21表示。其对应的Butcher表格为
+\begin{equation}
+\text{RK21:}\quad \begin{BMAT}[5pt]{c|cc}{cc|c}
+0 & & \\ 1 & 1 & \\
+ & \frac{1}{2} & \frac{1}{2}
+\end{BMAT}
+\end{equation}
+\begin{equation}
+\text{RK22:}\quad \begin{BMAT}[5pt]{c|cc}{cc|c}
+0 & & \\ \frac{1}{2} & \frac{1}{2} & \\
+ & 0 & 1
+\end{BMAT}
+\end{equation}
+而我们最常使用的四阶Runge-Kutta方法，也就是MATLAB软件中ode求解器中的“ode45”，可表示为
+\begin{equation}
+\text{RK41:}\quad \begin{BMAT}[4pt]{c|cccc}{cccc|c}
+0 & & & &\\
+\frac12 & \frac12 & & &\\
+\frac12 & 0 & \frac12 & & \\
+1 & 0 & 0 & 1 & \\
+ & \frac{1}{6} & \frac13 & \frac13 & \frac16
+\end{BMAT}
+\end{equation}
 
+由等式(\ref{eq:ch2GLM2RK})不难将这些Runge-Kutta方法使用广义线性法的形式表出，即
+\begin{equation}\text{RK21:}\quad 
+\begin{bmatrix}
+\begin{BMAT}[4pt]{cc:c}{cc:c}
+0 & 0& 1\\ 1 & 0 &1 \\
+\frac{1}{2} & \frac{1}{2} &1
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+\begin{equation}\text{RK41:}\quad 
+\begin{bmatrix}
+\begin{BMAT}[3.5pt]{cccc:c}{cccc:c}
+0 & 0 & 0 & 0 & 1\\
+\frac12 & 0 & 0 & 0 & 1\\
+0 & \frac12 & 0 & 0 & 1\\
+0 & 0 & 1 & 0 & 1\\
+\frac16 & \frac13 & \frac13 & \frac16 & 1\\
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+关于Runge-Kutta方法更加详细的分析和应用可以参考文献或专著\inlinecite{Butcher2008,Lapidus1971,Hairer1993,ErnstHairer1996,李寿佛2010,Lambert1973,Butcher1987}。
+\subsection{One-leg方法}
+为了简化线性多步法(\ref{eq:ch2lms})在求解刚性问题时的误差分析，Dahlquist引入了如下格式的One-leg方法\cite{Dahlquist1976,Dahlquist1983}。
+\begin{equation}
+y_n=\sum_{j=1}^{k}\alpha_jy_{n-j}+h\beta f\left(\frac{1}{\beta}\sum_{j=0}^{k}\beta_jy_{n-j}\right)\label{eq:ch2Oneleg}
+\end{equation}
+其中，参数$\beta$满足$\beta=\sum_{j=0}^{k}\beta_j$。因此，从公式(\ref{eq:ch2Oneleg})可以知道，每步内只需要计算一次$f$的函数值。同时，也需要提及的时，对于对应的线性多步法(\ref{eq:ch2lms})，One-leg方法可能具有更强的非线性稳定性特点，如G稳定性以及对于非一致性网格上更好的鲁棒性\cite{Hundsdorfer1991}。
 
-
-
-
-
+令
+\begin{equation}
+Y^{[n]}=\frac{1}{\beta}\sum_{j=1}^{k}\beta_jy_{n-j}
+\end{equation}
+将等式(\ref{eq:ch2Oneleg})带入到上式就有
+\begin{equation}
+\begin{aligned}
+Y^{[n]}&=\frac{1}{\beta}\left(\beta_0y_n+\sum_{j=1}^{k}\beta_jy_{n-j} \right)\\
+&=\frac{1}{\beta}\left[\beta_0\left(\sum_{j=1}^{k}\alpha_jy_{n-j}+h\beta f(Y^{[n]})\right)+\sum_{j=1}^{k}\beta_jy_{n-j}\right]\\
+&=\frac{1}{\beta}\sum_{j=1}^{k}(\beta_0\alpha_j+\beta_j)y_{n-j}+h\beta_0f(Y^{[n]})
+\end{aligned}
+\end{equation}
+当建立如下的递推向量
+\begin{equation}
+y^{[n]}=[y_n\quad y_{n-1}\quad \cdots \quad y_{n-k+1}]^{\text{T}}
+\end{equation}
+时，One-leg方法(\ref{eq:ch2Oneleg})就可以用广义线性法表出如下$r=k,s=1$
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{c:c}{c:c}
+A & U\\
+B & V
+\end{BMAT}
+\end{bmatrix}=\begin{bmatrix}
+\begin{BMAT}[5pt]{c:ccccc}{c:ccccc}
+\beta_0 & \frac{\beta_0\alpha_1+\beta_1}{\beta} & \frac{\beta_0\alpha_2+\beta_2}{\beta} & \cdots & \frac{\beta_0\alpha_{k-1}+\beta_{k-1}}{\beta} & \frac{\beta_0\alpha_k+\beta_k}{\beta}\\
+\beta & \alpha_1 & \alpha_2 & \cdots & \alpha_{k-1} & \alpha_k\\
+0 & 1 & 0 & \cdots & 0 & 0 \\
+0 & 0 & 1 & \cdots & 0 & 0 \\
+\vdots &\vdots & \vdots & \ddots & \vdots & \vdots \\
+0 & 0 & 0 & \cdots & 1 & 0 \\
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+关于One-leg方法的另外一种书写方式可以参见文献\inlinecite{Butcher2006c}。
 
 
 
