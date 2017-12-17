@@ -3,7 +3,7 @@
 \contentsline {figure}{\numberline {2-1}{\ignorespaces Euler格式的改进策略示意图}}{7}{figure.2.1}
 \contentsline {figure}{\numberline {2-2}{\ignorespaces Euler格式的改进算法框架}}{8}{figure.2.2}
 \addvspace {10.0pt}
-\contentsline {figure}{\numberline {3-1}{\ignorespaces $N_{t+\Delta t},N_t,N_{t-\Delta t}$二次形函数}}{40}{figure.3.1}
-\contentsline {figure}{\numberline {3-2}{\ignorespaces (a):$N_{t+\Delta t},N_t,N_{t-\Delta t}$分段线性的形函数;(b):一般性的加权函数$W(t)$示意图}}{43}{figure.3.2}
+\contentsline {figure}{\numberline {3-1}{\ignorespaces $N_{t+\Delta t},N_t,N_{t-\Delta t}$二次形函数}}{42}{figure.3.1}
+\contentsline {figure}{\numberline {3-2}{\ignorespaces (a):$N_{t+\Delta t},N_t,N_{t-\Delta t}$分段线性的形函数;(b):一般性的加权函数$W(t)$示意图}}{45}{figure.3.2}
 \addvspace {10.0pt}
 \addvspace {10.0pt}
