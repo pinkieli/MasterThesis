@@ -281,6 +281,43 @@
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
   \bibyear{2009}\@.
 
+\bibitem{Rattenbury2005}
+\bibauthor{Rattenbury N}\@. \bibtitle{Almost Runge-Kutta Methods for Stiff and
+  Non-Stiff Problems}\bibmark{[D]}\@. \bibaddress{New
+  Zealand}\thinspace{}\textnormal{: }\bibschool{University of Auckland}\@,
+  \bibyear{2005}\@.
+
+\bibitem{Huang2005a}
+\bibauthor{Huang S~J~Y}\@. \bibtitle{Implementation of general linear methods
+  for stiff differential equations}\bibmark{[D]}\@. \bibaddress{New
+  Zealand}\thinspace{}\textnormal{: }\bibschool{University of Auckland}\@,
+  \bibyear{2005}\@.
+
+\bibitem{Lee2004}
+\bibauthor{Lee J~H~J}\@. \bibtitle{Numerical methods for ordinary differential
+  equations: A survey of some standard methods}\bibmark{[D]}\@. \bibaddress{New
+  Zealand}\thinspace{}\textnormal{: }\bibschool{University of Auckland}\@,
+  \bibyear{2004}\@.
+
+\bibitem{Oliver1975}
+\bibauthor{Oliver J}\@. \bibtitle{A Curiosity of Low-Order Explicit Runge-Kutta
+  Methods}\bibmark{[J]}\@. \bibjournal{Mathematics of Computation}\@,
+  \bibyear{1975}\@, \bibvolume{29}\bibnumber{(132)}\thinspace{}\textnormal{:
+  }\bibpages{1032\thinspace{}\textnormal{--}\thinspace{}1036}\@.
+
+\bibitem{Zlatev1980}
+\bibauthor{Zlatev Z}\@. \bibtitle{Modified Diagonally Implicit Runge–Kutta
+  Methods}\bibmark{[J]}\@. \bibjournal{Siam Journal on Scientific \&
+  Statistical Computing}\@, \bibyear{1980}\@,
+  \bibvolume{2}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{321\thinspace{}\textnormal{--}\thinspace{}334}\@.
+
+\bibitem{Dekker1984}
+\bibauthor{Dekker K\@, Verwer J~G}\@. \bibtitle{Stability of Runge-Kutta
+  methods for stiff nonlinear differential equations}\bibmark{[J]}\@.
+  \bibjournal{Mathematics of Computation}\@, \bibyear{1984}\@,
+  \bibvolume{47}\bibnumber{(47)}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural

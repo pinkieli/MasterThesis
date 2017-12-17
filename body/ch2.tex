@@ -486,7 +486,7 @@ hf(y_{n-k})
 \begin{align}
 Y_i^{[n]}&=y_{n-1}+h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n]}),\quad i=1,2,\cdots,s\\
 y_n&=y_{n-1}+h\sum_{j=1}^{s}b_jf(Y_j^{[n]})
-\end{align}
+\end{align}\label{eq:ch2RK}
 \end{subequations}
 一般情况下，Runge-Kutta法可通过Butcher表格表示，即
 \begin{equation}
@@ -714,7 +714,7 @@ B&=\begin{bmatrix}
 0 & 0 & \cdots & 0 & 0\\
 0 & 0 & \cdots & 1 & 0\\
 \end{bmatrix}
-\end{align}
+\end{align}\label{eq:ch2MEBDF}
 \end{subequations}
 \subsection{两步Runge-Kutta方法}
 考虑文\inlinecite{Jackiewicz1995a}中提出的两步Runge-Kutta方法(Two-step Runge-Kutta: TSRK)。该类算法依赖于两个连续步的极数值，其算法可以描述为
@@ -790,7 +790,7 @@ b_1 & b_2 & \cdots & b_s & v_1 & v_2 & \cdots & v_{k-1} & v_k\\
 \subsection{Peer方法}
 Weiner等人提出了Peer方法\cite{Schmitt2004}，该方法使得所有的级数值都有相同的特点，同时没有额外的求解向量使用。对于两步Peer方法，在一致网格划分下有如下形式
 \begin{equation}
-Y_i^{[n]}=\sum_{j=1}^{s}b_{ij}Y_j^{[n]}+h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n-1]})+h\sum_{j=1}^{s}r_{ij}f(Y_j^{{n}})
+Y_i^{[n]}=\sum_{j=1}^{s}b_{ij}Y_j^{[n]}+h\sum_{j=1}^{s}a_{ij}f(Y_j^{[n-1]})+h\sum_{j=1}^{s}r_{ij}f(Y_j^{{n}})\label{eq:ch2Peer}
 \end{equation}
 其中，$i=1,2,\cdots,s$，在向量形式下有
 \begin{equation}
@@ -856,33 +856,257 @@ q_{i,0}y(t_{n})+&q_{i,1}hy'(t_{n})=h\sum_{j=1}^{s}b_{ij}y'(t_{n})\\
 \sum_{j=1}^{s}b_{ij}+\sum_{j=1}^{r}v_{ij}q_{j,1}&=q_{i,0}+q_{i,1},\ i=1,2,\cdots,r
 \end{align}
 \end{subequations}
-于是，就有如下定义
+于是，就有如下定义\vspace{-15pt}
 \begin{definition}[预相容]
-广义线性法($\bm{c,A,U,B,V}$)是预相容的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果存在向量$\bm{q}_0$使得
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是预相容的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果存在向量$\bm{q}_0$使得
 \begin{equation}
 \bm{Uq}_0=\bm{e},\quad \bm{Vq}_0=\bm{q}_0\label{eq:ch2PreConsistent}
 \end{equation}
 其中，$\bm{e}=[1,\cdots,1]^T\in\mathbb{R}^s$。而向量$\bm{q}_0$称为预相容向量。
-\end{definition}
+\end{definition}\vspace{-15pt}
+\begin{definition}[相容]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是相容的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果它带有预相容向量$\bm{q}_0$且存在向量$\bm{q}_1$使得
+\begin{equation}
+\bm{Be}+\bm{Vq}_1=\bm{q}_0+\bm{q}_1\label{eq:ch2Consistent}
+\end{equation}
+其中，$\bm{e}=[1,\cdots,1]^T\in\mathbb{R}^r$。而向量$\bm{q}_1$称为相容向量。
+\end{definition}\vspace{-20pt}
+从相容性的的定义可以看出，相容是建立在预相容的基础上做了进一步的要求。亦即算法是相容的，也暗示了算法是预相容的。\vspace{-15pt}
+\begin{definition}[级相容]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是级相容的\cite{Jackiewicz2009}，如果满足
+\begin{equation}
+\bm{Ae}+\bm{Uq}_1=\bm{c}\label{eq:ch2StageConsistent}
+\end{equation}
+\end{definition}\vspace{-20pt}
 
+实质上，上述的预相容、相容条件都是保证了广义线性法(\ref{eq:ch2GLM})在求解一阶微分方程$y'(t)=0$和$y'(t)=1$时能获得精确解。对于其更加详细的介绍可以参见文献\inlinecite{Rattenbury2005,Huang2005a,Lee2004}。
 
+针对Runge-Kutta方法，可以很容易判断其预相容和相容向量分别为$\bm{q}_0=1$和$\bm{q}_1=0$，并且其级相容和相容性条件就等价于
+\begin{equation}
+\bm{Ae}=\bm{c},\quad \bm{b}^T\bm{e}=1
+\end{equation}
 
+特别地，级相容条件$\bm{Ae}=\bm{c}$并不是必需条件，不满足此条件的Runge-Kutta方法已经有学者进行了研究\cite{Oliver1975,Zlatev1980,Dekker1984}。因此就剩余相容性条件$\bm{b}^T\bm{e}=1$被必须满足。
 
+而对于线性多步法(\ref{eq:ch2lms})在$r=2k,s=1$的广义线性法表示形式下，其预相容和相容向量分别为
+\begin{equation}
+\begin{aligned}
+\bm{q}_0&=\begin{bmatrix}
+\begin{BMAT}[4pt]{ccc:ccc}{c}
+1 & \cdots & 1 & 0 & \cdots & 0
+\end{BMAT}
+\end{bmatrix}^T\in\mathbb{R}^{2k}\\
+\bm{q}_1&=\begin{bmatrix}
+\begin{BMAT}[4pt]{cccc:ccc}{c}
+0& -1 & \cdots& -(k-1) & 1 & \cdots & 1
+\end{BMAT}
+\end{bmatrix}^T\in\mathbb{R}^{2k}
+\end{aligned}
+\end{equation}
+将其带入预相容、相容和级相容条件可得
+\begin{equation}
+\sum\limits_{j=1}^{k}\alpha_j=1,\quad \sum\limits_{j=1}^{k}j\alpha_j=\sum\limits_{j=0}^{k}\beta_j,\quad\bm{c}=1\label{eq:ch2LMSConsistEq}
+\end{equation}
+而对于线性多步法定另外一种较为紧凑的广义线性法表示形式下，其预相容和相容向量分别为
+\begin{equation}
+\bm{q}_0=\begin{bmatrix}
+\alpha_k\\
+\alpha_{k-1}+\alpha_k\\
+\vdots\\
+\sum\limits_{j=1}^{k}\alpha_j
+\end{bmatrix}\in\mathbb{R}^k,\quad
+\bm{q}_1=\begin{bmatrix}
+\beta_k\\
+\beta_{k-1}+\beta_k-\alpha_k\\
+\vdots\\
+\sum\limits_{j=1}^{k}\beta_j-\sum\limits_{j=1}^{k}(j-1)\alpha_j
+\end{bmatrix}\in\mathbb{R}^k
+\end{equation}
+尽管预相容和相容向量不一致，但是得到的对应的条件却是一致的，都是等式(\ref{eq:ch2LMSConsistEq})。
 
+对于One-leg方法(\ref{eq:ch2Oneleg})，我们也可以得到其预相容和相容向量
+\begin{equation}
+\bm{q}_0=\bm{e}\in\mathbb{R}^k,\quad \bm{q}_1=\left[0\quad -1\quad\cdots\quad-(k-1) \right]^T\in\mathbb{R}^k\label{eq:Onelegq0q1}
+\end{equation}
+而对应的预相容、相容和级相容条件分别为
+\begin{equation}
+\sum_{j=1}^{k}\alpha_j=1,\quad\sum_{j=1}^{k}j\alpha_j=\sum_{j=0}^{k}\beta_j,\quad\bm{c}=1-\frac{1}{\beta}\sum_{j=1}^{k}j\beta_j
+\end{equation}
 
+对于修改的扩展向后微分格式(MEBDF)(\ref{eq:ch2MEBDF})，其预相容和相容向量分别为
+\begin{equation}
+\bm{q}_0=\bm{e},\quad \bm{q}_1=[0\quad -1\quad\cdots\quad -(k-1)]^T
+\end{equation}
+这两个向量与One-leg方法所对应的预相容、相容向量相等。进而其预相容条件则可写为
+\begin{equation}
+1+\sum_{j=0}^{k-1}\hat{\alpha}_j=0,\quad1+\sum_{j=0}^{k-1}\alpha_j=0
+\end{equation}
+相容性条件为
+\begin{equation}
+\beta_k+\beta_{k+1}+\sum_{j=0}^{k-1}(k-j){\alpha}_j=0
+\end{equation}
+以及级相容条件则为
+\begin{subequations}
+\begin{align}
+c_1&=\hat{\beta}_k+\sum_{j=0}^{k-1}(k-j)\hat{\alpha}_j+1\\
+c_2&=(\hat{\alpha}_{k-1}-1)\left(2-\hat{\beta}_k+\sum_{j=0}^{k-1}(k-j)\hat{\alpha}_j\right)\\
+c_3&=\beta_k+\beta_{k+1}+\sum_{j=0}^{k-1}(k-j)\alpha_j+1
+\end{align}
+\end{subequations}
 
+对于两步的Runge-Kutta方法(\ref{eq:ch2TSRK})，其预相容和相容向量分别为
+\begin{equation}
+\bm{q}_0=\begin{bmatrix}
+\begin{BMAT}[5pt]{cc:ccc}{c}
+1 & 1 & 0 & \cdots & 0
+\end{BMAT}
+\end{bmatrix}^T\in\mathbb{R}^{s+2},\quad
+\bm{q}_1=\begin{bmatrix}
+\begin{BMAT}[5pt]{cc:ccc}{c}
+0 & -1 & 1 & \cdots & 1
+\end{BMAT}
+\end{bmatrix}^T\in\mathbb{R}^{s+2}
+\end{equation}
+而对应的预相容条件自动满足，其相容和级相容条件则为
+\begin{equation}
+(\bm{v}^T+\bm{w}^T)\bm{e}=1+\theta,\quad (\bm{A}+\bm{B})\bm{e}-\bm{u}=\bm{c}
+\end{equation}
 
+对于多步Runge-Kutta方法(\ref{eq:ch2MRK}),其预相容和相容向量也与One-leg方法和MEBDF方法的对于向量一致，即等式(\ref{eq:Onelegq0q1})。而预相容条件为
+\begin{equation}
+\bm{Ue}=\bm{e},\quad\bm{v}^T\bm{e}=1
+\end{equation}
+相容性条件为
+\begin{equation}
+\sum_{j=1}^{s}b_j-\sum_{j=1}^{k-1}jv_{j+1}=1
+\end{equation}
+级相容性条件为
+\begin{equation}
+c_i=\sum_{j=1}^{s}a_{ij}-\sum_{j=1}^{k}ju_{ij},\quad i=1,2,\cdots,s
+\end{equation}
 
+对于两步的Peer方法(\ref{eq:ch2Peer})，其预相容和相容向量为
+\begin{equation}
+\bm{q}_0=\begin{bmatrix}
+\bm{e}\\ \bm{0}
+\end{bmatrix}\in\mathbb{R}^{2s},\quad\bm{q}_1=\begin{bmatrix}
+\bm{c}-\bm{e}\\ \bm{e}
+\end{bmatrix}\in\mathbb{R}^{2s}
+\end{equation}
+而预相容条件为
+\begin{equation}
+\bm{Be}=\bm{e}
+\end{equation}
+同时，相容和级相容条件退化为一致，为
+\begin{equation}
+(\bm{R}+\bm{A})\bm{e}+\bm{B}(\bm{c}-\bm{e})=\bm{c}
+\end{equation}
+
+总之，对于可以转化为广义线性法形式的数值算法，其相容性都可以由其前述定义导出。不过，对于一个具体的算法，其预相容和相容向量的显式表达式需要小心计算，而由其预相容定义可以得知，其预相容向量$\bm{q}_0$是矩阵$\bm{V}$的特征值为1所对应的一个特征向量。
+%================================================================================
+\section{稳定性}
+这一节，我们将重点阐述数值算法的稳定性，以期可以收集和整理截至目前为止的各种数值算法稳定定义的收集，因为只有对各种稳定性的定义了解和对比之后，才能发现其差异性。
+
+在进一步阐述稳定性之前，我们先给出一些关于一个矩阵$\bm{A}$的稳定性定义。\vspace{-12pt}
+\begin{definition}[矩阵的稳定性/幂有界]
+一个矩阵$\bm{A}$是稳定的或者幂有界的\cite{Burrage1995,Butcher2008}，如果存在一个常数$C$使得对于任意的$n=0,1,\cdots$都有
+\begin{equation}
+||\bm{A}^n||\le C
+\end{equation}
+\end{definition}\vspace{-25pt}
+\begin{definition}[矩阵的收敛性]
+一个矩阵$\bm{A}$是收敛的\cite{Burrage1995,Butcher2008}，如果当$n\to\infty$有
+\begin{equation}
+||\bm{A}^n||_{\infty}\to0
+\end{equation}
+\end{definition}\vspace{-25pt}
+\begin{definition}[多项式的根条件]
+一个多项式$p$满足根条件\cite{Burrage1995,李寿佛2010}，如果多项式$p$的所有零根都位于闭的单位圆内，而仅单根可能位于单位圆上。
+\end{definition}\vspace{-25pt}
+\begin{theorem}[矩阵收敛的等价条件]
+对于两个矩阵$\bm{A}$和$\bm{B}$，下列的陈述等价\cite{Burrage1995,Butcher2008}：\begin{itemize}
+\item[(i)] 矩阵$\bm{A}$是收敛的。
+\item[(ii)] 矩阵$\bm{A}$的谱半径小于1，即$\rho(A)<1$。
+\item[(iii)] 存在一个相似于$\bm{A}$的矩阵$\bm{B}$，使得$||B||_{\infty}<1$。
+\end{itemize}
+\end{theorem}\vspace{-15pt}
+\begin{proof}
+参见文献\inlinecite{Butcher2008}。
+\end{proof}\vspace{-12pt}
+\begin{theorem}[矩阵稳定的等价条件]
+对于两个矩阵$\bm{A}$和$\bm{B}$，下列的陈述等价\cite{Burrage1995,Butcher2008}：\begin{itemize}
+\item[(i)] 矩阵$\bm{A}$是稳定的。
+\item[(ii)] 矩阵$\bm{A}$的最小多项式满足根条件要求。
+\item[(iii)] 存在一个相似于$\bm{A}$的矩阵$\bm{B}$，使得$||B||_{\infty}\le1$。
+\end{itemize}
+\end{theorem}\vspace{-15pt}
+\begin{proof}
+参见文献\inlinecite{Butcher2008}。
+\end{proof}
+
+从矩阵的稳定性和收敛性的等价条件可知，其收敛性强于稳定性。下面给出两个很有用的不等式条件。\vspace{-12pt}
+\begin{theorem}[稳定矩阵的鲁棒性]
+一个稳定的矩阵$\bm{A}$，对于任意具有相同维度的矩阵$\bm{B}$都会存在一个常数$C$使得对于任意的$n=1,2,\cdots$都有
+\begin{equation}
+||\left(\bm{A}+\frac{1}{n}\bm{B}\right)^n||\le C
+\end{equation}
+成立。
+\end{theorem}\vspace{-15pt}
+\begin{proof}
+参见文献\inlinecite{Butcher2008}。
+\end{proof}
+上述定理说明了对任意稳定的矩阵进行微扰动后仍然是稳定的。
+
+\vspace{-15pt}
+\begin{theorem}
+矩阵$\bm{A}$是$m\times m$维稳定的矩阵，且函数$\Phi:\mathbb{R}^{m}\to\mathbb{R}^{m}$满足带有Lipschitz常数$L$的Lipschitz条件。若存在两个序列$w=(w_1,w_2,\cdots,w_n)$和$v=(v_1,v_2,\cdots,v_n)$满足条件
+\begin{equation}
+v_i=\bm{A}v_{i-1}+\frac{1}{n}\Phi(v_{i-1})+w_i,\quad i=1,2,\cdots,n
+\end{equation}
+则存在独立于$n$的$C$使得
+\begin{equation}
+||v_n||\le C\left(||v_0||+\sum_{j=1}^{n}||w_j||\right)
+\end{equation}
+\end{theorem}\vspace{-20pt}
+\begin{proof}
+参见文献\inlinecite{Butcher2008}。
+\end{proof}
 
 考虑一个非常简单的一阶微分方程
 \begin{equation}
-y'=0,\quad y(0)=y_0\label{eq:ch2FirstTestPro}
+y'(t)=0,\quad y(t_0)=y_0
 \end{equation}
-显然，该问题的有精确的显式解$y(t)=y_0$。亦即对任何的数值算法求解该问题(\ref{eq:ch2FirstTestPro})都应该有获得有界的数值逼近解$y_n$。否则，若设计一个数值算法连求解(\ref{eq:ch2FirstTestPro})都存在发散问题，可能这样的设计也是失败的。于是，针对广义线性法(\ref{eq:ch2GLM})求解该问题有
+当使用广义线性法(\ref{eq:ch2GLM})进行求解时，可以得到
 \begin{equation}
-y^{[n+1]}=Vy^{[n]}
+y^{[n]}=\bm{V}y^{n-1}=\bm{V}^ny^{[0]},\quad n=0,1,\cdots
 \end{equation}
-若想使广义线性法(\ref{eq:ch2GLM})求解该问题获得有界解，则要求矩阵$V$满足一定的要求。
+由此可以知道，为了使得广义线性法求解得到的数值解稳定，则需要对广义线性法的矩阵$\bm{V}$满足一定的条件。即有如下定义\vspace{-15pt}
+\begin{definition}[零稳定性]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是零稳定的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果存在一个常数$C$使得对于任意的$n=0,1,\cdots$都有
+\begin{equation}
+||\bm{V}^n||\le C
+\end{equation}
+\end{definition}\vspace{-20pt}
+
+可以看出，广义线性法的零稳定性就是其矩阵$\bm{V}$的零稳定性。对于线性多步法，其对应的零稳定性就是矩阵$\bm{V}$的最小多项式$p$满足根条件。亦即有下述定理
+\vspace{-15pt}
+\begin{theorem}[零稳定性的等价转述]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是零稳定的\cite{Jackiewicz2009}，如果其系数矩阵$\bm{V}$的最小多项式满足根条件。
+\end{theorem}
+\vspace{-30pt}
+\begin{theorem}[严格零稳定性]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是严格零稳定的\cite{Jackiewicz2009}，如果它是零稳定的，且矩阵$\bm{V}$有一个精确的特征值位于单位圆上。
+\end{theorem}\vspace{-15pt}
+
+对于Runge-Kutta方法(\ref{eq:ch2RK})，其最小多项式为$p(w)=w-1$,因此Runge-Kutta方法都是零稳定的，而且还是严格零稳定的。而对于线性多步法(\ref{eq:ch2lms})在广义线性表示形式($r=2k,s=k$)下，其最小多项式为
+\begin{equation}
+p(w)=w^k\rho(w),\quad \rho(w)=w^k-\sum_{j=1}^{k}\alpha_jw^{k-j}
+\end{equation}
+而对于One-leg方法(\ref{eq:ch2Oneleg})的最小多项式为$\rho(w)$。因此对于线性多步法和One-leg方法在多项式$\rho(w)$满足根条件时实现零稳定性。对于两步Runge-Kutta方法(\ref{eq:ch2TSRK})，其最小多项式为
+\begin{equation}
+p(w)=w(w^2-(1-\vartheta)w-\vartheta)
+\end{equation}
+其零根为$w=0,w=1$和$w=-\vartheta$。因此，当条件$-1<\vartheta\le1$满足时，TSRK实现零稳定性。
 
 
 
@@ -891,7 +1115,8 @@ y^{[n+1]}=Vy^{[n]}
 
 
 
-\section{稳定性}
+
+
 
 \section{收敛性}
 
