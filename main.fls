@@ -417,6 +417,10 @@ INPUT easybmat.sty
 INPUT easybmat.sty
 INPUT d:/texlive/2017/texmf-dist/tex/latex/easy/easy.sty
 INPUT d:/texlive/2017/texmf-dist/tex/latex/easy/easy.sty
+INPUT d:/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+INPUT d:/texlive/2017/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
+INPUT d:/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+INPUT d:/texlive/2017/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
 INPUT d:/texlive/2017/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 INPUT d:/texlive/2017/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm

@@ -1094,9 +1094,12 @@ y^{[n]}=\bm{V}y^{n-1}=\bm{V}^ny^{[0]},\quad n=0,1,\cdots
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是零稳定的\cite{Jackiewicz2009}，如果其系数矩阵$\bm{V}$的最小多项式满足根条件。
 \end{theorem}
 \vspace{-30pt}
-\begin{theorem}[强零稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是强零稳定的\cite{Jackiewicz2009,李寿佛2010}，如果它是零稳定的，且矩阵$\bm{V}$有且仅有一个特征值位于单位圆上。此时，也称矩阵$\bm{V}$的最小多项式满足强根条件。
-\end{theorem}\vspace{-15pt}
+\begin{definition}[弱零稳定性]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是弱零稳定的\cite{Gear1971a}，如果它是零稳定的，且矩阵$\bm{V}$有两个或以上的特征值位于单位圆上。此时，也称矩阵$\bm{V}$的最小多项式满足弱根条件。
+\end{definition}
+\begin{definition}[强零稳定性]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是强零稳定的\cite{Jackiewicz2009,李寿佛2010,Gear1971a}，如果它是零稳定的，且矩阵$\bm{V}$有且仅有一个特征值位于单位圆上。此时，也称矩阵$\bm{V}$的最小多项式满足强根条件。
+\end{definition}\vspace{-15pt}
 
 对于Runge-Kutta方法(\ref{eq:ch2RK})，其最小多项式为$p(w)=w-1$,因此Runge-Kutta方法都是零稳定的，而且还是严格零稳定的。而对于线性多步法(\ref{eq:ch2lms})在广义线性表示形式($r=2k,s=k$)下，其最小多项式为
 \begin{equation}
@@ -1137,8 +1140,11 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \end{equation}
 其中，$w\in\mathbb{C}$。
 \vspace{-15pt}
+\begin{definition}[广义稳定的]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是广义稳定的\cite{李寿佛2010}，如果对于这样的$z$，稳定矩阵$\bm{M}(z)$是幂有界的。
+\end{definition}\vspace{-20pt}
 \begin{definition}[绝对稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是绝对稳定的\cite{Jackiewicz2009}，如果对于这样的$z$，稳定函数$p(w,z)$的所有零根$w_i=w_i(z),i=1,2,\cdots,r$都位于单位圆内。
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是绝对稳定的\cite{Jackiewicz2009,李寿佛2010}，如果对于这样的$z$，稳定函数$p(w,z)$的所有零根$w_i=w_i(z),i=1,2,\cdots,r$都位于单位圆内(亦或定义为，稳定矩阵$\bm{M}(z)$的谱半径都严格小于1)。
 \end{definition}\vspace{-20pt}
 \begin{definition}[绝对稳定域/区间]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)的绝对稳定域$\mathcal{A}$是所有$z\in\mathbb{C}$使其广义线性法绝对稳定的集合，即
@@ -1153,7 +1159,12 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \{z\in\mathbb{C}:\text{Re}(z)<0\}\subseteq\mathcal{A}
 \end{equation}
 \end{definition}
-
+\begin{definition}[刚性A稳定]
+一个数值算法被称为是刚性A稳定的\cite{Gear1971a}，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解满足，当Re$(z)\to-\infty$时，有
+\begin{equation}
+\frac{y_{n-1}}{y_n}\to0
+\end{equation}成立。
+\end{definition}
 一般情况下，A稳定是很困难或是不可能实现的，因此一个相对较弱的稳定性条件被提出来，即A$(\alpha)$稳定性。
 \begin{definition}[A($\alpha$)稳定性]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是A($\alpha$)稳定的\cite{Butcher2008,李寿佛2010}，如果存在一个$\alpha\in(0,\pi)$有
@@ -1161,7 +1172,36 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 S(\alpha)\triangleq\{z\in\mathbb{C}:|\arg(z)-\pi|<\alpha\}\subseteq\mathcal{A}
 \end{equation}
 其中，$\arg(z)$表示复数$z$的角度。
-\end{definition}
+\end{definition}\vspace{-15pt}
+
+另外可代替A稳定性的是刚性稳定\cite{Gear1971a}，其定义如下
+\begin{definition}[刚性稳定的]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是刚性稳定的\cite{Gear1971a}，如果在复平面区域$R_1\triangleq\{z:\text{Re}(z)\le D\}$它是绝对稳定的；而在区域$R_2\triangleq\{z:D<\text{Re}(z)<\alpha,|\text{Im}(z)|<\theta\}$它是精确的。
+\end{definition}\vspace{-15pt}
+其在复平面内的示意图如图\ref{Fig:StifflyStable}所示，
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1,yscale=1]
+\draw [pattern color=red,pattern=north east lines,dashed] (-2,-1) rectangle (2,1);
+\draw [pattern color=blue,pattern=north west lines] (-4,-3) rectangle (-2,3);
+\draw [white] (-4,-3) rectangle (-2,3);
+\draw [thin,blue] (-2,-3) -- (-2,3);
+\draw [thin,->] (-4.5,0) -- (3,0) node [below] {Re($z$)};
+\draw [thin,->] (0,-3) -- (0,3) node [left] {Im($z$)};
+\node [below left] at (-2,0) {$D$};
+\node [above right] at (2,0) {$\alpha$};
+\node [above right] at (0,1) {$\theta$};
+\node [below right] at (0,-1) {$-\theta$};
+\node [below] at (-1,0.8) {$R_2$};
+\node [below] at (-3,2) {$R_1$};
+%=============================================
+\end{tikzpicture}
+\bicaption[Fig:StifflyStable]{}{刚性稳定域}{Fig.$\!$}{Stiffly stability}
+\end{figure}
+
+
+
+
 \begin{definition}[极端稳定的]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)在$\infty$是极端稳定的\cite{李寿佛2010}，如果有
 \begin{equation}
