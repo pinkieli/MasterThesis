@@ -318,6 +318,49 @@
   \bibjournal{Mathematics of Computation}\@, \bibyear{1984}\@,
   \bibvolume{47}\bibnumber{(47)}\@.
 
+\bibitem{袁新鼎1987}
+\bibauthor{袁新鼎\@, 费景高\@, 刘德贵}\@.
+  \bibbooktitle{刚性常微分方程初值问题的数值解法}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{科学出版社}\@, \bibyear{1987}\thinspace{}\textnormal{:
+  }\bibpages{19\thinspace{}\textnormal{--}\thinspace{}20}\@.
+
+\bibitem{Dahlquist1963}
+\bibauthor{Dahlquist G~G}\@. \bibtitle{A special stability problem for linear
+  multistep methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
+  Mathematics}\@, \bibyear{1963}\@,
+  \bibvolume{3}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}43}\@.
+  \newline\url{http://dx.doi.org/10.1007/BF01963532}\@.
+
+\bibitem{Wanner2006}
+\bibauthor{Wanner G}\@. \bibtitle{Dahlquist's classical papers on stability
+  theory}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical Mathematics}\@,
+  \bibyear{2006}\@, \bibvolume{46}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{671\thinspace{}\textnormal{--}\thinspace{}683}\@.
+  \newline\url{http://dx.doi.org/10.1007/s10543-006-0072-1}\@.
+
+\bibitem{Widlund1967}
+\bibauthor{Widlund O~B}\@. \bibtitle{A note on unconditionally stable linear
+  multistep methods}\bibmark{[J]}\@. \bibjournal{Bit Numerical Mathematics}\@,
+  \bibyear{1967}\@, \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{65\thinspace{}\textnormal{--}\thinspace{}70}\@.
+
+\bibitem{Cryer1973a}
+\bibauthor{Cryer C~W}\@. \bibtitle{A new class of highly-stable methods:
+  $A_0$-stable methods.}\bibmark{[J]}\@. \bibjournal{Bit Numerical
+  Mathematics}\@, \bibyear{1973}\@,
+  \bibvolume{13}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{153\thinspace{}\textnormal{--}\thinspace{}159}\@.
+
+\bibitem{Fatunla1988}
+\bibauthor{Fatunla S~O\@, Rheinboldt W\@, Siewiorek D}\@.
+  \bibbooktitle{Computer Science and Scientific
+  Computing\thinspace{}\textnormal{: }Numerical Methods for Initial Value
+  Problems in Ordinary Differential Equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Elsevier Inc,
+  Academic Press}\@, \bibyear{1988}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural
@@ -422,14 +465,6 @@
   \bibvolume{20}\bibnumber{(96)}\thinspace{}\textnormal{:
   }\bibpages{516\thinspace{}\textnormal{--}\thinspace{}522}\@.
   \newline\url{http://www.jstor.org/stable/2003541}\@.
-
-\bibitem{Dahlquist1963}
-\bibauthor{Dahlquist G~G}\@. \bibtitle{A special stability problem for linear
-  multistep methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
-  Mathematics}\@, \bibyear{1963}\@,
-  \bibvolume{3}\bibnumber{(1)}\thinspace{}\textnormal{:
-  }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}43}\@.
-  \newline\url{http://dx.doi.org/10.1007/BF01963532}\@.
 
 \bibitem{Zienkiewicz1977a}
 \bibauthor{Zienkiewicz O~C}\@. \bibtitle{A new look at the Newmark, Houbolt and

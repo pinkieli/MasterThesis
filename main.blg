@@ -19,15 +19,15 @@ Warning--string name "oct" is undefined
 Warning--string name "dec" is undefined
 --line 5023 of file reference.bib
 Warning--string name "jun" is undefined
---line 54955 of file reference.bib
+--line 54957 of file reference.bib
 Warning--string name "apr" is undefined
---line 55185 of file reference.bib
+--line 55187 of file reference.bib
 Warning--string name "oct" is undefined
---line 59623 of file reference.bib
+--line 59625 of file reference.bib
 Warning--string name "jan" is undefined
---line 70125 of file reference.bib
+--line 70107 of file reference.bib
 Warning--string name "apr" is undefined
---line 70241 of file reference.bib
+--line 70223 of file reference.bib
 Warning--I didn't find a database entry for "Bathe2012a"
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
@@ -44,6 +44,10 @@ Warning--Require address: Butcher1987
 Warning--Require booktitle: Dahlquist1976
 Warning--Require address: Burrage1995
 Warning--Require address: Jackiewicz2009
+Warning--Require address: 袁新鼎1987
+Warning--Require citedate: Dahlquist1963
+Warning--Require citedate: Wanner2006
+Warning--Require address: Fatunla1988
 Warning--Require citedate: Hoff198887
 Warning--Require address: Chopra2011
 Warning--Require address: Wood
@@ -53,7 +57,6 @@ Warning--Require citedate: Fung1996a
 Warning--Require address: JasonHar2012
 Warning--Require citedate: JasonHar2012
 Warning--Require citedate: Lees1966
-Warning--Require citedate: Dahlquist1963
 Warning--Require citedate: Zienkiewicz1977a
 Warning--Require citedate: Hoff1990
 Warning--Require citedate: Hoff1990a
@@ -81,45 +84,45 @@ Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Bathe2012
 Warning--Require citedate: Noh2013
-You've used 120 entries,
+You've used 125 entries,
             3103 wiz_defined-function locations,
-            1512 strings with 26412 characters,
-and the built_in function-call counts, 157460 in all, are:
-= -- 16347
-> -- 340
-< -- 794
-+ -- 11926
-- -- 1105
-* -- 5816
-:= -- 16261
+            1541 strings with 27121 characters,
+and the built_in function-call counts, 164639 in all, are:
+= -- 17112
+> -- 354
+< -- 827
++ -- 12520
+- -- 1153
+* -- 6052
+:= -- 17034
 add.period$ -- 0
-call.type$ -- 120
+call.type$ -- 125
 change.case$ -- 0
 chr.to.int$ -- 27
-cite$ -- 172
-duplicate$ -- 22324
-empty$ -- 7208
-format.name$ -- 844
-if$ -- 41051
+cite$ -- 180
+duplicate$ -- 23327
+empty$ -- 7507
+format.name$ -- 880
+if$ -- 42950
 int.to.chr$ -- 0
-int.to.str$ -- 120
+int.to.str$ -- 125
 missing$ -- 0
-newline$ -- 387
-num.names$ -- 121
-pop$ -- 2391
+newline$ -- 402
+num.names$ -- 126
+pop$ -- 2498
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1569
+skip$ -- 1638
 stack$ -- 0
-substring$ -- 18428
-swap$ -- 5962
+substring$ -- 19266
+swap$ -- 6211
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 52
-while$ -- 2199
-width$ -- 123
-write$ -- 1772
-(There were 60 warnings)
+warning$ -- 55
+while$ -- 2296
+width$ -- 128
+write$ -- 1845
+(There were 63 warnings)

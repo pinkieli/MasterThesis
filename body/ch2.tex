@@ -1111,7 +1111,7 @@ p(w)=w(w^2-(1-\vartheta)w-\vartheta)
 \end{equation}
 其零根为$w=0,w=1$和$w=-\vartheta$。因此，当条件$-1<\vartheta\le1$满足时，TSRK实现零稳定性。
 
-接下来，我们通过一个标准的线性微分方程
+接下来，我们通过一个著名的Dahlquist测试微分方程
 \begin{equation}
 y'(t)=\lambda y(t),\quad y(t_0)=y_0\label{eq:ch2StandardDiffSystem}
 \end{equation}
@@ -1141,11 +1141,16 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 其中，$w\in\mathbb{C}$。
 \vspace{-15pt}
 \begin{definition}[广义稳定的]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是广义稳定的\cite{李寿佛2010}，如果对于这样的$z$，稳定矩阵$\bm{M}(z)$是幂有界的。
-\end{definition}\vspace{-20pt}
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是广义稳定的\cite{李寿佛2010}，如果对于这样的$z$，稳定函数$p(w,z)$满足根条件。
+\end{definition}%\vspace{-20pt}
 \begin{definition}[绝对稳定性]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是绝对稳定的\cite{Jackiewicz2009,李寿佛2010}，如果对于这样的$z$，稳定函数$p(w,z)$的所有零根$w_i=w_i(z),i=1,2,\cdots,r$都位于单位圆内(亦或定义为，稳定矩阵$\bm{M}(z)$的谱半径都严格小于1)。
-\end{definition}\vspace{-20pt}
+\end{definition}%\vspace{-20pt}
+
+需要说明的是，Gear在他的书\inlinecite{Gear1971a}中定义绝对稳定的算法为其稳定函数满足根条件，亦指这里的广义稳定性。
+\begin{definition}[相对稳定性]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是相对稳定的\cite{Gear1971a,袁新鼎1987}，如果对于这样的$z$，稳定函数$p(w,z)$的主根模值大于等于其他虚假根的模值。
+\end{definition}
 \begin{definition}[绝对稳定域/区间]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)的绝对稳定域$\mathcal{A}$是所有$z\in\mathbb{C}$使其广义线性法绝对稳定的集合，即
 \begin{equation}
@@ -1153,12 +1158,29 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \end{equation}
 而绝对稳定区间$\mathcal{I}$就是绝对稳定域$\mathcal{A}$与实轴的交集，即$\mathcal{I}=\mathcal{A}\cap\mathbb{R}$。
 \end{definition}
+
+同理，我们也可以定义对应广义稳定域和相对稳定域，由于使用较少，故这里不再显式给出。
 \begin{definition}[A稳定性]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是A稳定的\cite{Jackiewicz2009}，如果它的绝对稳定域包含复平面的左半平面，即
 \begin{equation}
 \{z\in\mathbb{C}:\text{Re}(z)<0\}\subseteq\mathcal{A}
 \end{equation}
 \end{definition}
+
+当使用或构造一个数值积分算法时，我们很自然的希望它是A稳定的，因为A稳定的算法表示它对任意大的积分步长都是稳定的，稳定性的要求对积分步长$h$并没有构成任何的限制，这是我们仅需要依据精度条件来选择积分步长$h$。因此，在构造一个求解刚性微分方程的数值算法时，往往应对其进行A稳定性分析。但是，Dahlquist在引入A稳定性的同时，得到了如下的两个结论\cite{Dahlquist1963,Wanner2006,袁新鼎1987,ErnstHairer1996,book:dover}:
+\begin{itemize}
+\item[\ddag] 显式的线性多步法(包括显式的Runge-Kutta方法)不可能是A稳定的。
+\item[\ddag] A稳定的隐式线性多步法的阶数不可能超过2，且在所有A稳定的二阶方法中，Trapeoidal公式具有最小的局部截断误差常数($C=\frac{1}{12}$)。
+\end{itemize}
+由于上述结论的存在和推动，以及为了突破这些结论的限制，刚性微分方程的数值算法的研究主要想两个方面进行发展：
+\begin{itemize}
+\item[(i)] 减弱A稳定性的定义，也就是说要求设计的数值算法的稳定区域不必包括整个开左半平面，而只需要包括其中的一部分。这样就先后由Widlund提出了A$(\alpha)$稳定性\cite{Widlund1967}，由Gear引进的刚性稳定性\cite{Gear1971a}以及由Cryer提出的$\text{A}_0$稳定性\cite{Cryer1973a}。构造具有这些稳定性的数值方法仍然适合求解一大类刚性问题。它们的最高精度阶也可以超过2阶，进而突破了前述限制。
+\item[(ii)] 保持A稳定性的定义，构造具有新形式的数值积分算法。至少在结构动力学数值求解算法里面，可以通过引入结构依赖于的参数实现这一目的。
+\end{itemize}
+
+
+
+
 \begin{definition}[刚性A稳定]
 一个数值算法被称为是刚性A稳定的\cite{Gear1971a}，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解满足，当Re$(z)\to-\infty$时，有
 \begin{equation}
@@ -1167,9 +1189,9 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \end{definition}
 一般情况下，A稳定是很困难或是不可能实现的，因此一个相对较弱的稳定性条件被提出来，即A$(\alpha)$稳定性。
 \begin{definition}[A($\alpha$)稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是A($\alpha$)稳定的\cite{Butcher2008,李寿佛2010}，如果存在一个$\alpha\in(0,\pi)$有
+一个数值算法是A($\alpha$)稳定的\cite{Butcher2008,李寿佛2010,Widlund1967}，如果存在一个角度$\alpha$使得
 \begin{equation}
-S(\alpha)\triangleq\{z\in\mathbb{C}:|\arg(z)-\pi|<\alpha\}\subseteq\mathcal{A}
+S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
 \end{equation}
 其中，$\arg(z)$表示复数$z$的角度。
 \end{definition}\vspace{-15pt}
@@ -1199,7 +1221,7 @@ S(\alpha)\triangleq\{z\in\mathbb{C}:|\arg(z)-\pi|<\alpha\}\subseteq\mathcal{A}
 \bicaption[Fig:StifflyStable]{}{刚性稳定域}{Fig.$\!$}{Stiffly stability}
 \end{figure}
 
-
+刚性稳定的算法可以推导出该算法也是A$(\alpha)$稳定的，其中$\alpha=\tan^{-1}(\theta/D)$\cite{Fatunla1988}。
 
 
 \begin{definition}[极端稳定的]
