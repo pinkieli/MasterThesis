@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  19 DEC 2017 12:44
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  19 DEC 2017 23:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3410,39 +3410,40 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 1026.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
 line 1034.
- [26] [27] [28] [29] [30] [31]
+ [26] [27] [28] [29] [30] [31] [32]
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1282.
+(Font)              scaled to size 8.0pt on input line 1344.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.52437pt on input line 1282.
+(Font)              scaled to size 6.52437pt on input line 1344.
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 1282.
-) [32]
+(Font)              scaled to size 9.03374pt on input line 1344.
+) [33] [34]
 \openout2 = `body/ch3.aux'.
 
- (./body/ch3.tex
+
+(./body/ch3.tex
 第3章
-[33
+[35
 
 
 
 
 
-] [34] [35] [36] [37]
+] [36] [37] [38] [39]
 LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <8> not available
 (Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 208.
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 8.0pt on input line 208.
- [38] [39] [40]
+ [40] [41] [42]
 
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 311.
 
-[41] [42]
+[43] [44]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 7.0pt on input line 406.
- [43] [44] [45] [46]
+ [45] [46] [47] [48]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 700.
@@ -3455,7 +3456,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 700.
 
-[47] [48]
+[49] [50]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 757.
@@ -3468,7 +3469,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 757.
 
-[49]
+[51]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 792.
@@ -3481,7 +3482,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 792.
 
-[50]
+[52]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 807.
@@ -3503,7 +3504,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <6> not available
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 6.0pt on input line 835.
-[51]
+[53]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 866.
@@ -3516,7 +3517,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 866.
 
-[52] [53] [54]
+[54] [55] [56]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 971.
@@ -3529,7 +3530,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 971.
 
-[55]
+[57]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1031.
@@ -3542,7 +3543,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1031.
 
-[56] [57]
+[58] [59]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1077.
@@ -3559,46 +3560,46 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 1077.
 
-[58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]
+[60] [61] [62] [63] [64] [65] [66] [67] [68] [69] [70] [71]
 
-Package natbib Warning: Citation `Bathe2012a' on page 70 undefined on input lin
+Package natbib Warning: Citation `Bathe2012a' on page 72 undefined on input lin
 e 1590.
 
-[70]
+[72]
 
-Package natbib Warning: Citation `Bathe2012a' on page 71 undefined on input lin
+Package natbib Warning: Citation `Bathe2012a' on page 73 undefined on input lin
 e 1624.
 
-[71]
+[73]
 
-Package natbib Warning: Citation `Bathe2012a' on page 72 undefined on input lin
+Package natbib Warning: Citation `Bathe2012a' on page 74 undefined on input lin
 e 1631.
 
 
-Package natbib Warning: Citation `Bathe2012a' on page 72 undefined on input lin
+Package natbib Warning: Citation `Bathe2012a' on page 74 undefined on input lin
 e 1631.
 
-[72] [73] [74] [75]
+[74] [75] [76] [77]
 
-Package natbib Warning: Citation `Bathe2012a' on page 76 undefined on input lin
+Package natbib Warning: Citation `Bathe2012a' on page 78 undefined on input lin
 e 1786.
 
-[76] [77] [78] [79]
+[78] [79] [80] [81]
 
-Package natbib Warning: Citation `Bathe2012a' on page 80 undefined on input lin
+Package natbib Warning: Citation `Bathe2012a' on page 82 undefined on input lin
 e 1917.
 
-[80] [81] [82]
+[82] [83] [84]
 LaTeX Font Info:    Font shape `OT1/ntxtlf/m/n' will be
 (Font)              scaled to size 9.03374pt on input line 2059.
 LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 (Font)              scaled to size 9.03374pt on input line 2059.
- [83] [84]) [85]
+ [85] [86]) [87]
 \openout2 = `body/ch4.aux'.
 
  (./body/ch4.tex
 第4章
-) [86
+) [88
 
 
 
@@ -3609,7 +3610,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 
  (./body/ch5.tex
 第5章
-) [87
+) [89
 
 
 
@@ -3623,7 +3624,7 @@ LaTeX Font Info:    Font shape `OT1/ntxtlf/b/n' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 2.
 
-) [88
+) [90
 
 
 
@@ -3637,29 +3638,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 1.
 
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
-[89
+[91
 
 
 
 
-] [90] [91] [92]
-Underfull \hbox (badness 10000) in paragraph at lines 434--440
+] [92] [93] [94]
+Underfull \hbox (badness 10000) in paragraph at lines 441--447
 []$\T1/ntxtlf/m/n/12.045 http : / / dx . doi . org / 10 . 1002 / (SICI ) 1097-[
 ]0207(19961030 ) 39 : 20<[]3475 ::
  []
 
-[93] [94]
+[95] [96]
 Missing character: There is no θ in font ntx-Regular-tlf-t1!
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
- [95] [96]
+ [97] [98]
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
- [97]
-Underfull \hbox (badness 10000) in paragraph at lines 779--785
+ [99]
+Underfull \hbox (badness 10000) in paragraph at lines 786--792
 []$\T1/ntxtlf/m/n/12.045 http : / / dx . doi . org / 10 . 1002 / (SICI ) 1097-[
 ]0207(19980115 ) 41 : 1<[]65 :: AID-[]NME270 >[]
  []
 
-[98] [99]) [100]
+[100] [101]) [102]
 \openout2 = `back/publications.aux'.
 
  (./back/publications.tex
@@ -3667,7 +3668,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 779--785
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 3.
 
-) [101
+) [103
 
 
 
@@ -3676,7 +3677,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@lof=\write9
 \openout9 = `main.lof'.
 
- [102
+ [104
 
 
 
@@ -3685,7 +3686,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 \tf@lot=\write10
 \openout10 = `main.lot'.
 
- [103
+ [105
 
 
 
@@ -3694,7 +3695,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\heiti' on input line 102.
 
-[104
+[106
 
 
 
@@ -3708,7 +3709,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/sc' will be
 (Font)              scaled to size 12.045pt on input line 7.
-) [105
+) [107
 
 
 
@@ -3744,12 +3745,12 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 50132 strings out of 493005
- 948663 string characters out of 6137956
- 1060225 words of memory out of 5000000
- 53225 multiletter control sequences out of 15000+600000
+ 50189 strings out of 493005
+ 950073 string characters out of 6137956
+ 1060466 words of memory out of 5000000
+ 53282 multiletter control sequences out of 15000+600000
  121008 words of font info for 200 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,19n,78p,10439b,14676s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (114 pages, 1208592 bytes).
+Output written on main.xdv (116 pages, 1231128 bytes).

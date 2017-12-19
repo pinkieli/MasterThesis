@@ -361,6 +361,13 @@
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Elsevier Inc,
   Academic Press}\@, \bibyear{1988}\@.
 
+\bibitem{Prothero1974}
+\bibauthor{Prothero A\@, Robinson A}\@. \bibtitle{On the stability and accuracy
+  of one-step methods for solving stiff systems of ordinary differential
+  equations}\bibmark{[J]}\@. \bibjournal{Mathematics of Computation}\@,
+  \bibyear{1974}\@, \bibvolume{28}\bibnumber{(125)}\thinspace{}\textnormal{:
+  }\bibpages{145\thinspace{}\textnormal{--}\thinspace{}162}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural

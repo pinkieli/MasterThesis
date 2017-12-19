@@ -1148,9 +1148,6 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \end{definition}%\vspace{-20pt}
 
 需要说明的是，Gear在他的书\inlinecite{Gear1971a}中定义绝对稳定的算法为其稳定函数满足根条件，亦指这里的广义稳定性。
-\begin{definition}[相对稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是相对稳定的\cite{Gear1971a,袁新鼎1987}，如果对于这样的$z$，稳定函数$p(w,z)$的主根模值大于等于其他虚假根的模值。
-\end{definition}
 \begin{definition}[绝对稳定域/区间]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)的绝对稳定域$\mathcal{A}$是所有$z\in\mathbb{C}$使其广义线性法绝对稳定的集合，即
 \begin{equation}
@@ -1159,13 +1156,50 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 而绝对稳定区间$\mathcal{I}$就是绝对稳定域$\mathcal{A}$与实轴的交集，即$\mathcal{I}=\mathcal{A}\cap\mathbb{R}$。
 \end{definition}
 
-同理，我们也可以定义对应广义稳定域和相对稳定域，由于使用较少，故这里不再显式给出。
+同理，我们也可以定义对应广义稳定域和相对稳定域。特别需要说明的，广义稳定域一般情况下是绝对稳定域的闭包，二者也仅仅是稳定域边界上的区别。大多数情况下，很多文献将其稳定域理解为广义稳定域。本文在后续稳定域的使用中将不再特别说明，都以稳定域代替。下面考虑一个简单的例子\cite{李寿佛2010}来说明广义稳定域和绝对稳定域的区别。
+
+考虑如下的一阶微分方程组
+\begin{equation}
+\bm{y}'(t)=\begin{bmatrix}
+-1 & 1\\ 0 & -1
+\end{bmatrix}\bm{y}(t),\quad \bm{y}(0)=[0,1]^T
+\end{equation}
+显式Euler方法使用积分步长$h=2$进行积分计算，可得
+\begin{equation}
+\bm{y}_n=\begin{bmatrix}
+-1 & 2\\ 0 & -1
+\end{bmatrix}^n\bm{y}_0=\begin{bmatrix}
+(-1)^{n-1}2n\\ (-1)^n
+\end{bmatrix},\qquad n=0,1,2,\cdots
+\end{equation}
+
+可以得出，尽管$z=-2$是属于显式Euler法的广义稳定域。但当$n\to\infty$时，其数值解$\bm{y}_n$的第一个分量无限增大。
+
+\begin{definition}
+若广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是广义稳定的且对于给定的$z\in\mathbb{C}$，其稳定函数$p(w,z)$有$r$个零根$w_i(z),i=1,2,\cdots,r$，并设$w_1(z)=1$，那么$w_1(z)$称为主根，其它根称为附加根(伪根或客根)；在这些根中，其模值等于1的那些根称为本质根，模值小于1的根称为非本质根\cite{李寿佛2010}。
+\end{definition}
+\begin{definition}[相对稳定性]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是相对稳定的\cite{Gear1971a,袁新鼎1987}，如果对于这样的$z$，稳定函数$p(w,z)$的主根模值大于等于其他伪根的模值。
+\end{definition}
+Dahlquist针对刚性问题求解提出了A稳定性\cite{Dahlquist1963}。
 \begin{definition}[A稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是A稳定的\cite{Jackiewicz2009}，如果它的绝对稳定域包含复平面的左半平面，即
+一个数值算法是A稳定的\cite{Dahlquist1963,Jackiewicz2009,ErnstHairer1996}，如果它的绝对稳定域包含复平面的左半平面，即
 \begin{equation}
 \{z\in\mathbb{C}:\text{Re}(z)<0\}\subseteq\mathcal{A}
 \end{equation}
 \end{definition}
+其A稳定域示意图如图\ref{Fig:AStable}所示。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1,yscale=1]
+\draw [pattern color=red,pattern=north east lines] (-2,-2) rectangle (0,2);
+\draw [white] (-2,-2) rectangle (0,2);
+\draw [thin,->] (-2.2,0) -- (2.2,0) node [below] {Re($z$)};
+\draw [thin,->] (0,-2.2) -- (0,2.2) node [left] {Im($z$)};
+%=============================================
+\end{tikzpicture}
+\bicaption[Fig:AStable]{}{A稳定域}{Fig.$\!$}{Domain of A-stability}
+\end{figure}
 
 当使用或构造一个数值积分算法时，我们很自然的希望它是A稳定的，因为A稳定的算法表示它对任意大的积分步长都是稳定的，稳定性的要求对积分步长$h$并没有构成任何的限制，这是我们仅需要依据精度条件来选择积分步长$h$。因此，在构造一个求解刚性微分方程的数值算法时，往往应对其进行A稳定性分析。但是，Dahlquist在引入A稳定性的同时，得到了如下的两个结论\cite{Dahlquist1963,Wanner2006,袁新鼎1987,ErnstHairer1996,book:dover}:
 \begin{itemize}
@@ -1178,8 +1212,32 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \item[(ii)] 保持A稳定性的定义，构造具有新形式的数值积分算法。至少在结构动力学数值求解算法里面，可以通过引入结构依赖于的参数实现这一目的。
 \end{itemize}
 
-
-
+正如前述所及，A稳定是很困难或是不可能实现的，因此一个相对较弱的稳定性条件被提出来，即A$(\alpha)$稳定性。
+\begin{definition}[A($\alpha$)稳定性]
+一个数值算法是A($\alpha$)稳定的\cite{Butcher2008,李寿佛2010,Widlund1967}，如果存在一个角度$\alpha$使得
+\begin{equation}
+S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
+\end{equation}
+其中，$\arg(z)$表示复数$z$的角度。
+\end{definition}
+其A$(\alpha)$稳定域示意图如图\ref{Fig:AalphaStable}所示。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1,yscale=1]
+\path [pattern color=red,pattern=north east lines] (0,0) -- (-1.8,2) to [out=225,in=135] (-1.8,-2) -- (0,0);
+\draw [thin,red] (0,0) -- (-1.8,2);
+\draw [thin,red] (0,0) -- (-1.8,-2);
+\draw [thin,->] (-3.0,0) -- (2.2,0) node [below] {Re($z$)};
+\draw [thin,->] (0,-2.2) -- (0,2.2) node [left] {Im($z$)};
+\draw [blue,<-] (-0.2,0.25) arc [radius=0.3, start angle=131.9872, end angle= 180];
+\node [left,blue] at (-0.15,0.2) {$\alpha$};
+\draw [blue,<-] (-0.2,-0.25) to [out=135,in=270] (-0.3,0);
+\node [left,blue] at (-0.15,-0.2) {$\alpha$};
+\node [left,blue] at (-2,0.2) {$S_{\alpha}$};
+%=============================================
+\end{tikzpicture}
+\bicaption[Fig:AalphaStable]{}{A$(\alpha)$稳定域}{Fig.$\!$}{Domain of A$(\alpha)$-stability}
+\end{figure}
 
 \begin{definition}[刚性A稳定]
 一个数值算法被称为是刚性A稳定的\cite{Gear1971a}，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解满足，当Re$(z)\to-\infty$时，有
@@ -1187,14 +1245,7 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \frac{y_{n-1}}{y_n}\to0
 \end{equation}成立。
 \end{definition}
-一般情况下，A稳定是很困难或是不可能实现的，因此一个相对较弱的稳定性条件被提出来，即A$(\alpha)$稳定性。
-\begin{definition}[A($\alpha$)稳定性]
-一个数值算法是A($\alpha$)稳定的\cite{Butcher2008,李寿佛2010,Widlund1967}，如果存在一个角度$\alpha$使得
-\begin{equation}
-S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
-\end{equation}
-其中，$\arg(z)$表示复数$z$的角度。
-\end{definition}\vspace{-15pt}
+
 
 另外可代替A稳定性的是刚性稳定\cite{Gear1971a}，其定义如下
 \begin{definition}[刚性稳定的]
@@ -1232,12 +1283,23 @@ S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
 其中，$\rho(\bm{M}(z))$表示稳定矩阵$\bm{M}(z)$的谱半径。
 \end{definition}
 \begin{definition}[L稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是L稳定的\cite{Butcher2008,李寿佛2010,Jackiewicz2009}，如果它是A稳定且是极端稳定的。
+一个数值算法是L稳定的\cite{Butcher2008,李寿佛2010,Jackiewicz2009}，如果它是A稳定且是极端稳定的。
 \end{definition}
 
+另外一个强于A稳定性且适用于单步格式的稳定性概念就是S稳定性\cite{Prothero1974}。
+\begin{definition}[S稳定性]
+一个单步数值算法是S稳定的\cite{Prothero1974,Fatunla1988}，如果当其求解下列的非自治微分方程
+\begin{equation}
+y'(x)=\lambda(y-g(x))+g'(x)
+\end{equation}
+时(其中$g(x)$是任意的有界函数)，其数值解$y_n$满足对于$\forall h,h>h_0>0$和$\forall\lambda, \text{Re}(\lambda)<-\lambda_0$都有
+\begin{equation}
+\frac{y_{n+1}-g(x_{n+1})}{y_n-g(x_n)}<1
+\end{equation}
+\end{definition}
+同理可以定义$S(\alpha)$稳定性\cite{Prothero1974}。
 
-
-
+S稳定性$\Longrightarrow$A稳定性，反之不成立。
 
 
 

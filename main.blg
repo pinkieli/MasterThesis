@@ -15,19 +15,19 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: reference.bib
 Warning--string name "oct" is undefined
---line 4365 of file reference.bib
+--line 4359 of file reference.bib
 Warning--string name "dec" is undefined
---line 5023 of file reference.bib
+--line 5017 of file reference.bib
 Warning--string name "jun" is undefined
 --line 54957 of file reference.bib
 Warning--string name "apr" is undefined
 --line 55187 of file reference.bib
 Warning--string name "oct" is undefined
---line 59625 of file reference.bib
+--line 59633 of file reference.bib
 Warning--string name "jan" is undefined
---line 70107 of file reference.bib
+--line 70115 of file reference.bib
 Warning--string name "apr" is undefined
---line 70223 of file reference.bib
+--line 70231 of file reference.bib
 Warning--I didn't find a database entry for "Bathe2012a"
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
@@ -84,45 +84,45 @@ Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Bathe2012
 Warning--Require citedate: Noh2013
-You've used 125 entries,
+You've used 126 entries,
             3103 wiz_defined-function locations,
-            1541 strings with 27121 characters,
-and the built_in function-call counts, 164639 in all, are:
-= -- 17112
-> -- 354
-< -- 827
-+ -- 12520
-- -- 1153
-* -- 6052
-:= -- 17034
+            1547 strings with 27293 characters,
+and the built_in function-call counts, 166154 in all, are:
+= -- 17273
+> -- 357
+< -- 834
++ -- 12640
+- -- 1164
+* -- 6103
+:= -- 17191
 add.period$ -- 0
-call.type$ -- 125
+call.type$ -- 126
 change.case$ -- 0
 chr.to.int$ -- 27
-cite$ -- 180
-duplicate$ -- 23327
-empty$ -- 7507
-format.name$ -- 880
-if$ -- 42950
+cite$ -- 181
+duplicate$ -- 23543
+empty$ -- 7574
+format.name$ -- 888
+if$ -- 43348
 int.to.chr$ -- 0
-int.to.str$ -- 125
+int.to.str$ -- 126
 missing$ -- 0
-newline$ -- 402
-num.names$ -- 126
-pop$ -- 2498
+newline$ -- 405
+num.names$ -- 127
+pop$ -- 2521
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1638
+skip$ -- 1652
 stack$ -- 0
-substring$ -- 19266
-swap$ -- 6211
+substring$ -- 19446
+swap$ -- 6265
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 55
-while$ -- 2296
-width$ -- 128
-write$ -- 1845
+while$ -- 2318
+width$ -- 129
+write$ -- 1860
 (There were 63 warnings)
