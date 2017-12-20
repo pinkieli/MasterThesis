@@ -633,7 +633,6 @@ OUTPUT body/ch2.aux
 INPUT body/ch2.tex
 INPUT body/ch2.tex
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
-INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
@@ -642,6 +641,7 @@ INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
 OUTPUT body/ch3.aux
 INPUT body/ch3.tex
 INPUT body/ch3.tex
+INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Bold-tlf-t1.tfm
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
 INPUT d:/texlive/2017/texmf-dist/fonts/tfm/public/newtx/ntxmi.tfm

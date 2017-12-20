@@ -333,6 +333,30 @@
   }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}43}\@.
   \newline\url{http://dx.doi.org/10.1007/BF01963532}\@.
 
+\bibitem{Ehle1969}
+\bibauthor{Ehle B~L}\@. \bibtitle{On Padé approximations to the exponential
+  function and A-stable methods for the numerical solution of initial value
+  problems}\bibmark{[D]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibschool{University of Waterloo}\@, \bibyear{1969}\@.
+
+\bibitem{Axelsson1969}
+\bibauthor{Axelsson O}\@. \bibtitle{A class of A -stable
+  methods}\bibmark{[J]}\@. \bibjournal{Bit Numerical Mathematics}\@,
+  \bibyear{1969}\@, \bibvolume{9}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{185\thinspace{}\textnormal{--}\thinspace{}199}\@.
+
+\bibitem{Chipman1971}
+\bibauthor{Chipman F~H}\@. \bibtitle{A -stable Runge-Kutta
+  processes}\bibmark{[J]}\@. \bibjournal{Bit Numerical Mathematics}\@,
+  \bibyear{1971}\@, \bibvolume{11}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{384\thinspace{}\textnormal{--}\thinspace{}388}\@.
+
+\bibitem{Axelsson1972}
+\bibauthor{Axelsson O}\@. \bibtitle{A note on a class of strongly A -stable
+  methods}\bibmark{[J]}\@. \bibjournal{Bit Numerical Mathematics}\@,
+  \bibyear{1972}\@, \bibvolume{12}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}4}\@.
+
 \bibitem{Wanner2006}
 \bibauthor{Wanner G}\@. \bibtitle{Dahlquist's classical papers on stability
   theory}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical Mathematics}\@,
@@ -346,14 +370,6 @@
   \bibyear{1967}\@, \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{65\thinspace{}\textnormal{--}\thinspace{}70}\@.
 
-\bibitem{Fatunla1988}
-\bibauthor{Fatunla S~O\@, Rheinboldt W\@, Siewiorek D}\@.
-  \bibbooktitle{Computer Science and Scientific
-  Computing\thinspace{}\textnormal{: }Numerical Methods for Initial Value
-  Problems in Ordinary Differential Equations}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Elsevier Inc,
-  Academic Press}\@, \bibyear{1988}\@.
-
 \bibitem{Cryer1973}
 \bibauthor{Cryer C~W}\@. \bibtitle{A new class of highly-stable
   methods:A0-stable methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
@@ -361,6 +377,14 @@
   \bibvolume{13}\bibnumber{(2)}\thinspace{}\textnormal{:
   }\bibpages{153\thinspace{}\textnormal{--}\thinspace{}159}\@.
   \newline\url{http://dx.doi.org/10.1007/BF01933487}\@.
+
+\bibitem{Fatunla1988}
+\bibauthor{Fatunla S~O\@, Rheinboldt W\@, Siewiorek D}\@.
+  \bibbooktitle{Computer Science and Scientific
+  Computing\thinspace{}\textnormal{: }Numerical Methods for Initial Value
+  Problems in Ordinary Differential Equations}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Elsevier Inc,
+  Academic Press}\@, \bibyear{1988}\@.
 
 \bibitem{Gupta1976}
 \bibauthor{Gupta G~K}\@. \bibtitle{Some new high-order multistep formulae for

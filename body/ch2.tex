@@ -1201,6 +1201,18 @@ Dahlquist针对刚性问题求解提出了A稳定性\cite{Dahlquist1963}。
 \bicaption[Fig:AStable]{}{A稳定域}{Fig.$\!$}{Domain of A-stability}
 \end{figure}
 
+\begin{definition}[极端稳定的]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)在$\infty$是极端稳定的\cite{李寿佛2010}，如果有
+\begin{equation}
+\lim_{z\to\infty}\rho(\bm{M}(z))=0
+\end{equation}
+其中，$\rho(\bm{M}(z))$表示稳定矩阵$\bm{M}(z)$的谱半径。
+\end{definition}
+\begin{definition}[L稳定性]
+一个数值算法是L稳定的\cite{Butcher2008,李寿佛2010,Jackiewicz2009}，如果它是A稳定且是极端稳定的。
+\end{definition}
+L稳定性在文\inlinecite{Ehle1969}被称为\textbf{左稳定性}而引入，同时Axelsson也在文\inlinecite{Axelsson1969}中称其为\textbf{刚性A稳定性}，而在文\inlinecite{Chipman1971,Axelsson1972}称L稳定性为\textbf{强A稳定性}。尽管这些名称不同，本文都统一使用L稳定性。
+
 当使用或构造一个数值积分算法时，我们很自然的希望它是A稳定的，因为A稳定的算法表示它对任意大的积分步长都是稳定的，稳定性的要求对积分步长$h$并没有构成任何的限制，这是我们仅需要依据精度条件来选择积分步长$h$。因此，在构造一个求解刚性微分方程的数值算法时，往往应对其进行A稳定性分析。但是，Dahlquist在引入A稳定性的同时，得到了如下的两个结论\cite{Dahlquist1963,Wanner2006,袁新鼎1987,ErnstHairer1996,book:dover}:
 \begin{itemize}
 \item[\ddag] 显式的线性多步法(包括显式的Runge-Kutta方法)不可能是A稳定的。
@@ -1208,7 +1220,7 @@ Dahlquist针对刚性问题求解提出了A稳定性\cite{Dahlquist1963}。
 \end{itemize}
 由于上述结论的存在和推动，以及为了突破这些结论的限制，刚性微分方程的数值算法的研究主要想两个方面进行发展：
 \begin{itemize}
-\item[(i)] 减弱A稳定性的定义，也就是说要求设计的数值算法的稳定区域不必包括整个开左半平面，而只需要包括其中的一部分。这样就先后由Widlund提出了A$(\alpha)$稳定性\cite{Widlund1967}，由Gear引进的刚性稳定性\cite{Gear1971a}以及由Cryer提出的$\text{A}_0$稳定性\cite{Cryer1973a}。构造具有这些稳定性的数值方法仍然适合求解一大类刚性问题。它们的最高精度阶也可以超过2阶，进而突破了前述限制。
+\item[(i)] 减弱A稳定性的定义，也就是说要求设计的数值算法的稳定区域不必包括整个开左半平面，而只需要包括其中的一部分。这样就先后由Widlund提出了A$(\alpha)$稳定性\cite{Widlund1967}，由Gear引进的刚性稳定性\cite{Gear1971a}以及由Cryer提出的$\text{A}_0$稳定性\cite{Cryer1973}。构造具有这些稳定性的数值方法仍然适合求解一大类刚性问题。它们的最高精度阶也可以超过2阶，进而突破了前述限制。
 \item[(ii)] 保持A稳定性的定义，构造具有新形式的数值积分算法。至少在结构动力学数值求解算法里面，可以通过引入结构依赖于的参数实现这一目的。
 \end{itemize}
 
@@ -1322,23 +1334,6 @@ Gupta在1976年提出了A$(\alpha,D)$稳定性，即包含了A稳定性的特点
 \bicaption[Fig:AalphaDStable]{}{A$(\alpha,D)$稳定域}{Fig.$\!$}{Domain of A$(\alpha,D)$ stability}
 \end{figure}
 
-\begin{definition}[刚性A稳定]
-一个数值算法被称为是刚性A稳定的\cite{Gear1971a}，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解满足，当Re$(z)\to-\infty$时，有
-\begin{equation}
-\frac{y_{n-1}}{y_n}\to0
-\end{equation}成立。
-\end{definition}
-
-\begin{definition}[极端稳定的]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)在$\infty$是极端稳定的\cite{李寿佛2010}，如果有
-\begin{equation}
-\lim_{z\to\infty}\rho(\bm{M}(z))=0
-\end{equation}
-其中，$\rho(\bm{M}(z))$表示稳定矩阵$\bm{M}(z)$的谱半径。
-\end{definition}
-\begin{definition}[L稳定性]
-一个数值算法是L稳定的\cite{Butcher2008,李寿佛2010,Jackiewicz2009}，如果它是A稳定且是极端稳定的。
-\end{definition}
 
 另外一个强于A稳定性且适用于单步格式的稳定性概念就是S稳定性\cite{Prothero1974}。
 \begin{definition}[S稳定性]

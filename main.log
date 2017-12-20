@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  20 DEC 2017 10:48
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  20 DEC 2017 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3410,30 +3410,23 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 1026.
 Package hyperref Info: bookmark level for unknown proof defaults to 0 on input 
 line 1034.
- [26] [27] [28] [29] [30]
-LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <8> not available
-(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 1211
-.
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 8.0pt on input line 1211.
-
-
-Package natbib Warning: Citation `Cryer1973a' on page 31 undefined on input lin
-e 1211.
-
-[31]
+ [26] [27] [28] [29] [30] [31]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1263.
+(Font)              scaled to size 7.0pt on input line 1275.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1263.
- [32] [33] [34]
+(Font)              scaled to size 5.0pt on input line 1275.
+ [32] [33]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34]
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1398.
+(Font)              scaled to size 8.0pt on input line 1393.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.52437pt on input line 1398.
+(Font)              scaled to size 6.52437pt on input line 1393.
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 1398.
-) [35]
+(Font)              scaled to size 9.03374pt on input line 1393.
+)
+[35]
 \openout2 = `body/ch3.aux'.
 
  (./body/ch3.tex
@@ -3444,7 +3437,13 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 
 
 
-] [37] [38] [39] [40] [41] [42] [43]
+] [37] [38] [39] [40]
+LaTeX Font Info:    Font shape `T1/ntxtlf/bx/n' in size <8> not available
+(Font)              Font shape `T1/ntxtlf/b/n' tried instead on input line 208.
+
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 8.0pt on input line 208.
+ [41] [42] [43]
 
 Package amsmath Warning: Cannot use `split' here;
 (amsmath)                trying to recover with `aligned' on input line 311.
@@ -3649,19 +3648,20 @@ Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
 
 
 
-] [93] [94] [95]
-Underfull \hbox (badness 10000) in paragraph at lines 449--455
+] [93] [94] [95] [96]
+Underfull \hbox (badness 10000) in paragraph at lines 473--479
 []$\T1/ntxtlf/m/n/12.045 http : / / dx . doi . org / 10 . 1002 / (SICI ) 1097-[
 ]0207(19961030 ) 39 : 20<[]3475 ::
  []
 
-[96] [97]
+[97]
 Missing character: There is no θ in font ntx-Regular-tlf-t1!
+ [98]
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
- [98] [99]
+ [99] [100]
 Missing character: There is no ‐ in font ntx-Regular-tlf-t1!
- [100]
-Underfull \hbox (badness 10000) in paragraph at lines 794--800
+
+Underfull \hbox (badness 10000) in paragraph at lines 818--824
 []$\T1/ntxtlf/m/n/12.045 http : / / dx . doi . org / 10 . 1002 / (SICI ) 1097-[
 ]0207(19980115 ) 41 : 1<[]65 :: AID-[]NME270 >[]
  []
@@ -3751,12 +3751,12 @@ LaTeX Font Warning: Size substitutions with differences
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 50212 strings out of 493005
- 950528 string characters out of 6137956
- 1060602 words of memory out of 5000000
- 53305 multiletter control sequences out of 15000+600000
+ 50222 strings out of 493005
+ 950713 string characters out of 6137956
+ 1060677 words of memory out of 5000000
+ 53315 multiletter control sequences out of 15000+600000
  123816 words of font info for 201 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 63i,19n,78p,10439b,14680s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,19n,78p,10439b,14678s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (117 pages, 1252636 bytes).
+Output written on main.xdv (117 pages, 1254164 bytes).
