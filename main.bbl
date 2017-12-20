@@ -346,13 +346,6 @@
   \bibyear{1967}\@, \bibvolume{7}\bibnumber{(1)}\thinspace{}\textnormal{:
   }\bibpages{65\thinspace{}\textnormal{--}\thinspace{}70}\@.
 
-\bibitem{Cryer1973a}
-\bibauthor{Cryer C~W}\@. \bibtitle{A new class of highly-stable methods:
-  $A_0$-stable methods.}\bibmark{[J]}\@. \bibjournal{Bit Numerical
-  Mathematics}\@, \bibyear{1973}\@,
-  \bibvolume{13}\bibnumber{(2)}\thinspace{}\textnormal{:
-  }\bibpages{153\thinspace{}\textnormal{--}\thinspace{}159}\@.
-
 \bibitem{Fatunla1988}
 \bibauthor{Fatunla S~O\@, Rheinboldt W\@, Siewiorek D}\@.
   \bibbooktitle{Computer Science and Scientific
@@ -360,6 +353,21 @@
   Problems in Ordinary Differential Equations}\bibmark{[M]}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Elsevier Inc,
   Academic Press}\@, \bibyear{1988}\@.
+
+\bibitem{Cryer1973}
+\bibauthor{Cryer C~W}\@. \bibtitle{A new class of highly-stable
+  methods:A0-stable methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
+  Mathematics}\@, \bibyear{1973}\@,
+  \bibvolume{13}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{153\thinspace{}\textnormal{--}\thinspace{}159}\@.
+  \newline\url{http://dx.doi.org/10.1007/BF01933487}\@.
+
+\bibitem{Gupta1976}
+\bibauthor{Gupta G~K}\@. \bibtitle{Some new high-order multistep formulae for
+  solving stiff equations}\bibmark{[J]}\@. \bibjournal{Mathematics of
+  Computation}\@, \bibyear{1976}\@,
+  \bibvolume{30}\bibnumber{(135)}\thinspace{}\textnormal{:
+  }\bibpages{417\thinspace{}\textnormal{--}\thinspace{}432}\@.
 
 \bibitem{Prothero1974}
 \bibauthor{Prothero A\@, Robinson A}\@. \bibtitle{On the stability and accuracy

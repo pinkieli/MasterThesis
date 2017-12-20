@@ -1239,17 +1239,41 @@ S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
 \bicaption[Fig:AalphaStable]{}{A$(\alpha)$稳定域}{Fig.$\!$}{Domain of A$(\alpha)$-stability}
 \end{figure}
 
-\begin{definition}[刚性A稳定]
-一个数值算法被称为是刚性A稳定的\cite{Gear1971a}，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解满足，当Re$(z)\to-\infty$时，有
-\begin{equation}
-\frac{y_{n-1}}{y_n}\to0
-\end{equation}成立。
+显然，A$(\frac{\pi}{2})$稳定性$\equiv$A稳定性。
+\begin{definition}[A($0$)稳定性]
+一个数值算法是A($0$)稳定的\cite{袁新鼎1987,Fatunla1988}，如果存在充分小的角度$\alpha\in(0,\frac{\pi}{2})$使得算法是A($\alpha$)稳定的。
 \end{definition}
 
+Cryer又提出了$A_0$稳定性\cite{Cryer1973}。
+\begin{definition}[$A_0$稳定性]
+一个数值算法是$A_0$稳定的\cite{袁新鼎1987,Cryer1973,Fatunla1988}，如果其稳定域包含整个负实轴，即
+\begin{equation}
+\{z\in\mathbb{C}:\text{Im}(z)=0,\text{Re}(z)<0\}\subseteq\mathcal{A}
+\end{equation}
+\end{definition}
+其$\text{A}_0$稳定域示意图如图\ref{Fig:A0Stable}所示。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1,yscale=1]
+\draw [line width=0.2cm,red] (-3.0,0) -- (0,0);
+\draw [thin,->] (-3.0,0) -- (2.2,0) node [below] {Re($z$)};
+\draw [thin,->] (0,-2.2) -- (0,2.2) node [left] {Im($z$)};
+%=============================================
+\end{tikzpicture}
+\bicaption[Fig:A0Stable]{}{$\text{A}_0$稳定域}{Fig.$\!$}{Domain of $\text{A}_0$-stability}
+\end{figure}
 
-另外可代替A稳定性的是刚性稳定\cite{Gear1971a}，其定义如下
+从上述稳定性定义可以得出
+\begin{itemize}
+\item[\ddag] A$(\pi/2)$稳定性$\iff$A稳定性。
+\item[\ddag] L稳定性$\Longrightarrow$A$(\alpha)$稳定性$\Longrightarrow$A$(0)$稳定性$\Longrightarrow$$\text{A}_0$稳定性。
+\end{itemize}
+
+$\text{A}_0$稳定的算法族中包含于A稳定和A$(\alpha)$稳定的算法族中，通过详细研究$\text{A}_0$算法的性质，将能够确定合适的求解刚性微分方程的数值算法必须具备的一些条件，这也是研究$\text{A}_0$稳定性的理论意义。另一方面，许多实际的刚性问题可能只具有实的特征值，于是$\text{A}_0$稳定的算法对于求解一些特殊的刚性方程是有效的。
+
+上述的定义只考虑了稳定性，没有考虑精度问题，Gear定义了另外可代替A稳定性的刚性稳定性\cite{Gear1971a}。即考虑了稳定性，又考虑了数值逼近的精度。其定义如下
 \begin{definition}[刚性稳定的]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是刚性稳定的\cite{Gear1971a}，如果在复平面区域$R_1\triangleq\{z:\text{Re}(z)\le D\}$它是绝对稳定的；而在区域$R_2\triangleq\{z:D<\text{Re}(z)<\alpha,|\text{Im}(z)|<\theta\}$它是精确的。
+一个数值算法是刚性稳定的\cite{Gear1971a}，如果在复平面区域$R_1\triangleq\{z:\text{Re}(z)\le D\}$它是绝对稳定的；而在区域$R_2\triangleq\{z:D<\text{Re}(z)<\alpha,|\text{Im}(z)|<\theta\}$它是精确的。
 \end{definition}\vspace{-15pt}
 其在复平面内的示意图如图\ref{Fig:StifflyStable}所示，
 \begin{figure}[htpb]
@@ -1272,8 +1296,38 @@ S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
 \bicaption[Fig:StifflyStable]{}{刚性稳定域}{Fig.$\!$}{Stiffly stability}
 \end{figure}
 
-刚性稳定的算法可以推导出该算法也是A$(\alpha)$稳定的，其中$\alpha=\tan^{-1}(\theta/D)$\cite{Fatunla1988}。
+刚性稳定的算法可以推导出该算法也是A$(\alpha)$稳定的，其中$\alpha=\tan^{-1}(\theta/D)$\cite{Fatunla1988}。关于刚性稳定性定义的解释可以参见文献\inlinecite{Fatunla1988,袁新鼎1987}。
 
+Gupta在1976年提出了A$(\alpha,D)$稳定性，即包含了A稳定性的特点又结合了刚性稳定的性质。其定义如下
+\begin{definition}[A$(\alpha,D)$稳定性]
+一个数值算法是A$(\alpha,D)$稳定的\cite{Gupta1976}$\alpha\in(0,\frac{\pi}{2})$，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解$y_n$满足，当积分步长$h$给定，$n\to\infty$时，对于所有的$|\arg(-\lambda h)|<\alpha,D\le\text{Re}(h\lambda)<0,|\lambda|\neq0$以及所有的$\text{Re}(h\lambda)\le D$，都有$y_n\to0$。
+\end{definition}
+其在复平面内的示意图如图\ref{Fig:AalphaDStable}所示，
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1,yscale=1]
+\path [pattern color=red,pattern=north east lines] (0,0) -- (-1.8,2) -- (-1.8,-2) -- (0,0);
+\path [pattern color=blue,pattern=north west lines] (-1.8,-3) -- (-1.8,3) -- (-3.5,3) to [out=220,in=145] (-4,0) to [out=315,in=145] (-3.5,-3) -- (-1.8,-3);
+\draw [red] (0,0) -- (-1.8,2) -- (-1.8,-2) -- (0,0);
+\draw [blue] (-1.8,-3) -- (-1.8,3) -- (-3.5,3) to [out=220,in=145] (-4,0) to [out=315,in=145] (-3.5,-3) -- (-1.8,-3);
+\draw [thin,->] (-4.5,0) -- (3,0) node [below] {Re($z$)};
+\draw [thin,->] (0,-3) -- (0,3) node [left] {Im($z$)};
+\node [below left] at (-1.8,0) {$D$};
+\draw [blue,<-] (-0.2,0.23) to [out=225,in=90] (-0.3,0);
+\node [left] at (-0.3,0.25) {$\alpha$};
+\draw [blue,<-] (-0.2,-0.23) to [out=145,in=270] (-0.3,0);
+\node [left] at (-0.3,-0.25) {$\alpha$}; 
+%=============================================
+\end{tikzpicture}
+\bicaption[Fig:AalphaDStable]{}{A$(\alpha,D)$稳定域}{Fig.$\!$}{Domain of A$(\alpha,D)$ stability}
+\end{figure}
+
+\begin{definition}[刚性A稳定]
+一个数值算法被称为是刚性A稳定的\cite{Gear1971a}，如果对于微分方程(\ref{eq:ch2StandardDiffSystem})的数值解满足，当Re$(z)\to-\infty$时，有
+\begin{equation}
+\frac{y_{n-1}}{y_n}\to0
+\end{equation}成立。
+\end{definition}
 
 \begin{definition}[极端稳定的]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)在$\infty$是极端稳定的\cite{李寿佛2010}，如果有
