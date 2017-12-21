@@ -30,7 +30,6 @@ Warning--string name "apr" is undefined
 --line 70231 of file reference.bib
 Warning--string name "mar" is undefined
 --line 87151 of file reference.bib
-Warning--I didn't find a database entry for "Bathe2012a"
 Warning--Require address: book:dover
 Warning--Require address: Lunk2004
 Warning--Require journal: Lunk2005
@@ -52,6 +51,8 @@ Warning--Require address: Ehle1969
 Warning--Require citedate: Wanner2006
 Warning--Require citedate: Cryer1973
 Warning--Require address: Fatunla1988
+Warning--Require citedate: Odeh1971
+Warning--Require citedate: Butcher1975
 Warning--Require citedate: Hoff198887
 Warning--Require address: Chopra2011
 Warning--Require address: Wood
@@ -79,6 +80,7 @@ Warning--Require citedate: SoaresJr2016a
 Warning--Require address: Quarteroni2010
 Warning--Require citedate: Tarnow1994
 Warning--Require citedate: Fung1998
+Warning--Require citedate: Bathe2012
 Warning--Require citedate: Zhang2017
 Warning--Require journal: Kumara
 Warning--Require year: Kumara
@@ -86,47 +88,46 @@ Warning--Require journal: Guwahati
 Warning--Require year: Guwahati
 Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
-Warning--Require citedate: Bathe2012
 Warning--Require citedate: Noh2013
-You've used 131 entries,
+You've used 133 entries,
             3103 wiz_defined-function locations,
-            1576 strings with 27847 characters,
-and the built_in function-call counts, 170170 in all, are:
-= -- 17620
-> -- 367
-< -- 859
-+ -- 12844
-- -- 1196
-* -- 6327
-:= -- 17535
+            1590 strings with 28146 characters,
+and the built_in function-call counts, 172515 in all, are:
+= -- 17847
+> -- 372
+< -- 871
++ -- 12989
+- -- 1214
+* -- 6433
+:= -- 17748
 add.period$ -- 0
-call.type$ -- 131
+call.type$ -- 133
 change.case$ -- 0
 chr.to.int$ -- 27
-cite$ -- 188
-duplicate$ -- 24096
-empty$ -- 7827
-format.name$ -- 908
-if$ -- 44348
+cite$ -- 192
+duplicate$ -- 24443
+empty$ -- 7954
+format.name$ -- 920
+if$ -- 44930
 int.to.chr$ -- 0
-int.to.str$ -- 131
+int.to.str$ -- 133
 missing$ -- 0
-newline$ -- 420
-num.names$ -- 132
-pop$ -- 2606
+newline$ -- 426
+num.names$ -- 134
+pop$ -- 2658
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1705
+skip$ -- 1722
 stack$ -- 0
-substring$ -- 19871
-swap$ -- 6515
+substring$ -- 20143
+swap$ -- 6629
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 57
-while$ -- 2391
-width$ -- 134
-write$ -- 1934
-(There were 66 warnings)
+warning$ -- 59
+while$ -- 2433
+width$ -- 136
+write$ -- 1968
+(There were 67 warnings)

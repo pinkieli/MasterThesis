@@ -393,12 +393,28 @@
   \bibvolume{30}\bibnumber{(135)}\thinspace{}\textnormal{:
   }\bibpages{417\thinspace{}\textnormal{--}\thinspace{}432}\@.
 
+\bibitem{Odeh1971}
+\bibauthor{Odeh F\@, Liniger W}\@. \bibtitle{A note on unconditional fixed-h
+  stability of linear multistep formulae}\bibmark{[J/OL]}\@.
+  \bibjournal{Computing}\@, \bibyear{1971}\@,
+  \bibvolume{7}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{240\thinspace{}\textnormal{--}\thinspace{}253}\@.
+  \newline\url{https://doi.org/10.1007/BF02242351}\@.
+
 \bibitem{Prothero1974}
 \bibauthor{Prothero A\@, Robinson A}\@. \bibtitle{On the stability and accuracy
   of one-step methods for solving stiff systems of ordinary differential
   equations}\bibmark{[J]}\@. \bibjournal{Mathematics of Computation}\@,
   \bibyear{1974}\@, \bibvolume{28}\bibnumber{(125)}\thinspace{}\textnormal{:
   }\bibpages{145\thinspace{}\textnormal{--}\thinspace{}162}\@.
+
+\bibitem{Butcher1975}
+\bibauthor{Butcher J~C}\@. \bibtitle{A stability property of implicit
+  Runge-Kutta methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
+  Mathematics}\@, \bibyear{1975}\@,
+  \bibvolume{15}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{358\thinspace{}\textnormal{--}\thinspace{}361}\@.
+  \newline\url{https://doi.org/10.1007/BF01931672}\@.
 
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
@@ -836,6 +852,14 @@
   \bibvolume{85}\bibnumber{(7–8)}\thinspace{}\textnormal{:
   }\bibpages{437\thinspace{}\textnormal{--}\thinspace{}445}\@.
 
+\bibitem{Bathe2012}
+\bibauthor{Bathe K-J\@, Noh G}\@. \bibtitle{Insight into an implicit time
+  integration scheme for structural dynamics}\bibmark{[J/OL]}\@.
+  \bibjournal{Computers \& Structures}\@, \bibyear{2012}\@,
+  \bibvolume{98–99}\thinspace{}\textnormal{: }\bibpages{1
+  \thinspace{}\textnormal{--}\thinspace{} 6}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/S0045794912000107}\@.
+
 \bibitem{Silva2008}
 \bibauthor{Silva W~T~M\@, Bezerra L~M}\@. \bibtitle{Performance of Composite
   Implicit Time Integration Scheme for Nonlinear Dynamic
@@ -930,14 +954,6 @@
   \bibvolume{31}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{791\thinspace{}\textnormal{--}\thinspace{}812}\@.
   \newline\url{http://dx.doi.org/10.1007/s00366-014-0390-x}\@.
-
-\bibitem{Bathe2012}
-\bibauthor{Bathe K-J\@, Noh G}\@. \bibtitle{Insight into an implicit time
-  integration scheme for structural dynamics}\bibmark{[J/OL]}\@.
-  \bibjournal{Computers \& Structures}\@, \bibyear{2012}\@,
-  \bibvolume{98–99}\thinspace{}\textnormal{: }\bibpages{1
-  \thinspace{}\textnormal{--}\thinspace{} 6}\@.
-  \newline\url{http://www.sciencedirect.com/science/article/pii/S0045794912000107}\@.
 
 \bibitem{Noh2013}
 \bibauthor{Noh G\@, Bathe K-J}\@. \bibtitle{An explicit time integration scheme

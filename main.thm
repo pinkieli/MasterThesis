@@ -8,13 +8,13 @@
 \contentsline {proof}{{证明}{1}{}}{26}{proof.1}
 \contentsline {theorem}{{定理}{2.{2}}{矩阵稳定的等价条件}}{26}{theorem.2.2}
 \contentsline {proof}{{证明}{2}{}}{26}{proof.2}
-\contentsline {theorem}{{定理}{2.{3}}{稳定矩阵的鲁棒性}}{26}{theorem.2.3}
+\contentsline {theorem}{{定理}{2.{3}}{稳定矩阵的鲁棒性}}{27}{theorem.2.3}
 \contentsline {proof}{{证明}{3}{}}{27}{proof.3}
 \contentsline {theorem}{{定理}{2.{4}}{}}{27}{theorem.2.4}
 \contentsline {proof}{{证明}{4}{}}{27}{proof.4}
 \contentsline {definition}{{定义}{2.{7}}{零稳定性}}{27}{definition.2.7}
-\contentsline {theorem}{{定理}{2.{5}}{零稳定性的等价转述}}{27}{theorem.2.5}
-\contentsline {definition}{{定义}{2.{8}}{弱零稳定性}}{27}{definition.2.8}
+\contentsline {theorem}{{定理}{2.{5}}{零稳定性的等价转述}}{28}{theorem.2.5}
+\contentsline {definition}{{定义}{2.{8}}{弱零稳定性}}{28}{definition.2.8}
 \contentsline {definition}{{定义}{2.{9}}{强零稳定性}}{28}{definition.2.9}
 \contentsline {definition}{{定义}{2.{10}}{广义稳定的}}{29}{definition.2.10}
 \contentsline {definition}{{定义}{2.{11}}{绝对稳定性}}{29}{definition.2.11}
@@ -28,7 +28,12 @@
 \contentsline {definition}{{定义}{2.{19}}{A($0$)稳定性}}{32}{definition.2.19}
 \contentsline {definition}{{定义}{2.{20}}{$A_0$稳定性}}{32}{definition.2.20}
 \contentsline {definition}{{定义}{2.{21}}{刚性稳定的}}{33}{definition.2.21}
-\contentsline {definition}{{定义}{2.{22}}{A$(\alpha ,D)$稳定性}}{33}{definition.2.22}
-\contentsline {definition}{{定义}{2.{23}}{S稳定性}}{35}{definition.2.23}
-\contentsline {definition}{{定义}{2.{24}}{}}{35}{definition.2.24}
-\contentsline {definition}{{定义}{2.{25}}{}}{35}{definition.2.25}
+\contentsline {definition}{{定义}{2.{22}}{A$(\alpha ,D)$稳定性}}{34}{definition.2.22}
+\contentsline {definition}{{定义}{2.{23}}{$\text {A}_D$稳定性}}{34}{definition.2.23}
+\contentsline {definition}{{定义}{2.{24}}{$\text {A}_\infty $稳定性}}{34}{definition.2.24}
+\contentsline {definition}{{定义}{2.{25}}{S稳定性}}{35}{definition.2.25}
+\contentsline {definition}{{定义}{2.{26}}{强S稳定性}}{35}{definition.2.26}
+\contentsline {definition}{{定义}{2.{27}}{$\text {A}^0$稳定性}}{36}{definition.2.27}
+\contentsline {definition}{{定义}{2.{28}}{B稳定性}}{36}{definition.2.28}
+\contentsline {definition}{{定义}{2.{29}}{}}{36}{definition.2.29}
+\contentsline {definition}{{定义}{2.{30}}{}}{36}{definition.2.30}
