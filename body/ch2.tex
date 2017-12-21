@@ -1099,6 +1099,8 @@ y^{[n]}=\bm{V}y^{n-1}=\bm{V}^ny^{[0]},\quad n=0,1,\cdots
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是强零稳定的\cite{Jackiewicz2009,李寿佛2010,Gear1971a}，如果它是零稳定的，且矩阵$\bm{V}$有且仅有一个特征值位于单位圆上。此时，也称矩阵$\bm{V}$的最小多项式满足强根条件。
 \end{definition}%\vspace{-15pt}
 
+零稳定性在一些文献\inlinecite{Denholm1973,Stetter1973}中也称为D\textbf{稳定性}，仅仅是“Dahlquist-stability”的简称。在本文中一律使用零稳定性。 
+
 对于Runge-Kutta方法(\ref{eq:ch2RK})，其最小多项式为$p(w)=w-1$,因此Runge-Kutta方法都是零稳定的，而且还是严格零稳定的。而对于线性多步法(\ref{eq:ch2lms})在广义线性表示形式($r=2k,s=k$)下，其最小多项式为
 \begin{equation}
 p(w)=w^k\rho(w),\quad \rho(w)=w^k-\sum_{j=1}^{k}\alpha_jw^{k-j}
@@ -1175,9 +1177,12 @@ p(w,z)=\det(w\bm{I}-\bm{M}(z))
 \begin{definition}
 若广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是广义稳定的且对于给定的$z\in\mathbb{C}$，其稳定函数$p(w,z)$有$r$个零根$w_i(z),i=1,2,\cdots,r$，并设$w_1(z)=1$，那么$w_1(z)$称为主根，其它根称为附加根(伪根或客根)；在这些根中，其模值等于1的那些根称为本质根，模值小于1的根称为非本质根\cite{李寿佛2010}。
 \end{definition}
+
+需要说明的是，一个数值算法若是直接对一阶微分方程进行离散，则其对应的稳定函数有且仅有一个主根其模值接近1；若是直接对二阶微分方程进行离散，则稳定函数有两个主根，其模值最接近于1。这一点在后续稳定性分析中将进一步解释。
 \begin{definition}[相对稳定性]
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)对给定的$z\in\mathbb{C}$是相对稳定的\cite{Gear1971a,袁新鼎1987}，如果对于这样的$z$，稳定函数$p(w,z)$的主根模值大于等于其他伪根的模值。
 \end{definition}
+当主根个数多于1时，则相对稳定性应改为主根模值的最小值大于等于其他伪根的模值。
 Dahlquist针对刚性问题求解提出了A稳定性\cite{Dahlquist1963}。
 \begin{definition}[A稳定性]
 一个数值算法是A稳定的\cite{Dahlquist1963,Jackiewicz2009,ErnstHairer1996}，如果它的绝对稳定域包含复平面的左半平面，即
@@ -1396,15 +1401,44 @@ $||\bm{y}_n-\bm{z}_n||\le ||\bm{y}_{n-1}-\bm{z}_{n-1}||$成立，其中$\bm{y}_n
 \end{definition}
 文\inlinecite{Butcher1975}中主要分析了隐式的Runge-Kutta方法满足B稳定性的要求和条件。同时，也知道了B稳定性是A稳定性对于非线性系统分析的扩展。
 
+在结构动力学中，常常遇到的是经过有限元离散之后的二阶微分方程，故也有学者直接分析如下的二阶微分方程
+\begin{equation}
+y''(x)=-\lambda^2y(x),\quad \lambda,y\in\mathbb{R}
+\end{equation}
+对于上述二阶微分方程的线性$k$步法
+\begin{equation}
+\sum_{j=0}^{k}\alpha_jy_{n+j}=h^2\sum_{j=0}^{k}\beta_jf(y_{n+j}),\quad k\ge2\label{eq:ch2SecondDiffLMS}
+\end{equation}
+进行离散可以得到\begin{equation}
+\sum_{j=0}^{k}(\alpha_j+z^2\beta_j)y_{n+j}=0,\qquad z\triangleq h\lambda
+\end{equation}
+同时，可以定义其稳定函数为\begin{equation}
+p(w,z)=\sum_{j=0}^{k}(\alpha_j+z^2\beta_j)w^j
+\end{equation}
+显然，对于给定的$z$值，上述稳定函数有$k$个零根$w_j(z),j=1,2,\cdots,k$。其中，称$w_{1,2}(z)$为其主根，其他根为虚假根。
+\begin{definition}[周期区间]
+一个数值算法(\ref{eq:ch2SecondDiffLMS})是有周期区间$(0,Z_0^2)$的\cite{Lambert1976}，如果对于所有的$z^2\in(0,Z_0^2)$都有稳定函数的零根$w_i(z)$满足其两个主根为复共轭的，而其他虚假根的模值小于等于1。
+\end{definition}
+\begin{definition}[P稳定性]
+一个数值算法(\ref{eq:ch2SecondDiffLMS})是P稳定的\cite{Lambert1976}，如果其周期区间是$(0,\infty)$。
+\end{definition}
+可以看出P稳定性实质上就是对于任意积分步长$h$，其数值解都可以保持有界振动，而不是衰减和发散。因此，尽管P稳定性的定义是由数值格式(\ref{eq:ch2SecondDiffLMS})出发的，但是根据P稳定性所含意义不难将其进行一般化的推广。
 
-
-
-
-
-
-
-
-
+\begin{definition}[无条件稳定性]
+一个数值算法(\ref{eq:ch2SecondDiffLMS})是无条件稳定的\cite{Dahlquist1978}，如果其稳定函数$p(w,z)$满足根条件。
+\end{definition}
+非常有意思的是，针对P稳定和无条件稳定的线性多步法，Lambert\cite{Lambert1976}和Dahlquist\cite{Dahlquist1978}分别独立的给出了如下的定理
+\begin{theorem}
+数值算法(\ref{eq:ch2SecondDiffLMS})是P稳定的/无条件稳定的，如果满足
+\begin{itemize}
+\item[(i)] 算法格式是隐式的，即$\beta_k\neq0$。
+\item[(ii)] 算法格式能实现的最高阶数是2阶，且最高阶数的P稳定/无条件稳定的线性多步法是
+\begin{equation}
+y_{n+2}-2y_{n+1}+y_n=\frac{1}{4}h^2(f(y_{n+2})+2f(y_{n+2})+f(y_n))
+\end{equation}
+亦即对应的隐式Trapezoidal规则。
+\end{itemize}
+\end{theorem}
 
 
 

@@ -126,7 +126,7 @@
 % 我自己添加到宏包，目的是为了完成定理环境的书写
 \RequirePackage{framed}
 % 自己添加的项
-\renewcommand*\FrameCommand{{\color{gray}\vrule width 5pt \hspace{5pt}}\vspace{-20pt}}
+\renewcommand*\FrameCommand{{\color{gray}\vrule width 5pt \hspace{5pt}}\vspace{-19pt}}
 %==============END===================
 \RequirePackage{longtable}
 \RequirePackage{booktabs}

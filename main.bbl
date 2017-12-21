@@ -318,6 +318,19 @@
   \bibjournal{Mathematics of Computation}\@, \bibyear{1984}\@,
   \bibvolume{47}\bibnumber{(47)}\@.
 
+\bibitem{Denholm1973}
+\bibauthor{Denholm L}\@. \bibbooktitle{Computational Methods in Ordinary
+  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{1st~ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{John Wiley \&
+  Sons Inc}\@, \bibyear{1973}\@.
+
+\bibitem{Stetter1973}
+\bibauthor{Stetter H~J}\@. \bibbooktitle{Springer Tracts in Natural Philosophy
+  23\thinspace{}\textnormal{: }Analysis of Discretization Methods for Ordinary
+  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{1st~ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer-Verlag
+  Berlin Heidelberg}\@, \bibyear{1973}\@.
+
 \bibitem{袁新鼎1987}
 \bibauthor{袁新鼎\@, 费景高\@, 刘德贵}\@.
   \bibbooktitle{刚性常微分方程初值问题的数值解法}\bibmark{[M]}\@.
@@ -415,6 +428,20 @@
   \bibvolume{15}\bibnumber{(4)}\thinspace{}\textnormal{:
   }\bibpages{358\thinspace{}\textnormal{--}\thinspace{}361}\@.
   \newline\url{https://doi.org/10.1007/BF01931672}\@.
+
+\bibitem{Lambert1976}
+\bibauthor{Lambert J~D\@, Watson I~A}\@. \bibtitle{Symmetric multistep methods
+  for periodic initial value problems}\bibmark{[J]}\@. \bibjournal{IMA Journal
+  of Applied Mathematics}\@, \bibyear{1976}\thinspace{}\textnormal{:
+  }\bibpages{189\thinspace{}\textnormal{--}\thinspace{}202}\@.
+
+\bibitem{Dahlquist1978}
+\bibauthor{Dahlquist G}\@. \bibtitle{On accuracy and unconditional stability of
+  linear multistep methods for second order differential
+  equations}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical Mathematics}\@,
+  \bibyear{1978}\@, \bibvolume{18}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{133\thinspace{}\textnormal{--}\thinspace{}136}\@.
+  \newline\url{http://dx.doi.org/10.1007/BF01931689}\@.
 
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method

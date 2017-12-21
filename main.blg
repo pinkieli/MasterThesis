@@ -45,6 +45,8 @@ Warning--Require address: Butcher1987
 Warning--Require booktitle: Dahlquist1976
 Warning--Require address: Burrage1995
 Warning--Require address: Jackiewicz2009
+Warning--Require address: Denholm1973
+Warning--Require address: Stetter1973
 Warning--Require address: 袁新鼎1987
 Warning--Require citedate: Dahlquist1963
 Warning--Require address: Ehle1969
@@ -53,6 +55,7 @@ Warning--Require citedate: Cryer1973
 Warning--Require address: Fatunla1988
 Warning--Require citedate: Odeh1971
 Warning--Require citedate: Butcher1975
+Warning--Require citedate: Dahlquist1978
 Warning--Require citedate: Hoff198887
 Warning--Require address: Chopra2011
 Warning--Require address: Wood
@@ -89,45 +92,45 @@ Warning--Require year: Guwahati
 Warning--Require citedate: Wen2017c
 Warning--Require citedate: Rezaiee-Pajand2015
 Warning--Require citedate: Noh2013
-You've used 133 entries,
+You've used 137 entries,
             3103 wiz_defined-function locations,
-            1590 strings with 28146 characters,
-and the built_in function-call counts, 172515 in all, are:
-= -- 17847
-> -- 372
-< -- 871
-+ -- 12989
-- -- 1214
-* -- 6433
-:= -- 17748
+            1610 strings with 28688 characters,
+and the built_in function-call counts, 176347 in all, are:
+= -- 18205
+> -- 383
+< -- 895
++ -- 13235
+- -- 1242
+* -- 6615
+:= -- 18119
 add.period$ -- 0
-call.type$ -- 133
+call.type$ -- 137
 change.case$ -- 0
-chr.to.int$ -- 27
-cite$ -- 192
-duplicate$ -- 24443
-empty$ -- 7954
-format.name$ -- 920
-if$ -- 44930
+chr.to.int$ -- 33
+cite$ -- 199
+duplicate$ -- 24967
+empty$ -- 8163
+format.name$ -- 940
+if$ -- 45922
 int.to.chr$ -- 0
-int.to.str$ -- 133
+int.to.str$ -- 137
 missing$ -- 0
-newline$ -- 426
-num.names$ -- 134
-pop$ -- 2658
+newline$ -- 438
+num.names$ -- 138
+pop$ -- 2723
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1722
+skip$ -- 1771
 stack$ -- 0
-substring$ -- 20143
-swap$ -- 6629
+substring$ -- 20553
+swap$ -- 6813
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 59
-while$ -- 2433
-width$ -- 136
-write$ -- 1968
-(There were 67 warnings)
+warning$ -- 62
+while$ -- 2491
+width$ -- 140
+write$ -- 2025
+(There were 70 warnings)
