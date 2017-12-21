@@ -443,6 +443,11 @@
   }\bibpages{133\thinspace{}\textnormal{--}\thinspace{}136}\@.
   \newline\url{http://dx.doi.org/10.1007/BF01931689}\@.
 
+\bibitem{Wood}
+\bibauthor{Wood W~L}\@. \bibbooktitle{Practical time-stepping
+  schemes.}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Oxford: Clarendon}\@, \bibyear{1990}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural
@@ -477,11 +482,6 @@
   engineering}\bibmark{[M]}\@. \bibedition{\mbox{4th~ed}}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
   \bibyear{2011}\@.
-
-\bibitem{Wood}
-\bibauthor{Wood W~L}\@. \bibbooktitle{Practical time-stepping
-  schemes.}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{Oxford: Clarendon}\@, \bibyear{1990}\@.
 
 \bibitem{Zienkiewicz1991a}
 \bibauthor{Zienkiewicz O~C\@, Taylor R~L}\@. \bibbooktitle{The finite element
