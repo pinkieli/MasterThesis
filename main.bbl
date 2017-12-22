@@ -421,14 +421,6 @@
   \bibyear{1974}\@, \bibvolume{28}\bibnumber{(125)}\thinspace{}\textnormal{:
   }\bibpages{145\thinspace{}\textnormal{--}\thinspace{}162}\@.
 
-\bibitem{Butcher1975}
-\bibauthor{Butcher J~C}\@. \bibtitle{A stability property of implicit
-  Runge-Kutta methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
-  Mathematics}\@, \bibyear{1975}\@,
-  \bibvolume{15}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{358\thinspace{}\textnormal{--}\thinspace{}361}\@.
-  \newline\url{https://doi.org/10.1007/BF01931672}\@.
-
 \bibitem{Lambert1976}
 \bibauthor{Lambert J~D\@, Watson I~A}\@. \bibtitle{Symmetric multistep methods
   for periodic initial value problems}\bibmark{[J]}\@. \bibjournal{IMA Journal
@@ -447,6 +439,14 @@
 \bibauthor{Wood W~L}\@. \bibbooktitle{Practical time-stepping
   schemes.}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
   }\bibpublisher{Oxford: Clarendon}\@, \bibyear{1990}\@.
+
+\bibitem{Butcher1975}
+\bibauthor{Butcher J~C}\@. \bibtitle{A stability property of implicit
+  Runge-Kutta methods}\bibmark{[J/OL]}\@. \bibjournal{BIT Numerical
+  Mathematics}\@, \bibyear{1975}\@,
+  \bibvolume{15}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{358\thinspace{}\textnormal{--}\thinspace{}361}\@.
+  \newline\url{https://doi.org/10.1007/BF01931672}\@.
 
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method

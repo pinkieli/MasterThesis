@@ -1392,14 +1392,6 @@ Axelsson给出了守恒微分方程稳定性的数值A稳定算法\cite{Axelsson
 \end{itemize}
 \end{definition}
 
-\begin{definition}[B稳定性]
-一个数值算法是B稳定的\cite{Butcher1975}，如果对于微分方程$y'(x)=f(y(x))$中满足
-\begin{equation}
-<f(\bm{u})-f(\bm{v}),\bm{u}-\bm{v}>\le0,\quad\forall\bm{u},\bm{v}\in\mathbb{R}^N
-\end{equation}都有
-$||\bm{y}_n-\bm{z}_n||\le ||\bm{y}_{n-1}-\bm{z}_{n-1}||$成立，其中$\bm{y}_n,\bm{z}_n$使其数值方法求解得到的两个解序列。
-\end{definition}
-文\inlinecite{Butcher1975}中主要分析了隐式的Runge-Kutta方法满足B稳定性的要求和条件。同时，也知道了B稳定性是A稳定性对于非线性系统分析的扩展。
 
 在结构动力学中，常常遇到的是经过有限元离散之后的二阶微分方程，故也有学者直接分析如下的二阶微分方程
 \begin{equation}
@@ -1443,13 +1435,13 @@ y_{n+2}-2y_{n+1}+y_n=\frac{1}{4}h^2(f(y_{n+2})+2f(y_{n+2})+f(y_n))
 在结构动力学数值算法设计中，使用较多的还有C稳定性\cite{Wood}，其定义为
 \begin{definition}[C稳定性]
 一个数值算法是C稳定的\cite{Wood}，如果它是A稳定的，且对于所有的$z$值其稳定函数都存在一对模值最大的复共轭主根。
-\end{definition}
+\end{definition}\vspace{2pt}
 
 根据定义可以发现，P稳定性对应于这里C稳定性中的最大模值为1的情况。
 
 对于上述定义的广义线性法(\ref{eq:ch2GLM})的稳定矩阵$\bm{M}(z)$，对于Runge-Kutta算法，将退化为Runge-Kutta方法的稳定函数$R(z)$，即
 \begin{equation}
-R(z)=1+z\bm{b}^T(\bm{I}-z\bm{A})^{-1}\bm{e}
+R(z)=1+z\bm{b}^T(\bm{I}-z\bm{A})^{-1}\bm{e}\label{eq:ch2RKpwz}
 \end{equation}
 该稳定函数在分析Runge-Kutta的阶数和性质时，经常会用到。而对于线性多步法(\ref{eq:ch2lms})，其稳定矩阵$\bm{M}(z)$有如下形式
 \begin{equation}
@@ -1475,23 +1467,123 @@ R(z)=1+z\bm{b}^T(\bm{I}-z\bm{A})^{-1}\bm{e}
 \begin{theorem}
 线性多步法(\ref{eq:ch2lms})在广义线性法(\ref{eq:ch2GLM})形式($r=2k$)下的稳定函数$p(w,z)=\det(w\bm{I}-\bm{M}(z))$可以简化为
 \begin{equation}
-p(w,z)=\frac{1}{1-z\beta_0}w^k(\rho(w)-z\sigma(w))
+p(w,z)=\frac{1}{1-z\beta_0}w^k(\rho(w)-z\sigma(w))\label{eq:ch2LMSPwz}
 \end{equation}
 \end{theorem}
 
+\begin{proof}
+参见文献\inlinecite{Jackiewicz2009}的92页。
+\end{proof}
 
+当使用线性多步法(\ref{eq:ch2lms})在广义线性法(\ref{eq:ch2GLM})($r=k$)的表示形式下，尽管稳定矩阵$\bm{M}(z)$不同，但对应的稳定函数$p(w,z)$却是与(\ref{eq:ch2LMSPwz})一致的(相差$w^k$的因子)，具体推导可以见文\inlinecite{Jackiewicz2009}。
 
+定义多项式\begin{equation}
+\pi(w,z)\triangleq\rho(w)-z\sigma(w)\label{eq:ch2lmsCharaPoly}
+\end{equation}
+称为线性多步法(\ref{eq:ch2lms})的特征多项式，其定义与经典线性多步法理论框架\cite{李寿佛2010,Butcher2008,Gear1971a,Hairer1993,ErnstHairer1996,Butcher1987,Fatunla1988,袁新鼎1987}下推导的结果是一致。
 
+对于One-leg方法(\ref{eq:ch2Oneleg})，其稳定矩阵$\bm{M}(z)$可表示为
+\begin{equation}
+\bm{M}(z)=\begin{bmatrix}
+m_{11}(z) & \cdots & m_{1,k-1}(z) & m_{1,k}(z)\\
+1 & \cdots & 0 & 0\\
+\vdots & \ddots & \vdots & \vdots\\
+0 & \cdots & 1 & 0\\
+\end{bmatrix}
+\end{equation}
+其中，\begin{equation}
+m_{i,j}(z)=\alpha_j+\frac{z}{1-z\beta_0}(\beta_0\alpha_j+\beta_j),\quad j=1,2,\cdots,k
+\end{equation}
+稳定函数$p(w,z)$为\begin{equation}
+p(w,z)=\frac{1}{1-z\beta_0}(\rho(w)-z\sigma(w))
+\end{equation}
+关于其他数值方法在广义线性法(\ref{eq:ch2GLM})的表出形式下的稳定矩阵和稳定函数的推导可以参见文献\inlinecite{Jackiewicz2009}。
 
-
-
-
-
-
-
-
-
+%===============================================================================
 \subsection{代数稳定性理论}
+这一小节，主要给出关于Runge-Kutta方法(\ref{eq:ch2RK})的一些代数稳定性概念。
+
+首先考虑如下的一个线性的非自治微分方程\begin{equation}
+y'(t)=\xi(t)y(t),\quad y(0)=y_0
+\end{equation}
+其中，$\text{Re}(\xi(t))\le0$，且$\xi(t)$是任意变化的复值函数。当使用Runge-Kutta方法求解上式，则有
+\begin{equation}
+y_{n+1}=(1+\bm{b}^T\xi(\bm{I}-\bm{A\xi})^{-1}\bm{e})y_n
+\end{equation}
+其中，对角矩阵$\bm{\xi}\in\mathbb{C}^{s\times s}$的显式为
+\begin{equation}
+\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)=\text{diag}(h\xi(t_n+c_ih),\cdots,h\xi(t_n+c_sh))
+\end{equation}
+令
+\begin{equation}
+K(\xi)=1+\bm{b}^T\xi(\bm{I}-\bm{A\xi})^{-1}\bm{e}
+\end{equation}
+于是，根据正对上式线性非自治微分方程的求解，可定义AN稳定性。特别地，当$\bm{\xi}=z\bm{I}$时，函数$K(\xi)$将退化为Runge-Kutta方法的稳定函数(\ref{eq:ch2RKpwz})，因此可以得到
+\begin{definition}[AN稳定性]
+Runge-Kutta方法(\ref{eq:ch2RK})是AN稳定的，如果每当$c_i=c_j$时，对于所有的$\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)$使得$\xi_i=\xi_j$且有$\text{Re}(\xi_i)\le0,i=1,2,\cdots,s $都有函数$K(\xi)$满足
+\begin{equation}
+|K(\xi)|\le1
+\end{equation}
+\end{definition}
+特别地，当$\bm{\xi}=z\bm{I}$时，函数$K(\xi)$将退化为Runge-Kutta方法的稳定函数(\ref{eq:ch2RKpwz})，因此可以得到
+
+AN稳定性$\Longrightarrow$A稳定性。反之不成立。
+
+考虑如下一个Runge-Kutta法，其Butcher表格表示为\begin{equation}
+\begin{BMAT}[5pt]{c|c}{c|c}
+c & A\\  & b^T
+\end{BMAT}=\begin{BMAT}[5pt]{c|cc}{cc|c}
+\frac{1}{4} & \frac{1}{8} & \frac{1}{8}\\
+\frac{3}{4} & \frac{3}{8} & \frac{3}{8}\\
+ & \frac{1}{2} & \frac{1}{2}\\
+\end{BMAT}
+\end{equation}
+经过简单的计算，可以发现其稳定函数$R(z)$和$K(\xi)$分别为
+\begin{align}
+R(z)&=\frac{2+z}{2-z}\\
+K(\xi)&=\frac{8+3\xi_1+\xi_2}{8-\xi_1-3\xi_2}
+\end{align}
+可以证明，该Runge-Kutta法是A稳定的而非AN稳定的，因为当$\text{Re}(\xi_1),\text{Re}(\xi_2)\le0$时，其函数$K(\xi)$并非有界。
+
+接着考虑如下的初值微分系统
+\begin{equation}
+y'(t)=g(t,y(t)),\quad y(0)=y_0\label{eq:ch2testfunBstable}
+\end{equation}
+其中，$g:\mathbb{R}\times \mathbb{R}^m\to\mathbb{R}^m$，且函数$g$满足单边Lipschitz条件\cite{Jackiewicz2009,Burrage1995}(单步Lipschitz常数为$v=0$)：
+\begin{equation}
+[g(t,y_1)-g(t,y_2)]^T(y_1-y_2)\le0
+\end{equation}
+$y_1,y_2\in\mathbb{R}^m$。令$y(t)$和$\tilde{y}(t)$分别表示系统(\ref{eq:ch2testfunBstable})在初值$y_0$和$\tilde{y}_0$下的解，则单步Lipschitz条件则表明了
+\begin{equation}
+||y(t_2)-\tilde{y}(t_2)||\le||y(t_1)-\tilde{y}(t_1)||,\quad\text{对于}\ 0\le t_1\le t_2\label{eq:ch2DisspativePro}
+\end{equation}
+于是称满足方程(\ref{eq:ch2DisspativePro})的微分系统(\ref{eq:ch2testfunBstable})是耗散的。
+
+令$\{y_n\}_{n=0}^\infty$表示使用Runge-Kutta法(\ref{eq:ch2RK})求解系统(\ref{eq:ch2testfunBstable})在初值为$y_0$的数值解；而使用$\{\tilde{y}_n\}_{n=0}^\infty$表示使用Runge-Kutta法(\ref{eq:ch2RK})求解系统(\ref{eq:ch2testfunBstable})在初值为$\tilde{y}_0$的数值解。实质上，也可以理解为$\{\tilde{y}_{n=0}^\infty\}$为$\{y_n\}_{n=0}^\infty$在初值扰动下的数值解。基于上述理解，则可以引入B稳定和BN稳定性。
+\begin{definition}[B稳定性]
+Runge-Kutta方法(\ref{eq:ch2RK})是B稳定的\cite{Butcher1975,Fatunla1988}，如果对于求解满足\begin{equation}
+[f(y_1)-f(y_2)]^T(y_1-y_2)\le0
+\end{equation}的微分方程$y'(t)=f(y(t)),\ f:\mathbb{R}^m\to\mathbb{R}^m$的两个数值解$y_n,\tilde{y}_n$有
+\begin{equation}
+||y_{n+1}-\tilde{y}_{n+1}||\le ||y_{n}-\tilde{y}_{n}||,\quad h>0
+\end{equation}成立。
+\end{definition}
+文\inlinecite{Butcher1975}中主要分析了隐式的Runge-Kutta方法满足B稳定性的要求和条件。同时，也知道了B稳定性是A稳定性对于非线性系统分析的扩展。
+\begin{definition}[BN稳定性]
+Runge-Kutta方法(\ref{eq:ch2RK})是BN稳定的\cite{Jackiewicz2009,Butcher2008,Butcher1975}，如果对于求解满足条件(\ref{eq:ch2DisspativePro})的微分方程(\ref{eq:ch2testfunBstable})有($n=0,1,2,\cdots$)
+\begin{equation}
+||y_{n+1}-\tilde{y}_{n+1}||\le ||y_{n}-\tilde{y}_{n}||,\quad h>0
+\end{equation}
+\end{definition}
+
+
+
+
+
+
+
+
+
 
 
 
