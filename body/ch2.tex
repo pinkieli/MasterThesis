@@ -1443,7 +1443,16 @@ y_{n+2}-2y_{n+1}+y_n=\frac{1}{4}h^2(f(y_{n+2})+2f(y_{n+2})+f(y_n))
 \begin{equation}
 R(z)=1+z\bm{b}^T(\bm{I}-z\bm{A})^{-1}\bm{e}\label{eq:ch2RKpwz}
 \end{equation}
-该稳定函数在分析Runge-Kutta的阶数和性质时，经常会用到。而对于线性多步法(\ref{eq:ch2lms})，其稳定矩阵$\bm{M}(z)$有如下形式
+该稳定函数在分析Runge-Kutta的阶数和性质时，经常会用到。
+
+\begin{definition}[I稳定性]
+Runge-Kutta方法(\ref{eq:ch2RK})是I稳定的\cite{ErnstHairer1996}，如果对于任意的$y\in\mathbb{R}$，其稳定函数$R(z)$满足\begin{equation}
+|R(iy)|\le1
+\end{equation}
+\end{definition}
+其实，Runge-Kutta法的I稳定性仅仅保证了算法在虚轴上的稳定性。
+
+而对于线性多步法(\ref{eq:ch2lms})，其稳定矩阵$\bm{M}(z)$有如下形式
 \begin{equation}
 \begin{bmatrix}
 \begin{BMAT}[4pt]{cccc:cccc}{cccc:cccc}
@@ -1500,11 +1509,11 @@ p(w,z)=\frac{1}{1-z\beta_0}(\rho(w)-z\sigma(w))
 关于其他数值方法在广义线性法(\ref{eq:ch2GLM})的表出形式下的稳定矩阵和稳定函数的推导可以参见文献\inlinecite{Jackiewicz2009}。
 
 %===============================================================================
-\subsection{代数稳定性理论}
+\subsection{Runge-Kutta法的代数稳定性}
 这一小节，主要给出关于Runge-Kutta方法(\ref{eq:ch2RK})的一些代数稳定性概念。
 
 首先考虑如下的一个线性的非自治微分方程\begin{equation}
-y'(t)=\xi(t)y(t),\quad y(0)=y_0
+y'(t)=\xi(t)y(t),\quad y(0)=y_0\label{eq:ch2NonAutoDiffSys}
 \end{equation}
 其中，$\text{Re}(\xi(t))\le0$，且$\xi(t)$是任意变化的复值函数。当使用Runge-Kutta方法求解上式，则有
 \begin{equation}
@@ -1512,22 +1521,21 @@ y_{n+1}=(1+\bm{b}^T\xi(\bm{I}-\bm{A\xi})^{-1}\bm{e})y_n
 \end{equation}
 其中，对角矩阵$\bm{\xi}\in\mathbb{C}^{s\times s}$的显式为
 \begin{equation}
-\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)=\text{diag}(h\xi(t_n+c_ih),\cdots,h\xi(t_n+c_sh))
+\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)=\text{diag}(h\xi(t_n+c_ih),\cdots,h\xi(t_n+c_sh))\label{eq:ch2Matrixi}
 \end{equation}
 令
 \begin{equation}
 K(\xi)=1+\bm{b}^T\xi(\bm{I}-\bm{A\xi})^{-1}\bm{e}
 \end{equation}
 于是，根据正对上式线性非自治微分方程的求解，可定义AN稳定性。特别地，当$\bm{\xi}=z\bm{I}$时，函数$K(\xi)$将退化为Runge-Kutta方法的稳定函数(\ref{eq:ch2RKpwz})，因此可以得到
+
+AN稳定性$\Longrightarrow$A稳定性。反之不成立。
 \begin{definition}[AN稳定性]
-Runge-Kutta方法(\ref{eq:ch2RK})是AN稳定的，如果每当$c_i=c_j$时，对于所有的$\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)$使得$\xi_i=\xi_j$且有$\text{Re}(\xi_i)\le0,i=1,2,\cdots,s $都有函数$K(\xi)$满足
+Runge-Kutta方法(\ref{eq:ch2RK})是AN稳定的，如果每当$c_i=c_j$时，对所有的$\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)$有$\xi_i=\xi_j$且有$\text{Re}(\xi_i)\le0,i=1,2,\cdots,s $都有函数$K(\xi)$满足
 \begin{equation}
 |K(\xi)|\le1
 \end{equation}
 \end{definition}
-特别地，当$\bm{\xi}=z\bm{I}$时，函数$K(\xi)$将退化为Runge-Kutta方法的稳定函数(\ref{eq:ch2RKpwz})，因此可以得到
-
-AN稳定性$\Longrightarrow$A稳定性。反之不成立。
 
 考虑如下一个Runge-Kutta法，其Butcher表格表示为\begin{equation}
 \begin{BMAT}[5pt]{c|c}{c|c}
@@ -1545,46 +1553,148 @@ K(\xi)&=\frac{8+3\xi_1+\xi_2}{8-\xi_1-3\xi_2}
 \end{align}
 可以证明，该Runge-Kutta法是A稳定的而非AN稳定的，因为当$\text{Re}(\xi_1),\text{Re}(\xi_2)\le0$时，其函数$K(\xi)$并非有界。
 
-接着考虑如下的初值微分系统
-\begin{equation}
-y'(t)=g(t,y(t)),\quad y(0)=y_0\label{eq:ch2testfunBstable}
+接着考虑更加一般的微分方程\begin{equation}
+y'(t)=f(y(t)),\ f:\mathbb{R}^m\to\mathbb{R}^m\label{eq:ch2testfunBstable}
 \end{equation}
-其中，$g:\mathbb{R}\times \mathbb{R}^m\to\mathbb{R}^m$，且函数$g$满足单边Lipschitz条件\cite{Jackiewicz2009,Burrage1995}(单步Lipschitz常数为$v=0$)：
+且微分方程满足对于任意的$y,z\in\mathbb{R}^m$都有
 \begin{equation}
-[g(t,y_1)-g(t,y_2)]^T(y_1-y_2)\le0
+<f(y)-f(z),y-z>\le0\label{eq:ch2OndsideLipsc}
 \end{equation}
-$y_1,y_2\in\mathbb{R}^m$。令$y(t)$和$\tilde{y}(t)$分别表示系统(\ref{eq:ch2testfunBstable})在初值$y_0$和$\tilde{y}_0$下的解，则单步Lipschitz条件则表明了
-\begin{equation}
-||y(t_2)-\tilde{y}(t_2)||\le||y(t_1)-\tilde{y}(t_1)||,\quad\text{对于}\ 0\le t_1\le t_2\label{eq:ch2DisspativePro}
+其中，“$<\cdot>$”表示在$\mathbb{R}^m$上的内积。同时BN稳定性与如下的非自治微分方程有关\begin{equation}
+y'(t)=f(t,y(t)),\ f:\mathbb{R}\times \mathbb{R}^m\to\mathbb{R}^m\label{eq:ch2testfunBNstable}
 \end{equation}
-于是称满足方程(\ref{eq:ch2DisspativePro})的微分系统(\ref{eq:ch2testfunBstable})是耗散的。
-
-令$\{y_n\}_{n=0}^\infty$表示使用Runge-Kutta法(\ref{eq:ch2RK})求解系统(\ref{eq:ch2testfunBstable})在初值为$y_0$的数值解；而使用$\{\tilde{y}_n\}_{n=0}^\infty$表示使用Runge-Kutta法(\ref{eq:ch2RK})求解系统(\ref{eq:ch2testfunBstable})在初值为$\tilde{y}_0$的数值解。实质上，也可以理解为$\{\tilde{y}_{n=0}^\infty\}$为$\{y_n\}_{n=0}^\infty$在初值扰动下的数值解。基于上述理解，则可以引入B稳定和BN稳定性。
+令$\{y_n\}_{n=0}^\infty$表示使用Runge-Kutta法(\ref{eq:ch2RK})求解系统(\ref{eq:ch2testfunBstable})在初值为$y_0$的数值解；而使用$\{\tilde{y}_n\}_{n=0}^\infty$表示使用Runge-Kutta法(\ref{eq:ch2RK})求解系统(\ref{eq:ch2testfunBstable})在初值为$\tilde{y}_0$的数值解。实质上，也可以理解$\{\tilde{y}_{n=0}^\infty\}$为$\{y_n\}_{n=0}^\infty$在初值扰动下的数值解。
 \begin{definition}[B稳定性]
-Runge-Kutta方法(\ref{eq:ch2RK})是B稳定的\cite{Butcher1975,Fatunla1988}，如果对于求解满足\begin{equation}
-[f(y_1)-f(y_2)]^T(y_1-y_2)\le0
-\end{equation}的微分方程$y'(t)=f(y(t)),\ f:\mathbb{R}^m\to\mathbb{R}^m$的两个数值解$y_n,\tilde{y}_n$有
+Runge-Kutta方法(\ref{eq:ch2RK})是B稳定的\cite{Butcher1975,Fatunla1988}，如果针对满足条件(\ref{eq:ch2OndsideLipsc})的微分方程(\ref{eq:ch2testfunBstable})的数值解$y_n,\tilde{y}_n$，有
 \begin{equation}
-||y_{n+1}-\tilde{y}_{n+1}||\le ||y_{n}-\tilde{y}_{n}||,\quad h>0
+||y_{n+1}-\tilde{y}_{n+1}||\le||y_n-\tilde{y}_n||
 \end{equation}成立。
 \end{definition}
+
 文\inlinecite{Butcher1975}中主要分析了隐式的Runge-Kutta方法满足B稳定性的要求和条件。同时，也知道了B稳定性是A稳定性对于非线性系统分析的扩展。
 \begin{definition}[BN稳定性]
-Runge-Kutta方法(\ref{eq:ch2RK})是BN稳定的\cite{Jackiewicz2009,Butcher2008,Butcher1975}，如果对于求解满足条件(\ref{eq:ch2DisspativePro})的微分方程(\ref{eq:ch2testfunBstable})有($n=0,1,2,\cdots$)
+Runge-Kutta方法(\ref{eq:ch2RK})是BN稳定的\cite{Butcher1975,Fatunla1988}，如果针对满足条件(\ref{eq:ch2OndsideLipsc})的非自治微分方程(\ref{eq:ch2testfunBNstable})的数值解$y_n,\tilde{y}_n$，有
 \begin{equation}
-||y_{n+1}-\tilde{y}_{n+1}||\le ||y_{n}-\tilde{y}_{n}||,\quad h>0
-\end{equation}
+||y_{n+1}-\tilde{y}_{n+1}||\le||y_n-\tilde{y}_n||
+\end{equation}成立。
 \end{definition}
 
+对于线性非自治微分方程，BN稳定性$\Longrightarrow$A、AN和B稳定性。
 
+定义如下形式的$\bm{M}$矩阵
+\begin{equation}
+\bm{M}=\bm{BA}+\bm{A}^T\bm{B}-\bm{b}^T\bm{b}
+\end{equation}
+其中，矩阵$\bm{A}$和向量$\bm{b}$分别为Runge-Kutta法的系数，而矩阵$\bm{B}$被定义如下\begin{equation}
+\bm{B}=\text{diag}(b_1,b_2,\cdots,b_s)
+\end{equation}\vspace{-1.3cm}
+\begin{definition}[代数稳定性]
+Runge-Kutta方法(\ref{eq:ch2RK})是代数稳定的\cite{Jackiewicz2009,Fatunla1988}，如果矩阵$\bm{B}$和矩阵$\bm{M}$都是非负定的。
+\end{definition}
 
+下列的定理给出了各个稳定性概念之间的关系。
+\begin{theorem}[\inlinecite{Jackiewicz2009}]
+Runge-Kutta法(\ref{eq:ch2RK})是代数稳定的，则它也是BN稳定的。
+\end{theorem}
+这个定理说明了定义代数稳定性概念的意义。进一步的有
+\begin{theorem}[\inlinecite{Fatunla1988}]
+一个代数稳定的Runge-Kutta法(\ref{eq:ch2RK})也是AN稳定的。如果$c_i,i=1,2,\cdots,s$互不相同，则一个AN稳定的Runge-Kutta法也是代数稳定的。
+\end{theorem}
 
+上述定理的一个推论就是
+\begin{corollary}
+当Runge-Kutta法中的$c_i,i=1,2,\cdots,s$互不相同时，则有
 
+AN稳定性$\iff$BN稳定性。
+\end{corollary}
+而这个推论的实际含义就是它将非线性问题的稳定性直接与线性问题的稳定性建立起了联系。
 
+通过前述提及的各种稳定性定义，可以发现不同的稳定性概念定义是基于不同的测试微分方程而定的。故这里表\ref{Tab:TestFunctionOfDiffStable}总结了各种稳定性定义所对应的测试微分方程。\vspace{-10pt}
+\begin{table}[htbp]
+\bicaption[Tab:TestFunctionOfDiffStable]{}{各种稳定性定义所对应的测试微分方程}{Table$\!$}{Test differential equations for stability criteria}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{cc}
+\toprule[1.5pt]
+测试微分方程 & 稳定性准则\\
+\midrule[1pt]
+$y'(t)=\lambda y(t)$ & A稳定性、L稳定性\\
+$y'(t)=\lambda(t) y(t)$ & AN稳定性、LN稳定性\\
+$y'(t)=f(y(t))$ & B稳定性\\
+$y'(t)=f(t,y(t))$ & BN稳定性、B稳定性\\
+$y'(t)=\lambda(y(t)-g(t))+g'(t)$ & S稳定性\\
+$\bm{y}'(t)=\bm{A}(t)\bm{y}(t)$ & D稳定性\\
+$y''(t)=\omega^2y(t)$ & P稳定性、C稳定性\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+%==================================================================================
+\subsection{广义线性法的代数稳定性}
+对微分方程(\ref{eq:ch2NonAutoDiffSys})使用广义线性法(\ref{eq:ch2GLM})求解可得
+\begin{equation}
+y^{[n+1]}=\bm{S}(\bm{\xi})y^{[n]}
+\end{equation}
+其中，$\bm{\xi}$由前述定义(\ref{eq:ch2Matrixi})计算，且$\bm{S}(\bm{\xi})$的显式表达为\begin{equation}
+\bm{S}(\bm{\xi})=\bm{V}+\bm{B\xi}(\bm{I}-\bm{A\xi})^{-1}\bm{U}
+\end{equation}
 
+令矩阵$\bm{G}=[g_{ij}]_{i,j=1}^r$是实对称正定矩阵，对于向量$y\in\mathbb{R}^{mr}$\begin{equation}
+y=\begin{bmatrix}
+y_1\\ y_2\\ \vdots \\ y_r
+\end{bmatrix},\quad y_i\in\mathbb{R}^m,\quad i=1,2,\cdots,r
+\end{equation}
+定义如下的G范数
+\begin{equation}
+||y||_G^2=\sum_{i=1}^{r}\sum_{j=1}^{r}g_{ij}y_i^Ty_j
+\end{equation}
 
+于是，可以根据G范数可以定义广义线性法的AN稳定性。
+\begin{definition}[AN稳定性]
+广义线性法(\ref{eq:ch2GLM})是AN稳定的\cite{Jackiewicz2009}，如果每当$c_i=c_j$时，对所有的$\bm{\xi}=\text{diag}(\xi_1,\cdots,\xi_s)$有$\xi_i=\xi_j$且在$\text{Re}(\xi_i)\le0,i=1,2,\cdots,s $成立时，存在一个实对称正定矩阵$\bm{G}$使得
+\begin{equation}
+||\bm{S}(\bm{\xi})y||_G\le||y||_G
+\end{equation}成立。
+\end{definition}
+对于广义线性法的AN稳定性的其他等价定义可以参加文献\inlinecite{Butcher1987}。当$\bm{\xi}=z\bm{I}$成立时，矩阵$\bm{S}(\bm{\xi})$将退化为广义线性法的稳定矩阵$\bm{M}(z)$，因此一个广义线性法是AN稳定的，那么它也是A稳定的。
 
+同样地，令$\{y^{[n]}\}_{n=0}^\infty$和$\{\tilde{y}^{[n]}\}_{n=0}^\infty$表示广义线性法(\ref{eq:ch2GLM})求解带有不同初值问题的微分方程(\ref{eq:ch2testfunBstable})的数值解。则可以定义广义线性法的G稳定性
+\begin{definition}[G稳定性]
+广义线性法(\ref{eq:ch2GLM})是G稳定的\cite{Jackiewicz2009}，如果对于所有满足条件(\ref{eq:ch2OndsideLipsc})的微分方程(\ref{eq:ch2testfunBNstable})在两个不同初值条件下的数值解$\{y^{[n]}\}_{n=0}^\infty$和$\{\tilde{y}^{[n]}\}_{n=0}^\infty$有存在一个实对称正定矩阵$\bm{G}$使得
+\begin{equation}
+||y^{[n+1]}-\tilde{y}^{[n+1]}||_G\le||y^{[n]}-\tilde{y}^{[n]}||_G
+\end{equation}成立。
+\end{definition}
 
+类似于Runge-Kutta法，对于给定的矩阵$\bm{G}\in\mathbb{R}^{r\times r}$和矩阵$\bm{D}\in\mathbb{R}^{s\times s}$，定义其矩阵$\bm{M}$为
+\begin{equation}
+\bm{M}\triangleq\begin{bmatrix}
+\begin{BMAT}[5pt]{c|c}{c|c}
+\bm{DA}+\bm{A}^T\bm{D}-\bm{B}^T\bm{GB} & \bm{DU}-\bm{B}^T\bm{GV}\\
+\bm{U}^T\bm{D}-\bm{V}^T\bm{GB} & \bm{G}-\bm{V}^t\bm{GV}\\
+\end{BMAT}
+\end{bmatrix}\label{eq:GLMG}
+\end{equation}
+
+有了矩阵$\bm{M}$的定义，就可以很方便的定义广义线性法的代数稳定性。
+\begin{definition}[代数稳定性]
+广义线性法(\ref{eq:ch2GLM})是代数稳定的\cite{Jackiewicz2009}，如果存在一个实对称正定矩阵$\bm{G}$和实对角正定矩阵$\bm{D}$使得等式(\ref{eq:GLMG})中的矩阵$\bm{M}$是非负定的。
+\end{definition}
+
+由此可见，对于证明一个广义线性法是代数稳定的的，需要找到矩阵$\bm{G,D}$，同时文\inlinecite{Burrage1980}已经证明对于预相容且代数稳定的广义线性法(\ref{eq:ch2GLM})，其矩阵$\bm{G},\bm{D}$并非相互独立而是由下列的等式相关联
+\begin{equation}
+\bm{De}=\bm{B}^T\bm{Gq}_0
+\end{equation}
+其中，$\bm{q}_0$是预相容向量。而且，向量$\bm{Gq}_0$是系数矩阵$\bm{V}$的特征值1所对应的左特征向量，即
+\begin{equation}
+(\bm{I}-\bm{V}^T)\bm{Gq}_0=\bm{0}
+\end{equation}
+进一步，广义线性法的各个稳定性之间的关系如下
+
+代数稳定性$\Longrightarrow$G稳定性$\Longrightarrow$AN稳定性$\Longrightarrow$A稳定性。
+
+上述的关系仅仅是单向的，如果加上一些条件，可以得到如下的结果
+\begin{theorem}[\inlinecite{ErnstHairer1996}]
+对于预相容的广义线性法(\ref{eq:ch2GLM})，且$c_i,i=1,2,\cdots,s$互不相同，则有：代数稳定性$\iff$G稳定性$\iff$AN稳定性。
+\end{theorem}
 
 
 
