@@ -28,77 +28,77 @@
 \contentsline {subsection}{\numberline {2.3.2}Runge-Kutta法的代数稳定性}{39}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}广义线性法的代数稳定性}{42}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}收敛性}{44}{section.2.4}
-\contentsline {section}{\numberline {2.5}精度分析}{44}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}数值耗散}{44}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}数值弥散}{44}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}超调行为}{44}{section.2.6}
-\contentsline {section}{\numberline {2.7}虚假根分析}{44}{section.2.7}
-\contentsline {section}{\numberline {2.8}直接积分法的放大矩阵}{44}{section.2.8}
-\contentsline {section}{\numberline {2.9}本章小结}{44}{section.2.9}
-\contentsline {chapter}{\numberline {第3章}结构动响应数值算法}{45}{chapter.3}
-\contentsline {section}{\numberline {3.1}有限差分法(线性多步法)}{47}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}向前欧拉法}{48}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}向后欧拉法}{49}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}广义梯形算法}{49}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}中点公式}{50}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}中心差分法}{51}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Houbolt算法}{51}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}带终点加速度的中点公式}{52}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Newmark算法}{53}{subsection.3.1.8}
-\contentsline {subsubsection}{\numberline {3.1.8.1}基于有限元离散的加权残差推导}{56}{subsubsection.3.1.8.1}
-\contentsline {subsection}{\numberline {3.1.9}Wilson-$\theta $法}{59}{subsection.3.1.9}
-\contentsline {subsection}{\numberline {3.1.10}Park算法}{61}{subsection.3.1.10}
-\contentsline {subsection}{\numberline {3.1.11}Hilber-Hughes-Taylor-$\alpha $算法}{61}{subsection.3.1.11}
-\contentsline {subsection}{\numberline {3.1.12}Wood-Bosak-Zienkiewicz-$\alpha $算法}{62}{subsection.3.1.12}
-\contentsline {subsection}{\numberline {3.1.13}基于速度更新的$\gamma _s$格式}{63}{subsection.3.1.13}
-\contentsline {subsection}{\numberline {3.1.14}带中点加速度的中点公式}{64}{subsection.3.1.14}
-\contentsline {subsection}{\numberline {3.1.15}三参数优化算法/CH-$\alpha $法}{64}{subsection.3.1.15}
-\contentsline {subsubsection}{\numberline {3.1.15.1}最优的$\chi $格式}{65}{subsubsection.3.1.15.1}
-\contentsline {subsubsection}{\numberline {3.1.15.2}HHT-$\alpha $算法}{65}{subsubsection.3.1.15.2}
-\contentsline {subsubsection}{\numberline {3.1.15.3}WBZ-$\alpha $算法}{66}{subsubsection.3.1.15.3}
-\contentsline {subsubsection}{\numberline {3.1.15.4}CH-$\alpha $算法}{66}{subsubsection.3.1.15.4}
-\contentsline {subsection}{\numberline {3.1.16}广义$\alpha $算法}{67}{subsection.3.1.16}
-\contentsline {section}{\numberline {3.2}加权残值法}{68}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}$\rho $-算法}{68}{subsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.1.1}$\rho $算法的显式格式}{69}{subsubsection.3.2.1.1}
-\contentsline {subsection}{\numberline {3.2.2}单步隐式的$\theta _1$格式}{70}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}高阶导数的单步显式算法}{72}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}单步单解算法框架/GSSSS算法}{75}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}时间子步策略}{76}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}BEF算法}{76}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}BADF-TR算法}{77}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}GCD-BDF2算法}{77}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Soares-Jr型算法}{78}{subsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.4.1}SJ算法格式1\cite {SoaresJr2016}}{78}{subsubsection.3.3.4.1}
-\contentsline {subsubsection}{\numberline {3.3.4.2}SJ算法格式2\cite {Jr2014}}{79}{subsubsection.3.3.4.2}
-\contentsline {subsubsection}{\numberline {3.3.4.3}SJ算法格式3\cite {Soares2015}}{80}{subsubsection.3.3.4.3}
-\contentsline {subsubsection}{\numberline {3.3.4.4}SJ算法格式4\cite {Soares2014}}{80}{subsubsection.3.3.4.4}
-\contentsline {subsubsection}{\numberline {3.3.4.5}SJ算法格式4\cite {SoaresJr2016a}}{81}{subsubsection.3.3.4.5}
-\contentsline {subsubsection}{\numberline {3.3.4.6}稳定化的中心差分法}{82}{subsubsection.3.3.4.6}
-\contentsline {section}{\numberline {3.4}预测-校正算法}{82}{section.3.4}
-\contentsline {section}{\numberline {3.5}结构依赖型直接积分法}{82}{section.3.5}
-\contentsline {section}{\numberline {3.6}复合型子步隐式算法}{82}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}TR-BDF2算法}{83}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}TR-TR-Houbolt算法}{84}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}BDF2-Newmark算法}{85}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}BDF型积分算法}{85}{subsection.3.6.4}
-\contentsline {subsection}{\numberline {3.6.5}TTBDF算法}{88}{subsection.3.6.5}
-\contentsline {subsection}{\numberline {3.6.6}BDF2-BDF3算法}{89}{subsection.3.6.6}
-\contentsline {subsection}{\numberline {3.6.7}BDF3BDF2-Newmark算法}{90}{subsection.3.6.7}
-\contentsline {subsection}{\numberline {3.6.8}CTFEA算法}{90}{subsection.3.6.8}
-\contentsline {subsection}{\numberline {3.6.9}TR-BDF2-Houbolt算法}{92}{subsection.3.6.9}
-\contentsline {subsection}{\numberline {3.6.10}TR-NBDDF-N算法}{93}{subsection.3.6.10}
-\contentsline {subsection}{\numberline {3.6.11}TR-RP算法}{94}{subsection.3.6.11}
-\contentsline {section}{\numberline {3.7}复合型子步显式算法}{94}{section.3.7}
-\contentsline {subsection}{\numberline {3.7.1}Noh-Bathe两子步算法}{94}{subsection.3.7.1}
-\contentsline {subsection}{\numberline {3.7.2}Kwon-Lee四子步算法}{96}{subsection.3.7.2}
-\contentsline {section}{\numberline {3.8}本章小结}{97}{section.3.8}
-\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{98}{chapter.4}
-\contentsline {section}{\numberline {4.1}本章小结}{98}{section.4.1}
-\contentsline {chapter}{\numberline {第5章}数值算例}{99}{chapter.5}
-\contentsline {section}{\numberline {5.1}本章小结}{99}{section.5.1}
-\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{100}{section*.16}
-\contentsline {chapter}{\heiti 参考文献}{101}{section*.19}
-\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{114}{section*.21}
-\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{117}{section*.27}
-\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{118}{section*.29}
+\contentsline {section}{\numberline {2.5}精度分析}{48}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}数值耗散}{48}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}数值弥散}{48}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}超调行为}{48}{section.2.6}
+\contentsline {section}{\numberline {2.7}虚假根分析}{48}{section.2.7}
+\contentsline {section}{\numberline {2.8}直接积分法的放大矩阵}{48}{section.2.8}
+\contentsline {section}{\numberline {2.9}本章小结}{48}{section.2.9}
+\contentsline {chapter}{\numberline {第3章}结构动响应数值算法}{49}{chapter.3}
+\contentsline {section}{\numberline {3.1}有限差分法(线性多步法)}{51}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}向前欧拉法}{52}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}向后欧拉法}{53}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}广义梯形算法}{53}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}中点公式}{54}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}中心差分法}{55}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Houbolt算法}{55}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}带终点加速度的中点公式}{56}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Newmark算法}{57}{subsection.3.1.8}
+\contentsline {subsubsection}{\numberline {3.1.8.1}基于有限元离散的加权残差推导}{60}{subsubsection.3.1.8.1}
+\contentsline {subsection}{\numberline {3.1.9}Wilson-$\theta $法}{63}{subsection.3.1.9}
+\contentsline {subsection}{\numberline {3.1.10}Park算法}{65}{subsection.3.1.10}
+\contentsline {subsection}{\numberline {3.1.11}Hilber-Hughes-Taylor-$\alpha $算法}{65}{subsection.3.1.11}
+\contentsline {subsection}{\numberline {3.1.12}Wood-Bosak-Zienkiewicz-$\alpha $算法}{66}{subsection.3.1.12}
+\contentsline {subsection}{\numberline {3.1.13}基于速度更新的$\gamma _s$格式}{67}{subsection.3.1.13}
+\contentsline {subsection}{\numberline {3.1.14}带中点加速度的中点公式}{68}{subsection.3.1.14}
+\contentsline {subsection}{\numberline {3.1.15}三参数优化算法/CH-$\alpha $法}{68}{subsection.3.1.15}
+\contentsline {subsubsection}{\numberline {3.1.15.1}最优的$\chi $格式}{69}{subsubsection.3.1.15.1}
+\contentsline {subsubsection}{\numberline {3.1.15.2}HHT-$\alpha $算法}{69}{subsubsection.3.1.15.2}
+\contentsline {subsubsection}{\numberline {3.1.15.3}WBZ-$\alpha $算法}{70}{subsubsection.3.1.15.3}
+\contentsline {subsubsection}{\numberline {3.1.15.4}CH-$\alpha $算法}{70}{subsubsection.3.1.15.4}
+\contentsline {subsection}{\numberline {3.1.16}广义$\alpha $算法}{71}{subsection.3.1.16}
+\contentsline {section}{\numberline {3.2}加权残值法}{72}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}$\rho $-算法}{72}{subsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.1.1}$\rho $算法的显式格式}{73}{subsubsection.3.2.1.1}
+\contentsline {subsection}{\numberline {3.2.2}单步隐式的$\theta _1$格式}{74}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}高阶导数的单步显式算法}{76}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}单步单解算法框架/GSSSS算法}{79}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}时间子步策略}{80}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}BEF算法}{80}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}BADF-TR算法}{81}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}GCD-BDF2算法}{81}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Soares-Jr型算法}{82}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}SJ算法格式1\cite {SoaresJr2016}}{82}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}SJ算法格式2\cite {Jr2014}}{83}{subsubsection.3.3.4.2}
+\contentsline {subsubsection}{\numberline {3.3.4.3}SJ算法格式3\cite {Soares2015}}{84}{subsubsection.3.3.4.3}
+\contentsline {subsubsection}{\numberline {3.3.4.4}SJ算法格式4\cite {Soares2014}}{84}{subsubsection.3.3.4.4}
+\contentsline {subsubsection}{\numberline {3.3.4.5}SJ算法格式4\cite {SoaresJr2016a}}{85}{subsubsection.3.3.4.5}
+\contentsline {subsubsection}{\numberline {3.3.4.6}稳定化的中心差分法}{86}{subsubsection.3.3.4.6}
+\contentsline {section}{\numberline {3.4}预测-校正算法}{86}{section.3.4}
+\contentsline {section}{\numberline {3.5}结构依赖型直接积分法}{86}{section.3.5}
+\contentsline {section}{\numberline {3.6}复合型子步隐式算法}{86}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}TR-BDF2算法}{87}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}TR-TR-Houbolt算法}{88}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}BDF2-Newmark算法}{89}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}BDF型积分算法}{89}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.6.5}TTBDF算法}{92}{subsection.3.6.5}
+\contentsline {subsection}{\numberline {3.6.6}BDF2-BDF3算法}{93}{subsection.3.6.6}
+\contentsline {subsection}{\numberline {3.6.7}BDF3BDF2-Newmark算法}{94}{subsection.3.6.7}
+\contentsline {subsection}{\numberline {3.6.8}CTFEA算法}{94}{subsection.3.6.8}
+\contentsline {subsection}{\numberline {3.6.9}TR-BDF2-Houbolt算法}{96}{subsection.3.6.9}
+\contentsline {subsection}{\numberline {3.6.10}TR-NBDDF-N算法}{97}{subsection.3.6.10}
+\contentsline {subsection}{\numberline {3.6.11}TR-RP算法}{98}{subsection.3.6.11}
+\contentsline {section}{\numberline {3.7}复合型子步显式算法}{98}{section.3.7}
+\contentsline {subsection}{\numberline {3.7.1}Noh-Bathe两子步算法}{98}{subsection.3.7.1}
+\contentsline {subsection}{\numberline {3.7.2}Kwon-Lee四子步算法}{100}{subsection.3.7.2}
+\contentsline {section}{\numberline {3.8}本章小结}{101}{section.3.8}
+\contentsline {chapter}{\numberline {第4章}基于广义线性法的结构动响应数值算法设计}{102}{chapter.4}
+\contentsline {section}{\numberline {4.1}本章小结}{102}{section.4.1}
+\contentsline {chapter}{\numberline {第5章}数值算例}{103}{chapter.5}
+\contentsline {section}{\numberline {5.1}本章小结}{103}{section.5.1}
+\contentsline {chapter}{\heiti 结\hspace {\ccwd }论}{104}{section*.16}
+\contentsline {chapter}{\heiti 参考文献}{105}{section*.19}
+\contentsline {chapter}{\heiti 攻读硕士学位期间发表的论文及其他成果}{118}{section*.21}
+\contentsline {chapter}{\heiti 哈尔滨工业大学学位论文原创性声明和使用权限}{121}{section*.27}
+\contentsline {chapter}{\heiti 致\hspace {\ccwd }谢}{122}{section*.29}

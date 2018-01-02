@@ -53,5 +53,12 @@
 \contentsline {definition}{{定义}{2.{38}}{G稳定性}}{43}{definition.2.38}
 \contentsline {definition}{{定义}{2.{39}}{代数稳定性}}{43}{definition.2.39}
 \contentsline {theorem}{{定理}{2.{10}}{\inlinecite {ErnstHairer1996}}}{44}{theorem.2.10}
-\contentsline {definition}{{定义}{2.{40}}{}}{44}{definition.2.40}
-\contentsline {definition}{{定义}{2.{41}}{}}{44}{definition.2.41}
+\contentsline {definition}{{定义}{2.{40}}{收敛性定义}}{44}{definition.2.40}
+\contentsline {theorem}{{定理}{2.{11}}{}}{45}{theorem.2.11}
+\contentsline {proof}{{证明}{6}{}}{45}{proof.6}
+\contentsline {lemma}{{引理}{2.{1}}{\inlinecite {Jackiewicz2009}}}{47}{lemma.2.1}
+\contentsline {proof}{{证明}{7}{}}{47}{proof.7}
+\contentsline {theorem}{{定理}{2.{12}}{\inlinecite {Jackiewicz2009,Butcher2016}}}{48}{theorem.2.12}
+\contentsline {proof}{{证明}{8}{}}{48}{proof.8}
+\contentsline {definition}{{定义}{2.{41}}{}}{48}{definition.2.41}
+\contentsline {definition}{{定义}{2.{42}}{}}{48}{definition.2.42}

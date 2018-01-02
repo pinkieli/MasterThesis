@@ -155,11 +155,11 @@
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
   \bibyear{1971}\@.
 
-\bibitem{Butcher2008}
+\bibitem{Butcher2016}
 \bibauthor{Butcher J~C}\@. \bibbooktitle{Numerical Methods for Ordinary
-  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{2nd ed}}\@.
+  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{3rd~ed}}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
-  \bibyear{2008}\@.
+  \bibyear{2016}\@.
 
 \bibitem{Lapidus1971}
 \bibauthor{Lapidus L\@, Seinfeld J~H}\@. \bibbooktitle{Mathematics in Science
@@ -332,11 +332,10 @@
   Berlin Heidelberg}\@, \bibyear{1973}\@.
 
 \bibitem{袁新鼎1987}
-\bibauthor{袁新鼎\@, 费景高\@, 刘德贵}\@.
+\bibauthor{袁兆鼎\@, 费景高\@, 刘德贵}\@.
   \bibbooktitle{刚性常微分方程初值问题的数值解法}\bibmark{[M]}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{科学出版社}\@, \bibyear{1987}\thinspace{}\textnormal{:
-  }\bibpages{19\thinspace{}\textnormal{--}\thinspace{}20}\@.
+  }\bibpublisher{科学出版社}\@, \bibyear{1987}\@.
 
 \bibitem{Dahlquist1963}
 \bibauthor{Dahlquist G~G}\@. \bibtitle{A special stability problem for linear
@@ -448,6 +447,14 @@
   }\bibpages{358\thinspace{}\textnormal{--}\thinspace{}361}\@.
   \newline\url{https://doi.org/10.1007/BF01931672}\@.
 
+\bibitem{Califano2017}
+\bibauthor{Califano G\@, Izzo G\@, Jackiewicz Z}\@. \bibtitle{Starting
+  procedures for general linear methods}\bibmark{[J/OL]}\@. \bibjournal{Applied
+  Numerical Mathematics}\@, \bibyear{2017}\@,
+  \bibvolume{120}\thinspace{}\textnormal{: }\bibpages{165
+  \thinspace{}\textnormal{--}\thinspace{} 175}\@.
+  \newline\url{http://www.sciencedirect.com/science/article/pii/S0168927417301241}\@.
+
 \bibitem{Hoff1988}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an implicit method
   with numerical dissipation for time integration algorithms in structural
@@ -526,6 +533,12 @@
   \bibjournal{AIAA Journal}\@, \bibyear{1974}\@,
   \bibvolume{108}\bibnumber{(6)}\thinspace{}\textnormal{:
   }\bibpages{1868\thinspace{}\textnormal{--}\thinspace{}1876}\@.
+
+\bibitem{Butcher2008}
+\bibauthor{Butcher J~C}\@. \bibbooktitle{Numerical Methods for Ordinary
+  Differential Equations}\bibmark{[M]}\@. \bibedition{\mbox{2nd ed}}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Wiley}\@,
+  \bibyear{2008}\@.
 
 \bibitem{张雄2007}
 \bibauthor{张雄\@, 王天舒\@, 刘岩}\@.

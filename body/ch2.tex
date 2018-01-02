@@ -573,7 +573,7 @@ b_1 & \cdots & b_s & 1
 \end{BMAT}
 \end{bmatrix}
 \end{equation}
-关于Runge-Kutta方法更加详细的分析和应用可以参考文献或专著\inlinecite{Butcher2008,Lapidus1971,Hairer1993,ErnstHairer1996,李寿佛2010,Lambert1973,Butcher1987}。
+关于Runge-Kutta方法更加详细的分析和应用可以参考文献或专著\inlinecite{Butcher2016,Lapidus1971,Hairer1993,ErnstHairer1996,李寿佛2010,Lambert1973,Butcher1987}。
 \subsection{One-leg方法}
 为了简化线性多步法(\ref{eq:ch2lms})在求解刚性问题时的误差分析，Dahlquist引入了如下格式的One-leg方法\cite{Dahlquist1976,Dahlquist1983}。
 \begin{equation}
@@ -832,7 +832,7 @@ Y^{[n]}_i&=y(t_{n-1}+c_ih)+\mathcal{O}(h^2),\quad i=1,2,\cdots,s\\
 y_i^{[n]}&=q_{i,0}y(t_{n})+q_{i,1}hy'(t_{n})+\mathcal{O}(h^2),\quad i=1,2,\cdots,r
 \end{align}
 
-正如文\inlinecite{Butcher2008,Burrage1995,Jackiewicz2009}所说，将这些关系带入广义线性法(\ref{eq:ch2GLM})可得
+正如文\inlinecite{Butcher2016,Burrage1995,Jackiewicz2009}所说，将这些关系带入广义线性法(\ref{eq:ch2GLM})可得
 \begin{equation}
 \begin{aligned}
 y(t_{n-1})+&hc_iy'(t_{n-1})=h\sum_{j=1}^{s}a_{ij}y'(t_{n-1})\\
@@ -858,14 +858,14 @@ q_{i,0}y(t_{n})+&q_{i,1}hy'(t_{n})=h\sum_{j=1}^{s}b_{ij}y'(t_{n})\\
 \end{subequations}
 于是，就有如下定义%\vspace{-15pt}
 \begin{definition}[预相容]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是预相容的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果存在向量$\bm{q}_0$使得
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是预相容的\cite{Jackiewicz2009,Burrage1995,Butcher2016}，如果存在向量$\bm{q}_0$使得
 \begin{equation}
 \bm{Uq}_0=\bm{e},\quad \bm{Vq}_0=\bm{q}_0\label{eq:ch2PreConsistent}
 \end{equation}
 其中，$\bm{e}=[1,\cdots,1]^T\in\mathbb{R}^s$。而向量$\bm{q}_0$称为预相容向量。
 \end{definition}%\vspace{-15pt}
 \begin{definition}[相容]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是相容的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果它带有预相容向量$\bm{q}_0$且存在向量$\bm{q}_1$使得
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是相容的\cite{Jackiewicz2009,Burrage1995,Butcher2016}，如果它带有预相容向量$\bm{q}_0$且存在向量$\bm{q}_1$使得
 \begin{equation}
 \bm{Be}+\bm{Vq}_1=\bm{q}_0+\bm{q}_1\label{eq:ch2Consistent}
 \end{equation}
@@ -1009,13 +1009,13 @@ c_i=\sum_{j=1}^{s}a_{ij}-\sum_{j=1}^{k}ju_{ij},\quad i=1,2,\cdots,s
 
 在进一步阐述稳定性之前，我们先给出一些关于一个矩阵$\bm{A}$的稳定性定义。%\vspace{-12pt}
 \begin{definition}[矩阵的稳定性/幂有界]
-一个矩阵$\bm{A}$是稳定的或者幂有界的\cite{Burrage1995,Butcher2008}，如果存在一个常数$C$使得对于任意的$n=0,1,\cdots$都有
+一个矩阵$\bm{A}$是稳定的或者幂有界的\cite{Burrage1995,Butcher2016}，如果存在一个常数$C$使得对于任意的$n=0,1,\cdots$都有
 \begin{equation}
 ||\bm{A}^n||\le C
 \end{equation}
 \end{definition}%\vspace{-25pt}
 \begin{definition}[矩阵的收敛性]
-一个矩阵$\bm{A}$是收敛的\cite{Burrage1995,Butcher2008}，如果当$n\to\infty$有
+一个矩阵$\bm{A}$是收敛的\cite{Burrage1995,Butcher2016}，如果当$n\to\infty$有
 \begin{equation}
 ||\bm{A}^n||_{\infty}\to0
 \end{equation}
@@ -1024,24 +1024,24 @@ c_i=\sum_{j=1}^{s}a_{ij}-\sum_{j=1}^{k}ju_{ij},\quad i=1,2,\cdots,s
 一个多项式$p$满足根条件\cite{Burrage1995,李寿佛2010}，如果多项式$p$的所有零根都位于闭的单位圆内，而仅单根可能位于单位圆上。
 \end{definition}%\vspace{-25pt}
 \begin{theorem}[矩阵收敛的等价条件]
-对于两个矩阵$\bm{A}$和$\bm{B}$，下列的陈述等价\cite{Burrage1995,Butcher2008}：\begin{itemize}
+对于两个矩阵$\bm{A}$和$\bm{B}$，下列的陈述等价\cite{Burrage1995,Butcher2016}：\begin{itemize}
 \item[(i)] 矩阵$\bm{A}$是收敛的。
 \item[(ii)] 矩阵$\bm{A}$的谱半径小于1，即$\rho(A)<1$。
 \item[(iii)] 存在一个相似于$\bm{A}$的矩阵$\bm{B}$，使得$||B||_{\infty}<1$。
 \end{itemize}
 \end{theorem}%\vspace{-15pt}
 \begin{proof}
-参见文献\inlinecite{Butcher2008}。
+参见文献\inlinecite{Butcher2016}。
 \end{proof}%\vspace{-12pt}
 \begin{theorem}[矩阵稳定的等价条件]
-对于两个矩阵$\bm{A}$和$\bm{B}$，下列的陈述等价\cite{Burrage1995,Butcher2008}：\begin{itemize}
+对于两个矩阵$\bm{A}$和$\bm{B}$，下列的陈述等价\cite{Burrage1995,Butcher2016}：\begin{itemize}
 \item[(i)] 矩阵$\bm{A}$是稳定的。
 \item[(ii)] 矩阵$\bm{A}$的最小多项式满足根条件要求。
 \item[(iii)] 存在一个相似于$\bm{A}$的矩阵$\bm{B}$，使得$||B||_{\infty}\le1$。
 \end{itemize}
 \end{theorem}%\vspace{-15pt}
 \begin{proof}
-参见文献\inlinecite{Butcher2008}。
+参见文献\inlinecite{Butcher2016}。
 \end{proof}
 
 从矩阵的稳定性和收敛性的等价条件可知，其收敛性强于稳定性。下面给出两个很有用的不等式条件。%\vspace{-12pt}
@@ -1053,7 +1053,7 @@ c_i=\sum_{j=1}^{s}a_{ij}-\sum_{j=1}^{k}ju_{ij},\quad i=1,2,\cdots,s
 成立。
 \end{theorem}%\vspace{-15pt}
 \begin{proof}
-参见文献\inlinecite{Butcher2008}。
+参见文献\inlinecite{Butcher2016}。
 \end{proof}
 上述定理说明了对任意稳定的矩阵进行微扰动后仍然是稳定的。
 
@@ -1069,7 +1069,7 @@ v_i=\bm{A}v_{i-1}+\frac{1}{n}\Phi(v_{i-1})+w_i,\quad i=1,2,\cdots,n
 \end{equation}
 \end{theorem}%\vspace{-20pt}
 \begin{proof}
-参见文献\inlinecite{Butcher2008}。
+参见文献\inlinecite{Butcher2016}。
 \end{proof}
 \subsection{线性化稳定性理论}
 考虑一个非常简单的一阶微分方程
@@ -1082,7 +1082,7 @@ y^{[n]}=\bm{V}y^{n-1}=\bm{V}^ny^{[0]},\quad n=0,1,\cdots
 \end{equation}
 由此可以知道，为了使得广义线性法求解得到的数值解稳定，则需要对广义线性法的矩阵$\bm{V}$满足一定的条件。即有如下定义
 \begin{definition}[零稳定性]
-广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是零稳定的\cite{Jackiewicz2009,Burrage1995,Butcher2008}，如果存在一个常数$C$使得对于任意的$n=0,1,\cdots$都有
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是零稳定的\cite{Jackiewicz2009,Burrage1995,Butcher2016}，如果存在一个常数$C$使得对于任意的$n=0,1,\cdots$都有
 \begin{equation}
 ||\bm{V}^n||\le C
 \end{equation}
@@ -1211,7 +1211,7 @@ Dahlquist针对刚性问题求解提出了A稳定性\cite{Dahlquist1963}。
 其中，$\rho(\bm{M}(z))$表示稳定矩阵$\bm{M}(z)$的谱半径。
 \end{definition}
 \begin{definition}[L稳定性]
-一个数值算法是L稳定的\cite{Butcher2008,李寿佛2010,Jackiewicz2009}，如果它是A稳定且是极端稳定的。
+一个数值算法是L稳定的\cite{Butcher2016,李寿佛2010,Jackiewicz2009}，如果它是A稳定且是极端稳定的。
 \end{definition}
 L稳定性在文\inlinecite{Ehle1969}被称为\textbf{左稳定性}而引入，同时Axelsson也在文\inlinecite{Axelsson1969}中称其为\textbf{刚性A稳定性}，而在文\inlinecite{Chipman1971,Axelsson1972}称L稳定性为\textbf{强A稳定性}。尽管这些名称不同，本文都统一使用L稳定性。
 
@@ -1228,7 +1228,7 @@ L稳定性在文\inlinecite{Ehle1969}被称为\textbf{左稳定性}而引入，�
 
 正如前述所及，A稳定是很困难或是不可能实现的，因此一个相对较弱的稳定性条件被提出来，即A$(\alpha)$稳定性。
 \begin{definition}[A($\alpha$)稳定性]
-一个数值算法是A($\alpha$)稳定的\cite{Butcher2008,李寿佛2010,Widlund1967}，如果存在一个角度$\alpha$使得
+一个数值算法是A($\alpha$)稳定的\cite{Butcher2016,李寿佛2010,Widlund1967}，如果存在一个角度$\alpha$使得
 \begin{equation}
 S_\alpha=\{z\in\mathbb{C}:|\arg(-z)|<\alpha\}\subseteq\mathcal{A}
 \end{equation}
@@ -1489,7 +1489,7 @@ p(w,z)=\frac{1}{1-z\beta_0}w^k(\rho(w)-z\sigma(w))\label{eq:ch2LMSPwz}
 定义多项式\begin{equation}
 \pi(w,z)\triangleq\rho(w)-z\sigma(w)\label{eq:ch2lmsCharaPoly}
 \end{equation}
-称为线性多步法(\ref{eq:ch2lms})的特征多项式，其定义与经典线性多步法理论框架\cite{李寿佛2010,Butcher2008,Gear1971a,Hairer1993,ErnstHairer1996,Butcher1987,Fatunla1988,袁新鼎1987}下推导的结果是一致。
+称为线性多步法(\ref{eq:ch2lms})的特征多项式，其定义与经典线性多步法理论框架\cite{李寿佛2010,Butcher2016,Gear1971a,Hairer1993,ErnstHairer1996,Butcher1987,Fatunla1988,袁新鼎1987}下推导的结果是一致。
 
 对于One-leg方法(\ref{eq:ch2Oneleg})，其稳定矩阵$\bm{M}(z)$可表示为
 \begin{equation}
@@ -1695,16 +1695,205 @@ y_1\\ y_2\\ \vdots \\ y_r
 \begin{theorem}[\inlinecite{ErnstHairer1996}]
 对于预相容的广义线性法(\ref{eq:ch2GLM})，且$c_i,i=1,2,\cdots,s$互不相同，则有：代数稳定性$\iff$G稳定性$\iff$AN稳定性。
 \end{theorem}
-
-
-
-
-
-
-
-
+%========================================================================
 
 \section{收敛性}
+正如线性多步法一样，在进行数值方法的应用之前，往往需要启动方法进行初始计算。而广义线性法也需要一个特殊的启动机制来完成$r$维向量$\bm{y}^{[n]}$的装配工作。但这里我们不准备详细阐述其原理，详见文献\inlinecite{Califano2017,Butcher2016}。本文假定存在一个带有积分步长$h$的启动机制$\bm{S}_h$
+\begin{equation}
+\bm{S}_h:\mathbb{R}^{m}\to\mathbb{R}^{mr}
+\end{equation}
+使得初始向量$y^{[0]}=y^{[0]}(h)\in\mathbb{R}^{mr}$转换为
+\begin{equation}
+\lim_{h\to0}\bm{S}_h(y_0)=\lim_{h\to0}y^{[0]}=(\bm{q}_0\otimes\bm{I})y(t_0)\label{eq:Sh}
+\end{equation}
+其中，$\bm{q}_0$是某个预相容向量。而$y_0\in\mathbb{R}^m$是初始值，$y(t)$是微分方程(\ref{eq:ch2FirstAuto})的解。
+\begin{definition}[收敛性定义]
+广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是收敛的，如果对于任意满足Lipschitz条件的微分方程(\ref{eq:ch2FirstAuto})，存在一个非零向量$\bm{q}_0$和一个满足条件(\ref{eq:Sh})启动机制$\bm{S}_h$，使得对于任意的$\overline{t}\in[t_0,T]$和$h=(\overline{t}-t_0)/n$下，由广义线性法(\ref{eq:ch2GLM})在$y^{[0]}=\bm{S}_h(y_0)$下计算$n$步得到的向量$y^{[n]}$收敛到$\bm{q}_0y(\overline{t})$，其中，$y(t)$是微分方程(\ref{eq:ch2FirstAuto})的一个解。
+\end{definition}
+需要说明的是，上述针对广义线性法的定义也适用于线性多步法。因为通过前述线性多步法(\ref{eq:ch2lms})在广义线性法(\ref{eq:ch2GLM})的表示形式，上述稳定性定义可以很容易的与经典线性多步法的理论下的稳定性定义做对比。
+
+在线性多步法的经典理论中，我们可以知道，其收敛性可以由相容性和稳定性保证，即
+\begin{center}
+\textbf{相容性+稳定性=收敛性 }
+\end{center}
+
+其实，在广义线性法中也有类似的收敛性条件，即，\textbf{零稳定性+相容性=收敛性 }。
+\begin{theorem}
+若广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是收敛的，则它是零稳定的和相容的。
+\end{theorem}
+\begin{proof}
+首先，使用反证法证明收敛性暗示零稳定性。假定序列$||\bm{V}^n||,n=1,2,\cdots$是无界的。因为下式关系存在
+\begin{equation}
+||\bm{V}^n||=\max_{||w||=1}||\bm{V}^nw||,\ n=1,2,\cdots
+\end{equation}
+则存在一个向量序列$w_n,(||w_n||=1)$使得序列$||\bm{V}^nw_n||,n=1,2,\cdots$也是无界的。考虑如下的微分方程
+\begin{equation}
+y'(t)=0,\quad y(0)=0
+\end{equation}
+且$t\in[0,1]$。当积分步长$h=1/n$时，其初始向量$y^{[0]}$可由如下给出
+\begin{equation}
+y^{[0]}=\bm{S}_h(0)=\frac{w_n}{\max\limits_{1\le i\le n}||\bm{V}^iw_i||}
+\end{equation}
+由于序列$\bm{V}^nw_n$是无界的，因此有$\lim_{h\to0}\bm{S}_h(0)=0$。而在$n$次积分步之后有
+\begin{equation}
+y^{[n]}=\bm{V}^n\bm{S}_h(0)=\frac{\bm{V}^nw_n}{\max\limits_{1\le i\le n}||\bm{V}^iw_i||}
+\end{equation}
+且其范数为
+\begin{equation}
+||y^{[n]}||=||\bm{V}^n\bm{S}_h(0)||=\frac{||\bm{V}^nw_n||}{\max\limits_{1\le i\le n}||\bm{V}^iw_i||}
+\end{equation}
+因为$||\bm{V}^nw_n||$是无界的，因此存在一个连续递增的子序列$||\bm{V}^{n_j}w_{n_j}||$使得$\lim\limits_{j\to\infty}||\bm{V}^{n_j}w_{n_j}||=\infty$和$\max\limits_{1\le i\le n_j}||\bm{V}^iw_i||=||\bm{V}^{n_j}w_{n_j}||$。于是，就有
+\begin{equation}
+||y^{[n_j]}||=|\bm{V}^{n_j}\bm{S}(1/n_j)||=1\neq 0
+\end{equation}
+这与广义线性法的收敛性相矛盾。
+
+下证，收敛性暗示相容性。考虑如下的初值问题
+\begin{equation}
+y'(t)=1,\quad y(0)=0
+\end{equation}
+且$t\in[0,1]$。取积分步长为$h=1/n$，而初始向量为$y^{[0]}$由
+\begin{equation}
+y^{[0]}=\bm{S}_h(0)=\bm{q}_0y(0)=\bm{0}
+\end{equation}
+给出。而第$i$步调输出向量为
+\begin{equation}
+y^{[i]}=h\bm{Be}+\bm{V}y^{[i-1]},\quad i=1,2,\cdots,n
+\end{equation}
+于是就有
+\begin{equation}
+y^{[n]}=h(\bm{I}+\bm{V}+\cdots+\bm{V}^{n-1})\bm{Be}
+\end{equation}
+因为$\bm{V}^i\bm{q}_0=\bm{q}_0,i=0,1,\cdots$，进而
+\begin{equation}
+h(\bm{I}+\bm{V}+\cdots+\bm{V}^{n-1})\bm{q}_0=hn\bm{q}_0=\bm{q}_0
+\end{equation}
+可以得出
+\begin{equation}
+y^{[n]}-\bm{q}_0=h(\bm{I}+\bm{V}+\cdots+\bm{V}^{n-1})(\bm{Be}-\bm{q}_0)
+\end{equation}
+
+因为系数矩阵$\bm{V}$稳定的，故存在一个非奇异矩阵$\bm{P}$使得
+\begin{equation}
+\bm{V}=\bm{P}^{-1}\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & \tilde{\bm{V}}
+\end{BMAT}
+\end{bmatrix}\bm{P}
+\end{equation}
+其中，矩阵$\bm{I}$是$\tilde{r}\times\tilde{r}$维的单位矩阵，而$\tilde{\bm{V}}$是稳定的，且其特征值不含$1$。于是又有\begin{equation}
+\begin{aligned}
+y^{[n]}-\bm{q}_0&=\bm{P}^{-1}\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & h(\bm{I}+\tilde{\bm{V}}+\cdots+\tilde{\bm{V}^{n-1}})
+\end{BMAT}
+\end{bmatrix}\bm{P}(\bm{Be}-\bm{q}_0)\\
+&=\bm{P}^{-1}\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & h(\bm{I}-\tilde{\bm{V}})^{-1}(\bm{I}-\tilde{V}^n)
+\end{BMAT}
+\end{bmatrix}\bm{P}(\bm{Be}-\bm{q}_0)
+\end{aligned}\label{eq:ch2conven}
+\end{equation}
+同时，考虑第$n$步输出量$y^{[n]}$的极限值，即
+\begin{equation}
+\lim_{n\to\infty,hn=1}y^{[n]}=\bm{q}_0y(1)=\bm{q}_0
+\end{equation}
+进而等式(\ref{eq:ch2conven})可转换为
+\begin{equation}
+\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & \bm{0}
+\end{BMAT}
+\end{bmatrix}\bm{P}(\bm{Be}-\bm{q}_0)=\begin{bmatrix}
+\begin{BMAT}[5pt]{c}{cc}
+ \bm{0}\\
+\bm{0}
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+这表明向量$\bm{P}(\bm{Be}-\bm{q}_0)$在它的前$\tilde{r}$个分量中全为0。因为矩阵$\bm{I}-\tilde{\bm{V}}$是非奇异的，因此可以将向量$\bm{P}(\bm{Be}-\bm{q}_0)$改写为如下形式
+\begin{equation}
+\bm{P}(\bm{Be}-\bm{q}_0)=\begin{bmatrix}
+\begin{BMAT}[5pt]{c}{cc}
+ \bm{0}\\
+(\bm{I}-\tilde{\bm{V}})\tilde{\bm{q}}_1
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$\tilde{\bm{q}}_1\in\mathbb{R}^{r-\tilde{r}}$。定义向量$\bm{q}_1\in\mathbb{R}^r$如下
+\begin{equation}
+\bm{q}_1=\bm{P}^{-1}\begin{bmatrix}
+\begin{BMAT}[5pt]{c}{cc}
+ \bm{0}\\
+\tilde{\bm{q}}_1
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+于是就有
+\begin{equation}
+\begin{aligned}
+\bm{P}(\bm{Be}-\bm{q}_0)&=\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & \bm{I}-\tilde{\bm{V}}
+\end{BMAT}
+\end{bmatrix}\begin{bmatrix}
+\begin{BMAT}[5pt]{c}{cc}
+ \bm{0}\\
+\tilde{\bm{q}}_1
+\end{BMAT}
+\end{bmatrix}\\
+&=\left(\bm{I}-\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & \tilde{\bm{V}}
+\end{BMAT}
+\end{bmatrix}\right)\bm{P}\bm{q}_1\\
+&=\bm{P}\left(\bm{I}-\bm{P}^{-1}\begin{bmatrix}
+\begin{BMAT}[5pt]{cc}{cc}
+\bm{I} & \bm{0}\\
+\bm{0} & \tilde{\bm{V}}
+\end{BMAT}
+\end{bmatrix}\bm{P}\right)\bm{q}_1\\
+&=\bm{P}(\bm{I}-\bm{V})\bm{q}_1
+\end{aligned}
+\end{equation}
+因此可得$\bm{Be}+\bm{Vq}_1=\bm{q}_0+\bm{q}_1$，就是相容性条件。完成了证明。
+\end{proof}
+
+在证明零稳定性和相容性可以推导出收敛性之前，需要如下的引理。
+\begin{lemma}[\inlinecite{Jackiewicz2009}]
+若矩阵$\bm{A}\in\mathbb{R}^{r\times r}$是稳定的(其有界常数为$C_1\ge1$)。两个序列$u_n,w_n\in\mathbb{R}^r$满足如下关系
+\begin{equation}
+u_n=\bm{A}u_{n-1}+w_n,\quad ||w_n||\le C_2||u_{n-1}||+\delta,\ n=0,1,2,\cdots
+\end{equation}
+其中，常数$C_2\ge0,\delta\ge0$。则有
+\begin{equation}
+||u_n||\le C_1(1+C_1C_2)^n||u_0||+\frac{\delta}{C_2}\left((1+C_1C_2)^n-1\right),\ C_2>0,n=0,1,2,\cdots
+\end{equation}
+若$C_2=0$，则对上式右端取极限既可，即得$C_1(||u_0||+n\delta)$。
+\end{lemma}
+\begin{proof}
+参见文献\inlinecite{Jackiewicz2009}。
+\end{proof}
+
+\begin{theorem}[\inlinecite{Jackiewicz2009,Butcher2016}]
+一个零稳定的且相容的广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是收敛的。
+\end{theorem}
+\begin{proof}
+参见文献\inlinecite{Jackiewicz2009,Butcher2016}。
+\end{proof}
+
+
+
+
+
+
 
 \section{精度分析}
 
