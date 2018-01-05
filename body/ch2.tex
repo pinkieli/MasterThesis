@@ -272,7 +272,7 @@ hf(y_{n-k+1})
 \end{bmatrix}=\begin{bmatrix}
 \begin{BMAT}[5pt]{c:cccccc}{c:cccccc}
 \beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\
-\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\
 1		& 0 & 0		  & 0   &\cdots &0 &0\\
 0		& 0 & 1		  & 0   &\cdots &0 &0\\
 0		& 0 & 0		  & 1   &\cdots &0 &0\\
@@ -352,7 +352,7 @@ hf(y_{n-k+1})
 \end{bmatrix}=\begin{bmatrix}
 \begin{BMAT}[5pt]{c:cccccc}{c:cccccc}
 0 & 1 & \beta_1^* & \beta_2^* & \cdots & \beta_{k-1}^* & \beta_k^*\\
-\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+\beta_0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\
 1		& 0 & 0		  & 0   &\cdots &0 &0\\
 0		& 0 & 1		  & 0   &\cdots &0 &0\\
 0		& 0 & 0		  & 1   &\cdots &0 &0\\
@@ -395,8 +395,8 @@ hf(y_{n-k+1})
 \end{bmatrix}=\begin{bmatrix}
 \begin{BMAT}[5pt]{cc:cccccc}{cc:cccccc}
 0 & 0 & 1 & \beta_1^* & \beta_2^* & \cdots & \beta_{k-1}^* & \beta_k^*\\
-\beta_0& 0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
-\beta_0& 0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\ 
+\beta_0& 0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\
+\beta_0& 0 & 1 & \beta_1 & \beta_2 & \cdots & \beta_{k-1} & \beta_k\\
 0 & 1		& 0 & 0		  & 0   &\cdots &0 &0\\
 0& 0		& 0 & 1		  & 0   &\cdots &0 &0\\
 0&0		& 0 & 0		  & 1   &\cdots &0 &0\\
@@ -554,7 +554,7 @@ b_1 & \cdots & b_s & 1
 \end{equation}
 
 由等式(\ref{eq:ch2GLM2RK})不难将这些Runge-Kutta方法使用广义线性法的形式表出，即
-\begin{equation}\text{RK21:}\quad 
+\begin{equation}\text{RK21:}\quad
 \begin{bmatrix}
 \begin{BMAT}[4pt]{cc:c}{cc:c}
 0 & 0& 1\\ 1 & 0 &1 \\
@@ -562,7 +562,7 @@ b_1 & \cdots & b_s & 1
 \end{BMAT}
 \end{bmatrix}
 \end{equation}
-\begin{equation}\text{RK41:}\quad 
+\begin{equation}\text{RK41:}\quad
 \begin{bmatrix}
 \begin{BMAT}[3.5pt]{cccc:c}{cccc:c}
 0 & 0 & 0 & 0 & 1\\
@@ -1099,7 +1099,7 @@ y^{[n]}=\bm{V}y^{n-1}=\bm{V}^ny^{[0]},\quad n=0,1,\cdots
 广义线性法($\bm{c},\bm{A},\bm{U},\bm{B},\bm{V}$)是强零稳定的\cite{Jackiewicz2009,李寿佛2010,Gear1971a}，如果它是零稳定的，且矩阵$\bm{V}$有且仅有一个特征值位于单位圆上。此时，也称矩阵$\bm{V}$的最小多项式满足强根条件。
 \end{definition}%\vspace{-15pt}
 
-零稳定性在一些文献\inlinecite{Denholm1973,Stetter1973}中也称为D\textbf{稳定性}，仅仅是“Dahlquist-stability”的简称。在本文中一律使用零稳定性。 
+零稳定性在一些文献\inlinecite{Denholm1973,Stetter1973}中也称为D\textbf{稳定性}，仅仅是“Dahlquist-stability”的简称。在本文中一律使用零稳定性。
 
 对于Runge-Kutta方法(\ref{eq:ch2RK})，其最小多项式为$p(w)=w-1$,因此Runge-Kutta方法都是零稳定的，而且还是严格零稳定的。而对于线性多步法(\ref{eq:ch2lms})在广义线性表示形式($r=2k,s=k$)下，其最小多项式为
 \begin{equation}
@@ -1330,7 +1330,7 @@ Gupta在1976年提出了A$(\alpha,D)$稳定性，即包含了A稳定性的特点
 \draw [blue,<-] (-0.2,0.23) to [out=225,in=90] (-0.3,0);
 \node [left] at (-0.3,0.25) {$\alpha$};
 \draw [blue,<-] (-0.2,-0.23) to [out=145,in=270] (-0.3,0);
-\node [left] at (-0.3,-0.25) {$\alpha$}; 
+\node [left] at (-0.3,-0.25) {$\alpha$};
 %=============================================
 \end{tikzpicture}
 \bicaption[Fig:AalphaDStable]{}{A$(\alpha,D)$稳定域}{Fig.$\!$}{Domain of A$(\alpha,D)$ stability}
@@ -1888,6 +1888,9 @@ u_n=\bm{A}u_{n-1}+w_n,\quad ||w_n||\le C_2||u_{n-1}||+\delta,\ n=0,1,2,\cdots
 \begin{proof}
 参见文献\inlinecite{Jackiewicz2009,Butcher2016}。
 \end{proof}
+
+
+
 
 
 
