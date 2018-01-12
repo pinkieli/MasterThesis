@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  2 JAN 2018 12:26
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.4)  12 JAN 2018 21:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3439,11 +3439,11 @@ Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input
 line 1870.
  [47]
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1911.
+(Font)              scaled to size 8.0pt on input line 1914.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.52437pt on input line 1911.
+(Font)              scaled to size 6.52437pt on input line 1914.
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.03374pt on input line 1911.
+(Font)              scaled to size 9.03374pt on input line 1914.
 ) [48]
 \openout2 = `body/ch3.aux'.
 
@@ -3734,11 +3734,11 @@ LaTeX Font Warning: Size substitutions with differences
 ### bottom level 
 Here is how much of TeX's memory you used:
  50331 strings out of 493005
- 952522 string characters out of 6137956
- 1061472 words of memory out of 5000000
+ 952522 string characters out of 6137957
+ 1061485 words of memory out of 5000000
  53424 multiletter control sequences out of 15000+600000
  123816 words of font info for 201 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  63i,21n,78p,10439b,14730s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (131 pages, 1397144 bytes).
+Output written on main.xdv (131 pages, 1397156 bytes).
