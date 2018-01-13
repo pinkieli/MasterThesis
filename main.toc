@@ -69,11 +69,11 @@
 \contentsline {subsection}{\numberline {3.3.2}BADF-TR算法}{81}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}GCD-BDF2算法}{81}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Soares-Jr型算法}{82}{subsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.4.1}SJ算法格式1\cite {SoaresJr2016}}{82}{subsubsection.3.3.4.1}
-\contentsline {subsubsection}{\numberline {3.3.4.2}SJ算法格式2\cite {Jr2014}}{83}{subsubsection.3.3.4.2}
-\contentsline {subsubsection}{\numberline {3.3.4.3}SJ算法格式3\cite {Soares2015}}{84}{subsubsection.3.3.4.3}
-\contentsline {subsubsection}{\numberline {3.3.4.4}SJ算法格式4\cite {Soares2014}}{84}{subsubsection.3.3.4.4}
-\contentsline {subsubsection}{\numberline {3.3.4.5}SJ算法格式4\cite {SoaresJr2016a}}{85}{subsubsection.3.3.4.5}
+\contentsline {subsubsection}{\numberline {3.3.4.1}SJ算法格式1\cite {SoaresJr2015c}}{82}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}SJ算法格式2\cite {SoaresJr2014c}}{83}{subsubsection.3.3.4.2}
+\contentsline {subsubsection}{\numberline {3.3.4.3}SJ算法格式3\cite {SoaresJr2015b}}{84}{subsubsection.3.3.4.3}
+\contentsline {subsubsection}{\numberline {3.3.4.4}SJ算法格式4\cite {SoaresJr2014e}}{84}{subsubsection.3.3.4.4}
+\contentsline {subsubsection}{\numberline {3.3.4.5}SJ算法格式5\cite {SoaresJr2016b}}{85}{subsubsection.3.3.4.5}
 \contentsline {subsubsection}{\numberline {3.3.4.6}稳定化的中心差分法}{86}{subsubsection.3.3.4.6}
 \contentsline {section}{\numberline {3.4}预测-校正算法}{86}{section.3.4}
 \contentsline {section}{\numberline {3.5}结构依赖型直接积分法}{86}{section.3.5}

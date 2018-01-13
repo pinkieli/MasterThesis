@@ -13,126 +13,136 @@ A level-1 auxiliary file: back/acknowledgements.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Database file #1: reference.bib
+Database file #1: Reference_New.bib
 Warning--string name "oct" is undefined
---line 4359 of file reference.bib
+--line 709 of file Reference_New.bib
 Warning--string name "dec" is undefined
---line 5017 of file reference.bib
-Warning--string name "jun" is undefined
---line 54967 of file reference.bib
+--line 1369 of file Reference_New.bib
+Warning--string name "jul" is undefined
+--line 2069 of file Reference_New.bib
 Warning--string name "apr" is undefined
---line 55197 of file reference.bib
-Warning--string name "oct" is undefined
---line 59645 of file reference.bib
-Warning--string name "jan" is undefined
---line 70131 of file reference.bib
-Warning--string name "apr" is undefined
---line 70247 of file reference.bib
+--line 2224 of file Reference_New.bib
+Warning--string name "dec" is undefined
+--line 10281 of file Reference_New.bib
+Warning--string name "sep" is undefined
+--line 10296 of file Reference_New.bib
 Warning--string name "mar" is undefined
---line 87167 of file reference.bib
-Warning--Require address: book:dover
-Warning--Require address: Lunk2004
-Warning--Require journal: Lunk2005
-Warning--Require citedate: Yin2013
-Warning--Require citedate: Burrage1980
-Warning--Require address: Gear1971a
-Warning--Require address: Butcher2016
-Warning--Require address: Hairer1993
-Warning--Require address: ErnstHairer1996
-Warning--Require address: 李寿佛2010
-Warning--Require address: Lambert1973
-Warning--Require address: Butcher1987
-Warning--Require booktitle: Dahlquist1976
-Warning--Require address: Burrage1995
-Warning--Require address: Jackiewicz2009
-Warning--Require address: Denholm1973
-Warning--Require address: Stetter1973
-Warning--Require address: 袁新鼎1987
-Warning--Require citedate: Dahlquist1963
-Warning--Require address: Ehle1969
-Warning--Require citedate: Wanner2006
-Warning--Require citedate: Cryer1973
-Warning--Require address: Fatunla1988
-Warning--Require citedate: Odeh1971
-Warning--Require citedate: Dahlquist1978
-Warning--Require address: Wood
-Warning--Require citedate: Butcher1975
-Warning--Require citedate: Califano2017
-Warning--Require citedate: Hoff198887
-Warning--Require address: Chopra2011
-Warning--Require citedate: Dokainish1989
-Warning--Require citedate: Subbaraj1989
-Warning--Require citedate: Fung1996a
-Warning--Require address: Butcher2008
-Warning--Require address: JasonHar2012
-Warning--Require citedate: JasonHar2012
-Warning--Require citedate: Lees1966
+--line 10421 of file Reference_New.bib
+Repeated entry---line 11969 of file Reference_New.bib
+ : @article{ZIENKIEWICZ1991c
+ :                          ,
+I'm skipping whatever remains of this entry
+Warning--string name "oct" is undefined
+--line 13377 of file Reference_New.bib
+Warning--string name "oct" is undefined
+--line 18444 of file Reference_New.bib
+Warning--string name "oct" is undefined
+--line 18866 of file Reference_New.bib
+Warning--string name "apr" is undefined
+--line 19044 of file Reference_New.bib
+Warning--string name "jun" is undefined
+--line 19071 of file Reference_New.bib
+Warning--string name "jan" is undefined
+--line 21490 of file Reference_New.bib
+Warning--string name "jun" is undefined
+--line 29419 of file Reference_New.bib
+Warning--Require address: Hughes2000c
+Warning--Require address: Lunk2004a
+Warning--Require journal: Lunk2005a
+Warning--Require citedate: Yin2013a
+Warning--Require citedate: Burrage1980b
+Warning--Require address: Gear1971c
+Warning--Require address: Butcher2016a
+Warning--Require address: ErnstHairer1993a
+Warning--Require address: ErnstHairer1996a
+Warning--Require address: LiShouFo2010a
+Warning--Require address: Lambert1973a
+Warning--Require address: Butcher1987a
+Warning--Require booktitle: Dahlquist1976a
+Warning--Require address: Burrage1995a
+Warning--Require address: Jackiewicz2009a
+Warning--Require address: Huang2005a
+Warning--Require address: Stetter1973a
+Warning--Require address: YuanZhaoDing1987a
+Warning--Require citedate: Dahlquist1963a
+Warning--Require address: Ehle1969a
+Warning--Require citedate: Wanner2006a
+Warning--Require citedate: Cryer1973a
+Warning--Require address: Fatunla1988a
+Warning--Require citedate: Odeh1971a
+Warning--Require citedate: Dahlquist1978a
+Warning--Require address: Wood1990e
+Warning--Require citedate: Butcher1975a
+Warning--Require citedate: Califano2017a
+Warning--Require citedate: Hoff1988b
+Warning--Require citedate: Dokainish1989a
+Warning--Require citedate: Subbaraj1989b
+Warning--Require citedate: Fung1996e
+Warning--Require journal: Geradin1983
+Warning--Require address: Chopra2011a
 Warning--Require citedate: Zienkiewicz1977a
 Warning--Require citedate: Hoff1990
 Warning--Require citedate: Hoff1990a
-Warning--Require citedate: Hilber1978
-Warning--Require citedate: Hilber1977
-Warning--Require citedate: Wood1980a
-Warning--Require citedate: KaiPing2008
-Warning--Require citedate: Mohammadzadeh2017
-Warning--Require address: Simo1992b
-Warning--Require citedate: Hulbert1994
-Warning--Require citedate: Bazzi1982
-Warning--Require citedate: Zienkiewicz1984a
-Warning--Require citedate: Wood1984
-Warning--Require citedate: Grosseholz2015
-Warning--Require citedate: SoaresJr2016a
-Warning--Require address: Quarteroni2010
-Warning--Require citedate: Tarnow1994
-Warning--Require citedate: Fung1998
-Warning--Require citedate: Bathe2012
-Warning--Require citedate: Zhang2017
-Warning--Require journal: Kumara
-Warning--Require year: Kumara
-Warning--Require journal: Guwahati
-Warning--Require year: Guwahati
-Warning--Require citedate: Wen2017c
-Warning--Require citedate: Rezaiee-Pajand2015
-Warning--Require citedate: Noh2013
-You've used 139 entries,
+Warning--Require citedate: Hilber1978a
+Warning--Require citedate: Hilber1977a
+Warning--Require citedate: Wood1980b
+Warning--Require citedate: Yu2008a
+Warning--Require citedate: Mohammadzadeh2017a
+Warning--Require address: Simo1992e
+Warning--Require citedate: Hulbert1994b
+Warning--Require citedate: Bazzi1982a
+Warning--Require citedate: Zienkiewicz1984b
+Warning--Require citedate: Wood1984a
+Warning--Require citedate: Zhang2015b
+Warning--Require citedate: Grosseholz2015a
+Warning--Require citedate: SoaresJr2016b
+Warning--Require address: Quarteroni2010a
+Warning--Require citedate: Tarnow1994a
+Warning--Require citedate: Fung1998e
+Warning--Require citedate: Bathe2012a
+Warning--Require citedate: Zhang2017a
+Warning--Require citedate: Wen2017f
+Warning--Require citedate: Rezaiee-Pajand2015a
+Warning--Require citedate: Noh2013c
+You've used 137 entries,
             3103 wiz_defined-function locations,
-            1620 strings with 28966 characters,
-and the built_in function-call counts, 179124 in all, are:
-= -- 18510
-> -- 390
-< -- 910
-+ -- 13487
-- -- 1259
-* -- 6708
-:= -- 18446
+            1586 strings with 28225 characters,
+and the built_in function-call counts, 185002 in all, are:
+= -- 19212
+> -- 385
+< -- 901
++ -- 14070
+- -- 1252
+* -- 6645
+:= -- 18999
 add.period$ -- 0
-call.type$ -- 139
+call.type$ -- 137
 change.case$ -- 0
-chr.to.int$ -- 36
-cite$ -- 203
-duplicate$ -- 25340
-empty$ -- 8259
+chr.to.int$ -- 27
+cite$ -- 195
+duplicate$ -- 26428
+empty$ -- 8541
 format.name$ -- 956
-if$ -- 46667
+if$ -- 48306
 int.to.chr$ -- 0
-int.to.str$ -- 139
+int.to.str$ -- 137
 missing$ -- 0
-newline$ -- 444
-num.names$ -- 140
-pop$ -- 2749
+newline$ -- 438
+num.names$ -- 138
+pop$ -- 3027
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1798
+skip$ -- 1787
 stack$ -- 0
-substring$ -- 20872
-swap$ -- 6893
+substring$ -- 21613
+swap$ -- 6944
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 64
-while$ -- 2519
-width$ -- 142
-write$ -- 2053
-(There were 72 warnings)
+warning$ -- 58
+while$ -- 2649
+width$ -- 140
+write$ -- 2016
+(There was 1 error message)
