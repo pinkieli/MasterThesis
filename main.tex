@@ -59,7 +59,46 @@
 % 分块矩阵的书写宏包
 \usepackage{easybmat}
 \usetikzlibrary{patterns}
+% drawing Butcher rooted tree
 \usepackage{forest}
+\forestset{
+  */.style={
+    delay+={append={[]},}
+  },
+  rooted tree/.style={
+    for tree={
+      grow'=90,
+      parent anchor=center,
+      child anchor=center,
+      s sep=5pt,
+      if level=0{
+        baseline
+      }{},
+      delay={
+        if content={*}{
+          content=,
+          append={[]}
+        }{}
+      }
+    },
+    before typesetting nodes={
+      for tree={
+        circle,
+        fill,
+        minimum width=3pt,
+        inner sep=0pt,
+        child anchor=center,
+      },
+    },
+    before computing xy={
+      for tree={
+        l=8pt,
+      }
+    }
+  }
+}
+%\usepackage{xparse}
+\DeclareDocumentCommand\rootedtree{o}{\Forest{rooted tree [#1]}}
 %============================
 \begin{document}
 

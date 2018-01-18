@@ -464,6 +464,12 @@
   \bibyear{1972}\@, \bibvolume{26}\bibnumber{(117)}\thinspace{}\textnormal{:
   }\bibpages{79\thinspace{}\textnormal{--}\thinspace{}106}\@.
 
+\bibitem{Wright2002b}
+\bibauthor{Wright W~M}\@. \bibtitle{General {{Linear Methods}} with {{Inherent
+  Runge}}-{{Kutta Stability}}}\bibmark{[D]}\@. \bibaddress{New
+  Zealand}\thinspace{}\textnormal{: }\bibschool{John Wiley \& Sons, Inc.}\@,
+  \bibyear{2002}\@.
+
 \bibitem{Hoff1988c}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an Implicit Method
   with Numerical Dissipation for Time Integration Algorithms in Structural

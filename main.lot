@@ -3,12 +3,13 @@
 \addvspace {10.0pt}
 \contentsline {table}{\numberline {2-1}{\ignorespaces BDF、EBDF和MEBDF算法所对应的$A(\alpha )$稳定的$\alpha $角度值}}{19}{table.2.1}
 \contentsline {table}{\numberline {2-2}{\ignorespaces 各种稳定性定义所对应的测试微分方程}}{42}{table.2.2}
+\contentsline {table}{\numberline {2-3}{\ignorespaces 函数$r(t),\gamma (t)$和$\sigma (t)$在直到5阶有根树的对应值}}{52}{table.2.3}
 \addvspace {10.0pt}
-\contentsline {table}{\numberline {3-1}{\ignorespaces Newmark算法家族的著名成员}}{62}{table.3.1}
-\contentsline {table}{\numberline {3-2}{\ignorespaces Newmark算法成员所对应的权重函数$W(t)$}}{64}{table.3.2}
-\contentsline {table}{\numberline {3-3}{\ignorespaces 广义$\alpha $积分算法成员的参数取值}}{75}{table.3.3}
-\contentsline {table}{\numberline {3-4}{\ignorespaces 单步隐式的$\theta _1$算法的算法成员}}{78}{table.3.4}
-\contentsline {table}{\numberline {3-5}{\ignorespaces 高阶导数的单步显式算法参数取值}}{82}{table.3.5}
-\contentsline {table}{\numberline {3-6}{\ignorespaces 高阶导数的单步显式算法子成员的数值性能比较}}{82}{table.3.6}
+\contentsline {table}{\numberline {3-1}{\ignorespaces Newmark算法家族的著名成员}}{64}{table.3.1}
+\contentsline {table}{\numberline {3-2}{\ignorespaces Newmark算法成员所对应的权重函数$W(t)$}}{66}{table.3.2}
+\contentsline {table}{\numberline {3-3}{\ignorespaces 广义$\alpha $积分算法成员的参数取值}}{77}{table.3.3}
+\contentsline {table}{\numberline {3-4}{\ignorespaces 单步隐式的$\theta _1$算法的算法成员}}{80}{table.3.4}
+\contentsline {table}{\numberline {3-5}{\ignorespaces 高阶导数的单步显式算法参数取值}}{84}{table.3.5}
+\contentsline {table}{\numberline {3-6}{\ignorespaces 高阶导数的单步显式算法子成员的数值性能比较}}{84}{table.3.6}
 \addvspace {10.0pt}
 \addvspace {10.0pt}

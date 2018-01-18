@@ -2044,167 +2044,125 @@ y^{[n]}=z(t_n,h)+\mathcal{O}(h^{p+1})
 所谓有根树，就是一个单根的无圈联通图。令$T$表示包含空集的所有有根树的集合。对于已知的有根树$t_1,t_2\in T$，可以通过将它们的根与新根相连接从而得到一个新的有根树$t=[t_1,t_2]$。
 
 例如
-\begin{center}
-$t_1$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[
-  [[]]
-  [ ]
-  [ ]
-]
-\end{forest}\qquad
-$t_2$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[[][]]
-\end{forest}
-\end{center}
+\begin{equation*}
+t_1=\rootedtree [*,*,[*]]\qquad t_2=\rootedtree [*,*]
+\end{equation*}
 则有，
-\begin{center}
-$t=[t_1,t_2]$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[
-    [
-      [[]]
-      [ ]
-      [ ]
-    ]
-    [
-      [ ]
-      [ ]
-    ]
-]
-\end{forest}
-\end{center}
+\begin{equation*}
+t=[t_1,t_2]=\rootedtree [[*,*,[*]],[*,*]]
+\end{equation*}
 
 当然，对于如下的有根树
-\begin{center}
-$t_1$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[]
-\end{forest}\qquad$t_2$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[[][]]
-\end{forest}\qquad$t_3$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[[]]
-\end{forest}
-\end{center}
-则其有根树$t=[t_1,t_1,t_2,t_3]=[t_1^2,t_2,t_3]$可表示为
-\begin{center}
-$t=[t_1,t_1,t_2,t_3]=[t_1^2,t_2,t_3]$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[[][][[][]][[]]]
-\end{forest}
-\end{center}
+\begin{equation*}
+t_1=\rootedtree []\qquad t_2=\rootedtree [*,*]\qquad t_3=\rootedtree [*]
+\end{equation*}
 
-特别地，对于只有一个节点的有根树，即\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[]
-\end{forest}。可定义如下的符号表示
-\begin{center}
-$\tau$=\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 1pt,s sep+=3pt, % distance between children
-    }
-[]
-\end{forest}
-\end{center}
+则其有根树$t=[t_1,t_1,t_2,t_3]=[t_1^2,t_2,t_3]$可表示为
+\begin{equation*}
+t=[t_1,t_1,t_2,t_3]=[t_1^2,t_2,t_3]=\rootedtree [*,*,[*,*],[*]]
+\end{equation*}
+
+特别地，对于只有一个节点的有根树，即$\rootedtree []$。可定义如下的符号表示
+\begin{equation*}
+\tau=\rootedtree []
+\end{equation*}
 
 于是，就有
-\begin{center}
-\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 0.1pt,s sep+=3pt, % distance between children
-    }
-[[]]
-\end{forest}=[$\tau$]\qquad\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 0.1pt,s sep+=3pt, % distance between children
-    }
-[[][]]
-\end{forest}=[$\tau^2$]\qquad\begin{forest}
-  for tree={
-    grow'=90,circle,draw,fill,
-    minimum width=5pt, % size
-    inner sep=0pt,
-    parent anchor=center,
-    child anchor=center,
-    l = 0.1pt,s sep+=3pt, % distance between children
-    }
-[[[]]]
-\end{forest}=[[$\tau$]]
-\end{center}
+\begin{equation*}
+\rootedtree [*]=[\tau]\qquad \rootedtree [*,*]=[\tau^2]\qquad \rootedtree [[*]]=[[\tau]]
+\end{equation*}
+
+定义$r(t)$是作用在有根树$t\in T$上的函数，即$r(t)$等于有根树$t$的节点数。如
+\begin{equation*}
+r\left(\rootedtree [*,*,[*,*]]\right)=6\qquad r\left(\rootedtree []\right)=1\qquad r\left(\rootedtree [*]\right)=2\qquad r(\varnothing)=0
+\end{equation*}
+
+于是，根据上述复合进程可以归纳如下
+\begin{definition}
+一个有根树$t\in T$可以由如下等式递归生成，即
+\begin{equation}
+t=\begin{cases}
+\varnothing & \text{if}\quad r(t)=0\\
+\tau & \text{if}\quad r(t)=1\\
+[t_1^{n_1},t_2^{n_2},\cdots,t_m^{n_m}] &\text{if}\quad r(t)>1,t_i\in T,i=1,2,\cdots,m
+\end{cases}
+\end{equation}
+\end{definition}
+
+另外两个非常重要的作用在有根树上的函数分别为$\gamma(t)$和$\sigma(t)$，其函数$\gamma(t)$和$\sigma(t)$的含义可以参见文献\inlinecite{Butcher2016a,Wright2002b}。而它们的计算公式由下述定义给出
+\begin{definition}
+如果有根树$t=[t_1^{n_1},t_2^{n_2},\cdots,t_m^{n_m}]\in T$，且子树$t_1,t_2,\cdots,t_m$是不相同的有根树，则有
+\begin{align}
+r(t)&=1+n_1r(t_1)+\cdots+n_mr(t_m)\\
+\gamma(t)&=r(t)\gamma(t_1)^{n_1}\cdots\gamma(t_m)^{n_m}\\
+\sigma(t)&=n_1!n_2!\cdots n_m!\sigma(t_1)^{n_1}\cdots\sigma(t_m)^{n_m}
+\end{align}
+而当$t=\varnothing,\tau$时，有
+\begin{align*}
+r(\varnothing)&=\gamma(\varnothing)=\sigma(\varnothing)=0\\
+r(\tau)&=\gamma(\tau)=\sigma(\tau)=1
+\end{align*}
+\end{definition}
+
+有根树的集合即是一个森林，用$F$表示。当一个有根树$t=[t_1,t_2,\cdots,t_m]\in T$被去掉根之后，留下的子树的集合即是一个森林$F$，即
+\begin{equation*}
+F=\{t_1,t_2,\cdots,t_m\}
+\end{equation*}
+
+需要说明的是，除了上述利用子树复合的方式产生新的有根树外,也可以利用Butcher积运算得到新的有根树。
+\begin{definition}[Butcher积\inlinecite{Butcher2016a,Butcher1987a}]
+两个有根树$t,v\in T$的积$t\cdot v\in T$被定义如下
+\begin{equation}
+[\varnothing]\cdot v=[v],\qquad [t_1,t_2,\cdots,t_m]\cdot v=[t_1,t_2,\cdots,t_m,v]
+\end{equation}
+\end{definition}
+
+进一步地，对于给定的$t,v_1,v_2\in T$，其Butcher积满足
+\begin{equation}
+(t\cdot v_1)\cdot v_2=(t\cdot v_2)\cdot v_1
+\end{equation}
+
+如果对一个有根树$t$进行标号，且需满足两个条件
+\begin{itemize}
+\item 每个节点都被标号，且只能标记一次。
+\item 如果(i,j)是被标记的边，则应有$i<j$。
+\end{itemize}
+这样的标号方式次数用$\alpha(t)$表示。于是，就有
+\begin{equation}
+\alpha(t)=\frac{r(t)!}{\gamma(t)\sigma(t)}
+\end{equation}
+同时那些等价的标号只能被记一次。第一个$\alpha(t)\neq1$的有根树就是
+\begin{equation*}
+\rootedtree [*,[*]]
+\end{equation*}
+其$\alpha(t)=3$。
+
+表\ref{Tab:ch2ThreeFunctions}给出了三个函数$r(t),\gamma(t)$和$\sigma(t)$在直到5阶的有根树的对应值。
+\begin{table}[htbp]
+\bicaption[Tab:ch2ThreeFunctions]{}{函数$r(t),\gamma(t)$和$\sigma(t)$在直到5阶有根树的对应值}{Table$\!$}{The values of functions $\alpha(t),\gamma(t),\sigma(t)$ for rooted trees of order up to five.}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{cccccccccccccccccc}
+\toprule[1.5pt]
+有根树$t$& $\rootedtree []$ &$\rootedtree [*]$ & $\rootedtree [[*]]$ & $\rootedtree [*,*]$ & $\rootedtree [[[*]]]$ &$\rootedtree [[*,*]]$ &$\rootedtree [*,[*]] $ &$\rootedtree [*,*,*] $ &$\rootedtree [[[[*]]]] $ &$\rootedtree [[[*,*]]] $ &$\rootedtree [[*,[*]]] $ &$\rootedtree [[*,*,*]] $ &$\rootedtree [*,[[*]]] $ &$\rootedtree [*,[*,*]] $ &$\rootedtree [[*],[*]] $ &$\rootedtree [*,*,[*]] $ &$\rootedtree [*,*,*,*] $\\
+\midrule[1pt]
+$r(t)$ & 1 & 2 & 3 & 3 & 4 & 4 & 4 & 4 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5\\
+$\gamma(t)$ & 1 & 2 & 6 & 3 & 24 & 12 & 8 & 4 & 120 & 60 & 40 & 20 & 30 & 15 & 20 & 10 & 5\\
+$\sigma(t)$ & 1 & 1 & 1 & 2 & 1 & 2 &1 & 6 & 1 & 2 & 1 & 6 & 1 & 2 & 2 & 2 & 24\\
+$\alpha(t)$ & 1 & 1 & 1 & 1 & 1 & 1 & 3 & 1 & 1 & 1 & 3 & 1 & 4 & 4 & 3 & 6 & 1\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
