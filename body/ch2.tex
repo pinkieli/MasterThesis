@@ -1889,16 +1889,325 @@ u_n=\bm{A}u_{n-1}+w_n,\quad ||w_n||\le C_2||u_{n-1}||+\delta,\ n=0,1,2,\cdots
 参见文献\inlinecite{Jackiewicz2009a,Butcher2016a}。
 \end{proof}
 
-
-
-
-
-
-
-
-
-
 \section{精度分析}
+在这一节，我们将建立广义线性法的阶条件理论；于此同时，我们也将推到出结构动力学算法评价中两个重要的指标-数值耗散和数值弥散特性。
+
+对于给定的初始值$y(t_0)$，在使用广义线性法(\ref{eq:ch2GLM})求解之前，需要一个启动机制去计算初始向量$y^{[0]}$。一般情况下，定义启动机制算法的台级值为$\overline{Y}_1,\overline{Y}_2,\cdots,\overline{Y}_{\overline{s}}$,而这些值所对应的导数值分别为$f(\overline{Y}_1),f(\overline{Y}_2),\cdots,f(\overline{Y}_{\overline{s}})$。于是，启动算法可以被表示为
+\begin{equation}
+\begin{aligned}
+\overline{Y}&=hS_{11}f(\overline{Y})+S_{12}y_0\\
+y^{[0]}&=hS_{12}f(\overline{Y})+S_{22}y_0
+\end{aligned}
+\end{equation}
+其中，向量$\overline{Y}$和向量$f(\overline{Y})$分别为
+\begin{equation}
+\overline{Y}=\begin{bmatrix}
+\overline{Y}_1\\
+\overline{Y}_2\\
+\vdots\\
+\overline{Y}_{\overline{s}}
+\end{bmatrix},\qquad f(\overline{Y})=\begin{bmatrix}
+f(\overline{Y}_1)\\
+f(\overline{Y}_2)\\
+\vdots\\
+f(\overline{Y}_{\overline{s}})
+\end{bmatrix}
+\end{equation}
+
+于是，启动机制可以表示为\begin{equation}
+S=\begin{bmatrix}
+\begin{BMAT}[5pt]{c|c}{c|c}
+S_{11} & S_{12}\\
+S_{21} & S_{22}\\
+\end{BMAT}
+\end{bmatrix}
+\end{equation}
+其中，$r$表示需要被计算的输出量的个数，而$\overline{s}$表示需要计算的台级值的个数。 一般的，启动机制也可以选择$r$个不同的广义Runge-Kutta方法，也即是
+\begin{equation}
+\begin{BMAT}[5pt]{c|c}{c|c}
+c & A\\ b_0 & b^{T}
+\end{BMAT}
+\end{equation}
+其中，$b_0$可以取值为0。有必要提及的就是第一个使用广义Runge-Kutta方法作为启动机制的是Gear在1980年推到得到\cite{Gear1980}。
+
+表示$M\circ S$表示启动算法$S$和广义线性法$M$执行一次后的结果；同时从时刻$t_{n-1}$到$t_n$时刻的精确解计算过程用转移算法$E$表示。则广义线性法$M$相对于启动算法$S$是$p$阶精确的，如果有
+\begin{equation}
+M\circ S-S\circ E=\mathcal{O}(h^{p+1})
+\end{equation}
+上述过程可以用图\ref{Fig:OrderOfGLM}表示
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[xscale=1.7,yscale=1.7]
+\draw [thin,->] (0,0) node [below] {$y(t_0)$} -- (0.75,0) node [below] {$E$};
+\draw [thin] (0.75,0) -- (1.5,0) node [below] {$y(t_1)$};
+\draw [thin,->] (1.5,0) -- (1.5,1) node [left] {S};
+\draw [thin,->] (0,0) -- (0,1) node [left] {S};
+\draw [thin] (1.5,1) -- (1.5,2);
+\draw [thin] (0,1) -- (0,2) node [above left] {$y^{[0]}$};
+\draw [thin,->] (0,2) -- (0.75,2) node [below] {$E$};
+\draw [thin] (0.75,2) -- (1.5,2);
+\draw [thin] (0,2) -- (1.5,2.5) node [above] {$y^{[1]}$};
+\draw [thin] (1.5,2) -- (1.5,2.5);
+\node [above] at (0.75,2.3) {$M$};
+\node [right] at (1.5,2.2) {$\mathcal{O}(h^{p+1})$};
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1.5,0) circle [radius = 0.03];
+\draw [thin,fill] (1.5,2) circle [radius = 0.03];
+\draw [thin,fill] (0,2) circle [radius = 0.03];
+\draw [thin,fill] (1.5,2.5) circle [radius = 0.03];
+\end{tikzpicture}
+\bicaption[Fig:OrderOfGLM]{}{广义线性法的阶数定义示意图}{Fig.$\!$}{Order of accuracy}
+\end{figure}
+
+一般情况下，广义线性法是$p$阶的，则说明输出向量的每一个分量都是$p$阶的。也即是
+\begin{equation}
+y^{[n]}=z(t_n,h)+\mathcal{O}(h^{p+1})
+\end{equation}
+其中，$z(t_n,h)$表示微分方程的精确解向量。但上述要求也可以放松，即输出向量$y^{[n]}$中的每一个分量不必都是$p$阶的，如Almost Runge-Kutta方法\cite{Rattenbury2005a}。
+
+在每一步中的局部截断误差的累积，可以导致最后的全局误差(当然，全局误差也可以由其他误差贡献，如初始值的误差等)。重复上述图\ref{Fig:OrderOfGLM}的过程，可以得到如下的全局误差估计示意图\ref{Fig:GlobalOfGLM}。
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[scale=1.3]
+\draw [thin,->] (0,0) node [below] {$y(t_0)$} -- (0.75,0) node [below] {$E$};
+\draw [thin] (0.75,0) -- (1.5,0) node [below] {$y(t_1)$};
+\draw [thin,->] (1.5,0) -- (1.5,1) node [left] {S};
+\draw [thin,->] (0,0) -- (0,1) node [left] {S};
+\draw [thin] (1.5,1) -- (1.5,2);
+\draw [thin] (0,1) -- (0,2) node [above left] {$y^{[0]}$};
+\draw [thin,->] (0,2) -- (0.75,2) node [below] {$E$};
+\draw [thin] (0.75,2) -- (1.5,2);
+\draw [thin] (0,2) -- (1.5,2.2) node [above] {$y^{[1]}$};
+\draw [thin] (1.5,2) -- (1.5,2.2);
+\node [above] at (0.75,2.1) {$M$};
+%\node [right] at (1.5,2.2) {$\mathcal{O}(h^{p+1})$};
+\draw [thin,fill] (0,0) circle [radius = 0.03];
+\draw [thin,fill] (1.5,0) circle [radius = 0.03];
+\draw [thin,fill] (1.5,2) circle [radius = 0.03];
+\draw [thin,fill] (0,2) circle [radius = 0.03];
+\draw [thin,fill] (1.5,2.2) circle [radius = 0.03];
+%===================================================
+\draw [thin,->] (1.5,0) -- (1.5+0.75,0) node [below] {$E$};
+\draw [thin] (2.25,0) -- (3,0) node [below] {$y(t_2)$};
+\draw [thin,->] (3,0) -- (3,1) node [left] {S};
+\draw [thin] (3,1) -- (3,2) -- (3,2.4) node [above] {$y^{[2]}$};
+\draw [thin,->] (1.5,2) -- (2.25,2) node [below] {$E$};
+\draw [thin] (2.25,2) -- (3,2);
+\draw [thin] (1.5,2.2) -- (3,2.4);
+\draw [thin,fill] (3,2.4) circle [radius = 0.03];
+\draw [thin,fill] (3,2) circle [radius = 0.03];
+\draw [thin,fill] (3,0) circle [radius = 0.03];
+\node [above] at (2.25,2.3) {$M$};
+%===================================================
+\draw [thin,dashed] (1.5+1.5,0) -- (1.5+3,0) node [below] {$y(t_{N-2})$};
+\draw [thin,->] (1.5+3,0) -- (1.5+3,1) node [left] {S};
+\draw [thin] (1.5+3,1) -- (1.5+3,2) -- (1.5+3,2.6) node [above] {$y^{[N-2]}$};
+%\draw [thin,->] (1.5+1.5,2) -- (1.5+2.25,2) node [below] {$E$};
+\draw [thin,dashed] (1.5+1.5,2) -- (1.5+3,2);
+\draw [thin,dashed] (1.5+1.5,2.4) -- (1.5+3,2.6);
+\draw [thin,fill] (1.5+3,2.6) circle [radius = 0.03];
+\draw [thin,fill] (1.5+3,2) circle [radius = 0.03];
+\draw [thin,fill] (1.5+3,0) circle [radius = 0.03];
+\node [above] at (1.5+2.25,2.5) {$M$};
+%===================================================
+\draw [thin,->] (3+1.5,0) -- (3+2.25,0) node [below] {$E$};
+\draw [thin] (3+2.25,0) -- (3+3,0) node [below] {$y(t_{N-1})$};
+\draw [thin,->] (3+3,0) -- (3+3,1) node [left] {S};
+\draw [thin] (3+3,1) -- (3+3,2) -- (3+3,2.8) node [above] {$y^{[N-1]}$};
+\draw [thin,->] (3+1.5,2) -- (3+2.25,2) node [below] {$E$};
+\draw [thin] (3+2.25,2) -- (3+3,2);
+\draw [thin] (3+1.5,2.6) -- (3+3,2.8);
+\draw [thin,fill] (3+3,2.8) circle [radius = 0.03];
+\draw [thin,fill] (3+3,2) circle [radius = 0.03];
+\draw [thin,fill] (3+3,0) circle [radius = 0.03];
+\node [above] at (3+2.25,2.7) {$M$};
+%===================================================
+\draw [thin,->] (4.5+1.5,0) -- (4.5+2.25,0) node [below] {$E$};
+\draw [thin] (4.5+2.25,0) -- (4.5+3,0) node [below] {$y(t_{N})$};
+\draw [thin,->] (4.5+3,0) -- (4.5+3,1) node [left] {S};
+\draw [thin] (4.5+3,1) -- (4.5+3,2) -- (4.5+3,3) node [above] {$y^{[N]}$};
+\draw [thin,->] (4.5+1.5,2) -- (4.5+2.25,2) node [below] {$E$};
+\draw [thin] (4.5+2.25,2) -- (4.5+3,2);
+\draw [thin] (4.5+1.5,2.8) -- (4.5+3,3);
+\draw [thin,fill] (4.5+3,3) circle [radius = 0.03];
+\draw [thin,fill] (4.5+3,2) circle [radius = 0.03];
+\draw [thin,fill] (4.5+3,0) circle [radius = 0.03];
+\node [above] at (4.5+2.25,2.9) {$M$};
+\end{tikzpicture}
+\bicaption[Fig:GlobalOfGLM]{}{广义线性法的全局误差估计示意图}{Fig.$\!$}{Global error estimate}
+\end{figure}
+
+当完成一步计算时，常常需要一个额外的算法$F$将数值$y^{[n]}$映射为微分方程的数值解$y(t_n)$。但该算法机制一般情况下是不需要的。因为在$y^{[n]}$中，常包含了对应于$y(t_n)$的数值解分量，如线性多步法和Runge-Kutta法。在这种情况时，我们仅仅需要将其对应的量取出作为微分方程的数值解即可。
+
+为了得到广义线性法的阶条件，不可避免的需要计算其相应量的Taylor级数展开表达式。随着阶数的增加，其展开式越复杂且计算量越大。因此，为了更好的得到其一般情况下的阶条件，需要借助额外的理论来获得其阶条件，即有根树和B序列。相关理论由Buthcer在1972年首次提出\cite{Butcher1972}。
+
+所谓有根树，就是一个单根的无圈联通图。令$T$表示包含空集的所有有根树的集合。对于已知的有根树$t_1,t_2\in T$，可以通过将它们的根与新根相连接从而得到一个新的有根树$t=[t_1,t_2]$。
+
+例如
+\begin{center}
+$t_1$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[
+  [[]]
+  [ ]
+  [ ]
+]
+\end{forest}\qquad
+$t_2$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[[][]]
+\end{forest}
+\end{center}
+则有，
+\begin{center}
+$t=[t_1,t_2]$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[
+    [
+      [[]]
+      [ ]
+      [ ]
+    ]
+    [
+      [ ]
+      [ ]
+    ]
+]
+\end{forest}
+\end{center}
+
+当然，对于如下的有根树
+\begin{center}
+$t_1$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[]
+\end{forest}\qquad$t_2$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[[][]]
+\end{forest}\qquad$t_3$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[[]]
+\end{forest}
+\end{center}
+则其有根树$t=[t_1,t_1,t_2,t_3]=[t_1^2,t_2,t_3]$可表示为
+\begin{center}
+$t=[t_1,t_1,t_2,t_3]=[t_1^2,t_2,t_3]$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[[][][[][]][[]]]
+\end{forest}
+\end{center}
+
+特别地，对于只有一个节点的有根树，即\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[]
+\end{forest}。可定义如下的符号表示
+\begin{center}
+$\tau$=\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 1pt,s sep+=3pt, % distance between children
+    }
+[]
+\end{forest}
+\end{center}
+
+于是，就有
+\begin{center}
+\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 0.1pt,s sep+=3pt, % distance between children
+    }
+[[]]
+\end{forest}=[$\tau$]\qquad\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 0.1pt,s sep+=3pt, % distance between children
+    }
+[[][]]
+\end{forest}=[$\tau^2$]\qquad\begin{forest}
+  for tree={
+    grow'=90,circle,draw,fill,
+    minimum width=5pt, % size
+    inner sep=0pt,
+    parent anchor=center,
+    child anchor=center,
+    l = 0.1pt,s sep+=3pt, % distance between children
+    }
+[[[]]]
+\end{forest}=[[$\tau$]]
+\end{center}
+
+
+
 
 \subsection{数值耗散}
 

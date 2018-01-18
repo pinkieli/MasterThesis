@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2017.6.12)  21 DEC 2017 10:05
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.1.4)  18 JAN 2018 15:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3331,11 +3331,11 @@ Missing character: There is no 年 in font nullfont!
 Missing character: There is no 提 in font nullfont!
 Missing character: There is no 出 in font nullfont!
 Missing character: There is no [ in font nullfont!
-\citation{Butcher1966}
+\citation{Butcher1966b}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .^^J
-l.93 ...er教授在1966年提出\cite{Butcher1966}
+l.93 ...r教授在1966年提出\cite{Butcher1966b}
                                                   。下面提及的广义�...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3344,7 +3344,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Butcher1966' on page  undefined on input line 93.
+LaTeX Warning: Citation `Butcher1966b' on page  undefined on input line 93.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no 。 in font nullfont!
@@ -3394,11 +3394,11 @@ Missing character: There is no 入 in font nullfont!
 Missing character: There is no 而 in font nullfont!
 Missing character: There is no 来 in font nullfont!
 Missing character: There is no [ in font nullfont!
-\citation{Burrage1980}
+\citation{Burrage1980b}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .^^J
-l.93 ...er在1980年引入而来\cite{Burrage1980}
+l.93 ...r在1980年引入而来\cite{Burrage1980b}
                                                   。
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3407,7 +3407,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Burrage1980' on page  undefined on input line 93.
+LaTeX Warning: Citation `Burrage1980b' on page  undefined on input line 93.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no 。 in font nullfont!
@@ -4922,11 +4922,11 @@ Missing character: There is no 的 in font nullfont!
 Missing character: There is no 形 in font nullfont!
 Missing character: There is no 式 in font nullfont!
 Missing character: There is no [ in font nullfont!
-\citation{Burrage1980}
+\citation{Burrage1980b}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .^^J
-l.189 ...��义线性法的形式\cite{Burrage1980}
+l.189 ...�义线性法的形式\cite{Burrage1980b}
                                                   ，即$r=2k,s=1$
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -4935,7 +4935,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Burrage1980' on page  undefined on input line 189.
+LaTeX Warning: Citation `Burrage1980b' on page  undefined on input line 189.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no ， in font nullfont!
@@ -5940,11 +5940,11 @@ Missing character: There is no 法 in font nullfont!
 Missing character: There is no 形 in font nullfont!
 Missing character: There is no 式 in font nullfont!
 Missing character: There is no [ in font nullfont!
-\citation{Butcher2006c}
+\citation{Butcher2006f}
 ! Undefined control sequence.
 <write> ...: Citation `\@citeb ' on page \thepage 
                                                   \space undefined\on@line .^^J
-l.210 ...�广义线性法形式\cite{Butcher2006c}
+l.210 ...�广义线性法形式\cite{Butcher2006f}
                                                   。文\inlinecite{Butcher2...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -5953,14 +5953,14 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-LaTeX Warning: Citation `Butcher2006c' on page  undefined on input line 210.
+LaTeX Warning: Citation `Butcher2006f' on page  undefined on input line 210.
 
 Missing character: There is no ] in font nullfont!
 Missing character: There is no 。 in font nullfont!
 Missing character: There is no 文 in font nullfont!
 ! Undefined control sequence.
-l.210 ...��式\cite{Butcher2006c}。文\inlinecite
-                                                  {Butcher2006c}中定义
+l.210 ...��式\cite{Butcher2006f}。文\inlinecite
+                                                  {Butcher2006f}中定义
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -5978,7 +5978,7 @@ Missing character: There is no 2 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 0 in font nullfont!
 Missing character: There is no 6 in font nullfont!
-Missing character: There is no c in font nullfont!
+Missing character: There is no f in font nullfont!
 Missing character: There is no 中 in font nullfont!
 Missing character: There is no 定 in font nullfont!
 Missing character: There is no 义 in font nullfont!
@@ -6015,11 +6015,11 @@ Missing character: There is no ( in font nullfont!
 <write> ...ference `eq:ch2skeel' on page \thepage 
                                                   \space undefined\on@line .^^J
 l.214 其实，公式(\ref{eq:ch2skeel}
-                                       )在文献\inlinecite{Skeel1979}就�...
+                                       )在文献\inlinecite{Skeel1979a}就�...
 (That makes 100 errors; please try again.) 
 Here is how much of TeX's memory you used:
  68 strings out of 493005
- 1121 string characters out of 6137956
+ 1123 string characters out of 6137957
  71634 words of memory out of 5000000
  4129 multiletter control sequences out of 15000+600000
  3959 words of font info for 17 fonts, out of 8000000 for 9000

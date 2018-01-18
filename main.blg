@@ -15,37 +15,37 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: Reference_New.bib
 Warning--string name "oct" is undefined
---line 709 of file Reference_New.bib
+--line 711 of file Reference_New.bib
 Warning--string name "dec" is undefined
---line 1369 of file Reference_New.bib
+--line 1372 of file Reference_New.bib
 Warning--string name "jul" is undefined
---line 2069 of file Reference_New.bib
+--line 2080 of file Reference_New.bib
 Warning--string name "apr" is undefined
---line 2224 of file Reference_New.bib
+--line 2235 of file Reference_New.bib
 Warning--string name "dec" is undefined
---line 10281 of file Reference_New.bib
+--line 10292 of file Reference_New.bib
 Warning--string name "sep" is undefined
---line 10296 of file Reference_New.bib
+--line 10307 of file Reference_New.bib
 Warning--string name "mar" is undefined
---line 10421 of file Reference_New.bib
-Repeated entry---line 11969 of file Reference_New.bib
+--line 10432 of file Reference_New.bib
+Repeated entry---line 11980 of file Reference_New.bib
  : @article{ZIENKIEWICZ1991c
  :                          ,
 I'm skipping whatever remains of this entry
 Warning--string name "oct" is undefined
---line 13377 of file Reference_New.bib
+--line 13388 of file Reference_New.bib
 Warning--string name "oct" is undefined
---line 18444 of file Reference_New.bib
+--line 18455 of file Reference_New.bib
 Warning--string name "oct" is undefined
---line 18866 of file Reference_New.bib
+--line 18877 of file Reference_New.bib
 Warning--string name "apr" is undefined
---line 19044 of file Reference_New.bib
+--line 19055 of file Reference_New.bib
 Warning--string name "jun" is undefined
---line 19071 of file Reference_New.bib
+--line 19082 of file Reference_New.bib
 Warning--string name "jan" is undefined
---line 21490 of file Reference_New.bib
+--line 21473 of file Reference_New.bib
 Warning--string name "jun" is undefined
---line 29419 of file Reference_New.bib
+--line 29393 of file Reference_New.bib
 Warning--Require address: Hughes2000c
 Warning--Require address: Lunk2004a
 Warning--Require journal: Lunk2005a
@@ -104,45 +104,45 @@ Warning--Require citedate: Zhang2017a
 Warning--Require citedate: Wen2017f
 Warning--Require citedate: Rezaiee-Pajand2015a
 Warning--Require citedate: Noh2013c
-You've used 137 entries,
+You've used 139 entries,
             3103 wiz_defined-function locations,
-            1586 strings with 28225 characters,
-and the built_in function-call counts, 185002 in all, are:
-= -- 19212
-> -- 385
-< -- 901
-+ -- 14070
-- -- 1252
-* -- 6645
-:= -- 18999
+            1598 strings with 28423 characters,
+and the built_in function-call counts, 186866 in all, are:
+= -- 19377
+> -- 389
+< -- 911
++ -- 14160
+- -- 1266
+* -- 6739
+:= -- 19147
 add.period$ -- 0
-call.type$ -- 137
+call.type$ -- 139
 change.case$ -- 0
 chr.to.int$ -- 27
-cite$ -- 195
-duplicate$ -- 26428
-empty$ -- 8541
-format.name$ -- 956
-if$ -- 48306
+cite$ -- 197
+duplicate$ -- 26704
+empty$ -- 8664
+format.name$ -- 964
+if$ -- 48768
 int.to.chr$ -- 0
-int.to.str$ -- 137
+int.to.str$ -- 139
 missing$ -- 0
-newline$ -- 438
-num.names$ -- 138
-pop$ -- 3027
+newline$ -- 444
+num.names$ -- 140
+pop$ -- 3073
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1787
+skip$ -- 1809
 stack$ -- 0
-substring$ -- 21613
-swap$ -- 6944
+substring$ -- 21821
+swap$ -- 7056
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 58
-while$ -- 2649
-width$ -- 140
-write$ -- 2016
+while$ -- 2685
+width$ -- 142
+write$ -- 2046
 (There was 1 error message)

@@ -451,6 +451,19 @@
   \thinspace{}\textnormal{--}\thinspace{} 175}\@.
   \newline\url{http://dx.doi.org/10/gcp3tv}\@.
 
+\bibitem{Gear1980}
+\bibauthor{Gear C~W}\@. \bibtitle{Runge-{{Kutta Starters For Multistep
+  Methods}}}\bibmark{[J]}\@. \bibjournal{Acm Transactions on Mathematical
+  Software}\@, \bibyear{1980}\@,
+  \bibvolume{6}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{263\thinspace{}\textnormal{--}\thinspace{}279}\@.
+
+\bibitem{Butcher1972}
+\bibauthor{Butcher J~C}\@. \bibtitle{An Algebraic Theory of Integration
+  Methods}\bibmark{[J]}\@. \bibjournal{Mathematics of Computation}\@,
+  \bibyear{1972}\@, \bibvolume{26}\bibnumber{(117)}\thinspace{}\textnormal{:
+  }\bibpages{79\thinspace{}\textnormal{--}\thinspace{}106}\@.
+
 \bibitem{Hoff1988c}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an Implicit Method
   with Numerical Dissipation for Time Integration Algorithms in Structural
