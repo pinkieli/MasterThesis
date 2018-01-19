@@ -2153,15 +2153,65 @@ $\alpha(t)$ & 1 & 1 & 1 & 1 & 1 & 1 & 3 & 1 & 1 & 1 & 3 & 1 & 4 & 4 & 3 & 6 & 1\
 \end{tabular}
 \end{table}
 
+为了通过比较广义线性法求得的数值解和理论解的Taylor级数去计算广义线性法的阶数。同时，Taylor级数展开可以与有根树紧密联系在一起。首先，我们将介绍初等微分(Elementary Differential)的概念。Butcher在1963年首次提出初等微分将$f(y(x))$的导数与有根树联系起来\cite{Butcher1963}，其具体定义如下。
+\begin{definition}[初等微分\inlinecite{Butcher2016a,Butcher1963}]
+对于任意的有根树$t\in T$,其作用在函数$f$上的初等微分$F(t)$定义如下
+\begin{equation}
+F(t)(y(x))=\begin{cases}
+y(x) & \text{若}\quad t=\varnothing,\\
+f(y(x)) & \text{若}\quad t=\tau,\\
+f^{(m)}(F(t_1),F(t_2),\cdots,F(t_m))(y(x)) & \text{若}\quad t=[t_1,t_2,\cdots,t_m],
+\end{cases}
+\end{equation}
+\end{definition}
 
+下面的表\ref{Tab:ch2elementaryDifferential}展现了直到4阶的有根树与初等微分的对应关系，由此不难给出对于任意的有根树所对应的初等微分等式。需要说明的是在表\ref{Tab:ch2elementaryDifferential}中的$f$代表$f(y(x))$，而$f'$代表$f'(y(x))$以此类推。
+\begin{table}[htbp]
+\bicaption[Tab:ch2elementaryDifferential]{}{初等微分$F(t)$与直到4阶的有根树的对应关系}{Table$\!$}{Connection between trees and elementary differentials}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{ccccccccc}
+\toprule[1.5pt]
+有根树$t$& $\rootedtree []$ &$\rootedtree [*]$ & $\rootedtree [[*]]$ & $\rootedtree [*,*]$ & $\rootedtree [[[*]]]$ &$\rootedtree [[*,*]]$ &$\rootedtree [*,[*]] $ &$\rootedtree [*,*,*] $\\
+\midrule[1pt]
+$F(t)$ & $ f$ & $f'f$ & $f'f'f$ & $f^{''}(f,f)$ & $f'f'f'f$ & $f'f^{''}(f,f)$ & $f^{''}(f,f'f)$ & $f^{'''}(f,f,f)$\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
 
+显然，对于特定阶数的初等微分的数量是等于该阶数下的有根树的数量。于是，对于特定制定的阶数的$y(x)$的导数可以被表达为该阶数下所有有根树的初等微分的线性组合。即
+\begin{theorem}
+若函数$y(x)$是$n$次可微的，则有
+\begin{equation}
+y^{(n)}(x)=\sum_{r(t)=n}\alpha(t)F(t)(y(x))
+\end{equation}
+\end{theorem}
+关于该定理的证明和例子可以参考文献\inlinecite{Butcher2016a}。于是，我们就可以将Taylor级数展开表达式用有根树的理论表示出来，即得所谓的B序列(B-series)\cite{Butcher2016a,Hairer1974,Burrage1980}。
+\begin{definition}[B序列]
+若$a(t):T\to\mathbb{R}$是一个实值函数，则定义如下序列
+\begin{equation}
+B(a(t),y(x))=a(\varnothing)y(x)+\sum_{t\in T}\frac{a(t)}{\sigma(t)}h^{r(t)}F(t)(y(x))
+\end{equation}为B序列。
+\end{definition}
 
-
-
-
-
-
-
+下面给出一些针对B序列计算的基本规则。
+\begin{itemize}
+\item 存在一个初等权重函数$\bm{1}(t)$，也即是恒等映射，使得如下等式成立。
+\begin{equation}
+B(\bm{1}(t),y_{n-1})=y_{n-1}
+\end{equation}
+\item 对于任意的矩阵$H\in\mathbb{R}^{m\times n}$和初等权重函数$a(t)\in\mathbb{R}$，则有
+\begin{equation}
+HB(a(t),y_{n-1})=B(Ha(t),y_{n-1})
+\end{equation}
+\item 对于分别带初等权重函数$a(t)$和$b(t)$的两个B序列的和是带初等权重函数$(a+b)(t)$的B序列。即
+\begin{equation}
+B(a(t),y_{n-1})+B(b(t),y_{n-1})=B((a+b)(t),y_{n-1})
+\end{equation}
+\item 对于给定的初等权重函数$a(t)$，存在一个逆元$a^{-1}(t)$使得$aa^{-1}(t)=\bm{1}(t)$，也即是
+\begin{equation}
+y_n=B(a(t),y_{n-1})\Longleftrightarrow y_{n-1}=B(a^{-1}(t),y_n)
+\end{equation}
+\end{itemize}
 
 
 

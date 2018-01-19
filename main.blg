@@ -44,6 +44,8 @@ Warning--string name "jun" is undefined
 --line 19082 of file Reference_New.bib
 Warning--string name "jan" is undefined
 --line 21473 of file Reference_New.bib
+Warning--string name "dec" is undefined
+--line 29375 of file Reference_New.bib
 Warning--string name "jun" is undefined
 --line 29393 of file Reference_New.bib
 Warning--Require address: Hughes2000c
@@ -74,6 +76,8 @@ Warning--Require citedate: Dahlquist1978a
 Warning--Require address: Wood1990e
 Warning--Require citedate: Butcher1975a
 Warning--Require citedate: Califano2017a
+Warning--Require citedate: Butcher1963
+Warning--Require citedate: Burrage1980
 Warning--Require citedate: Hoff1988b
 Warning--Require citedate: Dokainish1989a
 Warning--Require citedate: Subbaraj1989b
@@ -104,45 +108,45 @@ Warning--Require citedate: Zhang2017a
 Warning--Require citedate: Wen2017f
 Warning--Require citedate: Rezaiee-Pajand2015a
 Warning--Require citedate: Noh2013c
-You've used 140 entries,
+You've used 143 entries,
             3103 wiz_defined-function locations,
-            1603 strings with 28552 characters,
-and the built_in function-call counts, 187429 in all, are:
-= -- 19425
-> -- 391
-< -- 916
-+ -- 14194
-- -- 1270
-* -- 6774
-:= -- 19208
+            1620 strings with 28955 characters,
+and the built_in function-call counts, 191176 in all, are:
+= -- 19793
+> -- 399
+< -- 935
++ -- 14448
+- -- 1299
+* -- 6933
+:= -- 19567
 add.period$ -- 0
-call.type$ -- 140
+call.type$ -- 143
 change.case$ -- 0
 chr.to.int$ -- 27
-cite$ -- 198
-duplicate$ -- 26767
-empty$ -- 8694
-format.name$ -- 968
-if$ -- 48914
+cite$ -- 203
+duplicate$ -- 27305
+empty$ -- 8887
+format.name$ -- 988
+if$ -- 49869
 int.to.chr$ -- 0
-int.to.str$ -- 140
+int.to.str$ -- 143
 missing$ -- 0
-newline$ -- 447
-num.names$ -- 141
-pop$ -- 3079
+newline$ -- 456
+num.names$ -- 144
+pop$ -- 3158
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1822
+skip$ -- 1853
 stack$ -- 0
-substring$ -- 21871
-swap$ -- 7091
+substring$ -- 22293
+swap$ -- 7261
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 58
-while$ -- 2692
-width$ -- 143
-write$ -- 2058
+warning$ -- 60
+while$ -- 2758
+width$ -- 146
+write$ -- 2107
 (There was 1 error message)

@@ -470,6 +470,28 @@
   Zealand}\thinspace{}\textnormal{: }\bibschool{John Wiley \& Sons, Inc.}\@,
   \bibyear{2002}\@.
 
+\bibitem{Butcher1963}
+\bibauthor{Butcher J~C}\@. \bibtitle{Coefficients for the Study of
+  {{Runge}}-{{Kutta}} Integration Processes}\bibmark{[J/OL]}\@.
+  \bibjournal{Journal of the Australian Mathematical Society}\@,
+  \bibyear{1963}\@, \bibvolume{3}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{185\thinspace{}\textnormal{--}\thinspace{}201}\@.
+  \newline\url{http://dx.doi.org/10/bvtffk}\@.
+
+\bibitem{Hairer1974}
+\bibauthor{Hairer E\@, Wanner G}\@. \bibtitle{On the {{Butcher}} Group and
+  General Multi-Value Methods}\bibmark{[J]}\@. \bibjournal{Computing}\@,
+  \bibyear{1974}\@, \bibvolume{13}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}15}\@.
+
+\bibitem{Burrage1980}
+\bibauthor{Burrage K\@, Moss P}\@. \bibtitle{Simplifying Assumptions for the
+  Order of Partitioned Multivalue Methods}\bibmark{[J/OL]}\@. \bibjournal{BIT
+  Numerical Mathematics}\@, \bibyear{1980}\@,
+  \bibvolume{20}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{452\thinspace{}\textnormal{--}\thinspace{}465}\@.
+  \newline\url{http://dx.doi.org/10/fdwpx2}\@.
+
 \bibitem{Hoff1988c}
 \bibauthor{Hoff C\@, Pahl P~J}\@. \bibtitle{Development of an Implicit Method
   with Numerical Dissipation for Time Integration Algorithms in Structural
