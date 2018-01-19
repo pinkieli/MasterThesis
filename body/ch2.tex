@@ -134,7 +134,7 @@ y_i^{[n]}=\sum_{j=1}^{s}hb_{ij}f(Y_j^{[n]})+\sum_{j=1}^{r}v_{ij}y_j^{[n-1]},\qqu
 Y^{[n]}&=h(A\otimes I)F(Y^{[n]})+(U\otimes I)y^{[n-1]}\\
 y^{[n]}&=h(B\otimes I)F(Y^{[n]})+(V\otimes I)y^{[n-1]}
 \end{align}
-其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下，若$A\in\mathbb{R}^{m_1\times n_1}$和$B\in\bm{R}^{m_2\times n_2}$，则有
+其中，$I$表示维度相容的单位矩阵。而Kronecker积定义如下，若$A\in\mathbb{R}^{m_1\times n_1}$和$B\in\mathbb{R}^{m_2\times n_2}$，则有
 \begin{equation}
 A\otimes B=\begin{bmatrix}
 a_{11} B&&a_{12}B&&\cdots && a_{1,n_1} B\\
@@ -2213,7 +2213,213 @@ y_n=B(a(t),y_{n-1})\Longleftrightarrow y_{n-1}=B(a^{-1}(t),y_n)
 \end{equation}
 \end{itemize}
 
+Picard积分的初等权重函数$E(t)$表明了$B(E(t),y_{n-1})$是在$x_n$时刻的精确解，其中，
+\begin{equation}
+E(t)=\frac{1}{\gamma(t)},\quad t\in T
+\end{equation}
+而对于台级值的精确解的初等权重函数$C(t)$满足
+\begin{equation}
+C(t)=\frac{1}{\gamma(t)}c^{r(t)}
+\end{equation}
+因为对于充分可微的函数$y(x)$，有
+\begin{equation}
+\begin{aligned}
+B(C(t),y(x))&=\sum_{t\in T}\frac{C(t)}{\sigma(t)}h^{r(t)}F(t)(y(x))\\
+&=\sum_{i=0}^{\infty}\frac{c^ih^i}{i!}\sum_{r(t)=i}\frac{i!}{\sigma(t)\gamma(t)}F(t)(y(x))\\
+&=\sum_{i=0}^{\infty}\frac{c^ih^i}{i!}y^{(i)}(x)\\
+&=y(x+\bm{c}h)
+\end{aligned}
+\end{equation}
+于是，可以得出$E(t)$只是$C(t)$的特例。进而可以得出精确解$y(x+h)$是一个B序列。
 
+接下来，我们定义第$i$阶导数算子，$D_i(t)$。对于任意的有根树$t\in T$，定义
+\begin{equation}
+D_i(t)=\begin{cases}
+\displaystyle\frac{r(t)!}{\gamma(t)} & \text{若}\quad r(t)=i\\
+0& \text{若}\quad r(t)\neq i
+\end{cases}
+\end{equation}
+
+计算初等权重函数为$D_i(t)$的B序列，则有
+\begin{equation}
+\begin{aligned}
+B(D_i(t),y(x))&=\sum_{r(t)=i}\frac{D_i(t)}{\sigma(t)}h^iF(t)(y(x))\\
+&=\sum_{r(t)=i}\frac{r(t)!}{\sigma(t)\gamma(t)}h^iF(t)(y(x))\\
+&=\sum_{r(t)=i}\alpha(t)h^iF(t)(y(x))\\
+&=h^iy^{(i)}(x)
+\end{aligned}\label{eq:ch2ElemenWeightFunForDi}
+\end{equation}
+于是，可以看出被$h^i$放缩后的导数$h^iy^{(i)}(x)$也是一个以$D_i(t)$为初等权重函数的B序列。
+
+令广义线性法(\ref{eq:ch2GLM})的台级值$Y^{[n]}$的初等权重微分函数为$\xi(t)$。亦即让$Y^{[n]}$可以由一个以$\xi(t)$为初等权重函数的B序列表出，即
+\begin{equation}
+Y^{[n]}=B(\xi(t),y_{n-1})\label{eq:ch2ElemeWightFunForStage}
+\end{equation}
+同时，假定启动算法$S$也是一个以$S(t)$为初等权重函数的B序列。即
+\begin{equation}
+y^{[0]}=B(S(t),y(x_0))
+\end{equation}
+
+为了计算广义线性阶条件的需要，下面需要定义两个B序列的复合。即
+\begin{definition}
+令$a(t):T\to \mathbb{R}$和$b(t):T\to \mathbb{R}$是满足$a(\varnothing)=1$的两个初等权重函数，则两个B序列的复合仍然是一个B序列，且有
+\begin{equation}
+B(b(t),B(a(t),y(x)))=B(ab(t),y(x))
+\end{equation}
+而$ab(t):T\to\mathbb{R}$被定义如下
+\begin{equation}
+ab(t)=b(\varnothing)a(t)+b(t)+\sum_{u\prec t}b(u)a(t\backslash u)\quad \forall t\in T
+\end{equation}
+\end{definition}
+其中，$u\prec t$表示任意的与有根树$t$具有相同根的真子有根树$u$。而$t\backslash u$表示在有根树$t$中删除子树$u$之后剩下的子树。对于上述$ab(t)$的计算例子可以参见文献\inlinecite{Butcher1987a}。表\ref{Tab:ch2abt}给出了直到4阶有根树的$ab(t)$积运算结果。
+\begin{table}[htbp]
+\bicaption[Tab:ch2abt]{}{直到4阶有根树的初等权重函数$ab(t)$积}{Table$\!$}{Composition of elementary weight functions}
+\vspace{0.5em}\centering\wuhao
+\begin{tabular}{ccl}
+\toprule[1.5pt]
+有根树$t$& 注记 & $ab(t)$\\
+\midrule[1pt]
+$\varnothing$ & $t_0$ & $b(t_0)$\\
+$\rootedtree [] $ & $t_1$ & $a(t_1)b(t_0)+b(t_1) $\\
+$\rootedtree [*] $ & $t_2$ & $a(t_2)b(t_0)+a(t_1)b(t_1)+b(t_2) $\\
+$\rootedtree [[*]] $ & $t_3$ & $a(t_3)b(t_0)+a(t_2)b(t_1)+a(t_1)b(t_2)+b(t_3) $\\
+$\rootedtree [*,*] $ & $t_4$ & $a(t_4)b(t_0)+a(t_1)^2b(t_1)+2a(t_1)b(t_2)+b(t_4) $\\
+$\rootedtree [[[*]]] $ & $t_5$ & $a(t_5)b(t_0)+a(t_3)b(t_1)+a(t_2)b(t_2)+a(t_1)b(t_3)+b(t_5) $\\
+$\rootedtree [[*,*]] $ & $t_6$ & $a(t_6)b(t_0)+a(t_4)b(t_1)+a(t_1)^2b(t_2)+2a(t_1)b(t_3)+b(t_6) $\\
+$\rootedtree [*,[*]] $ & $t_7$ & $a(t_7)b(t_0)+a(t_4)a(t_2)b(t_1)+(a(t_1)^2+a(t_2))b(t_2)+a(t_1)(b(t_3)+b(t_4))+b(t_7) $\\
+$\rootedtree [*,*,*] $ & $t_8$ & $a(t_8)b(t_0)+a(t_1)^3b(t_1)+3a(t_1)^2b(t_2)+3a(t_1)b(t_4)+b(t_8) $\\
+\bottomrule[1.5pt]
+\end{tabular}
+\end{table}
+
+显而易见的是，随着阶数的增加，其复合初等权重函数$ab(t)$的计算也越来越复杂。定义如下的两个集合
+\begin{equation}
+G=\{a(t)|a(t):T\to\mathbb{R},a(t)\text{是一个线性泛函。} \}
+\end{equation}
+而$G$的一个子集$G_1$被定义如下
+\begin{equation}
+G_1=\{a(t)|a(t)\in G, a(\varnothing) =1 \}
+\end{equation}
+于是，两个B序列的复合就是使得$G_1\times G\to G$。对于给定的集合$G$，可以定义对合集(Dual set)$\hat{G}$如下
+\begin{equation}
+\hat{G}=\{\hat{t}:G\to\mathbb{R}|\hat{t}(\zeta)=\zeta(t),\text{对于所有的}\zeta\in G \}
+\end{equation}
+同时，对合有根树$\hat{t}$的集合由$\hat{T}$表示。而两个对合有根树的积$\hat{T}\times\hat{T}\to\hat{T}$也可以定义如下
+\begin{equation}
+\hat{t}\cdot\hat{u}=\hat{tu}
+\end{equation}
+
+上述定义的两个B序列的复合计算公式，在求解被$h$放缩后的台级导数值的B序列时，非常有用。首先，有公式(\ref{eq:ch2ElemenWeightFunForDi}-\ref{eq:ch2ElemeWightFunForStage})可以得到
+\begin{equation}
+\begin{aligned}
+hf(Y^{[n]})&=B(D_1(t),Y^{[n]})\\
+&=B(D_1(t),B(\xi(t),y_{n-1}))\\
+&=B(\xi D_1(t),y_{n-1})
+\end{aligned}
+\end{equation}
+针对一般的初等权重函数$a(t)$和$D_i(t)$的复合$aD_i(t)$，可以由下式直接计算
+\begin{equation}
+aD_i(t)=\begin{cases}
+0 & \text{若}\quad r(t)<i\\
+\displaystyle\frac{r(t)!}{\gamma(t)} & \text{若}\quad r(t)=i\\
+\displaystyle\sum\limits_{\substack{r(u)=i\\ u\prec t}}\frac{i!}{\gamma(u)}a(t\backslash u) & \text{若}\quad r(t)>i
+\end{cases}\label{eq:ch2alphaDi}
+\end{equation}
+
+最常用到的是$i=1$的情况，此时带入公式(\ref{eq:ch2alphaDi})则有
+\begin{equation}
+aD_1(t)=aD_1([t_1,t_2,\cdots,t_m])=a(t_1)a(t_2)\cdots a(t_m)
+\end{equation}
+
+对于Picard积分的精确解的初等权重函数$E(t)$满足
+\begin{equation}
+\begin{aligned}
+E(t)&=\frac{1}{\gamma(t)}\\
+&=\frac{1}{r(t)\gamma(t_1)\gamma(t_2)\cdots\gamma(t_m)}\\
+&=\frac{1}{r(t)}E(t_1)E(t_2)\cdots E(t_m)\\
+&=\frac{1}{r(t)}ED_1([t_1,t_2,\cdots,t_m])
+\end{aligned}
+\end{equation}
+于是，就有下式成立。
+\begin{equation}
+ED_1(t)=r(t)E(t)\label{eq:ED1}
+\end{equation}
+
+上述公式(\ref{eq:ED1})可以被一般化如下
+\begin{theorem}
+对于给定的整数$i\in\mathbb{N}$，初等权重函数$E(t)$的第$i$阶导数由
+\begin{equation}
+ED_i(t)=\frac{r(t)!}{(r(t)-i)!}E(t)\quad \text{对于任意的}t\in T
+\end{equation}计算。
+\end{theorem}
+对于该定理的证明可以由对$i$的归纳法得之，亦可参见文献\inlinecite{Wright2002b}。
+
+针对广义线性法(\ref{eq:ch2GLM})的台级方程
+\begin{equation}
+Y^{[n]}=h\bm{A}f(Y^{[n]})+\bm{U}y^{[n-1]}
+\end{equation}
+将之用B序列重新书写，则有
+\begin{equation}
+B(\xi(t),y_{n-1})=\bm{A}B(\xi D_1(t),y_{n-1})+\bm{U}B(S(t),y_{n-1})\label{eq:StageOrderCondit}
+\end{equation}
+类似地，将广义线性法的输出逼近量也用B序列书写，则有
+\begin{equation}
+\bm{B}B(\xi D_1(t),y_{n-1})+\bm{V}B(S(t),y_{n-1})
+\end{equation}
+
+与此同时，在$x_n=x_{n-1}+h$时刻的精确解$y(x_n)$的B序列表现形式为
+\begin{equation}
+B(S(t),y(x_{n-1}+h))=B(S(t),B(E(t),y_{n-1}))=B(ES(t),y_{n-1})
+\end{equation}
+
+因此，如广义线性法(\ref{eq:ch2GLM})相对于启动算法$S(t)$是$p$阶精度的，则要求下式对于所有的有根树$t\in T,r(t)\le p$都成立
+\begin{equation}
+B(ES(t),y_{n-1})=\bm{B}B(\xi D_1(t),y_{n-1})+\bm{V}B(S(t),y_{n-1})
+\end{equation}
+将等式(\ref{eq:StageOrderCondit})和上式化简即得
+\begin{align}
+\xi(t)&=\bm{A}\xi D_1(t)+\bm{U}S(t)\label{eq:stageordercondi2}\\
+ES(t)&=\bm{B}\xi D_1(t)+\bm{V}S(t)\label{eq:orderCondi2}
+\end{align}
+
+当$t=\varnothing\in T$时，等式(\ref{eq:stageordercondi2})-(\ref{eq:orderCondi2})退化为
+\begin{equation}
+\xi(\varnothing) = \bm{U}S(\varnothing) \qquad S(\varnothing)= \bm{V}S(\varnothing)
+\end{equation}
+有预相容条件(\ref{eq:ch2PreConsistent})可知
+\begin{equation}
+S(\varnothing) =\bm{q}_0\qquad \xi(\varnothing) =\bm{e}\label{eq:rtprecon}
+\end{equation}
+而当$t=\tau\in T$时，等式(\ref{eq:stageordercondi2})-(\ref{eq:orderCondi2})退化为
+\begin{equation}
+\bm{q}_0+S(\tau)=\bm{Be}+\bm{V}S(\tau)\quad \xi(\tau)=\bm{Ae}+\bm{U}S(\tau)
+\end{equation}
+由相容性条件(\ref{eq:ch2Consistent})和级相容性条件(\ref{eq:ch2StageConsistent})可以知道
+\begin{equation}
+S(\tau)=\bm{q}_1\qquad \xi(\tau)=\bm{c}\label{eq:rtconsist}
+\end{equation}
+
+换句话说，广义线性法(\ref{eq:ch2GLM})的预相容、级相容和相容性条件由有根树理论表出时即是等式(\ref{eq:rtprecon})和(\ref{eq:rtconsist})应该被满足。
+
+根据上述的描述，下述的定理是很容易得到
+\begin{theorem}\label{Thm:TrocateErrorGLM}
+令$M$表示广义线性法(\ref{eq:ch2GLM})，且$S(t)$为启动算法$S$的代数表示。设等式(\ref{eq:stageordercondi2})-(\ref{eq:orderCondi2})对于所有满足$r(t)\le p$的有根树$t\in T$都满足，即广义线性法$M$是$p$阶精度的。则有$(S\circ E-M\circ S)(y(x_0))$的Taylor级数展开式为
+\begin{equation}
+\sum_{r(t)>p}\frac{\epsilon(t)}{\sigma(t)}h^{r(t)}F(t)(y(x_0))
+\end{equation}
+其中，$\epsilon(t)$满足
+\begin{equation}
+\epsilon= ES-\bm{B}\xi D_1-\bm{V}S
+\end{equation}
+\end{theorem}
+\begin{proof}
+参见文献\inlinecite{Butcher2016a}。
+\end{proof}
+
+由定理\ref{Thm:TrocateErrorGLM}可知，对于$p$阶精度的广义线性法的局部截断误差的系数主项$C_{p+1}$为
+\begin{equation}
+C_{p+1}=\sum_{r(t)=p+1}\frac{\epsilon(t)}{\sigma(t)}F(t)(y(x_0))
+\end{equation}
 
 
 
